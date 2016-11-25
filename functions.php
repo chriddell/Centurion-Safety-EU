@@ -80,3 +80,14 @@ function cntrn_product_category_init() {
 	);
 }
 add_action( 'init', 'cntrn_product_category_init' );
+
+/**
+ * Fix 'rows' not working on
+ * ACF textarea
+ *
+ * See: http://bit.ly/2fvTUmI
+ */
+function acf_textarea_fix() {
+	echo '<style type="text/css">.acf_postbox .field textarea {min-height:0 !important;}</style>';
+}
+add_filter('admin_head','acf_textarea_fix');
