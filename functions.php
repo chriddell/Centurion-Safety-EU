@@ -123,6 +123,47 @@ function cntrn_product_colours_init() {
 add_action( 'init', 'cntrn_product_colours_init' );
 
 /**
+ * Create Product Specialism taxonomy
+ */
+function cntrn_product_specialisms_init() {
+
+	// labels across the admin
+	$labels = array(
+    'name'              => 'Product Specialisms',
+    'singular_name'     => 'Product Specialism',
+    'search_items'      => 'Search Product Specialisms',
+    'all_items'         => 'All Product Specialisms',
+    'parent_item'       => 'Parent Product Specialism',
+    'parent_item_colon' => 'Parent Product Specialism:',
+    'edit_item'         => 'Edit Product Specialism',
+    'update_item'       => 'Update Product Specialism',
+    'add_new_item'      => 'Add New Product Specialism',
+    'new_item_name'     => 'New Product Specialism Name',
+    'menu_name'         => 'Product Specialisms',
+  );
+
+	// create a new taxonomy
+	register_taxonomy(
+		'product_specialism',
+		'product',
+
+		// list it's capabilites
+		array(
+
+			'labels' => $labels,
+			'rewrite' => array( 'slug' => 'products', 'hierarchical' => true ),
+			'capabilities'      => array(
+      	'manage_terms'  => 'edit_posts', 
+      	'edit_terms'    => 'edit_posts',
+      	'delete_terms'  => 'edit_posts',
+      	'assign_terms'  => 'edit_posts'  // means administrator', 'editor', 'author', 'contributor'
+    	)
+		)
+	);
+}
+add_action( 'init', 'cntrn_product_specialisms_init' );
+
+/**
  * Fix 'rows' not working on
  * ACF textarea
  *
