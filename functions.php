@@ -41,7 +41,7 @@ function cntrn_product_init() {
 add_action( 'init', 'cntrn_product_init' );
 
 /**
- * Create a custom taxonomy
+ * Create Product Category taxonomy
  */
 function cntrn_product_category_init() {
 
@@ -80,6 +80,47 @@ function cntrn_product_category_init() {
 	);
 }
 add_action( 'init', 'cntrn_product_category_init' );
+
+/**
+ * Create Product Category taxonomy
+ */
+function cntrn_product_colours_init() {
+
+	// labels across the admin
+	$labels = array(
+    'name'              => 'Product Colours',
+    'singular_name'     => 'Product Colour',
+    'search_items'      => 'Search Product Colours',
+    'all_items'         => 'All Product Colours',
+    'parent_item'       => 'Parent Product Colour',
+    'parent_item_colon' => 'Parent Product Colour:',
+    'edit_item'         => 'Edit Product Colour',
+    'update_item'       => 'Update Product Colour',
+    'add_new_item'      => 'Add New Product Colour',
+    'new_item_name'     => 'New Product Colour Name',
+    'menu_name'         => 'Product Colours',
+  );
+
+	// create a new taxonomy
+	register_taxonomy(
+		'product_colour',
+		'product',
+
+		// list it's capabilites
+		array(
+
+			'labels' => $labels,
+			'rewrite' => array( 'slug' => 'products', 'hierarchical' => true ),
+			'capabilities'      => array(
+      	'manage_terms'  => 'edit_posts', 
+      	'edit_terms'    => 'edit_posts',
+      	'delete_terms'  => 'edit_posts',
+      	'assign_terms'  => 'edit_posts'  // means administrator', 'editor', 'author', 'contributor'
+    	)
+		)
+	);
+}
+add_action( 'init', 'cntrn_product_colours_init' );
 
 /**
  * Fix 'rows' not working on
