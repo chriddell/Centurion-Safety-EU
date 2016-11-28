@@ -28,7 +28,14 @@ if ( ! empty( $terms ) && ! is_wp_error( $terms ) ) {
 		// Get the term's image (ACF) [Object]
 		$term_image = get_field('product_category_image', $term);
 
-		$term_list .= '<li><a href="' . esc_url( get_term_link( $term ) ) . '" title="' . esc_attr( sprintf( __( 'View all %s products', 'my_localization_domain' ), $term->name ) ) . '">' . '<img src="' . $term_image['url'] . '" alt="' . $term_image['alt'] . '"/>' . $term->name . '</a></li>';
+		// Store some DOM
+		$term_list .= '<li>';
+		$term_list .= '<a href="' . esc_url( get_term_link( $term ) ) . '" title="' . esc_attr( sprintf( __( 'View all %s products', 'my_localization_domain' ), $term->name ) ) . '">';
+		$term_list .= '<img src="' . $term_image['url'] . '" alt="' . $term_image['alt'] . '"/>';
+		$term_list .= '<h3>' . $term->name . '</h3>';
+		$term_list .= '<p>' . $term->description . '</p>';
+		$term_list .= '</a>';
+		$term_list .= '</li>';
 	}
 
 	// Close the list
