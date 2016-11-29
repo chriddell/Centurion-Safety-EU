@@ -69,6 +69,7 @@ function cntrn_product_category_init() {
 		array(
 
 			'labels' => $labels,
+			'hierarchical' => true,
 			'rewrite' => array( 'slug' => 'products', 'hierarchical' => true ),
 			'capabilities'      => array(
       	'manage_terms'  => 'edit_posts', 
@@ -110,7 +111,7 @@ function cntrn_product_colours_init() {
 		array(
 
 			'labels' => $labels,
-			'rewrite' => array( 'slug' => 'products', 'hierarchical' => true ),
+			'rewrite' => array( 'slug' => 'products', 'hierarchical' => false ),
 			'capabilities'      => array(
       	'manage_terms'  => 'edit_posts', 
       	'edit_terms'    => 'edit_posts',
@@ -170,6 +171,93 @@ add_action( 'init', 'cntrn_product_specialisms_init' );
  * See: http://bit.ly/2fvTUmI
  */
 function acf_textarea_fix() {
+	// Echo a style fix
 	echo '<style type="text/css">.acf_postbox .field textarea {min-height:0 !important;}</style>';
 }
-add_filter('admin_head','acf_textarea_fix');
+add_filter( 'admin_head','acf_textarea_fix' );
+
+/**
+ * Add site logo support
+ * https://codex.wordpress.org/Theme_Logo
+ */
+add_theme_support( 'custom-logo' );
+function cntrn_the_custom_logo() {
+
+	if ( function_exists( 'the_custom_logo' ) ) {
+		the_custom_logo();
+	}
+}
+
+/**
+ * Get all terms of a taxonomy
+ * and render as a tree
+ */ 
+function cntrn_render_term_tree( $taxonomy, $term_id ){
+
+	// Get the requested term
+	$single_term = get_term( $term_id, $taxonomy );
+
+	// If term is parent
+	if ( $single_term->parent == 0 ) {
+
+		// Then it is not an input
+		echo '<li>';
+		echo $single_term->name;
+		echo '</li>';
+	} 
+
+	// Else it is a child
+	else {
+
+		echo '<li>';
+		echo '<a href="' . get_term_link( $single_term ) . '">';
+		echo $single_term->name;
+		echo '</a>';
+		echo '</li>';
+	}
+
+	$children = get_term_children( $term_id, $taxonomy );
+
+	if ( $children ) {
+
+		// Sub-list
+		echo '<ul>';
+
+		foreach ( $children as $child ) {
+
+			$child_term = get_term( $child );
+
+			echo '<li>';
+			echo $child_term->name;
+			echo '</li>';				
+		}
+
+		// Close sub-list
+		echo '</ul>';	
+	}
+
+	// Get sibling terms of top parent
+	if ( $single_term->parent == 0 ) {
+		$siblings = get_terms( array( 'taxonomy' => $taxonomy, 'exclude_tree' => $term_id ) );
+	}
+	else {
+		$siblings = get_terms( array( 'taxonomy' => $taxonomy, 'exclude_tree' => $single_term->parent ) );
+	}
+
+	// If term has siblings
+	if ( $siblings ) {
+
+		// List them out
+		foreach ( $siblings as $sibling ) {
+
+			// Only show parents
+			if ( $sibling->parent == 0 ) {
+				echo '<li>';
+				echo '<a href="' . get_term_link( $sibling ) . '">';
+				echo $sibling->name;
+				echo '</a>';
+				echo '</li>';
+			}
+		}
+	}
+}
