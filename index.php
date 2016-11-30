@@ -14,4 +14,14 @@
 
 get_header(); ?>
 
+<?php 
+
+// Show featured products
+cntrn_render_featured_products();
+
+// Show product categories
+cntrn_render_top_product_categories(true, false);
+
+?>
+
 <?php get_footer(); ?>

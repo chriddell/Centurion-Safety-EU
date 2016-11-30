@@ -85,7 +85,7 @@ get_header(); ?>
 
 					while( $loop->have_posts() ) : $loop->the_post() ;
 						// Include the single post content template.
-						get_template_part( 'template-parts/content' );
+						get_template_part( 'template-parts/content-product' );
 					endwhile;
 				}
 			}

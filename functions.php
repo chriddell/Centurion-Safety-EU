@@ -18,12 +18,11 @@
  */
 
 /**
- * Create custom post types
+ * Create custom post type
+ * Product
  */
 function cntrn_product_init() {
 
-	/* Quotes
-	 ========================================================================== */
 	register_post_type( 'product',
 
 		array(
@@ -83,7 +82,7 @@ function cntrn_product_category_init() {
 add_action( 'init', 'cntrn_product_category_init' );
 
 /**
- * Create Product Category taxonomy
+ * Create Product Colours taxonomy
  */
 function cntrn_product_colours_init() {
 
@@ -163,6 +162,28 @@ function cntrn_product_specialisms_init() {
 	);
 }
 add_action( 'init', 'cntrn_product_specialisms_init' );
+
+/**
+ * Create custom post type
+ * Advice
+ */
+function cntrn_advice_init() {
+
+	register_post_type( 'advice',
+
+		array(
+
+			'labels' => array(
+				'name'            => __( 'Advice' ),
+				'singular_name'   => __( 'Advice' )
+			),
+			'public'        => true,
+			'has_archive'   => true,
+			'taxonomies'		=> array('post_tag')
+		)
+	);
+}
+add_action( 'init', 'cntrn_advice_init' );
 
 /**
  * Fix 'rows' not working on
@@ -259,5 +280,91 @@ function cntrn_render_term_tree( $taxonomy, $term_id ){
 				echo '</li>';
 			}
 		}
+	}
+}
+
+/**
+ * Show 2 featured products
+ */ 
+function cntrn_render_featured_products() {
+
+	// Get products with featured = true
+	$query = new WP_Query(array(
+		'posts_per_page'	=> 2,
+		'post_type'				=> 'product',
+		'meta_key'				=> 'product_featured',
+		'meta_value'			=> true
+	));
+
+	// If posts returns something
+	if ( $query->have_posts() ) { ?>
+
+		<h2>Featured Products</h2>
+		<ul>
+			<?php while ( $query->have_posts() ) : $query->the_post(); ?>
+
+				<?php
+				// Get the fields we need
+				$product_image 				= get_field('product_images');
+				$product_description 	= get_field('product_description');
+				?>
+				<li>
+					<img src="<?php echo $product_image[0]['product_image']['url']; ?>"/>
+					<?php the_title('<h3>', '</h3>'); ?>
+					<p><?php echo $product_description; ?></p>
+				<a href="<?php the_permalink(); ?>">Read more</a>
+				</li>
+			<?php endwhile; ?>
+		</ul>
+	<?php }
+
+	// Restore global data
+	wp_reset_query();
+}
+
+/**
+ * Show most recent advice articles
+ *
+ * @params
+ * - images 		= show category_image, default: false
+ * - classname 	= add class(es) to list
+ */
+function cntrn_render_top_product_categories( $images = false, $classnames = null ) {
+
+	// Set up query args
+	$args = array(
+		'hide_empty' => false,
+		'orderby' 		=> 'name',
+		'order' 			=> 'ASC',
+		'parent' 			=> 0 
+	);
+
+	// Get all product categories
+	// (only top-level)
+	$terms = get_terms( 'product_category', $args );
+
+	// Only render if we have terms
+	if ( ! empty( $terms ) && ! is_wp_error( $terms ) ) {
+
+		// Start a list
+		echo '<ul>';
+
+		foreach ( $terms as $term ) {
+
+			// Render DOM
+			echo '<li>';
+			echo '<a href="' . esc_url( get_term_link( $term ) ) . '" title="' . esc_attr( sprintf( __( 'View all %s products', 'my_localization_domain' ), $term->name ) ) . '">';
+			if ( $images ) {
+				$term_image = get_field( 'product_category_image', $term );
+				echo '<img src="' . $term_image['url'] . '" alt="' . $term_image['alt'] . '"/>';
+			}
+			echo $term->name;
+			echo '</a>';
+			echo '</li>';
+
+		}	
+
+		// End list
+		echo '</ul>';
 	}
 }

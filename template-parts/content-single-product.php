@@ -1,13 +1,13 @@
 <?php
 /**
- * The template part for displaying content
+ * The template part for displaying product content
  *
  * @package WordPress
  * @subpackage Centurion
  * @since Centurion 1.0
  */
 
-// Get all the fields for the product
+// Get ACF fields
 $product = array(
 	'description' 			=> get_field( 'product_description' ),
 	'images'						=> get_field( 'product_images' ),
@@ -17,7 +17,6 @@ $product = array(
 	'approved-to'				=> get_field( 'product_approved_to' ),
 	'tested-to'					=> get_field( 'product_tested_to' ),
 	'downloads'					=> get_field( 'product_downloads' ),
-	'featured'					=> get_field( 'product_featured' ),
 	'specialism'				=> get_field( 'product_specialism' ),
 	'linked-products'		=> get_field( 'product_linked_products' )
 );
@@ -91,8 +90,6 @@ get_header(); ?>
 	<?php if ( $product['approved-to'] ) { echo '<h3>Approved To</h3><p>' . $product['approved-to'] . '</p>'; } ?>
 
 	<?php if ( $product['tested-to'] ) { echo '<h3>Tested To</h3><p>' . $product['tested-to'] . '</p>'; } ?>
-
-	<?php if ( $product['featured'] ) { echo '<h3>Featured?</h3><p>' . $product['featured'] . '</p>'; } ?>
 
 	<?php 
 	// Check for any product_specialisms
