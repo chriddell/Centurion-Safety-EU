@@ -186,6 +186,28 @@ function cntrn_advice_init() {
 add_action( 'init', 'cntrn_advice_init' );
 
 /**
+ * Create custom post type
+ * Advice
+ */
+function cntrn_event_init() {
+
+	register_post_type( 'event',
+
+		array(
+
+			'labels' => array(
+				'name'            => __( 'Events' ),
+				'singular_name'   => __( 'Event' )
+			),
+			'public'        => true,
+			'has_archive'   => true,
+			'supports' 			=> array( 'title' ) // Disable WSYWIG	
+		)
+	);
+}
+add_action( 'init', 'cntrn_event_init' );
+
+/**
  * Fix 'rows' not working on
  * ACF textarea
  *
