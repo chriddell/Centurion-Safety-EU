@@ -187,7 +187,29 @@ add_action( 'init', 'cntrn_advice_init' );
 
 /**
  * Create custom post type
- * Advice
+ * News
+ */
+function cntrn_news_init() {
+
+	register_post_type( 'news',
+
+		array(
+
+			'labels' => array(
+				'name'            => __( 'News' ),
+				'singular_name'   => __( 'News' )
+			),
+			'public'        => true,
+			'has_archive'   => true,
+			'taxonomies'		=> array('post_tag')
+		)
+	);
+}
+add_action( 'init', 'cntrn_news_init' );
+
+/**
+ * Create custom post type
+ * Event
  */
 function cntrn_event_init() {
 
