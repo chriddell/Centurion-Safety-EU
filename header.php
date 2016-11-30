@@ -30,12 +30,14 @@
 			<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'twentysixteen' ); ?></a>
 
 			<header>
-				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
-					<?php 
-						bloginfo( 'name' ); 
-						the_custom_logo();
-					?>
-				</a>
+				<h1>
+					<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
+						<?php 
+							bloginfo( 'name' ); 
+							the_custom_logo();
+						?>
+					</a>
+				</h1>
 
 				<?php 
 					$description = get_bloginfo( 'description', 'display' );
