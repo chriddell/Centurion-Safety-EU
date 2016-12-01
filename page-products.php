@@ -1,8 +1,6 @@
 <?php
 /**
- * The products page
- *
- * Lists product categories
+ * The Products page
  *
  * @link http://codex.wordpress.org/Template_Hierarchy
  *
