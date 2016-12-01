@@ -48,8 +48,10 @@
 
 				<nav>
 					<h2>Main Nav</h2>
-					<?php
-						wp_nav_menu();
+					<?php 
+						wp_nav_menu(array(
+							'menu' => 'main'
+						));
 					?>
 				</nav>
 			</header>
