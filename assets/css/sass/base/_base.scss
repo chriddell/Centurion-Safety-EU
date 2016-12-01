@@ -1,0 +1,41 @@
+/* ==========================================================================
+   Base
+   
+   Base styles, no clases or IDs selectors please 
+   (placeholders are fine I guess...)
+   ========================================================================== */
+
+html {
+  font-family: $mainFontFamily;
+  font-size: $mainFontSize;
+
+  @if $globalFontSmoothing == true {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+h1,
+%like-h1 {
+  font-size: 2.6em;
+}
+
+h2,
+%like-h2 {
+  font-size: 1.55em;
+}
+
+h3,
+%like-h3 {
+  font-size: 1.2em;
+}
+
+h4,
+%like-h4 {
+  font-size: 1.1em;
+}
+
+img,
+video {
+  max-width: 100%;
+}

@@ -1,0 +1,12 @@
+/* ==========================================================================
+   Master SCSS file
+   
+   - imports partials from sub-folders
+   ========================================================================== */
+
+@import 'settings/config';
+@import 'settings/settings';
+
+@import 'generic/reset';
+
+@import 'base/base';
