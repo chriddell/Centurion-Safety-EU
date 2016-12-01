@@ -12,7 +12,23 @@
  * @package Centurion
  */
 
+// ACF Fields
+$hero = array(
+	'image' 		=> get_field( 'hero_image' ),
+	'title' 		=> get_field( 'hero_title' ),
+	'cta-text' 	=> get_field( 'hero_cta_text' ),
+	'video'			=> get_field( 'hero_video' )
+);
+
 get_header(); ?>
+
+
+<div style="background-image: url(<?php echo $hero['image']['url'] ?>);"><!-- .hero -->
+	<h2><?php echo $hero['title']; ?></h2>
+	<?php if ( $hero['cta-text'] ) { ?>
+		<span><a href=""><?php echo $hero['cta-text']; ?></a></span>
+	<?php } ?>
+</div><!-- / .hero -->
 
 <?php 
 
@@ -25,3 +41,11 @@ cntrn_render_top_product_categories(true, false);
 ?>
 
 <?php get_footer(); ?>
+
+<?php if ( $hero['cta-text'] ) { ?>
+	<div>
+		<video controls>
+			<source src="<?php echo $hero['video']['url']; ?>" type="<?php echo $hero['video']['mime_type']; ?>">
+		</video>
+	</div>
+<?php } ?>
