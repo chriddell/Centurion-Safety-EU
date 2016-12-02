@@ -158,6 +158,20 @@
 
       > a {
         padding: 0 0 0 $baseSpacingUnit * 1.5;
+
+        &:after {
+          content: '\25BE';
+          position: absolute;
+          right: $baseSpacingUnit * 2;
+
+          .is-active & {
+            transform: rotateZ(180deg);
+          }
+
+          @include respond-to( 'medium' ) {
+            right: 10px;
+          }
+        }
       }
     }
   }
@@ -176,7 +190,8 @@
       background-color: $brandColorOne;
     }
 
-    // ACTIVE (visible) style
+    // ACTIVE (visible) styles
+    // for defualt hidden item
     .is-active & {
       height: auto;
       border-top: 1px solid darken($brandColorOne, 10%);
@@ -203,16 +218,6 @@
           padding: 0 0 0 $baseSpacingUnit * 1.5;
         }
       }
-    }
-  }
-
-  &:first-of-type a:after {
-    content: '\25BE';
-    position: absolute;
-    right: $baseSpacingUnit * 2;
-
-    @include respond-to( 'medium' ) {
-      right: 10px;
     }
   }
 }
