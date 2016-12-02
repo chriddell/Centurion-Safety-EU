@@ -24,41 +24,52 @@
 
 <body <?php body_class(); ?>>
 
-	<div id="page" class="site">
-		<div class="site-inner">
+	<a class="skip-link sr-only" href="#content"><?php _e( 'Skip to content', 'twentysixteen' ); ?></a>
 
-			<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'twentysixteen' ); ?></a>
+	<header class="header--site">
+		<div class="wrapper">
+			<h1 class="reset-spacing zero-line-height">
+				<span class="sr-only"><?php bloginfo( 'name' ); ?></span>
+				<?php the_custom_logo(); ?>
+			</h1>
 
-			<header>
-				<h1>
-					<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
-						<?php 
-							bloginfo( 'name' ); 
-							the_custom_logo();
-						?>
-					</a>
-				</h1>
+			<button class="hamburger hamburger--boring nav--main__trigger header__button" type="button" id="nav-main-trigger">
+  			<span class="hamburger-box">
+    			<span class="hamburger-inner"></span>
+  			</span>
+			</button>
+		</div>
 
-				<?php 
-					$description = get_bloginfo( 'description', 'display' );
-					if ( $description ) {
-						echo '<p>' . $description . '</p>';
-					}
-				?>
-
-				<nav>
-					<h2>Main Nav</h2>
+			<nav class="nav--main" id="main-nav">
+				<div class="wrapper">
 					<?php 
-						wp_nav_menu(array(
-							'menu' => 'main'
-						));
+						$args = array(
+							'menu' 				=> 'main',
+							'menu_class'	=> 'menu menu--main menu--header',
+							'container'		=> false
+						);
+						wp_nav_menu( $args );
 					?>
-				</nav>
-			</header>
+				</div>
+			</nav>
 
-			<div id="content" class="site-content">
-				<?php
-				if ( $post->post_parent == 0 && !is_tax() && get_post_type() !== 'product' ) {
-					the_title('<h2>', '</h2>');
-				}
-				?>
+			<div class="nav--secondary" id="sub-nav">
+				<div class="wrapper">
+					<ul class="menu menu--drop-down menu--lang-selector menu--header" id="language-selector">
+						<li class="menu__item menu--header__item menu--lang-selector__item"><a href="" class="hover-underline">English</a></li>
+						<li class="menu__item menu--header__item menu--lang-selector__item"><a href="" class="hover-underline">Français</a></li>
+						<li class="menu__item menu--header__item menu--lang-selector__item"><a href="" class="hover-underline">Deutsch</a></li>
+						<li class="menu__item menu--header__item menu--lang-selector__item"><a href="" class="hover-underline">Español</a></li>
+					</ul>
+					<ul class="menu menu--header">
+						<li class="menu__item menu--header__item header__custom-link">
+							<a href="<?php echo cntrn_stockists_link(); ?>" class="hover-underline">Find a valued stockist</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+
+		</div>
+	</header>
+
+	<div id="content" class="site-content">

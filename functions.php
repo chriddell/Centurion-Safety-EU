@@ -261,13 +261,24 @@ add_filter( 'admin_head','acf_textarea_fix' );
  * Add site logo support
  * https://codex.wordpress.org/Theme_Logo
  */
-add_theme_support( 'custom-logo' );
 function cntrn_the_custom_logo() {
 
 	if ( function_exists( 'the_custom_logo' ) ) {
 		the_custom_logo();
 	}
 }
+add_theme_support( 'custom-logo' );
+
+/**
+ * Add class to site logo
+ * http://www.mavengang.com/2016/06/02/change-wordpress-custom-logo-class/
+ */
+function change_logo_class( $html ) {
+
+	$html = str_replace( 'custom-logo', 'header--site__logo', $html );
+	return $html;
+}
+add_filter( 'get_custom_logo', 'change_logo_class' );
 
 /**
  * Get all terms of a taxonomy
@@ -385,9 +396,8 @@ function cntrn_render_featured_products() {
 /**
  * Show most recent advice articles
  *
- * @params
- * - images 		= show category_image, default: false
- * - classname 	= add class(es) to list
+ * @param images 			= show category_image; boolean
+ * @param classnames 	= add class(es); string
  */
 function cntrn_render_top_product_categories( $images = false, $classnames = null ) {
 
@@ -428,3 +438,29 @@ function cntrn_render_top_product_categories( $images = false, $classnames = nul
 		echo '</ul>';
 	}
 }
+
+/**
+ * Echo link to 'Stockists'
+ * page.
+ *
+ */
+function cntrn_stockists_link() {
+
+	$stockists_page = get_page_by_path( 'stockists', object );
+	$stockists_page_url = get_page_link($stockists_page->ID);
+
+	// Print the URL
+	return $stockists_page_url;
+}
+
+/**
+ * Add class to to <a> tag in 
+ * wp_nav_menu
+ * 
+ * from http://stackoverflow.com/questions/26180688/how-to-add-class-to-link-in-wp-nav-menu
+ */
+function cntrn_add_link_class_wp_nav_menu_footer($ul_class) {
+
+	return preg_replace('/<a /', '<a class="menu__item__link hover-underline"', $ul_class);
+}
+add_filter( 'wp_nav_menu', 'cntrn_add_link_class_wp_nav_menu_footer');

@@ -1,0 +1,228 @@
+/* ==========================================================================
+    _menu
+    
+    Various menu styles.
+   ========================================================================== */
+
+.menu,
+.sub-menu {
+  // sub-menu is default WP class
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Sub Menus
+---------------------------------------- */
+
+.sub-menu {
+  // inaccessible on mob
+  // only screen-readers
+  @extend %sr-only;
+
+  @include respond-to( 'medium' ) {
+    // reset sr-only styles
+    left: 0 !important;
+    top: 100% !important;
+    height: auto !important;
+    width: auto !important;
+    overflow: visible !important;
+    visibility: hidden;
+  }
+
+  .menu__item {
+    min-width: 300px;
+  }
+
+  .menu--header__item--tier-two > & {
+    top: 0 !important;
+    left: 100% !important;
+  }
+}
+
+.menu--header__item--has-submenu:hover > .sub-menu {
+  visibility: visible;
+}
+
+// Sub-menus within header menus
+.menu--header__item--tier-two {
+  background-color: $brandColorTwoDark;
+}
+
+.menu--header__item--tier-three,
+.menu--header__item--tier-two.menu--header__item--has-submenu:hover {
+  background-color: $brandColorTwoDarker;
+}
+.menu--header__item--tier-three:hover {
+  background-color: darken($brandColorTwoDarker, 5%);
+}
+
+// Normal padding in sub-menus
+.sub-menu .menu__item:first-of-type a {
+  padding-left: $baseSpacingUnit;
+}
+
+/* Header
+---------------------------------------- */
+
+.menu--header {
+  // adjust nav for container on mobile
+  width: calc(100% + 20px + 20px);
+  position: relative;
+  left: -20px;
+  overflow: hidden;
+
+  @include respond-to( 'medium' ) {
+    width: 100%;
+    position: static;
+    overflow: visible;
+  }
+}
+
+.menu--header__item {
+  border-top: 1px solid darken($brandColorOne, 10%);
+  position: relative;
+
+  > a {
+    display: block;
+    padding: $baseSpacingUnit / 3 * 2 $baseSpacingUnit * 2;
+  }
+
+  @include respond-to( 'medium' ) {
+    border-top: 0;
+    float: left;
+
+    > a {
+      padding: $baseSpacingUnit $baseSpacingUnit * 2;
+    }
+  }
+}
+
+// Secondary nav menu tweaks
+.nav--secondary .menu--header {
+  @include respond-to( 'medium' ) {
+    width: auto;
+    display: inline-block;
+    float: right;
+  }
+}
+
+/* Main Navigation
+---------------------------------------- */
+
+.menu--main-nav__item {
+  @extend %like-h2;
+
+  @include respond-to( 'medium' ) {
+    font-size: 1em;
+
+    &:hover {
+      background-color: $brandColorTwoDark;
+    }
+
+    > a {
+      padding: $baseSpacingUnit $baseSpacingUnit;
+    }
+  }
+
+  &:after {
+    content: '\203A';
+    position: absolute;
+    right: $baseSpacingUnit * 2;
+    top: 11px;
+
+    @include respond-to( 'medium' ) {
+      content: none;
+    }
+  }
+}
+
+/* Language Selector
+---------------------------------------- */
+
+.menu--lang-selector__item {
+  @include respond-to( 'medium' ) {
+    line-height: 3;
+
+    &:hover {
+      background-color: darken($brandColorOne, 10%) !important;
+    }
+  }
+
+  &:first-of-type {
+    @include respond-to( 'medium' ) {
+      width: 135px;
+      height: 60px;
+      line-height: 3.35;
+      cursor: pointer;
+
+      > a {
+        padding: 0 0 0 $baseSpacingUnit * 1.5;
+      }
+    }
+  }
+
+  &:not(:first-of-type) {
+    // hidden by default, shown on tap
+    height: 0;
+    border: 0;
+    overflow: hidden;
+    background-color: lighten($brandColorOne, 5%);
+
+    @include respond-to( 'medium' ) {
+      padding: 0;
+      // Items now stacked
+      position: absolute;
+      background-color: $brandColorOne;
+    }
+
+    // ACTIVE (visible) style
+    .is-active & {
+      height: auto;
+      border-top: 1px solid darken($brandColorOne, 10%);
+      overflow: visible;
+
+      > a {
+        padding: $baseSpacingUnit / 3 * 2 $baseSpacingUnit * 2;
+      }
+
+      @include respond-to( 'medium' ) {
+        width: 135px;
+        height: 60px;
+        border-top: 0;
+
+        // increment top value for
+        // each item
+        @for $i from 2 through 4 {
+          &:nth-of-type(#{$i}) {
+            top: 60px * ($i - 1);
+          }
+        }
+
+        > a {
+          padding: 0 0 0 $baseSpacingUnit * 1.5;
+        }
+      }
+    }
+  }
+
+  &:first-of-type a:after {
+    content: '\25BE';
+    position: absolute;
+    right: $baseSpacingUnit * 2;
+
+    @include respond-to( 'medium' ) {
+      right: 10px;
+    }
+  }
+}
+
+
+/* Vendor (WP sub-menus)
+---------------------------------------- */
+
+.menu--header__item--has-submenu:hover {
+  > ul {
+    // reset 
+  }
+}

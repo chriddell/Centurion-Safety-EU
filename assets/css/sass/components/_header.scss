@@ -1,0 +1,47 @@
+/* ==========================================================================
+    _header
+    
+    Site header styles.
+   ========================================================================== */
+
+.header--site {
+  position: relative;
+  background-color: $brandColorOne;
+  color: #FFFFFF;
+  overflow: hidden;
+
+  @include respond-to( 'medium' ) {
+    overflow: visible;
+  }
+
+  a {
+    color: $lightColor;
+    text-decoration: none;
+  }
+}
+
+.header--site__logo {
+  width: 150px;
+  height: auto;
+  display: block;
+}
+
+.header--site__logo-link {
+  float: left;
+  margin: 20px 0 20px;
+  // Keep logo above
+  position: relative;
+  z-index: 2;
+}
+
+.header__button {
+  float: right;
+}
+
+.header__custom-link a {
+  @include respond-to( 'medium' ) {
+    &:hover {
+      background-color: darken($brandColorOne, 10%);
+    }
+  }
+}

@@ -22,7 +22,6 @@ $hero = array(
 
 get_header(); ?>
 
-
 <div style="background-image: url(<?php echo $hero['image']['url'] ?>);"><!-- .hero -->
 	<h2><?php echo $hero['title']; ?></h2>
 	<?php if ( $hero['cta-text'] ) { ?>

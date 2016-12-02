@@ -11,7 +11,6 @@
 // because we need to link to them/
 // get their fields
 $contact_page 	= get_page_by_path( 'contact', object );
-$stockists_page = get_page_by_path( 'stockists', object );
 
 // Get ACF Contact fields
 $contact = array(
@@ -20,6 +19,8 @@ $contact = array(
 );
 
 ?>
+
+</div><!-- / .content -->
 
 <footer>
 	<div>
@@ -44,7 +45,7 @@ $contact = array(
 
 	<div>
 		<ul>
-			<li><a href="<?php echo get_page_link($stockists_page->ID); ?>"/>Find a valued stockist</a></li>
+			<li><a href="<?php cntrn_stockists_link(); ?>"/>Find a valued stockist</a></li>
 		</ul>
 		<p>&copy; <?php echo date('Y'); echo ', '; bloginfo( 'name' ); ?></p>
 	</div>

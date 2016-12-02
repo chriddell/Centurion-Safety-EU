@@ -1,17 +1,23 @@
 /* ==========================================================================
    Master SCSS file
-   
+
    - imports partials from sub-folders
    ========================================================================== */
 /* ==========================================================================
     _config
     
-    Settings which affect how styles behave elsewhere in project
+    Settings which affect how styles behave elsewhere in project.
+    Breakpoints, font-smoothing etc.
    ========================================================================== */
 /* ==========================================================================
     _settings
     
     Declare defaults - fonts, spacing, re-usable variables
+   ========================================================================== */
+/* ==========================================================================
+    _mixins
+   
+    Global mixins
    ========================================================================== */
 /* ==========================================================================
     _reset
@@ -466,7 +472,111 @@ template {
 }
 
 /* ==========================================================================
-   Base
+    _grid
+
+    Grid classes, container.
+   ========================================================================== */
+.wrapper {
+  max-width: 1352px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 20px;
+}
+
+.wrapper:after {
+  content: " ";
+  display: block;
+  clear: both;
+}
+
+@media (min-width: 767px) {
+  .col-sml-1 {
+    width: 8.3333333333%;
+    float: left;
+  }
+}
+
+@media (min-width: 767px) {
+  .col-sml-2 {
+    width: 16.6666666667%;
+    float: left;
+  }
+}
+
+@media (min-width: 767px) {
+  .col-sml-3 {
+    width: 25%;
+    float: left;
+  }
+}
+
+@media (min-width: 767px) {
+  .col-sml-4 {
+    width: 33.3333333333%;
+    float: left;
+  }
+}
+
+@media (min-width: 767px) {
+  .col-sml-5 {
+    width: 41.6666666667%;
+    float: left;
+  }
+}
+
+@media (min-width: 767px) {
+  .col-sml-6 {
+    width: 50%;
+    float: left;
+  }
+}
+
+@media (min-width: 767px) {
+  .col-sml-7 {
+    width: 58.3333333333%;
+    float: left;
+  }
+}
+
+@media (min-width: 767px) {
+  .col-sml-8 {
+    width: 66.6666666667%;
+    float: left;
+  }
+}
+
+@media (min-width: 767px) {
+  .col-sml-9 {
+    width: 75%;
+    float: left;
+  }
+}
+
+@media (min-width: 767px) {
+  .col-sml-10 {
+    width: 83.3333333333%;
+    float: left;
+  }
+}
+
+@media (min-width: 767px) {
+  .col-sml-11 {
+    width: 91.6666666667%;
+    float: left;
+  }
+}
+
+@media (min-width: 767px) {
+  .col-sml-12 {
+    width: 100%;
+    float: left;
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+/* ==========================================================================
+   _base
    
    Base styles, no clases or IDs selectors please 
    (placeholders are fine I guess...)
@@ -478,11 +588,16 @@ html {
   -moz-osx-font-smoothing: grayscale;
 }
 
+* {
+  box-sizing: border-box;
+}
+
 h1 {
   font-size: 2.6em;
 }
 
-h2 {
+h2,
+.menu--main-nav__item {
   font-size: 1.55em;
 }
 
@@ -494,8 +609,470 @@ h4 {
   font-size: 1.1em;
 }
 
+h1, .menu--main-nav__item h3 {
+  margin-top: 0;
+}
+
 img,
 video {
   max-width: 100%;
+}
+
+/* ==========================================================================
+    _hamburgers
+
+    Hamburger (menu icon) styles. Taken from https://github.com/jonsuh/hamburgers
+   ========================================================================== */
+/* Settings
+---------------------------------------- */
+/* Base
+---------------------------------------- */
+.hamburger {
+  padding: 15px 15px;
+  display: inline-block;
+  cursor: pointer;
+  -webkit-transition-property: opacity, -webkit-filter, opacity, filter;
+          transition-property: opacity, filter;
+  -webkit-transition-duration: 0.15s;
+          transition-duration: 0.15s;
+  -webkit-transition-timing-function: linear;
+          transition-timing-function: linear;
+  font: inherit;
+  color: inherit;
+  text-transform: none;
+  background-color: transparent;
+  border: 0;
+  margin: 0;
+  overflow: visible;
+}
+
+.hamburger:hover {
+  opacity: 0.7;
+}
+
+.hamburger-box {
+  width: 40px;
+  height: 24px;
+  display: inline-block;
+  position: relative;
+}
+
+.hamburger-inner {
+  display: block;
+  top: 50%;
+  margin-top: -2px;
+}
+
+.hamburger-inner, .hamburger-inner::before, .hamburger-inner::after {
+  width: 40px;
+  height: 4px;
+  background-color: #000;
+  border-radius: 4px;
+  position: absolute;
+  -webkit-transition-property: -webkit-transform;
+          transition-property: transform;
+  -webkit-transition-duration: 0.15s;
+          transition-duration: 0.15s;
+  -webkit-transition-timing-function: ease;
+          transition-timing-function: ease;
+}
+
+.hamburger-inner::before, .hamburger-inner::after {
+  content: "";
+  display: block;
+}
+
+.hamburger-inner::before {
+  top: -10px;
+}
+
+.hamburger-inner::after {
+  bottom: -10px;
+}
+
+/*
+ * Boring
+ */
+.hamburger--boring .hamburger-inner, .hamburger--boring .hamburger-inner::before, .hamburger--boring .hamburger-inner::after {
+  -webkit-transition-property: none;
+          transition-property: none;
+}
+
+.hamburger--boring.is-active .hamburger-inner {
+  -webkit-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+.hamburger--boring.is-active .hamburger-inner::before {
+  top: 0;
+  opacity: 0;
+}
+
+.hamburger--boring.is-active .hamburger-inner::after {
+  bottom: 0;
+  -webkit-transform: rotate(-90deg);
+      -ms-transform: rotate(-90deg);
+          transform: rotate(-90deg);
+}
+
+/* ==========================================================================
+    _nav
+    
+    Navigation styles.
+   ========================================================================== */
+.nav--main,
+.nav--secondary {
+  height: 0;
+  overflow: hidden;
+  width: calc(100% + 20px + 20px);
+  position: relative;
+  left: -20px;
+}
+
+@media (min-width: 1023px) {
+  .nav--main,
+  .nav--secondary {
+    height: auto;
+    overflow: visible;
+  }
+}
+
+@media (min-width: 1023px) {
+  .nav--main,
+  .nav--secondary {
+    width: 100%;
+    position: static;
+    background-color: #94aab3;
+  }
+}
+
+@media (min-width: 1023px) {
+  .nav--secondary {
+    position: absolute;
+    top: 20px;
+    right: 0;
+    left: auto;
+    background: none;
+  }
+}
+
+.nav--main__trigger {
+  margin-top: 20px;
+}
+
+@media (min-width: 1023px) {
+  .nav--main__trigger {
+    display: none;
+  }
+}
+
+.nav--main__trigger .hamburger-inner {
+  background-color: #FFFFFF;
+}
+
+.nav--main__trigger .hamburger-inner:after, .nav--main__trigger .hamburger-inner:before {
+  background-color: #FFFFFF;
+}
+
+.nav--main__trigger .hamburger-inner:before {
+  top: -12px;
+}
+
+.nav--main__trigger .hamburger-inner:after {
+  bottom: -12px;
+}
+
+/* ==========================================================================
+    _menu
+    
+    Various menu styles.
+   ========================================================================== */
+.menu,
+.sub-menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Sub Menus
+---------------------------------------- */
+@media (min-width: 1023px) {
+  .sub-menu {
+    left: 0 !important;
+    top: 100% !important;
+    height: auto !important;
+    width: auto !important;
+    overflow: visible !important;
+    visibility: hidden;
+  }
+}
+
+.sub-menu .menu__item {
+  min-width: 300px;
+}
+
+.menu--header__item--tier-two > .sub-menu {
+  top: 0 !important;
+  left: 100% !important;
+}
+
+.menu--header__item--has-submenu:hover > .sub-menu {
+  visibility: visible;
+}
+
+.menu--header__item--tier-two {
+  background-color: #76888f;
+}
+
+.menu--header__item--tier-three,
+.menu--header__item--tier-two.menu--header__item--has-submenu:hover {
+  background-color: #667277;
+}
+
+.menu--header__item--tier-three:hover {
+  background-color: #5a6569;
+}
+
+.sub-menu .menu__item:first-of-type a {
+  padding-left: 20px;
+}
+
+/* Header
+---------------------------------------- */
+.menu--header {
+  width: calc(100% + 20px + 20px);
+  position: relative;
+  left: -20px;
+  overflow: hidden;
+}
+
+@media (min-width: 1023px) {
+  .menu--header {
+    width: 100%;
+    position: static;
+    overflow: visible;
+  }
+}
+
+.menu--header__item {
+  border-top: 1px solid #181d3c;
+  position: relative;
+}
+
+.menu--header__item > a {
+  display: block;
+  padding: 13.3333333333px 40px;
+}
+
+@media (min-width: 1023px) {
+  .menu--header__item {
+    border-top: 0;
+    float: left;
+  }
+  .menu--header__item > a {
+    padding: 20px 40px;
+  }
+}
+
+@media (min-width: 1023px) {
+  .nav--secondary .menu--header {
+    width: auto;
+    display: inline-block;
+    float: right;
+  }
+}
+
+/* Main Navigation
+---------------------------------------- */
+@media (min-width: 1023px) {
+  .menu--main-nav__item {
+    font-size: 1em;
+  }
+  .menu--main-nav__item:hover {
+    background-color: #76888f;
+  }
+  .menu--main-nav__item > a {
+    padding: 20px 20px;
+  }
+}
+
+.menu--main-nav__item:after {
+  content: '\203A';
+  position: absolute;
+  right: 40px;
+  top: 11px;
+}
+
+@media (min-width: 1023px) {
+  .menu--main-nav__item:after {
+    content: none;
+  }
+}
+
+/* Language Selector
+---------------------------------------- */
+@media (min-width: 1023px) {
+  .menu--lang-selector__item {
+    line-height: 3;
+  }
+  .menu--lang-selector__item:hover {
+    background-color: #181d3c !important;
+  }
+}
+
+@media (min-width: 1023px) {
+  .menu--lang-selector__item:first-of-type {
+    width: 135px;
+    height: 60px;
+    line-height: 3.35;
+    cursor: pointer;
+  }
+  .menu--lang-selector__item:first-of-type > a {
+    padding: 0 0 0 30px;
+  }
+}
+
+.menu--lang-selector__item:not(:first-of-type) {
+  height: 0;
+  border: 0;
+  overflow: hidden;
+  background-color: #2d3773;
+}
+
+@media (min-width: 1023px) {
+  .menu--lang-selector__item:not(:first-of-type) {
+    padding: 0;
+    position: absolute;
+    background-color: #262e61;
+  }
+}
+
+.is-active .menu--lang-selector__item:not(:first-of-type) {
+  height: auto;
+  border-top: 1px solid #181d3c;
+  overflow: visible;
+}
+
+.is-active .menu--lang-selector__item:not(:first-of-type) > a {
+  padding: 13.3333333333px 40px;
+}
+
+@media (min-width: 1023px) {
+  .is-active .menu--lang-selector__item:not(:first-of-type) {
+    width: 135px;
+    height: 60px;
+    border-top: 0;
+  }
+  .is-active .menu--lang-selector__item:not(:first-of-type):nth-of-type(2) {
+    top: 60px;
+  }
+  .is-active .menu--lang-selector__item:not(:first-of-type):nth-of-type(3) {
+    top: 120px;
+  }
+  .is-active .menu--lang-selector__item:not(:first-of-type):nth-of-type(4) {
+    top: 180px;
+  }
+  .is-active .menu--lang-selector__item:not(:first-of-type) > a {
+    padding: 0 0 0 30px;
+  }
+}
+
+.menu--lang-selector__item:first-of-type a:after {
+  content: '\25BE';
+  position: absolute;
+  right: 40px;
+}
+
+@media (min-width: 1023px) {
+  .menu--lang-selector__item:first-of-type a:after {
+    right: 10px;
+  }
+}
+
+/* Vendor (WP sub-menus)
+---------------------------------------- */
+/* ==========================================================================
+    _header
+    
+    Site header styles.
+   ========================================================================== */
+.header--site {
+  position: relative;
+  background-color: #262e61;
+  color: #FFFFFF;
+  overflow: hidden;
+}
+
+@media (min-width: 1023px) {
+  .header--site {
+    overflow: visible;
+  }
+}
+
+.header--site a {
+  color: #FFFFFF;
+  text-decoration: none;
+}
+
+.header--site__logo {
+  width: 150px;
+  height: auto;
+  display: block;
+}
+
+.header--site__logo-link {
+  float: left;
+  margin: 20px 0 20px;
+  position: relative;
+  z-index: 2;
+}
+
+.header__button {
+  float: right;
+}
+
+@media (min-width: 1023px) {
+  .header__custom-link a:hover {
+    background-color: #181d3c;
+  }
+}
+
+/* ==========================================================================
+    _helpers
+
+    Object-oriented classes, helper classes e.g. bold-font, absolute-center
+   ========================================================================== */
+.light-link {
+  color: #FFFFFF;
+}
+
+.sr-only,
+.sub-menu {
+  position: absolute;
+  left: -1000000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.reset-spacing {
+  padding: 0;
+  margin: 0;
+}
+
+.zero-line-height {
+  line-height: 0;
+}
+
+.clearfix:after {
+  content: '';
+  display: table;
+  clear: both;
+}
+
+.hover-underline:hover {
+  text-decoration: underline;
 }
 /*# sourceMappingURL=style.css.map */

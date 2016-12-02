@@ -1,12 +1,23 @@
 /* ==========================================================================
    Master SCSS file
-   
+
    - imports partials from sub-folders
    ========================================================================== */
 
 @import 'settings/config';
 @import 'settings/settings';
 
+@import 'tools/mixins';
+
 @import 'generic/reset';
 
+@import 'objects/grid';
+
 @import 'base/base';
+
+@import 'components/hamburger';
+@import 'components/nav';
+@import 'components/menu';
+@import 'components/header';
+
+@import 'trumps/helpers';

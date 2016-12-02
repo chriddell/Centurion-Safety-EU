@@ -1,7 +1,14 @@
 /* ==========================================================================
     _config
     
-    Settings which affect how styles behave elsewhere in project
+    Settings which affect how styles behave elsewhere in project.
+    Breakpoints, font-smoothing etc.
    ========================================================================== */
 
 $globalFontSmoothing: true;
+$globalBoxSizing: 'border-box';
+
+$breakpoints: (
+  'small'   : 767px,
+  'medium'  : 1023px
+);

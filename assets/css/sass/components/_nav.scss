@@ -1,0 +1,69 @@
+/* ==========================================================================
+    _nav
+    
+    Navigation styles.
+   ========================================================================== */
+
+.nav--main,
+.nav--secondary {
+  // hidden by default on mobile
+  height: 0;
+  overflow: hidden;
+
+  @include respond-to( 'medium' ) {
+    // show again
+    height: auto;
+    overflow: visible;
+  }
+
+  // adjust navs for container padding 
+  // on mobile
+  width: calc(100% + 20px + 20px);
+  position: relative;
+  left: -20px;
+
+  @include respond-to( 'medium' ) {
+    // show again
+    width: 100%;
+    position: static;
+
+    background-color: $brandColorTwo;
+  }
+}
+
+.nav--secondary {
+  @include respond-to( 'medium' ) {
+    position: absolute;
+    top: 20px;
+    right: 0;
+    left: auto;
+    background: none;
+  }
+}
+
+.nav--main__trigger {
+  margin-top: $baseSpacingUnit;
+
+  @include respond-to( 'medium' ) {
+    // no need for trigger anymore
+    display: none;
+  }
+
+  .hamburger-inner {
+    // override default hamburger styles
+    background-color: $lightColor;
+
+    &:after,
+    &:before {
+      background-color: $lightColor;
+    }
+
+    &:before {
+      top: -12px;
+    }
+
+    &:after {
+      bottom: -12px;
+    }
+  }
+}

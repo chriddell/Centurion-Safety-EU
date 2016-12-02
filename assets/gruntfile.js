@@ -7,10 +7,10 @@ module.exports = function( grunt ) {
 		watch: {
 			sass: {
 				files: ['./css/sass/*.scss', './css/sass/*/*.scss'],
-				tasks: ['sass:dev', 'autoprefixer'],
+				tasks: ['sass:dev', 'autoprefixer:dev'],
 			},
 			js: {
-				files: ['.js/*/*.js'],
+				files: ['./js/*/*.js'],
 				tasks: ['uglify'],
 			}
 		},
