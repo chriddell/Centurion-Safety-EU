@@ -1,0 +1,24 @@
+/* ==========================================================================
+    _footer
+    
+    Site footer styles.
+   ========================================================================== */
+
+.footer--site a {
+  color: $lightColor;
+}
+
+.footer--site--tier-one {
+  padding: $baseSpacingUnit * 2 0;
+  background-color: $brandColorOne;
+  color: $lightColor;
+}
+
+.footer__contact-detail {
+  margin: 0;
+  margin-bottom: 0.25em;
+}
+
+.footer__copyright {
+  color: #94aab3;
+}

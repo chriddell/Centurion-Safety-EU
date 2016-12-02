@@ -592,6 +592,18 @@ html {
   box-sizing: border-box;
 }
 
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+p:first-of-type {
+  margin-top: 0;
+}
+
 h1 {
   font-size: 2.6em;
 }
@@ -993,6 +1005,12 @@ video {
   }
 }
 
+/* Footer
+---------------------------------------- */
+.menu--footer__item {
+  margin-bottom: 1em;
+}
+
 /* Vendor (WP sub-menus)
 ---------------------------------------- */
 /* ==========================================================================
@@ -1042,6 +1060,30 @@ video {
 }
 
 /* ==========================================================================
+    _footer
+    
+    Site footer styles.
+   ========================================================================== */
+.footer--site a {
+  color: #FFFFFF;
+}
+
+.footer--site--tier-one {
+  padding: 40px 0;
+  background-color: #262e61;
+  color: #FFFFFF;
+}
+
+.footer__contact-detail {
+  margin: 0;
+  margin-bottom: 0.25em;
+}
+
+.footer__copyright {
+  color: #94aab3;
+}
+
+/* ==========================================================================
     _helpers
 
     Object-oriented classes, helper classes e.g. bold-font, absolute-center
@@ -1077,5 +1119,9 @@ video {
 
 .hover-underline:hover {
   text-decoration: underline;
+}
+
+.bold {
+  font-weight: bold;
 }
 /*# sourceMappingURL=style.css.map */

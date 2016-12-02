@@ -399,7 +399,7 @@ function cntrn_render_featured_products() {
  * @param images 			= show category_image; boolean
  * @param classnames 	= add class(es); string
  */
-function cntrn_render_top_product_categories( $images = false, $classnames = null ) {
+function cntrn_render_top_product_categories( $images = false, $ul_classnames = '', $li_classnames = '' ) {
 
 	// Set up query args
 	$args = array(
@@ -417,12 +417,12 @@ function cntrn_render_top_product_categories( $images = false, $classnames = nul
 	if ( ! empty( $terms ) && ! is_wp_error( $terms ) ) {
 
 		// Start a list
-		echo '<ul>';
+		echo '<ul class="'; echo $ul_classnames; echo '">';
 
 		foreach ( $terms as $term ) {
 
 			// Render DOM
-			echo '<li>';
+			echo '<li class="'; echo $li_classnames; echo '">';
 			echo '<a href="' . esc_url( get_term_link( $term ) ) . '" title="' . esc_attr( sprintf( __( 'View all %s products', 'my_localization_domain' ), $term->name ) ) . '">';
 			if ( $images ) {
 				$term_image = get_field( 'product_category_image', $term );

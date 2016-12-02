@@ -55,16 +55,16 @@
 
 			<div class="nav--secondary" id="sub-nav">
 				<div class="wrapper">
+					<ul class="menu menu--header">
+						<li class="menu__item menu--header__item header__custom-link">
+							<a href="<?php echo cntrn_stockists_link(); ?>" class="hover-underline">Find a valued stockist</a>
+						</li>
+					</ul>
 					<ul class="menu menu--drop-down menu--lang-selector menu--header" id="language-selector">
 						<li class="menu__item menu--header__item menu--lang-selector__item"><a href="" class="hover-underline">English</a></li>
 						<li class="menu__item menu--header__item menu--lang-selector__item"><a href="" class="hover-underline">Français</a></li>
 						<li class="menu__item menu--header__item menu--lang-selector__item"><a href="" class="hover-underline">Deutsch</a></li>
 						<li class="menu__item menu--header__item menu--lang-selector__item"><a href="" class="hover-underline">Español</a></li>
-					</ul>
-					<ul class="menu menu--header">
-						<li class="menu__item menu--header__item header__custom-link">
-							<a href="<?php echo cntrn_stockists_link(); ?>" class="hover-underline">Find a valued stockist</a>
-						</li>
 					</ul>
 				</div>
 			</div>

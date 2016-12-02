@@ -22,33 +22,40 @@ $contact = array(
 
 </div><!-- / .content -->
 
-<footer>
-	<div>
-		<p><?php bloginfo( 'name' ); ?></p>
-		<p><?php echo $contact['telephone']; ?></p>
-		<p><?php echo $contact['fax']; ?></p>
-	</div>
+<footer class="footer footer--site footer--site--tier-one">
+	<div class="wrapper">
+		<div class="col-sml-4 footer__contact">
+			<p class="footer__copy bold"><?php bloginfo( 'name' ); ?></p>
+			<p class="footer__contact-detail">Tel: <?php echo $contact['telephone']; ?></p>
+			<p class="footer__contact-detail">Fax: <?php echo $contact['fax']; ?></p>
+		</div>
 
-	<div>
-		<?php cntrn_render_top_product_categories(false); ?>
-	</div>
+		<div class="col-sml-3">
+			<?php cntrn_render_top_product_categories(false, 'menu menu--footer', 'menu__item menu--footer__item'); ?>
+		</div>
 
-	<div>
-		<nav>
-			<?php 
-				wp_nav_menu(array(
-					'menu' => 'footer'
-				)); 
-			?>
-		</nav>
-	</div>
+		<div class="col-sml-2">
+			<nav>
+				<?php 
+					wp_nav_menu(array(
+						'menu' => 'footer',
+						'menu_class'	=> 'menu menu--main menu--footer',
+						'container'		=> false
+					)); 
+				?>
+			</nav>
+		</div>
 
-	<div>
-		<ul>
-			<li><a href="<?php cntrn_stockists_link(); ?>"/>Find a valued stockist</a></li>
-		</ul>
-		<p>&copy; <?php echo date('Y'); echo ', '; bloginfo( 'name' ); ?></p>
+		<div class="col-sml-3">
+			<ul class="menu menu--footer">
+				<li class="menu__item menu--footer__item"><a href="<?php cntrn_stockists_link(); ?>"/>Find a valued stockist</a></li>
+			</ul>
+			<p class="footer__copyright">&copy; <?php echo date('Y'); echo ', '; bloginfo( 'name' ); ?></p>
+		</div>
 	</div>
+</footer>
+
+<footer class="footer footer--site footer--site--tier-two">
 </footer>
 
 <?php wp_footer(); ?>
