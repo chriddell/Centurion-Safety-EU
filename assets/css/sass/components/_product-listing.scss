@@ -1,0 +1,45 @@
+/* ==========================================================================
+    _product-listing
+    
+    Listing products (generally in an archive page)
+   ========================================================================== */
+
+.product-listing {
+  //margin-left: $baseSpacingUnit * 1.5;
+  padding: $baseSpacingUnit $baseSpacingUnit / 2;
+}
+
+.product-listing__image {
+  border: 1px solid $brandColorThree;
+  margin-bottom: 1em;
+}
+
+.product-listing__title {
+  color: $brandColorOne;
+  font-weight: normal;
+}
+
+.product-listing__link {
+  color: $brandColorHighlight;
+}
+
+.product-listing__category-title,
+.product-listing__sub-category-title {
+  color: $brandColorOne;
+}
+
+.product-listing__category-container {
+  margin-top: $baseSpacingUnit * 1.5;
+  overflow: hidden;
+}
+
+.product-listing__description {
+  color: $brandColorFour;
+}
+
+/* Product Listing with centered text
+---------------------------------------- */
+
+.product-listing--centered {
+  text-align: center;
+}

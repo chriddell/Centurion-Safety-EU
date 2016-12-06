@@ -34,6 +34,25 @@ function cntrn_assets() {
 add_action( 'wp_enqueue_scripts', 'cntrn_assets' );
 
 /**
+ * Remove jQuery Migrate
+ * http://aaha.co/2013/08/05/remove-jquery-migrate-wordpress-36/
+ */
+function cntrn_jquery() {
+
+  if (!is_admin()) {
+
+  	// Deregister wp default jQuery
+    wp_deregister_script( 'jquery' );
+
+    // Register it from CDN
+    wp_register_script('jquery', 'https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js', false, '3.1.1');
+    wp_enqueue_script('jquery');
+  }
+}
+add_action( 'init', 'cntrn_jquery' );
+
+
+/**
  * Create custom post type
  * Product
  */
@@ -293,15 +312,15 @@ function cntrn_render_term_tree( $taxonomy, $term_id ){
 	if ( $single_term->parent == 0 ) {
 
 		// Then it is not an input
-		echo '<li>';
-		echo $single_term->name;
+		echo '<li class="product-filter__item product-filter__item-heading">';
+		echo '<h3 class="reset-spacing">'; echo $single_term->name; echo '</h3>';
 		echo '</li>';
 	} 
 
 	// Else it is a child
 	else {
 
-		echo '<li>';
+		echo '<li class="product-filter__item">';
 		echo '<a href="' . get_term_link( $single_term ) . '">';
 		echo $single_term->name;
 		echo '</a>';
@@ -313,15 +332,18 @@ function cntrn_render_term_tree( $taxonomy, $term_id ){
 	if ( $children ) {
 
 		// Sub-list
-		echo '<ul>';
+		echo '<ul class="product-filter__item-list--is-child">';
 
 		foreach ( $children as $child ) {
 
 			$child_term = get_term( $child );
 
-			echo '<li>';
+			echo '<li class="product-filter__item product-filter__item--has-input">';
+			echo '<input type="checkbox" name="filter-' . $child_term->slug . '" class="product-filter__item__input" data-filter-by="' . $child_term->slug . '"/>';
+			echo '<label for="filter-' . $child_term->slug . '" class="product-filter__item__label">';
 			echo $child_term->name;
-			echo '</li>';				
+			echo '</label>';
+			echo '</li>';
 		}
 
 		// Close sub-list
@@ -344,10 +366,12 @@ function cntrn_render_term_tree( $taxonomy, $term_id ){
 
 			// Only show parents
 			if ( $sibling->parent == 0 ) {
-				echo '<li>';
-				echo '<a href="' . get_term_link( $sibling ) . '">';
+				echo '<li class="product-filter__item product-filter__item-heading">';
+				echo '<h3 class="reset-spacing">';
+				echo '<a href="' . get_term_link( $sibling ) . '" class="product-filter__item-link">';
 				echo $sibling->name;
 				echo '</a>';
+				echo '</h3>';
 				echo '</li>';
 			}
 		}

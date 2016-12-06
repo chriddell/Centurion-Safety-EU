@@ -31,6 +31,7 @@ a {
 
 p:first-of-type {
   margin-top: 0;
+  line-height: 1.35;
 }
 
 h1,
@@ -53,11 +54,12 @@ h4,
   font-size: 1.1em;
 }
 
-h1, %like-h1
-h2, %like-h2
-h3, %like-h3
+h1, %like-h1,
+h2, %like-h2,
+h3, %like-h3,
 h4, %like-h4 {
   margin-top: 0;
+  font-weight: normal;
 }
 
 img,

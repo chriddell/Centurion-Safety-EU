@@ -1,0 +1,58 @@
+/* ==========================================================================
+    _layout
+
+    Layout options, sidebar etc.
+   ========================================================================== */
+
+/* Globals
+---------------------------------------- */
+
+.main--has-sidebar {
+  padding: $baseSpacingUnit * 2;
+}
+
+/* Flexbox layout
+---------------------------------------- */
+@include respond-to( 'small' ) {
+  .flexbox .flex-content {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+  }
+
+  .flexbox .main--has-sidebar,
+  .flexbox .sidebar {
+    flex: 1 100%;
+  }
+
+  .flexbox .main--has-sidebar {
+    flex: 10 75%;
+    order: 2;
+  }
+
+  .flexbox .sidebar {
+    flex: 1 auto;
+    order: 1;
+  }
+}
+
+/* Fallback layout
+---------------------------------------- */
+
+@include respond-to( 'small' ) {
+  .flex-content {
+    display: table;
+  }
+
+  .main--has-sidebar {
+    display: table-cell;
+    width: 75%;
+    vertical-align: top;
+  }
+
+  .sidebar {
+    display: table-cell;
+    width: 25%;
+    vertical-align: top;
+  }
+}

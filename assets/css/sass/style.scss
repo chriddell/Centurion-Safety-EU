@@ -12,6 +12,7 @@
 @import 'generic/reset';
 
 @import 'objects/grid';
+@import 'objects/layout';
 
 @import 'base/base';
 
@@ -20,5 +21,8 @@
 @import 'components/menu';
 @import 'components/header';
 @import 'components/footer';
+@import 'components/sidebar';
+@import 'components/product-listing';
+@import 'components/product-filter';
 
 @import 'trumps/helpers';

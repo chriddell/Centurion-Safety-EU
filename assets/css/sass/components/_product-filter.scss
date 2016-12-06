@@ -1,0 +1,68 @@
+/* ==========================================================================
+    _product-filter
+    
+    Filter for products, lives in sidebar.
+   ========================================================================== */
+
+.product-filter__main {
+
+}
+
+.product-filter__header {
+  background-color: darken($brandColorThree, 5%);
+}
+
+.product-filter__item {
+  list-style-type: none;
+}
+
+.product-filter__item--has-input {
+  margin-bottom: $baseSpacingUnit / 2;
+}
+
+.product-filter__item__label {
+  margin-left: $baseSpacingUnit / 2;
+}
+
+.product-filter__item-link,
+.product-filter__item > a {
+  color: inherit;
+}
+
+.product-filter__item-heading {
+  padding: $baseSpacingUnit;
+  border-top: 1px solid $borderColor;
+}
+
+.product-filter__item-list--is-child {
+  padding-left: $baseSpacingUnit;
+  padding-bottom: $baseSpacingUnit;
+}
+
+.product-filter__header {
+  cursor: pointer;
+}
+
+/* Filters
+---------------------------------------- */
+
+// All child terms (slugs) which need to 
+// be filtered must be added to the 
+// $terms map
+$terms: (
+  'baseball-bump-caps',
+  'hygiene-bump-caps',
+  'general-purpose-helmet-systems',
+  'integrated-eyewear'
+);
+
+*[data-filter="filterable"] {
+  height: 0;
+  overflow: hidden;
+}
+
+@each $term in $terms {
+  #product-filter-canvas[data-filtering*="#{$term}"] .product-listing__category-container[data-filter-term="#{$term}"] {
+    height: auto;
+  }
+}

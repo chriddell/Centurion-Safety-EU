@@ -489,11 +489,28 @@ template {
   clear: both;
 }
 
+.col-1 {
+  width: 8.3333333333%;
+  float: left;
+}
+
 @media (min-width: 767px) {
   .col-sml-1 {
     width: 8.3333333333%;
     float: left;
   }
+}
+
+@media (min-width: 1023px) {
+  .col-med-1 {
+    width: 8.3333333333%;
+    float: left;
+  }
+}
+
+.col-2 {
+  width: 16.6666666667%;
+  float: left;
 }
 
 @media (min-width: 767px) {
@@ -503,11 +520,35 @@ template {
   }
 }
 
+@media (min-width: 1023px) {
+  .col-med-2 {
+    width: 16.6666666667%;
+    float: left;
+  }
+}
+
+.col-3 {
+  width: 25%;
+  float: left;
+}
+
 @media (min-width: 767px) {
   .col-sml-3 {
     width: 25%;
     float: left;
   }
+}
+
+@media (min-width: 1023px) {
+  .col-med-3 {
+    width: 25%;
+    float: left;
+  }
+}
+
+.col-4 {
+  width: 33.3333333333%;
+  float: left;
 }
 
 @media (min-width: 767px) {
@@ -517,11 +558,35 @@ template {
   }
 }
 
+@media (min-width: 1023px) {
+  .col-med-4 {
+    width: 33.3333333333%;
+    float: left;
+  }
+}
+
+.col-5 {
+  width: 41.6666666667%;
+  float: left;
+}
+
 @media (min-width: 767px) {
   .col-sml-5 {
     width: 41.6666666667%;
     float: left;
   }
+}
+
+@media (min-width: 1023px) {
+  .col-med-5 {
+    width: 41.6666666667%;
+    float: left;
+  }
+}
+
+.col-6 {
+  width: 50%;
+  float: left;
 }
 
 @media (min-width: 767px) {
@@ -531,11 +596,35 @@ template {
   }
 }
 
+@media (min-width: 1023px) {
+  .col-med-6 {
+    width: 50%;
+    float: left;
+  }
+}
+
+.col-7 {
+  width: 58.3333333333%;
+  float: left;
+}
+
 @media (min-width: 767px) {
   .col-sml-7 {
     width: 58.3333333333%;
     float: left;
   }
+}
+
+@media (min-width: 1023px) {
+  .col-med-7 {
+    width: 58.3333333333%;
+    float: left;
+  }
+}
+
+.col-8 {
+  width: 66.6666666667%;
+  float: left;
 }
 
 @media (min-width: 767px) {
@@ -545,11 +634,35 @@ template {
   }
 }
 
+@media (min-width: 1023px) {
+  .col-med-8 {
+    width: 66.6666666667%;
+    float: left;
+  }
+}
+
+.col-9 {
+  width: 75%;
+  float: left;
+}
+
 @media (min-width: 767px) {
   .col-sml-9 {
     width: 75%;
     float: left;
   }
+}
+
+@media (min-width: 1023px) {
+  .col-med-9 {
+    width: 75%;
+    float: left;
+  }
+}
+
+.col-10 {
+  width: 83.3333333333%;
+  float: left;
 }
 
 @media (min-width: 767px) {
@@ -559,11 +672,37 @@ template {
   }
 }
 
+@media (min-width: 1023px) {
+  .col-med-10 {
+    width: 83.3333333333%;
+    float: left;
+  }
+}
+
+.col-11 {
+  width: 91.6666666667%;
+  float: left;
+}
+
 @media (min-width: 767px) {
   .col-sml-11 {
     width: 91.6666666667%;
     float: left;
   }
+}
+
+@media (min-width: 1023px) {
+  .col-med-11 {
+    width: 91.6666666667%;
+    float: left;
+  }
+}
+
+.col-12 {
+  width: 100%;
+  float: left;
+  margin-left: 0;
+  margin-right: 0;
 }
 
 @media (min-width: 767px) {
@@ -572,6 +711,91 @@ template {
     float: left;
     margin-left: 0;
     margin-right: 0;
+  }
+}
+
+@media (min-width: 1023px) {
+  .col-med-12 {
+    width: 100%;
+    float: left;
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+/* ==========================================================================
+    _layout
+
+    Layout options, sidebar etc.
+   ========================================================================== */
+/* Globals
+---------------------------------------- */
+.main--has-sidebar {
+  padding: 40px;
+}
+
+/* Flexbox layout
+---------------------------------------- */
+@media (min-width: 767px) {
+  .flexbox .flex-content {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: row;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-align: stretch;
+    -webkit-align-items: stretch;
+        -ms-flex-align: stretch;
+            align-items: stretch;
+  }
+  .flexbox .main--has-sidebar,
+  .flexbox .sidebar {
+    -webkit-box-flex: 1;
+    -webkit-flex: 1 100%;
+        -ms-flex: 1 100%;
+            flex: 1 100%;
+  }
+  .flexbox .main--has-sidebar {
+    -webkit-box-flex: 10;
+    -webkit-flex: 10 75%;
+        -ms-flex: 10 75%;
+            flex: 10 75%;
+    -webkit-box-ordinal-group: 3;
+    -webkit-order: 2;
+        -ms-flex-order: 2;
+            order: 2;
+  }
+  .flexbox .sidebar {
+    -webkit-box-flex: 1;
+    -webkit-flex: 1 auto;
+        -ms-flex: 1 auto;
+            flex: 1 auto;
+    -webkit-box-ordinal-group: 2;
+    -webkit-order: 1;
+        -ms-flex-order: 1;
+            order: 1;
+  }
+}
+
+/* Fallback layout
+---------------------------------------- */
+@media (min-width: 767px) {
+  .flex-content {
+    display: table;
+  }
+  .main--has-sidebar {
+    display: table-cell;
+    width: 75%;
+    vertical-align: top;
+  }
+  .sidebar {
+    display: table-cell;
+    width: 25%;
+    vertical-align: top;
   }
 }
 
@@ -602,6 +826,7 @@ a:hover {
 
 p:first-of-type {
   margin-top: 0;
+  line-height: 1.35;
 }
 
 h1 {
@@ -621,8 +846,12 @@ h4 {
   font-size: 1.1em;
 }
 
-h1, .menu--main-nav__item h3 {
+h1,
+h2, .menu--main-nav__item,
+h3,
+h4 {
   margin-top: 0;
+  font-weight: normal;
 }
 
 img,
@@ -1081,6 +1310,159 @@ video {
 
 .footer__copyright {
   color: #94aab3;
+}
+
+/* ==========================================================================
+   _sidebar
+   
+   Sidebar styles.
+   ========================================================================== */
+.sidebar--grey {
+  border-right: 1px solid #dbdbdb;
+  background-color: #eaeef0;
+  color: #94aab3;
+}
+
+.sidebar__header {
+  padding: 20px;
+  color: #9ba399;
+}
+
+/* Show/hide
+
+Powered by JS
+---------------------------------------- */
+@media (min-width: 767px) {
+  .sidebar[data-sidebar="collapsed"] {
+    width: 15%;
+    max-width: 175px;
+  }
+  .sidebar[data-sidebar="collapsed"] .product-filter__toggle-text:after {
+    content: '>';
+    margin-left: 10px;
+  }
+}
+
+.sidebar[data-sidebar="collapsed"] .product-filter__item-list {
+  visibility: hidden;
+  height: 0;
+}
+
+@media (min-width: 767px) {
+  .sidebar[data-sidebar="expanded"] {
+    width: 25%;
+    max-width: none;
+  }
+  .sidebar[data-sidebar="expanded"] .product-filter__toggle-text:before {
+    content: '<';
+    margin-right: 10px;
+  }
+}
+
+/* ==========================================================================
+    _product-listing
+    
+    Listing products (generally in an archive page)
+   ========================================================================== */
+.product-listing {
+  padding: 20px 10px;
+}
+
+.product-listing__image {
+  border: 1px solid #eaeef0;
+  margin-bottom: 1em;
+}
+
+.product-listing__title {
+  color: #262e61;
+  font-weight: normal;
+}
+
+.product-listing__link {
+  color: #e83272;
+}
+
+.product-listing__category-title,
+.product-listing__sub-category-title {
+  color: #262e61;
+}
+
+.product-listing__category-container {
+  margin-top: 30px;
+  overflow: hidden;
+}
+
+.product-listing__description {
+  color: #9ba399;
+}
+
+/* Product Listing with centered text
+---------------------------------------- */
+.product-listing--centered {
+  text-align: center;
+}
+
+/* ==========================================================================
+    _product-filter
+    
+    Filter for products, lives in sidebar.
+   ========================================================================== */
+.product-filter__header {
+  background-color: #dbe2e5;
+}
+
+.product-filter__item {
+  list-style-type: none;
+}
+
+.product-filter__item--has-input {
+  margin-bottom: 10px;
+}
+
+.product-filter__item__label {
+  margin-left: 10px;
+}
+
+.product-filter__item-link,
+.product-filter__item > a {
+  color: inherit;
+}
+
+.product-filter__item-heading {
+  padding: 20px;
+  border-top: 1px solid #dbdbdb;
+}
+
+.product-filter__item-list--is-child {
+  padding-left: 20px;
+  padding-bottom: 20px;
+}
+
+.product-filter__header {
+  cursor: pointer;
+}
+
+/* Filters
+---------------------------------------- */
+*[data-filter="filterable"] {
+  height: 0;
+  overflow: hidden;
+}
+
+#product-filter-canvas[data-filtering*="baseball-bump-caps"] .product-listing__category-container[data-filter-term="baseball-bump-caps"] {
+  height: auto;
+}
+
+#product-filter-canvas[data-filtering*="hygiene-bump-caps"] .product-listing__category-container[data-filter-term="hygiene-bump-caps"] {
+  height: auto;
+}
+
+#product-filter-canvas[data-filtering*="general-purpose-helmet-systems"] .product-listing__category-container[data-filter-term="general-purpose-helmet-systems"] {
+  height: auto;
+}
+
+#product-filter-canvas[data-filtering*="integrated-eyewear"] .product-listing__category-container[data-filter-term="integrated-eyewear"] {
+  height: auto;
 }
 
 /* ==========================================================================

@@ -1,0 +1,52 @@
+/* ==========================================================================
+   _sidebar
+   
+   Sidebar styles.
+   ========================================================================== */
+
+.sidebar--grey {
+  border-right: 1px solid $borderColor;
+  background-color: $brandColorThree;
+  color: $brandColorTwo;
+}
+
+.sidebar__header {
+  padding: $baseSpacingUnit;
+  color: $brandColorFour;
+}
+
+/* Show/hide
+
+Powered by JS
+---------------------------------------- */
+
+.sidebar[data-sidebar="collapsed"] {
+
+  @include respond-to( 'small' ) {
+    width: 15%;
+    max-width: 175px;
+
+    .product-filter__toggle-text:after {
+      content: '>';
+      margin-left: $baseSpacingUnit / 2;
+    }
+  }
+
+  .product-filter__item-list {
+    visibility: hidden;
+    height: 0;
+  }
+}
+
+.sidebar[data-sidebar="expanded"] {
+
+  @include respond-to( 'small' ) {
+    width: 25%;
+    max-width: none;
+
+    .product-filter__toggle-text:before {
+      content: '<';
+      margin-right: $baseSpacingUnit / 2;
+    }
+  }
+}
