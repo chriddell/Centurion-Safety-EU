@@ -62,18 +62,18 @@ function cntrn_product_category_init() {
 
 	// labels across the admin
 	$labels = array(
-    'name'              => 'Product Categories',
-    'singular_name'     => 'Product Category',
-    'search_items'      => 'Search Product Categories',
-    'all_items'         => 'All Product Categories',
-    'parent_item'       => 'Parent Product Category',
-    'parent_item_colon' => 'Parent Product Category:',
-    'edit_item'         => 'Edit Product Category',
-    'update_item'       => 'Update Product Category',
-    'add_new_item'      => 'Add New Product Category',
-    'new_item_name'     => 'New Product Category Name',
-    'menu_name'         => 'Product Categories',
-  );
+		'name'              => 'Product Categories',
+		'singular_name'     => 'Product Category',
+		'search_items'      => 'Search Product Categories',
+		'all_items'         => 'All Product Categories',
+		'parent_item'       => 'Parent Product Category',
+		'parent_item_colon' => 'Parent Product Category:',
+		'edit_item'         => 'Edit Product Category',
+		'update_item'       => 'Update Product Category',
+		'add_new_item'      => 'Add New Product Category',
+		'new_item_name'     => 'New Product Category Name',
+		'menu_name'         => 'Product Categories',
+	);
 
 	// create a new taxonomy
 	register_taxonomy(
@@ -87,11 +87,11 @@ function cntrn_product_category_init() {
 			'hierarchical' => true,
 			'rewrite' => array( 'slug' => 'products', 'hierarchical' => true ),
 			'capabilities'      => array(
-      	'manage_terms'  => 'edit_posts', 
-      	'edit_terms'    => 'edit_posts',
-      	'delete_terms'  => 'edit_posts',
-      	'assign_terms'  => 'edit_posts'  // means administrator', 'editor', 'author', 'contributor'
-    	)
+				'manage_terms'  => 'edit_posts', 
+				'edit_terms'    => 'edit_posts',
+				'delete_terms'  => 'edit_posts',
+				'assign_terms'  => 'edit_posts'  // means administrator', 'editor', 'author', 'contributor'
+			)
 		)
 	);
 }
@@ -104,18 +104,18 @@ function cntrn_product_colours_init() {
 
 	// labels across the admin
 	$labels = array(
-    'name'              => 'Product Colours',
-    'singular_name'     => 'Product Colour',
-    'search_items'      => 'Search Product Colours',
-    'all_items'         => 'All Product Colours',
-    'parent_item'       => 'Parent Product Colour',
-    'parent_item_colon' => 'Parent Product Colour:',
-    'edit_item'         => 'Edit Product Colour',
-    'update_item'       => 'Update Product Colour',
-    'add_new_item'      => 'Add New Product Colour',
-    'new_item_name'     => 'New Product Colour Name',
-    'menu_name'         => 'Product Colours',
-  );
+		'name'              => 'Product Colours',
+		'singular_name'     => 'Product Colour',
+		'search_items'      => 'Search Product Colours',
+		'all_items'         => 'All Product Colours',
+		'parent_item'       => 'Parent Product Colour',
+		'parent_item_colon' => 'Parent Product Colour:',
+		'edit_item'         => 'Edit Product Colour',
+		'update_item'       => 'Update Product Colour',
+		'add_new_item'      => 'Add New Product Colour',
+		'new_item_name'     => 'New Product Colour Name',
+		'menu_name'         => 'Product Colours',
+	);
 
 	// create a new taxonomy
 	register_taxonomy(
@@ -128,11 +128,11 @@ function cntrn_product_colours_init() {
 			'labels' => $labels,
 			'rewrite' => array( 'slug' => 'products', 'hierarchical' => false ),
 			'capabilities'      => array(
-      	'manage_terms'  => 'edit_posts', 
-      	'edit_terms'    => 'edit_posts',
-      	'delete_terms'  => 'edit_posts',
-      	'assign_terms'  => 'edit_posts'  // means administrator', 'editor', 'author', 'contributor'
-    	)
+				'manage_terms'  => 'edit_posts', 
+				'edit_terms'    => 'edit_posts',
+				'delete_terms'  => 'edit_posts',
+				'assign_terms'  => 'edit_posts'  // means administrator', 'editor', 'author', 'contributor'
+			)
 		)
 	);
 }
@@ -145,18 +145,18 @@ function cntrn_product_specialisms_init() {
 
 	// labels across the admin
 	$labels = array(
-    'name'              => 'Product Specialisms',
-    'singular_name'     => 'Product Specialism',
-    'search_items'      => 'Search Product Specialisms',
-    'all_items'         => 'All Product Specialisms',
-    'parent_item'       => 'Parent Product Specialism',
-    'parent_item_colon' => 'Parent Product Specialism:',
-    'edit_item'         => 'Edit Product Specialism',
-    'update_item'       => 'Update Product Specialism',
-    'add_new_item'      => 'Add New Product Specialism',
-    'new_item_name'     => 'New Product Specialism Name',
-    'menu_name'         => 'Product Specialisms',
-  );
+		'name'              => 'Product Specialisms',
+		'singular_name'     => 'Product Specialism',
+		'search_items'      => 'Search Product Specialisms',
+		'all_items'         => 'All Product Specialisms',
+		'parent_item'       => 'Parent Product Specialism',
+		'parent_item_colon' => 'Parent Product Specialism:',
+		'edit_item'         => 'Edit Product Specialism',
+		'update_item'       => 'Update Product Specialism',
+		'add_new_item'      => 'Add New Product Specialism',
+		'new_item_name'     => 'New Product Specialism Name',
+		'menu_name'         => 'Product Specialisms',
+	);
 
 	// create a new taxonomy
 	register_taxonomy(
@@ -169,11 +169,11 @@ function cntrn_product_specialisms_init() {
 			'labels' => $labels,
 			'rewrite' => array( 'slug' => 'products', 'hierarchical' => true ),
 			'capabilities'      => array(
-      	'manage_terms'  => 'edit_posts', 
-      	'edit_terms'    => 'edit_posts',
-      	'delete_terms'  => 'edit_posts',
-      	'assign_terms'  => 'edit_posts'  // means administrator', 'editor', 'author', 'contributor'
-    	)
+				'manage_terms'  => 'edit_posts', 
+				'edit_terms'    => 'edit_posts',
+				'delete_terms'  => 'edit_posts',
+				'assign_terms'  => 'edit_posts'  // means administrator', 'editor', 'author', 'contributor'
+			)
 		)
 	);
 }
@@ -432,7 +432,7 @@ function cntrn_render_top_product_categories( $images = false, $ul_classnames = 
 			echo '</a>';
 			echo '</li>';
 
-		}	
+		}
 
 		// End list
 		echo '</ul>';
@@ -459,8 +459,35 @@ function cntrn_stockists_link() {
  * 
  * from http://stackoverflow.com/questions/26180688/how-to-add-class-to-link-in-wp-nav-menu
  */
-function cntrn_add_link_class_wp_nav_menu_footer($ul_class) {
+function cntrn_add_link_class_wp_nav_menu_footer( $ul_class ) {
 
 	return preg_replace('/<a /', '<a class="menu__item__link hover-underline"', $ul_class);
 }
 add_filter( 'wp_nav_menu', 'cntrn_add_link_class_wp_nav_menu_footer');
+
+/**
+ * Re-order search results from
+ * Relevanssi search plugin
+ *
+ * Uses 'relevanssi_hits_filter' hook
+ * http://www.relevanssi.com/user-manual/relevanssi_hits_filter/
+ */
+function cntrn_reorder_search_results($hits) {
+  $types = array();
+
+  $types['advice'] = array();
+  $types['news'] = array();
+  $types['product'] = array();
+
+  // Split the post types in array $types
+  if (!empty($hits)) {
+  	foreach ($hits[0] as $hit) {
+  		array_push($types[$hit->post_type], $hit);
+  	}
+  }
+
+  // Merge back to $hits in the desired order
+  $hits[0] = array_merge($types['product'], $types['advice'], $types['news']);
+  return $hits;
+}
+add_filter('relevanssi_hits_filter', 'cntrn_reorder_search_results');
