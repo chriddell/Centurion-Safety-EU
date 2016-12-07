@@ -31,7 +31,13 @@ $contact = array(
 		</div>
 
 		<div class="col-sml-3">
-			<?php cntrn_render_top_product_categories(false, 'menu menu--footer', 'menu__item menu--footer__item'); ?>
+			<?php 
+					wp_nav_menu(array(
+						'menu' => 'product categories',
+						'menu_class'	=> 'menu menu--footer',
+						'container'		=> false
+					)); 
+				?>
 		</div>
 
 		<div class="col-sml-2">
@@ -39,7 +45,7 @@ $contact = array(
 				<?php 
 					wp_nav_menu(array(
 						'menu' => 'footer',
-						'menu_class'	=> 'menu menu--main menu--footer',
+						'menu_class'	=> 'menu menu--footer',
 						'container'		=> false
 					)); 
 				?>
