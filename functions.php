@@ -506,6 +506,10 @@ function cntrn_reorder_search_results($hits) {
   // Split the post types in array $types
   if (!empty($hits)) {
   	foreach ($hits[0] as $hit) {
+  		// If search returns null for a post_type,
+  		// define as an array so we get no PHP error
+  		// Fix from: http://pastebin.com/jmjWZik1 (line 37)
+  		if (!is_array($types[$hit->post_type])) $types[$hit->post_type] = array();
   		array_push($types[$hit->post_type], $hit);
   	}
   }
