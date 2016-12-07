@@ -17,7 +17,13 @@
 	</header>
 	<div class="sidebar__main">
 		<ul class="product-filter__item-list reset-spacing">
-			<?php cntrn_render_top_product_categories( false, 'product-filter__item-list reset-spacing', 'product-filter__item product-filter__item-heading' ); ?>
+			<?php 
+			wp_nav_menu(array(
+				'menu' 				=> 'sidebar product categories',
+				'menu_class'	=> 'product-filter__item-list reset-spacing',
+				'container'		=> false
+			));
+			?>
 		</ul>
 	</div>
 </div>

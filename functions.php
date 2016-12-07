@@ -323,7 +323,7 @@ function cntrn_render_term_tree( $taxonomy, $term_id ){
 
 		// Then it is not an input
 		echo '<li class="product-filter__item product-filter__item-heading">';
-		echo '<h3 class="reset-spacing">'; echo $single_term->name; echo '</h3>';
+		echo $single_term->name;
 		echo '</li>';
 	} 
 
@@ -377,11 +377,9 @@ function cntrn_render_term_tree( $taxonomy, $term_id ){
 			// Only show parents
 			if ( $sibling->parent == 0 ) {
 				echo '<li class="product-filter__item product-filter__item-heading">';
-				echo '<h3 class="reset-spacing">';
 				echo '<a href="' . get_term_link( $sibling ) . '" class="product-filter__item-link">';
 				echo $sibling->name;
 				echo '</a>';
-				echo '</h3>';
 				echo '</li>';
 			}
 		}
