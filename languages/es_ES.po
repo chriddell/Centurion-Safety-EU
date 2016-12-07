@@ -1,0 +1,119 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"POT-Creation-Date: 2016-12-07 16:18+0000\n"
+"PO-Revision-Date: 2016-12-07 16:19+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: es_ES\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.11\n"
+"X-Poedit-Basepath: ..\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-KeywordsList: _e;__\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: assets\n"
+
+#: footer.php:29 page-contact.php:22
+msgid "Tel:"
+msgstr ""
+
+#: footer.php:30 page-contact.php:23
+msgid "Fax:"
+msgstr ""
+
+#: footer.php:53 header.php:60
+msgid "Find a valued stockist"
+msgstr ""
+
+#: functions.php:76
+msgid "Products"
+msgstr ""
+
+#: functions.php:77
+msgid "Product"
+msgstr ""
+
+#: functions.php:222 functions.php:223
+msgid "Advice"
+msgstr ""
+
+#: functions.php:244 functions.php:245
+msgid "News"
+msgstr ""
+
+#: functions.php:266
+msgid "Events"
+msgstr ""
+
+#: functions.php:267
+msgid "Event"
+msgstr ""
+
+#: functions.php:407
+msgid "Featured Products"
+msgstr ""
+
+#: functions.php:420
+msgid "Read more"
+msgstr ""
+
+#: functions.php:460
+#, php-format
+msgid "View all %s products"
+msgstr ""
+
+#: header.php:27
+msgid "Skip to content"
+msgstr ""
+
+#: search.php:16 searchpage.php:16
+#, php-format
+msgid "Search Results for: %s"
+msgstr ""
+
+#: sidebar-expanded.php:30
+msgid "Collapse Filter"
+msgstr ""
+
+#: sidebar.php:15
+msgid "Expand Filter"
+msgstr ""
+
+#: template-parts/content-product.php:45
+msgid "More info"
+msgstr ""
+
+#: template-parts/content-single-product.php:58
+msgid "Colours"
+msgstr ""
+
+#: template-parts/content-single-product.php:87
+msgid "Decals"
+msgstr ""
+
+#: template-parts/content-single-product.php:92
+msgid "Visibility"
+msgstr ""
+
+#: template-parts/content-single-product.php:97
+msgid "Approved To"
+msgstr ""
+
+#: template-parts/content-single-product.php:102
+msgid "Tested To"
+msgstr ""
+
+#: template-parts/content-single-product.php:107
+msgid "Specialism"
+msgstr ""
+
+#: template-parts/content-single-product.php:115
+msgid "Downloads"
+msgstr ""
+
+#: template-parts/content-single-product.php:134
+msgid "Linked Products"
+msgstr ""

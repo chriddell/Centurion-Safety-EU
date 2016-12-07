@@ -19,8 +19,8 @@ get_header(); ?>
 <?php bloginfo( 'name' ); ?>
 
 <p><?php echo $contact['address']; ?></p>
-<p>Tel: <?php echo $contact['telephone']; ?></p>
-<p>Fax: <?php echo $contact['fax']; ?></p>
+<p><?php _e('Tel:', 'centurion'); echo $contact['telephone']; ?></p>
+<p><?php _e('Fax:', 'centurion'); echo $contact['fax']; ?></p>
 
 <?php
 	// Start the loop.

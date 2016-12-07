@@ -13,7 +13,7 @@ get_header(); ?>
 		<main id="main" class="site-main" role="main">
 
 			<header class="page-header dir-header">
-				<h1 class="page-title"><?php printf( __( 'Search Results for: %s', 'onesocial' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
+				<h1 class="page-title"><?php printf( __( 'Search Results for: %s', 'centurion' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
 				<?php get_search_form(); ?>
 			</header>
 

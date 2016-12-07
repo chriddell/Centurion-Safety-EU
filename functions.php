@@ -18,6 +18,16 @@
  */
 
 /**
+ * Load text domains for mutlilanguage support
+ * https://www.smashingmagazine.com/2011/12/internationalizing-localizing-wordpress-theme/
+ */
+function cntrn_multilang_setup() {
+
+	load_theme_textdomain( 'centurion', get_template_directory() . '/languages' );
+}
+add_action( 'after_setup_theme', 'cntrn_multilang_setup' );
+
+/**
  * Enqueue scripts and styles
  */
 function cntrn_assets() {
@@ -394,7 +404,7 @@ function cntrn_render_featured_products() {
 	// If posts returns something
 	if ( $query->have_posts() ) { ?>
 
-		<h2>Featured Products</h2>
+		<h2><?php _e('Featured Products'); ?></h2>
 		<ul>
 			<?php while ( $query->have_posts() ) : $query->the_post(); ?>
 
@@ -407,7 +417,7 @@ function cntrn_render_featured_products() {
 					<img src="<?php echo $product_image[0]['product_image']['url']; ?>"/>
 					<?php the_title('<h3>', '</h3>'); ?>
 					<p><?php echo $product_description; ?></p>
-				<a href="<?php the_permalink(); ?>">Read more</a>
+					<a href="<?php the_permalink(); ?>"><?php _e('Read more', 'centurion'); ?></a>
 				</li>
 			<?php endwhile; ?>
 		</ul>

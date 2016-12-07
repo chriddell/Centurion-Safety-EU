@@ -26,8 +26,8 @@ $contact = array(
 	<div class="wrapper">
 		<div class="col-sml-4 footer__contact">
 			<p class="footer__copy bold"><?php bloginfo( 'name' ); ?></p>
-			<p class="footer__contact-detail">Tel: <?php echo $contact['telephone']; ?></p>
-			<p class="footer__contact-detail">Fax: <?php echo $contact['fax']; ?></p>
+			<p class="footer__contact-detail"><?php _e('Tel:', 'centurion'); echo $contact['telephone']; ?></p>
+			<p class="footer__contact-detail"><?php _e('Fax:', 'centurion'); echo $contact['fax']; ?></p>
 		</div>
 
 		<div class="col-sml-3">
@@ -48,7 +48,11 @@ $contact = array(
 
 		<div class="col-sml-3">
 			<ul class="menu menu--footer">
-				<li class="menu__item menu--footer__item"><a href="<?php cntrn_stockists_link(); ?>"/>Find a valued stockist</a></li>
+				<li class="menu__item menu--footer__item">
+					<a href="<?php cntrn_stockists_link(); ?>"/>
+						<?php _e('Find a valued stockist', 'centurion'); ?>
+					</a>
+				</li>
 			</ul>
 			<p class="footer__copyright">&copy; <?php echo date('Y'); echo ', '; bloginfo( 'name' ); ?></p>
 		</div>

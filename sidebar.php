@@ -11,7 +11,9 @@
 
 <div class="sidebar sidebar--grey" id="sidebar" data-sidebar="collapsed"><!-- .sidebar -->
 	<header class="header--sidebar sidebar__header product-filter__header" id="sidebar-toggle">
-		<p class="reset-spacing product-filter__toggle-text" id="sidebar-toggle-text">Expand Filter</p>
+		<p class="reset-spacing product-filter__toggle-text" id="sidebar-toggle-text">
+			<?php _e('Expand Filter', 'centurion'); ?>
+		</p>
 	</header>
 	<div class="sidebar__main">
 		<ul class="product-filter__item-list reset-spacing">

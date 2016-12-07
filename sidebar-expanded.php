@@ -27,7 +27,7 @@ $new_term_object				= ( $queried_term_object->parent == 0 ) ? $queried_term_obje
 
 <div class="sidebar sidebar--grey" id="sidebar" data-sidebar="expanded"><!-- .sidebar -->
 	<header class="header--sidebar sidebar__header product-filter__header" id="sidebar-toggle">
-		<p class="reset-spacing product-filter__toggle-text" id="sidebar-toggle-text">Collapse Filter</p>
+		<p class="reset-spacing product-filter__toggle-text" id="sidebar-toggle-text"><?php _e('Collapse Filter', 'centurion'); ?></p>
 	</header>
 	<div class="sidebar__main">
 		<ul class="product-filter__item-list reset-spacing" id="product-filter-controller">

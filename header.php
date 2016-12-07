@@ -24,7 +24,7 @@
 
 <body <?php body_class(); ?>>
 
-	<a class="skip-link sr-only" href="#content"><?php _e( 'Skip to content', 'twentysixteen' ); ?></a>
+	<a class="skip-link sr-only" href="#content"><?php _e( 'Skip to content', 'centurion' ); ?></a>
 
 	<header class="header--site">
 		<div class="wrapper">
@@ -57,14 +57,50 @@
 				<div class="wrapper">
 					<ul class="menu menu--header">
 						<li class="menu__item menu--header__item header__custom-link">
-							<a href="<?php echo cntrn_stockists_link(); ?>" class="hover-underline">Find a valued stockist</a>
+							<a href="<?php echo cntrn_stockists_link(); ?>" class="hover-underline"><?php _e( 'Find a valued stockist', 'centurion' ); ?></a>
 						</li>
 					</ul>
+					<!--
+					Not currently using the wp_nav_menu for language selector.
+					Should go back to using this so we can rearrange dynamically.
+					<?php 
+						$args = array(
+							'menu'				=> 'language',
+							'menu_class' 	=> 'menu menu--drop-down menu--lang-selector menu--header',
+							'container'		=> false
+						);
+						wp_nav_menu( $args );
+					?>
+					-->
 					<ul class="menu menu--drop-down menu--lang-selector menu--header" id="language-selector">
-						<li class="menu__item menu--header__item menu--lang-selector__item"><a href="" class="hover-underline">English</a></li>
-						<li class="menu__item menu--header__item menu--lang-selector__item"><a href="" class="hover-underline">Français</a></li>
-						<li class="menu__item menu--header__item menu--lang-selector__item"><a href="" class="hover-underline">Deutsch</a></li>
-						<li class="menu__item menu--header__item menu--lang-selector__item"><a href="" class="hover-underline">Español</a></li>
+						<?php /** Alternative menu order per language  **/ ?>
+						<?php $currentLang = qtrans_getLanguage(); ?>
+						<?php switch ( $currentLang ) {
+							case 'en': ?>
+								<li class="menu__item menu--header__item menu--lang-selector__item"><a href="<?php echo site_url('en/'); ?>" class="hover-underline">English</a></li>
+								<li class="menu__item menu--header__item menu--lang-selector__item"><a href="<?php echo site_url('fr/'); ?>" class="hover-underline">Français</a></li>
+								<li class="menu__item menu--header__item menu--lang-selector__item"><a href="<?php echo site_url('de/'); ?>" class="hover-underline">Deutsch</a></li>
+								<li class="menu__item menu--header__item menu--lang-selector__item"><a href="<?php echo site_url('es/'); ?>" class="hover-underline">Español</a></li>
+							<?php break; ?>
+							<?php case 'de': ?>
+								<li class="menu__item menu--header__item menu--lang-selector__item"><a href="<?php echo site_url('de/'); ?>" class="hover-underline">Deutsch</a></li>
+								<li class="menu__item menu--header__item menu--lang-selector__item"><a href="<?php echo site_url('en/'); ?>" class="hover-underline">English</a></li>
+								<li class="menu__item menu--header__item menu--lang-selector__item"><a href="<?php echo site_url('fr/'); ?>" class="hover-underline">Français</a></li>
+								<li class="menu__item menu--header__item menu--lang-selector__item"><a href="<?php echo site_url('es/'); ?>" class="hover-underline">Español</a></li>
+							<?php break; ?>
+							<?php case 'fr': ?>
+								<li class="menu__item menu--header__item menu--lang-selector__item"><a href="<?php echo site_url('fr/'); ?>" class="hover-underline">Français</a></li>
+								<li class="menu__item menu--header__item menu--lang-selector__item"><a href="<?php echo site_url('en/'); ?>" class="hover-underline">English</a></li>
+								<li class="menu__item menu--header__item menu--lang-selector__item"><a href="<?php echo site_url('de/'); ?>" class="hover-underline">Deutsch</a></li>
+								<li class="menu__item menu--header__item menu--lang-selector__item"><a href="<?php echo site_url('es/'); ?>" class="hover-underline">Español</a></li>
+							<?php break; ?>
+							<?php case 'es': ?>
+								<li class="menu__item menu--header__item menu--lang-selector__item"><a href="<?php echo site_url('es/'); ?>" class="hover-underline">Español</a></li>
+								<li class="menu__item menu--header__item menu--lang-selector__item"><a href="<?php echo site_url('en/'); ?>" class="hover-underline">English</a></li>
+								<li class="menu__item menu--header__item menu--lang-selector__item"><a href="<?php echo site_url('fr/'); ?>" class="hover-underline">Français</a></li>
+								<li class="menu__item menu--header__item menu--lang-selector__item"><a href="<?php echo site_url('de/'); ?>" class="hover-underline">Deutsch</a></li>
+							<?php break; ?>
+						<?php } ?>
 					</ul>
 				</div>
 			</div>

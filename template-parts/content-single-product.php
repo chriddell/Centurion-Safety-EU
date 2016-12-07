@@ -55,7 +55,7 @@ get_header(); ?>
 	if ( have_rows( 'product_color_variations' ) ) {
 
 		// Title
-		echo '<h3>Colours</h3>';
+		printf( '<h3>%s</h3>', __('Colours', 'centurion') );
 		echo '<ul>';
 
 		// Loop rows of colours
@@ -83,54 +83,57 @@ get_header(); ?>
 	}
 	?>
 
-	<?php if ( $product['decals'] ) { echo '<h3>Decals</h3><p>' . $product['decals'] . '</p>'; } ?>
+	<?php if ( $product['decals'] ) { ?>
+		<?php printf( '<h3>%s</h3>', __('Decals', 'centurion')); ?>
+		<?php printf( '<p>%s</p>', $product['decals'] ); ?>
+	<?php } ?>
 
-	<?php if ( $product['visibility'] ) { echo '<h3>Visibility</h3><p>' . $product['visibility'] . '</p>'; } ?>
+	<?php if ( $product['visibility'] ) { ?>
+		<?php printf( '<h3>%s</h3>', __('Visibility', 'centurion')); ?>
+		<?php printf( '<p>%s</p>', $product['visibility'] ); ?>
+	<?php } ?>
 
-	<?php if ( $product['approved-to'] ) { echo '<h3>Approved To</h3><p>' . $product['approved-to'] . '</p>'; } ?>
+	<?php if ( $product['approved-to'] ) { ?>
+		<?php printf( '<h3>%s</h3>', __('Approved To', 'centurion')); ?>
+		<?php printf( '<p>%s</p>', $product['approved-to'] ); ?>
+	<?php } ?>
 
-	<?php if ( $product['tested-to'] ) { echo '<h3>Tested To</h3><p>' . $product['tested-to'] . '</p>'; } ?>
+	<?php if ( $product['tested-to'] ) { ?>
+		<?php printf( '<h3>%s</h3>', __('Tested To', 'centurion')); ?>
+		<?php printf( '<p>%s</p>', $product['tested-to'] ); ?>
+	<?php } ?>
 
-	<?php 
-	// Check for any product_specialisms
-	if ( $product['specialism'] ) {
+	<?php if ( $product['specialism'] ) { ?>
+		<?php printf( '<h3>%s</h3>', __('Specialism', 'centurion') ); ?>
+		<?php echo '<p>' ?>
+		<?php echo $product['specialism']->name; ?>
+		<?php echo ' ('; echo get_field( 'product_specialism_hex_code', $product['specialism']); echo ')'; ?>
+		<?php echo '</p>'; ?>
+	<?php } ?>
 
-		// Render the name and hex_code
-		echo '<h3>Specialism</h3>';
-		echo '<p>' . $product['specialism']->name . ' (' . get_field( 'product_specialism_hex_code', $product['specialism']) . ')</p>';
-	}
-	?>
-
-	<?php
-	// Check if downloads
-	if ( have_rows( 'product_downloads') ) {
-
-		echo '<h3>Downloads</h3>';
-		echo '<ul>';
-
+	<?php if ( have_rows( 'product_downloads') ) { ?>
+		<?php printf( '<h3>%s</h3>', __('Downloads', 'centurion') ); ?>
+		<?php echo '<ul>'; ?>
+		<?php
+		// Set index to 0
 		$i = 0;
 		// Loop through images
 		while ( have_rows( 'product_downloads' ) ) : the_row();
-
 			// Current download
 			$download = get_sub_field( 'product_download' );
-
 			// Render the image
 			echo '<li>';
 			echo '<a href="' . $download['url'] . '" target="_blank">' . $download['title'] . '</a>';
 			echo '</li>';
-
 		endwhile;
-
 		echo '</ul>';
-	}
-	?>
+		?>
+	<?php } ?>
 
-	<?php
-	// Check if any linked products in CMS
-	if ( have_rows( 'product_linked_products') ) {
-		echo '<h3>Linked Products</h3>';
-		echo '<ul>';
+	<?php if ( have_rows( 'product_linked_products') ) { ?>
+		<?php printf( '<h3>%s</h3>', __('Linked Products', 'centurion') ); ?>
+		<?php echo '<ul>'; ?>
+		<?php
 		// Loop through linked-products
 		while ( have_rows( 'product_linked_products' ) ) : the_row();
 			// Get the linked product post-object
@@ -147,9 +150,9 @@ get_header(); ?>
 			echo '</a>';
 			echo '</li>';
 		endwhile;
-		echo '</ul>';
-	}
-	?>
+		?>
+		<?php echo '</ul>'; ?>
+	<?php } ?>
 </article>
 
 <?php get_footer(); ?>

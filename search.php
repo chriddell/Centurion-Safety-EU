@@ -25,17 +25,17 @@ get_header(); ?>
 						<?php while ( have_posts() ) : the_post(); ?>
 							<?php 
 							if ( $post->post_type == 'product' && !$products ) {
-								echo '<h3>Products</h3>';
+								printf('<h3>%s</h3>', get_post_type_object('product')->labels->name);
 								$products = true;
 							}
 
 							if ( $post->post_type == 'news' && !$news ) {
-								echo '<h3>News</h3>';
+								printf('<h3>%s</h3>', get_post_type_object('news')->labels->name);
 								$news = true;
 							}
 
 							if ( $post->post_type == 'advice' && !$advice ) {
-								echo '<h3>Advice</h3>';
+								printf('<h3>%s</h3>', get_post_type_object('advice')->labels->name);
 								$advice = true;
 							}
 							?>
