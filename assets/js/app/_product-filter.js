@@ -9,7 +9,7 @@
 	// partial
 	var filterCanvas = '#product-filter-canvas',
 			filterTerms = [],
-			currentlyFiltering = $(filterCanvas).attr('data-filtering').split(' ');
+			currentlyFiltering = ( $(filterCanvas).length ? $(filterCanvas).attr('data-filtering').split(' ') : false );
 
 	/**
 	 * Set a filter input [checkbox]
@@ -19,12 +19,15 @@
 		$('.product-filter__item__input[name="filter-' + target + '"]' ).prop('checked', true);
 	};
 
-	// Fire above function for
-	// each product which is showing
-	// on load
-	$.each(currentlyFiltering, function(i, e){
-		markAsChecked(e);
-	});
+	// Loop array of strings from
+	// curentlyFilter var and mark the 
+	// relevant input as checked 
+	// (make it's associated products visible)
+	if ( currentlyFiltering !== false ) {
+		$.each(currentlyFiltering, function(i, e){
+			markAsChecked(e);
+		});
+	}
 
 
 	/**
