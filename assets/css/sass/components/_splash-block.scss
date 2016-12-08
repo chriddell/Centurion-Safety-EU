@@ -1,0 +1,90 @@
+/* ==========================================================================
+    _splash-block
+
+    A repetitive UI-pattern across the site, which consits of:
+
+    - Background-image
+    - Centered button
+    - Title
+   ========================================================================== */
+
+.splash-block {
+  height: 180px;
+  color: $lightColor;
+  text-align: center;
+
+  @include respond-to( 'small' ) {
+    height: 250px;
+  }
+}
+
+.splash-block__container {
+  padding: $baseSpacingUnit;
+  background-size: cover;
+  background-position: center center;
+}
+
+.splash-block__title {
+  @extend %like-h2;
+  margin-bottom: 0.5em;
+  font-weight: bold;
+
+  @include respond-to( 'small' ) {
+    font-size: $h1Size;
+  }
+}
+
+.splash-block__btn {
+  margin: 0 auto;
+}
+
+/* Centering content
+---------------------------------------- */
+
+// The Flexbox way
+.flexbox .splash-block__container {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+// The non-flexbox way
+.no-flexbox .splash-block__container {
+  position: relative;
+  transform-style: preserve-3d; // prevent blurry text
+}
+
+.no-flexbox .splash-block__content {
+  @include totally-aligned(absolute);
+}
+
+/* The homepage blocks
+
+// I think we need a better name for these
+---------------------------------------- */
+
+.splash-block__homepage {
+
+  @include respond-to( 'small' ) {
+    margin-bottom: $baseSpacingUnit;
+    
+    &:nth-of-type(odd) .splash-block__container {
+      margin-right: $baseSpacingUnit / 2;
+    }
+
+    &:nth-of-type(even) .splash-block__container {
+      margin-left: $baseSpacingUnit / 2;
+    }
+  }
+
+  &:last-of-type:nth-of-type(odd) {
+    // Last needs to be full-width if an odd number
+    width: 100%;
+
+    .splash-block__container {
+      // and overwrite margin
+      margin-right: 0;
+    }
+  }
+}
