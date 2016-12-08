@@ -41,6 +41,9 @@ $new_term_object				= ( $queried_term_object->parent == 0 ) ? $queried_term_obje
 // Get term slugs of child terms
 $child_term_ids = ( $queried_term_object->parent == 0 ) ? get_term_children( $new_term_object->term_id, 'product_category') : $queried_term_object->term_id;
 
+// Empty var (string)
+$slugs_for_filter = '';
+
 // Check whether array of IDs
 if ( !is_array( $child_term_ids ) ) {
 
@@ -55,8 +58,9 @@ if ( !is_array( $child_term_ids ) ) {
 		// Get the slugs
 		$slug = get_term($child_term_id, 'product_category')->slug;
 
-		// Set up a var to hold them
-		$slugs_for_filter = $slugs_for_filter . ' ' . $slug;
+		// Add them to var
+		$slugs_for_filter .= ' ';
+		$slugs_for_filter .= $slug;
 	}
 }
 
@@ -64,7 +68,7 @@ get_header(); ?>
 	
 	<div class="flex-content"><!-- .flex-content -->
 		<?php get_sidebar('expanded'); ?>
-		<main role="main" class="main main--has-sidebar"><!-- .main -->
+		<main role="main" class="main main--has-sidebar main--with-padding"><!-- .main -->
 			<header id="main-header">
 				<?php
 					// Show taxonomy term (or it's parent) name and description
