@@ -1,0 +1,14 @@
+/* ==========================================================================
+    _titles
+
+    Generic title styles
+   ========================================================================== */
+
+.section-title {
+  color: $brandColorOne;
+  margin-bottom: $baseSpacingUnit * 2;
+}
+
+.section-title--light {
+  color: $lightColor;
+}

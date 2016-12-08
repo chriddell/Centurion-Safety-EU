@@ -36,30 +36,30 @@ p:first-of-type {
 
 h1,
 %like-h1 {
-  font-size: 2.6em;
+  margin-top: 0;
+  font-weight: normal;
+  font-size: $h1Size;
 }
 
 h2,
 %like-h2 {
-  font-size: 1.55em;
+  margin-top: 0;
+  font-weight: normal;
+  font-size: $h2Size;
 }
 
 h3,
 %like-h3 {
-  font-size: 1.2em;
+  margin-top: 0;
+  font-weight: normal;
+  font-size: $h3Size;
 }
 
 h4,
 %like-h4 {
-  font-size: 1.1em;
-}
-
-h1, %like-h1,
-h2, %like-h2,
-h3, %like-h3,
-h4, %like-h4 {
   margin-top: 0;
   font-weight: normal;
+  font-size: $h4Size;
 }
 
 img,

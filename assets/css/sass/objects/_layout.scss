@@ -1,14 +1,15 @@
 /* ==========================================================================
     _layout
 
-    Layout options, sidebar etc.
+    Mostly applies to products and product_category pages.
    ========================================================================== */
 
-/* Globals
----------------------------------------- */
-
-.main--has-sidebar {
-  padding: $baseSpacingUnit * 2;
+// Define global wrapper
+.wrapper {
+  // container is from susy set-up
+  // in _grid.scss
+  @include container;
+  padding: 0 20px;
 }
 
 /* Flexbox layout
@@ -55,4 +56,25 @@
     width: 25%;
     vertical-align: top;
   }
+}
+
+/* Trumps
+---------------------------------------- */
+
+.main--with-padding {
+  padding: $baseSpacingUnit 0;
+
+  @include respond-to( 'small' ) {
+    padding: $baseSpacingUnit * 2 $baseSpacingUnit;
+  }
+}
+
+.main--has-sidebar > .wrapper {
+  margin-left: 0;
+}
+
+// Sidebar is not visible if no-js
+// so reset margin
+.no-js .main--has-sidebar > .wrapper {
+  margin-left: auto;
 }

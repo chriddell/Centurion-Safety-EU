@@ -16,13 +16,19 @@
 
 @import 'base/base';
 
+@import 'components/titles';
 @import 'components/hamburger';
 @import 'components/nav';
 @import 'components/menu';
 @import 'components/header';
 @import 'components/footer';
 @import 'components/sidebar';
+@import 'components/buttons';
+@import 'components/blocks';
 @import 'components/product-listing';
 @import 'components/product-filter';
+@import 'components/splash-block';
+@import 'components/hero';
 
 @import 'trumps/helpers';
+@import 'trumps/trumps';
