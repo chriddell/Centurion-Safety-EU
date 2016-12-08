@@ -402,8 +402,8 @@ function cntrn_render_featured_products() {
 	// If posts returns something
 	if ( $query->have_posts() ) { ?>
 
-		<h2><?php _e('Featured Products'); ?></h2>
-		<ul>
+		<h2 class="section-title uppercase text-centered"><?php _e('Our Latest Systems'); ?></h2>
+		<ul class="product-listings menu clearfix">
 			<?php while ( $query->have_posts() ) : $query->the_post(); ?>
 
 				<?php
@@ -411,11 +411,15 @@ function cntrn_render_featured_products() {
 				$product_image 				= get_field('product_images');
 				$product_description 	= get_field('product_description');
 				?>
-				<li>
-					<img src="<?php echo $product_image[0]['product_image']['url']; ?>"/>
-					<?php the_title('<h3>', '</h3>'); ?>
-					<p><?php echo $product_description; ?></p>
-					<a href="<?php the_permalink(); ?>"><?php _e('Read more', 'centurion'); ?></a>
+				<li class="product-listing product-listing--featured col-12 col-sml-6">
+					<div class="product-listing__container product-listing--featured__container">
+						<span class="product-listing__image-container product-listing--featured__image-container">
+							<img src="<?php echo $product_image[0]['product_image']['url']; ?>" class="product-listing__image product-listing--featured__image"/>
+						</span>
+						<?php the_title('<h3 class="product-listing__title product-listing--featured__title uppercase">', '</h3>'); ?>
+						<p class="product-listing__description product-listing--featured__description"><?php echo $product_description; ?></p>
+						<a href="<?php the_permalink(); ?>" class="product-listing__link product-listing--featured__link"><?php _e('Visit product page', 'centurion'); ?></a>
+					</div>
 				</li>
 			<?php endwhile; ?>
 		</ul>
@@ -431,7 +435,7 @@ function cntrn_render_featured_products() {
  * @param images 			= show category_image; boolean
  * @param classnames 	= add class(es); string
  */
-function cntrn_render_top_product_categories( $images = false, $ul_classnames = '', $li_classnames = '' ) {
+function cntrn_render_splash_blocks( $ul_classnames = '', $li_classnames = '' ) {
 
 	// Set up query args
 	$args = array(
@@ -453,17 +457,20 @@ function cntrn_render_top_product_categories( $images = false, $ul_classnames = 
 
 		foreach ( $terms as $term ) {
 
+			// Get an image
+			$term_image = get_field( 'product_category_image', $term );
+
 			// Render DOM
 			echo '<li class="'; echo $li_classnames; echo '">';
-			echo '<a href="' . esc_url( get_term_link( $term ) ) . '" title="' . esc_attr( sprintf( __( 'View all %s products', 'my_localization_domain' ), $term->name ) ) . '">';
-			if ( $images ) {
-				$term_image = get_field( 'product_category_image', $term );
-				echo '<img src="' . $term_image['url'] . '" alt="' . $term_image['alt'] . '"/>';
-			}
-			echo $term->name;
+			echo '<span class="splash-block__container" style="background-image: url(' . $term_image['url'] . ')">';
+			echo '<span class="splash-block__content">';
+			echo '<h3 class="splash-block__title">' . $term->name . '</h3>';
+			echo '<a href="' . esc_url( get_term_link( $term ) ) . '" title="' . esc_attr( sprintf( __( 'View all %s products', 'my_localization_domain' ), $term->name ) ) . '" class="btn splash-block__btn">';
+			echo 'Explore our range';
 			echo '</a>';
+			echo '</span>';
+			echo '</span>';
 			echo '</li>';
-
 		}
 
 		// End list

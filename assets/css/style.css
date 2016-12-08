@@ -474,24 +474,68 @@ template {
 /* ==========================================================================
     _grid
 
-    Grid classes, container.
+    Grid setup and classes
    ========================================================================== */
-.wrapper {
-  max-width: 1352px;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 0 20px;
-}
-
-.wrapper:after {
-  content: " ";
-  display: block;
-  clear: both;
-}
-
 .col-1 {
   width: 8.3333333333%;
   float: left;
+}
+
+.col-2 {
+  width: 16.6666666667%;
+  float: left;
+}
+
+.col-3 {
+  width: 25%;
+  float: left;
+}
+
+.col-4 {
+  width: 33.3333333333%;
+  float: left;
+}
+
+.col-5 {
+  width: 41.6666666667%;
+  float: left;
+}
+
+.col-6 {
+  width: 50%;
+  float: left;
+}
+
+.col-7 {
+  width: 58.3333333333%;
+  float: left;
+}
+
+.col-8 {
+  width: 66.6666666667%;
+  float: left;
+}
+
+.col-9 {
+  width: 75%;
+  float: left;
+}
+
+.col-10 {
+  width: 83.3333333333%;
+  float: left;
+}
+
+.col-11 {
+  width: 91.6666666667%;
+  float: left;
+}
+
+.col-12 {
+  width: 100%;
+  float: left;
+  margin-left: 0;
+  margin-right: 0;
 }
 
 @media (min-width: 767px) {
@@ -501,21 +545,88 @@ template {
   }
 }
 
-@media (min-width: 1023px) {
-  .col-med-1 {
-    width: 8.3333333333%;
+@media (min-width: 767px) {
+  .col-sml-2 {
+    width: 16.6666666667%;
     float: left;
   }
 }
 
-.col-2 {
-  width: 16.6666666667%;
-  float: left;
+@media (min-width: 767px) {
+  .col-sml-3 {
+    width: 25%;
+    float: left;
+  }
 }
 
 @media (min-width: 767px) {
-  .col-sml-2 {
-    width: 16.6666666667%;
+  .col-sml-4 {
+    width: 33.3333333333%;
+    float: left;
+  }
+}
+
+@media (min-width: 767px) {
+  .col-sml-5 {
+    width: 41.6666666667%;
+    float: left;
+  }
+}
+
+@media (min-width: 767px) {
+  .col-sml-6 {
+    width: 50%;
+    float: left;
+  }
+}
+
+@media (min-width: 767px) {
+  .col-sml-7 {
+    width: 58.3333333333%;
+    float: left;
+  }
+}
+
+@media (min-width: 767px) {
+  .col-sml-8 {
+    width: 66.6666666667%;
+    float: left;
+  }
+}
+
+@media (min-width: 767px) {
+  .col-sml-9 {
+    width: 75%;
+    float: left;
+  }
+}
+
+@media (min-width: 767px) {
+  .col-sml-10 {
+    width: 83.3333333333%;
+    float: left;
+  }
+}
+
+@media (min-width: 767px) {
+  .col-sml-11 {
+    width: 91.6666666667%;
+    float: left;
+  }
+}
+
+@media (min-width: 767px) {
+  .col-sml-12 {
+    width: 100%;
+    float: left;
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+@media (min-width: 1023px) {
+  .col-med-1 {
+    width: 8.3333333333%;
     float: left;
   }
 }
@@ -527,33 +638,9 @@ template {
   }
 }
 
-.col-3 {
-  width: 25%;
-  float: left;
-}
-
-@media (min-width: 767px) {
-  .col-sml-3 {
-    width: 25%;
-    float: left;
-  }
-}
-
 @media (min-width: 1023px) {
   .col-med-3 {
     width: 25%;
-    float: left;
-  }
-}
-
-.col-4 {
-  width: 33.3333333333%;
-  float: left;
-}
-
-@media (min-width: 767px) {
-  .col-sml-4 {
-    width: 33.3333333333%;
     float: left;
   }
 }
@@ -565,33 +652,9 @@ template {
   }
 }
 
-.col-5 {
-  width: 41.6666666667%;
-  float: left;
-}
-
-@media (min-width: 767px) {
-  .col-sml-5 {
-    width: 41.6666666667%;
-    float: left;
-  }
-}
-
 @media (min-width: 1023px) {
   .col-med-5 {
     width: 41.6666666667%;
-    float: left;
-  }
-}
-
-.col-6 {
-  width: 50%;
-  float: left;
-}
-
-@media (min-width: 767px) {
-  .col-sml-6 {
-    width: 50%;
     float: left;
   }
 }
@@ -603,33 +666,9 @@ template {
   }
 }
 
-.col-7 {
-  width: 58.3333333333%;
-  float: left;
-}
-
-@media (min-width: 767px) {
-  .col-sml-7 {
-    width: 58.3333333333%;
-    float: left;
-  }
-}
-
 @media (min-width: 1023px) {
   .col-med-7 {
     width: 58.3333333333%;
-    float: left;
-  }
-}
-
-.col-8 {
-  width: 66.6666666667%;
-  float: left;
-}
-
-@media (min-width: 767px) {
-  .col-sml-8 {
-    width: 66.6666666667%;
     float: left;
   }
 }
@@ -641,33 +680,9 @@ template {
   }
 }
 
-.col-9 {
-  width: 75%;
-  float: left;
-}
-
-@media (min-width: 767px) {
-  .col-sml-9 {
-    width: 75%;
-    float: left;
-  }
-}
-
 @media (min-width: 1023px) {
   .col-med-9 {
     width: 75%;
-    float: left;
-  }
-}
-
-.col-10 {
-  width: 83.3333333333%;
-  float: left;
-}
-
-@media (min-width: 767px) {
-  .col-sml-10 {
-    width: 83.3333333333%;
     float: left;
   }
 }
@@ -679,38 +694,10 @@ template {
   }
 }
 
-.col-11 {
-  width: 91.6666666667%;
-  float: left;
-}
-
-@media (min-width: 767px) {
-  .col-sml-11 {
-    width: 91.6666666667%;
-    float: left;
-  }
-}
-
 @media (min-width: 1023px) {
   .col-med-11 {
     width: 91.6666666667%;
     float: left;
-  }
-}
-
-.col-12 {
-  width: 100%;
-  float: left;
-  margin-left: 0;
-  margin-right: 0;
-}
-
-@media (min-width: 767px) {
-  .col-sml-12 {
-    width: 100%;
-    float: left;
-    margin-left: 0;
-    margin-right: 0;
   }
 }
 
@@ -726,12 +713,19 @@ template {
 /* ==========================================================================
     _layout
 
-    Layout options, sidebar etc.
+    Mostly applies to products and product_category pages.
    ========================================================================== */
-/* Globals
----------------------------------------- */
-.main--has-sidebar {
-  padding: 40px;
+.wrapper {
+  max-width: 1352px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 20px;
+}
+
+.wrapper:after {
+  content: " ";
+  display: block;
+  clear: both;
 }
 
 /* Flexbox layout
@@ -799,6 +793,26 @@ template {
   }
 }
 
+/* Trumps
+---------------------------------------- */
+.main--with-padding {
+  padding: 20px 0;
+}
+
+@media (min-width: 767px) {
+  .main--with-padding {
+    padding: 40px 20px;
+  }
+}
+
+.main--has-sidebar > .wrapper {
+  margin-left: 0;
+}
+
+.no-js .main--has-sidebar > .wrapper {
+  margin-left: auto;
+}
+
 /* ==========================================================================
    _base
    
@@ -830,33 +844,50 @@ p:first-of-type {
 }
 
 h1 {
+  margin-top: 0;
+  font-weight: normal;
   font-size: 2.6em;
 }
 
 h2,
-.menu--main-nav__item {
+.menu--main-nav__item,
+.splash-block__title {
+  margin-top: 0;
+  font-weight: normal;
   font-size: 1.55em;
 }
 
-h3 {
+h3,
+.product-filter__item-heading {
+  margin-top: 0;
+  font-weight: normal;
   font-size: 1.2em;
 }
 
-h4 {
-  font-size: 1.1em;
-}
-
-h1,
-h2, .menu--main-nav__item,
-h3,
-h4 {
+h4,
+.btn {
   margin-top: 0;
   font-weight: normal;
+  font-size: 1.1em;
 }
 
 img,
 video {
   max-width: 100%;
+}
+
+/* ==========================================================================
+    _titles
+
+    Generic title styles
+   ========================================================================== */
+.section-title {
+  color: #262e61;
+  margin-bottom: 40px;
+}
+
+.section-title--light {
+  color: #FFFFFF;
 }
 
 /* ==========================================================================
@@ -1359,21 +1390,95 @@ Powered by JS
   }
 }
 
+.no-js .sidebar {
+  display: none;
+}
+
+/* ==========================================================================
+    _buttons
+
+    Button styles (Not actually buttons, links)
+   ========================================================================== */
+.btn {
+  max-width: 230px;
+  display: block;
+  padding: 20px 20px;
+  border: 2px solid #FFFFFF;
+  border-radius: 4px;
+  line-height: 1;
+  color: #FFFFFF;
+}
+
+.btn:hover {
+  text-decoration: none;
+}
+
+.btn--centered {
+  margin: 0 auto;
+}
+
+/* ==========================================================================
+    _blocks
+    
+    Containers of content
+   ========================================================================== */
+.block {
+  padding: 40px 0;
+}
+
+.block--last {
+  padding-bottom: 0;
+}
+
+@media (min-width: 767px) {
+  .block--last {
+    padding-bottom: 40px;
+  }
+}
+
+.block--coloured {
+  background-color: #94aab3;
+  color: #FFFFFF;
+}
+
 /* ==========================================================================
     _product-listing
     
     Listing products (generally in an archive page)
    ========================================================================== */
 .product-listing {
-  padding: 20px 10px;
+  padding: 0;
+  margin-bottom: 20px;
+}
+
+@media (min-width: 767px) {
+  .product-listing__container {
+    margin-right: 30px;
+  }
+}
+
+.product-listing__image-container {
+  display: block;
+  margin-bottom: 20px;
+  border: 1px solid #eaeef0;
+  background-color: #FFFFFF;
 }
 
 .product-listing__image {
-  border: 1px solid #eaeef0;
-  margin-bottom: 1em;
+  width: 50%;
+  margin: 0 auto;
+  display: block;
+}
+
+@media (min-width: 767px) {
+  .product-listing__image {
+    width: 100%;
+    padding: 10px;
+  }
 }
 
 .product-listing__title {
+  margin-bottom: 20px;
   color: #262e61;
   font-weight: normal;
 }
@@ -1394,6 +1499,53 @@ Powered by JS
 
 .product-listing__description {
   color: #9ba399;
+  margin-bottom: 20px;
+}
+
+/* Featured
+---------------------------------------- */
+.product-listing--featured {
+  padding: 0;
+}
+
+.product-listing--featured:last-of-type {
+  margin-bottom: 40px;
+}
+
+@media (min-width: 767px) {
+  .product-listing--featured:last-of-type {
+    margin-bottom: 0;
+  }
+}
+
+@media (min-width: 767px) {
+  .product-listing--featured {
+    margin-bottom: 40px;
+  }
+}
+
+@media (min-width: 767px) {
+  .product-listing--featured__container {
+    margin: 0;
+  }
+  .product-listing--featured:nth-of-type(odd) .product-listing--featured__container {
+    margin-right: 13.3333333333px;
+  }
+  .product-listing--featured:nth-of-type(even) .product-listing--featured__container {
+    margin-left: 13.3333333333px;
+  }
+}
+
+@media (min-width: 767px) {
+  .product-listing--featured__image {
+    width: 50%;
+    padding: 0;
+  }
+}
+
+.product-listing--featured__title {
+  font-size: 1.55em;
+  margin-bottom: 20px;
 }
 
 /* Product Listing with centered text
@@ -1444,7 +1596,7 @@ Powered by JS
 
 /* Filters
 ---------------------------------------- */
-*[data-filter="filterable"] {
+.js *[data-filter="filterable"] {
   height: 0;
   overflow: hidden;
 }
@@ -1457,12 +1609,163 @@ Powered by JS
   height: auto;
 }
 
-#product-filter-canvas[data-filtering*="general-purpose-helmet-systems"] .product-listing__category-container[data-filter-term="general-purpose-helmet-systems"] {
+#product-filter-canvas[data-filtering*="general-purpose"] .product-listing__category-container[data-filter-term="general-purpose"] {
   height: auto;
 }
 
 #product-filter-canvas[data-filtering*="integrated-eyewear"] .product-listing__category-container[data-filter-term="integrated-eyewear"] {
   height: auto;
+}
+
+#product-filter-canvas[data-filtering*="powered-air"] .product-listing__category-container[data-filter-term="powered-air"] {
+  height: auto;
+}
+
+/* ==========================================================================
+    _splash-block
+
+    A repetitive UI-pattern across the site, which consits of:
+
+    - Background-image
+    - Centered button
+    - Title
+   ========================================================================== */
+.splash-block {
+  height: 180px;
+  color: #FFFFFF;
+  text-align: center;
+}
+
+@media (min-width: 767px) {
+  .splash-block {
+    height: 250px;
+  }
+}
+
+.splash-block__container {
+  padding: 20px;
+  background-size: cover;
+  background-position: center center;
+}
+
+.splash-block__title {
+  margin-bottom: 0.5em;
+  font-weight: bold;
+}
+
+@media (min-width: 767px) {
+  .splash-block__title {
+    font-size: 2.6em;
+  }
+}
+
+.splash-block__btn {
+  margin: 0 auto;
+}
+
+/* Centering content
+---------------------------------------- */
+.flexbox .splash-block__container {
+  height: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.no-flexbox .splash-block__container {
+  position: relative;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+}
+
+.no-flexbox .splash-block__content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+/* The homepage blocks
+
+// I think we need a better name for these
+---------------------------------------- */
+@media (min-width: 767px) {
+  .splash-block__homepage {
+    margin-bottom: 20px;
+  }
+  .splash-block__homepage:nth-of-type(odd) .splash-block__container {
+    margin-right: 10px;
+  }
+  .splash-block__homepage:nth-of-type(even) .splash-block__container {
+    margin-left: 10px;
+  }
+}
+
+.splash-block__homepage:last-of-type:nth-of-type(odd) {
+  width: 100%;
+}
+
+.splash-block__homepage:last-of-type:nth-of-type(odd) .splash-block__container {
+  margin-right: 0;
+}
+
+/* ==========================================================================
+    _hero
+
+    Hero element.
+   ========================================================================== */
+.hero {
+  height: 350px;
+  height: calc(100vh - 94px);
+  max-height: 900px;
+  text-align: center;
+  background-size: cover;
+  background-position: 25% 0;
+  background-repeat: no-repeat;
+}
+
+.flexbox .hero {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+@media (min-width: 767px) {
+  .hero {
+    height: calc(100vh - 155px);
+  }
+}
+
+.hero__title {
+  font-size: 2.6em;
+  font-weight: bold;
+  color: #FFFFFF;
+  text-shadow: 1px 2px 5px rgba(0, 0, 0, 0.45);
+}
+
+.hero__cta {
+  box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.45);
+  text-shadow: 1px 2px 5px rgba(0, 0, 0, 0.45);
 }
 
 /* ==========================================================================
@@ -1505,5 +1808,30 @@ Powered by JS
 
 .bold {
   font-weight: bold;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.text-centered {
+  text-align: center;
+}
+
+/* ==========================================================================
+    _trumps
+
+    "Hacks"
+   ========================================================================== */
+.csscalc .disobey-wrapper-mob {
+  width: calc(100% + 40px);
+  margin-left: -20px;
+}
+
+@media (min-width: 767px) {
+  .csscalc .disobey-wrapper-mob {
+    width: inherit;
+    margin-left: inherit;
+  }
 }
 /*# sourceMappingURL=style.css.map */

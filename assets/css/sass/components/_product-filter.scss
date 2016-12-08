@@ -32,6 +32,7 @@
 .product-filter__item-heading {
   padding: $baseSpacingUnit;
   border-top: 1px solid $borderColor;
+  @extend %like-h3;
 }
 
 .product-filter__item-list--is-child {
@@ -52,11 +53,13 @@
 $terms: (
   'baseball-bump-caps',
   'hygiene-bump-caps',
-  'general-purpose-helmet-systems',
-  'integrated-eyewear'
+  'general-purpose',
+  'integrated-eyewear',
+  'powered-air'
 );
 
-*[data-filter="filterable"] {
+// We only filter if JS is enabled
+.js *[data-filter="filterable"] {
   height: 0;
   overflow: hidden;
 }

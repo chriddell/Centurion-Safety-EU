@@ -37,12 +37,16 @@ $child_term_object = get_terms(array(
 
 ?>
 
-<div class="product-listing__wrapper col-med-3 col-sml-4">
+<div class="col-sml-4">
 	<article id="post-<?php the_ID(); ?>" class="product-listing product-listing--centered">
-		<img src="<?php echo $product['image']['url'] ?>" class="product-listing__image"/>
-		<?php the_title( '<h3 class="product-listing__title">', '</h3>' ); ?>
-		<a href="<?php echo esc_url( get_permalink() ); ?>" rel="bookmark" class="product-listing__link">
-			<?php _e('More info', 'centurion'); ?>
-		</a>
+		<div class="product-listing__container">
+			<span class="product-listing__image-container">
+				<img src="<?php echo $product['image']['url'] ?>" class="product-listing__image"/>
+			</span>
+			<?php the_title( '<h3 class="product-listing__title">', '</h3>' ); ?>
+			<a href="<?php echo esc_url( get_permalink() ); ?>" rel="bookmark" class="product-listing__link">
+				<?php _e('More info', 'centurion'); ?>
+			</a>
+		</div>
 	</article><!-- #post-## -->
 </div>

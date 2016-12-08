@@ -1,0 +1,22 @@
+/* ==========================================================================
+    _blocks
+    
+    Containers of content
+   ========================================================================== */
+
+.block {
+  padding: $baseSpacingUnit * 2 0;
+}
+
+.block--last {
+  padding-bottom: 0;
+
+  @include respond-to( 'small' ) {
+    padding-bottom: $baseSpacingUnit * 2;
+  }
+}
+
+.block--coloured {
+  background-color: $brandColorTwo;
+  color: $lightColor;
+}

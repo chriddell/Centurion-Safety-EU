@@ -50,3 +50,8 @@ Powered by JS
     }
   }
 }
+
+// Hide sidebar if no javascripts :(
+.no-js .sidebar {
+  display: none;
+}

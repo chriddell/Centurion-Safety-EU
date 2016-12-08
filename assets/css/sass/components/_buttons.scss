@@ -1,0 +1,25 @@
+/* ==========================================================================
+    _buttons
+
+    Button styles (Not actually buttons, links)
+   ========================================================================== */
+
+.btn,
+%btn {
+  max-width: 230px;
+  display: block;
+  padding: $baseSpacingUnit $baseSpacingUnit;
+  border: 2px solid $lightColor;
+  border-radius: 4px;
+  line-height: 1;
+  color: $lightColor;
+  @extend %like-h4;
+
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+.btn--centered {
+  margin: 0 auto;
+}

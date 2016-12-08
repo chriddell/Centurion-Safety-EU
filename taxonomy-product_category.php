@@ -69,59 +69,61 @@ get_header(); ?>
 	<div class="flex-content"><!-- .flex-content -->
 		<?php get_sidebar('expanded'); ?>
 		<main role="main" class="main main--has-sidebar main--with-padding"><!-- .main -->
-			<header id="main-header">
-				<?php
-					// Show taxonomy term (or it's parent) name and description
-					echo '<h2 class="product-listing__category-title">'; echo $new_term_object->name; echo '</h2>';
-					echo '<p class="product-listing__description">'; echo $new_term_object->description; echo '</p>';
-				?>
-			</header>
+			<div class="wrapper">
+				<header id="main-header">
+					<?php
+						// Show taxonomy term (or it's parent) name and description
+						echo '<h2 class="product-listing__category-title">'; echo $new_term_object->name; echo '</h2>';
+						echo '<p class="product-listing__description">'; echo $new_term_object->description; echo '</p>';
+					?>
+				</header>
 
-			<!-- #product-filter-canvas -->
-			<div id="product-filter-canvas" class="clearfix" data-filtering="<?php echo $slugs_for_filter; ?>">
-				<?php
-				/**
-				 * Get all the posts (products) associated
-				 * with the current taxonomy term and return
-				 * them
-				 */
-				$terms = get_terms( 'product_category', array( 
-					'parent' => $new_term_object->term_id
-				));
+				<!-- #product-filter-canvas -->
+				<div id="product-filter-canvas" class="clearfix" data-filtering="<?php echo $slugs_for_filter; ?>">
+					<?php
+					/**
+					 * Get all the posts (products) associated
+					 * with the current taxonomy term and return
+					 * them
+					 */
+					$terms = get_terms( 'product_category', array( 
+						'parent' => $new_term_object->term_id
+					));
 
-				foreach ( $terms as $term ) {
+					foreach ( $terms as $term ) {
 
-					wp_reset_query();
+						wp_reset_query();
 
-					$args = array(
-						'post_type' => 'product',
-						'tax_query' => array(
-							array(
-								'taxonomy' => 'product_category',
-								'field' => 'slug',
-								'terms' => $term->slug,
-							),
-						)
-					);
+						$args = array(
+							'post_type' => 'product',
+							'tax_query' => array(
+								array(
+									'taxonomy' => 'product_category',
+									'field' => 'slug',
+									'terms' => $term->slug,
+								),
+							)
+						);
 
-					$loop = new WP_Query($args);
+						$loop = new WP_Query($args);
 
-					if ( $loop->have_posts() ) {
+						if ( $loop->have_posts() ) {
 
-						echo '<div class="product-listing__category-container clearfix" data-filter="filterable" data-filter-term="' . $term->slug . '">';
-							echo '<h3 class="product-listing__sub-category-title">' . $term->name . '</h3>';
+							echo '<div class="product-listing__category-container clearfix" data-filter="filterable" data-filter-term="' . $term->slug . '">';
+								echo '<h3 class="product-listing__sub-category-title">' . $term->name . '</h3>';
 
-							while( $loop->have_posts() ) : $loop->the_post() ;
-								// Include the single post content template.
-								get_template_part( 'template-parts/content-product' );
-							endwhile;
+								while( $loop->have_posts() ) : $loop->the_post() ;
+									// Include the single post content template.
+									get_template_part( 'template-parts/content-product' );
+								endwhile;
 
-						echo '</div>';
+							echo '</div>';
+						}
 					}
-				}
 
-				?>
-			</div><!-- / #product-filter-canvas -->
+					?>
+				</div><!-- / #product-filter-canvas -->
+			</div><!-- .wrapper -->
 		</main><!-- / .main -->
 	</div><!-- / .flex-content -->
 

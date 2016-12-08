@@ -5,16 +5,36 @@
    ========================================================================== */
 
 .product-listing {
-  //margin-left: $baseSpacingUnit * 1.5;
-  padding: $baseSpacingUnit $baseSpacingUnit / 2;
+  padding: 0;
+  margin-bottom: $baseSpacingUnit;
+}
+
+.product-listing__container {
+  @include respond-to( 'small' ) {
+    margin-right: $baseSpacingUnit * 1.5;
+  }
+}
+
+.product-listing__image-container {
+  display: block;
+  margin-bottom: $baseSpacingUnit;
+  border: 1px solid $brandColorThree;
+  background-color: $lightColor;
 }
 
 .product-listing__image {
-  border: 1px solid $brandColorThree;
-  margin-bottom: 1em;
+  width: 50%;
+  margin: 0 auto;
+  display: block;
+
+  @include respond-to( 'small' ) {
+    width: 100%;
+    padding: $baseSpacingUnit / 2;
+  }
 }
 
 .product-listing__title {
+  margin-bottom: $baseSpacingUnit;
   color: $brandColorOne;
   font-weight: normal;
 }
@@ -35,6 +55,53 @@
 
 .product-listing__description {
   color: $brandColorFour;
+  margin-bottom: $baseSpacingUnit;
+}
+
+/* Featured
+---------------------------------------- */
+
+.product-listing--featured {
+  padding: 0;
+
+  &:last-of-type {
+    margin-bottom: $baseSpacingUnit * 2;
+
+    @include respond-to( 'small' ) {
+      margin-bottom: 0;
+    }
+  }
+
+  @include respond-to( 'small' ) {
+    margin-bottom: $baseSpacingUnit * 2;
+  }
+}
+
+.product-listing--featured__container {
+
+  @include respond-to( 'small' ) {
+    margin: 0;
+
+    .product-listing--featured:nth-of-type(odd) & {
+      margin-right: $baseSpacingUnit / 1.5;
+    }
+
+    .product-listing--featured:nth-of-type(even) & {
+      margin-left: $baseSpacingUnit / 1.5;
+    }
+  }
+}
+
+.product-listing--featured__image {
+  @include respond-to( 'small' ) {
+    width: 50%;
+    padding: 0;
+  }
+}
+
+.product-listing--featured__title {
+  font-size: $h2Size;
+  margin-bottom: $baseSpacingUnit;
 }
 
 /* Product Listing with centered text

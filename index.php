@@ -22,22 +22,36 @@ $hero = array(
 
 get_header(); ?>
 
-<div style="background-image: url(<?php echo $hero['image']['url'] ?>);"><!-- .hero -->
-	<h2><?php echo $hero['title']; ?></h2>
-	<?php if ( $hero['cta-text'] ) { ?>
-		<span><a href=""><?php echo $hero['cta-text']; ?></a></span>
-	<?php } ?>
-</div><!-- / .hero -->
+<main class="main" role="main">
+	<div class="hero" style="background-image: url(<?php echo $hero['image']['url'] ?>);"><!-- .hero -->
+		<div class="wrapper">
+			<h2 class="hero__title"><?php echo $hero['title']; ?></h2>
+			<?php if ( $hero['cta-text'] ) { ?>
+			<a href="" class="hero__cta btn btn--centered"><?php echo $hero['cta-text']; ?></a>
+			<?php } ?>
+		</div>
+	</div><!-- / .hero -->
 
-<?php 
+	<div class="block">
+		<div class="wrapper">
+			<?php cntrn_render_featured_products(); ?>
+		</div>
+	</div>
 
-// Show featured products
-cntrn_render_featured_products();
+	<div class="block block--coloured">
+		<div class="wrapper">
 
-// Show product categories
-cntrn_render_top_product_categories(true, false);
+		</div>
+	</div>
 
-?>
+	<div class="block block--last">
+		<div class="wrapper">
+			<?php cntrn_render_splash_blocks( 'menu splash-blocks disobey-wrapper-mob clearfix', 'splash-block splash-block__homepage col-12 col-sml-6' ); ?>
+		</div>
+	</div>
+
+	</div>
+</main>
 
 <?php get_footer(); ?>
 
