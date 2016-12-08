@@ -9,10 +9,10 @@
 
 get_header(); ?>
 
-
-
-<?php
-// Show WP-Google-Map
-echo do_shortcode('[wpgmza id="1"]'); ?>
+<main class="main" role="main">
+	<div class="wrapper">
+		<?php echo do_shortcode('[wpgmza id="1"]'); ?>
+	</div>
+</main>
 
 <?php get_footer(); ?>

@@ -16,18 +16,22 @@ $contact = array(
 
 get_header(); ?>
 
-<?php bloginfo( 'name' ); ?>
+<main class="main" role="main">
+	<div class="wrapper">
+		<?php bloginfo( 'name' ); ?>
 
-<p><?php echo $contact['address']; ?></p>
-<p><?php _e('Tel:', 'centurion'); echo $contact['telephone']; ?></p>
-<p><?php _e('Fax:', 'centurion'); echo $contact['fax']; ?></p>
+		<p><?php echo $contact['address']; ?></p>
+		<p><?php _e('Tel:', 'centurion'); echo $contact['telephone']; ?></p>
+		<p><?php _e('Fax:', 'centurion'); echo $contact['fax']; ?></p>
 
-<?php
-	// Start the loop.
-	while ( have_posts() ) : the_post();
-		// Show the content
-		the_content();
-	endwhile;
-?>
+		<?php
+			// Start the loop.
+			while ( have_posts() ) : the_post();
+				// Show the content
+				the_content();
+			endwhile;
+		?>
+	</div>
+</main>
 
 <?php get_footer(); ?>
