@@ -50,6 +50,7 @@
 						);
 						wp_nav_menu( $args );
 					?>
+					<?php get_search_form(); ?>
 				</div>
 			</nav>
 

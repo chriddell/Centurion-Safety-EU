@@ -28,6 +28,14 @@ function cntrn_multilang_setup() {
 add_action( 'after_setup_theme', 'cntrn_multilang_setup' );
 
 /**
+ * Add HTML5 theme support.
+ */
+function cntrn_html5_support() {
+    add_theme_support( 'html5', array( 'search-form' ) );
+}
+add_action( 'after_setup_theme', 'cntrn_html5_support' );
+
+/**
  * Enqueue scripts and styles
  */
 function cntrn_assets() {
