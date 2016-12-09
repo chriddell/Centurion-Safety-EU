@@ -893,7 +893,8 @@ video {
 /* ==========================================================================
     _hamburgers
 
-    Hamburger (menu icon) styles. Taken from https://github.com/jonsuh/hamburgers
+    Hamburger (menu icon) styles. 
+    Taken from https://github.com/jonsuh/hamburgers
    ========================================================================== */
 /* Settings
 ---------------------------------------- */
@@ -1014,7 +1015,7 @@ video {
   .nav--main,
   .nav--secondary {
     width: 100%;
-    position: static;
+    left: 0;
     background-color: #94aab3;
   }
 }
@@ -1113,9 +1114,8 @@ video {
 /* Header
 ---------------------------------------- */
 .menu--header {
-  width: calc(100% + 20px + 20px);
+  width: 100%;
   position: relative;
-  left: -20px;
   overflow: hidden;
 }
 
@@ -1132,9 +1132,9 @@ video {
   position: relative;
 }
 
-.menu--header__item > a {
+.menu--header__item > .menu__item__link {
   display: block;
-  padding: 13.3333333333px 40px;
+  padding: 13.3333333333px 20px;
 }
 
 @media (min-width: 1023px) {
@@ -1142,7 +1142,7 @@ video {
     border-top: 0;
     float: left;
   }
-  .menu--header__item > a {
+  .menu--header__item > .menu__item__link {
     padding: 20px 40px;
   }
 }
@@ -1164,7 +1164,7 @@ video {
   .menu--main-nav__item:hover {
     background-color: #76888f;
   }
-  .menu--main-nav__item > a {
+  .menu--main-nav__item > .menu__item__link {
     padding: 20px 20px;
   }
 }
@@ -1172,7 +1172,7 @@ video {
 .menu--main-nav__item:after {
   content: '\203A';
   position: absolute;
-  right: 40px;
+  right: 20px;
   top: 11px;
 }
 
@@ -1200,22 +1200,22 @@ video {
     line-height: 3.35;
     cursor: pointer;
   }
-  .menu--lang-selector__item:first-of-type > a {
+  .menu--lang-selector__item:first-of-type .menu__item__link {
     padding: 0 0 0 30px;
   }
-  .menu--lang-selector__item:first-of-type > a:after {
+  .menu--lang-selector__item:first-of-type .menu__item__link:after {
     content: '\25BE';
     position: absolute;
     right: 40px;
   }
-  .is-active .menu--lang-selector__item:first-of-type > a:after {
+  .is-active .menu--lang-selector__item:first-of-type .menu__item__link:after {
     -webkit-transform: rotateZ(180deg);
             transform: rotateZ(180deg);
   }
 }
 
 @media (min-width: 1023px) and (min-width: 1023px) {
-  .menu--lang-selector__item:first-of-type > a:after {
+  .menu--lang-selector__item:first-of-type .menu__item__link:after {
     right: 10px;
   }
 }
@@ -1241,7 +1241,7 @@ video {
   overflow: visible;
 }
 
-.is-active .menu--lang-selector__item:not(:first-of-type) > a {
+.is-active .menu--lang-selector__item:not(:first-of-type) > .menu__item__link {
   padding: 13.3333333333px 40px;
 }
 
@@ -1260,7 +1260,7 @@ video {
   .is-active .menu--lang-selector__item:not(:first-of-type):nth-of-type(4) {
     top: 180px;
   }
-  .is-active .menu--lang-selector__item:not(:first-of-type) > a {
+  .is-active .menu--lang-selector__item:not(:first-of-type) > .menu__item__link {
     padding: 0 0 0 30px;
   }
 }
@@ -1273,6 +1273,104 @@ video {
 
 /* Vendor (WP sub-menus)
 ---------------------------------------- */
+/* ==========================================================================
+    _forms
+
+    Form styling
+   ========================================================================== */
+/* Generic
+---------------------------------------- */
+.form__input {
+  font-family: effra, Tahoma, Verdana, Arial, sans-serif;
+}
+
+.form__input--submit {
+  -webkit-appearance: none;
+  border: 0;
+  background-color: #262e61;
+}
+
+/* Search Form
+---------------------------------------- */
+@media (min-width: 1023px) {
+  .form--search {
+    float: right;
+  }
+}
+
+.form--search ::-webkit-input-placeholder {
+  color: #FFFFFF;
+}
+
+.form--search ::-moz-placeholder {
+  color: #FFFFFF;
+}
+
+.form--search :-ms-input-placeholder {
+  color: #FFFFFF;
+}
+
+.form--search ::placeholder {
+  color: #FFFFFF;
+}
+
+/* Search in header
+---------------------------------------- */
+.header--site .form--search {
+  height: 60px;
+}
+
+.header--site .form__input {
+  height: 100%;
+  border: 0;
+}
+
+@media (min-width: 1023px) {
+  .header--site .form--search__input--submit {
+    height: 100% !important;
+    width: 70px !important;
+    padding: 0;
+    position: static !important;
+    float: right;
+  }
+}
+
+.header--site .form__input--search {
+  background-color: #a9bbc2;
+  color: #FFFFFF;
+  background-color: #262e61;
+}
+
+.header--site .form__input--search:focus {
+  background-color: #343f86;
+}
+
+@media (min-width: 1023px) {
+  .header--site .form__input--search {
+    float: left;
+  }
+}
+
+.header--site .form__input--submit {
+  background-color: #76888f;
+}
+
+@media (min-width: 1023px) {
+  .header--site .form--search .form__input--search {
+    width: 0;
+    padding: 0;
+    visibility: hidden;
+    pointer-events: none;
+  }
+  .header--site .form--search:hover .form__input--search {
+    width: 300px;
+    padding: 20px;
+    background-color: #a9bbc2;
+    visibility: visible;
+    pointer-events: all;
+  }
+}
+
 /* ==========================================================================
     _header
     
@@ -1294,6 +1392,10 @@ video {
 .header--site a {
   color: #FFFFFF;
   text-decoration: none;
+}
+
+.header--site a:hover {
+  text-decoration: underline;
 }
 
 .header--site__logo {
@@ -1778,7 +1880,8 @@ Powered by JS
 }
 
 .sr-only,
-.sub-menu {
+.sub-menu,
+.header--site .form--search__input--submit {
   position: absolute;
   left: -1000000px;
   top: auto;

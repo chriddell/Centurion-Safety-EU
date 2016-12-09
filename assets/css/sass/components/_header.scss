@@ -17,6 +17,10 @@
   a {
     color: $lightColor;
     text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
   }
 }
 

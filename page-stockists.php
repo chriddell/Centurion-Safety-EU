@@ -11,7 +11,9 @@ get_header(); ?>
 
 <main class="main" role="main">
 	<div class="wrapper">
-		<?php echo do_shortcode('[wpgmza id="1"]'); ?>
+		<div class="block">
+			<?php echo do_shortcode('[wpgmza id="1"]'); ?>
+		</div>
 	</div>
 </main>
 

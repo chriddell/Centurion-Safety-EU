@@ -58,7 +58,7 @@
 				<div class="wrapper">
 					<ul class="menu menu--header">
 						<li class="menu__item menu--header__item header__custom-link">
-							<a href="<?php echo cntrn_stockists_link(); ?>" class="hover-underline"><?php _e( 'Find a valued stockist', 'centurion' ); ?></a>
+							<a href="<?php echo cntrn_stockists_link(); ?>" class="menu__item__link hover-underline"><?php _e( 'Find a valued stockist', 'centurion' ); ?></a>
 						</li>
 					</ul>
 					<!--
@@ -78,28 +78,28 @@
 						<?php $currentLang = qtrans_getLanguage(); ?>
 						<?php switch ( $currentLang ) {
 							case 'en': ?>
-								<li class="menu__item menu--header__item menu--lang-selector__item"><a href="<?php echo site_url('en/'); ?>" class="hover-underline">English</a></li>
-								<li class="menu__item menu--header__item menu--lang-selector__item"><a href="<?php echo site_url('fr/'); ?>" class="hover-underline">Français</a></li>
-								<li class="menu__item menu--header__item menu--lang-selector__item"><a href="<?php echo site_url('de/'); ?>" class="hover-underline">Deutsch</a></li>
-								<li class="menu__item menu--header__item menu--lang-selector__item"><a href="<?php echo site_url('es/'); ?>" class="hover-underline">Español</a></li>
+								<li class="menu__item menu--header__item menu--lang-selector__item"><a href="<?php echo site_url('en/'); ?>" class="menu__item__link">English</a></li>
+								<li class="menu__item menu--header__item menu--lang-selector__item"><a href="<?php echo site_url('fr/'); ?>" class="menu__item__link">Français</a></li>
+								<li class="menu__item menu--header__item menu--lang-selector__item"><a href="<?php echo site_url('de/'); ?>" class="menu__item__link">Deutsch</a></li>
+								<li class="menu__item menu--header__item menu--lang-selector__item"><a href="<?php echo site_url('es/'); ?>" class="menu__item__link">Español</a></li>
 							<?php break; ?>
 							<?php case 'de': ?>
-								<li class="menu__item menu--header__item menu--lang-selector__item"><a href="<?php echo site_url('de/'); ?>" class="hover-underline">Deutsch</a></li>
-								<li class="menu__item menu--header__item menu--lang-selector__item"><a href="<?php echo site_url('en/'); ?>" class="hover-underline">English</a></li>
-								<li class="menu__item menu--header__item menu--lang-selector__item"><a href="<?php echo site_url('fr/'); ?>" class="hover-underline">Français</a></li>
-								<li class="menu__item menu--header__item menu--lang-selector__item"><a href="<?php echo site_url('es/'); ?>" class="hover-underline">Español</a></li>
+								<li class="menu__item menu--header__item menu--lang-selector__item"><a href="<?php echo site_url('de/'); ?>" class="menu__item__link">Deutsch</a></li>
+								<li class="menu__item menu--header__item menu--lang-selector__item"><a href="<?php echo site_url('en/'); ?>" class="menu__item__link">English</a></li>
+								<li class="menu__item menu--header__item menu--lang-selector__item"><a href="<?php echo site_url('fr/'); ?>" class="menu__item__link">Français</a></li>
+								<li class="menu__item menu--header__item menu--lang-selector__item"><a href="<?php echo site_url('es/'); ?>" class="menu__item__link">Español</a></li>
 							<?php break; ?>
 							<?php case 'fr': ?>
-								<li class="menu__item menu--header__item menu--lang-selector__item"><a href="<?php echo site_url('fr/'); ?>" class="hover-underline">Français</a></li>
-								<li class="menu__item menu--header__item menu--lang-selector__item"><a href="<?php echo site_url('en/'); ?>" class="hover-underline">English</a></li>
-								<li class="menu__item menu--header__item menu--lang-selector__item"><a href="<?php echo site_url('de/'); ?>" class="hover-underline">Deutsch</a></li>
-								<li class="menu__item menu--header__item menu--lang-selector__item"><a href="<?php echo site_url('es/'); ?>" class="hover-underline">Español</a></li>
+								<li class="menu__item menu--header__item menu--lang-selector__item"><a href="<?php echo site_url('fr/'); ?>" class="menu__item__link">Français</a></li>
+								<li class="menu__item menu--header__item menu--lang-selector__item"><a href="<?php echo site_url('en/'); ?>" class="menu__item__link">English</a></li>
+								<li class="menu__item menu--header__item menu--lang-selector__item"><a href="<?php echo site_url('de/'); ?>" class="menu__item__link">Deutsch</a></li>
+								<li class="menu__item menu--header__item menu--lang-selector__item"><a href="<?php echo site_url('es/'); ?>" class="menu__item__link">Español</a></li>
 							<?php break; ?>
 							<?php case 'es': ?>
-								<li class="menu__item menu--header__item menu--lang-selector__item"><a href="<?php echo site_url('es/'); ?>" class="hover-underline">Español</a></li>
-								<li class="menu__item menu--header__item menu--lang-selector__item"><a href="<?php echo site_url('en/'); ?>" class="hover-underline">English</a></li>
-								<li class="menu__item menu--header__item menu--lang-selector__item"><a href="<?php echo site_url('fr/'); ?>" class="hover-underline">Français</a></li>
-								<li class="menu__item menu--header__item menu--lang-selector__item"><a href="<?php echo site_url('de/'); ?>" class="hover-underline">Deutsch</a></li>
+								<li class="menu__item menu--header__item menu--lang-selector__item"><a href="<?php echo site_url('es/'); ?>" class="menu__item__link">Español</a></li>
+								<li class="menu__item menu--header__item menu--lang-selector__item"><a href="<?php echo site_url('en/'); ?>" class="menu__item__link">English</a></li>
+								<li class="menu__item menu--header__item menu--lang-selector__item"><a href="<?php echo site_url('fr/'); ?>" class="menu__item__link">Français</a></li>
+								<li class="menu__item menu--header__item menu--lang-selector__item"><a href="<?php echo site_url('de/'); ?>" class="menu__item__link">Deutsch</a></li>
 							<?php break; ?>
 						<?php } ?>
 					</ul>

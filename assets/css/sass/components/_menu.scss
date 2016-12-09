@@ -67,9 +67,8 @@
 
 .menu--header {
   // adjust nav for container on mobile
-  width: calc(100% + 20px + 20px);
+  width: 100%;
   position: relative;
-  left: -20px;
   overflow: hidden;
 
   @include respond-to( 'medium' ) {
@@ -83,16 +82,16 @@
   border-top: 1px solid darken($brandColorOne, 10%);
   position: relative;
 
-  > a {
+  > .menu__item__link {
     display: block;
-    padding: $baseSpacingUnit / 3 * 2 $baseSpacingUnit * 2;
+    padding: $baseSpacingUnit / 1.5 $baseSpacingUnit;
   }
 
   @include respond-to( 'medium' ) {
     border-top: 0;
     float: left;
 
-    > a {
+    > .menu__item__link {
       padding: $baseSpacingUnit $baseSpacingUnit * 2;
     }
   }
@@ -120,7 +119,7 @@
       background-color: $brandColorTwoDark;
     }
 
-    > a {
+    > .menu__item__link {
       padding: $baseSpacingUnit $baseSpacingUnit;
     }
   }
@@ -128,7 +127,7 @@
   &:after {
     content: '\203A';
     position: absolute;
-    right: $baseSpacingUnit * 2;
+    right: $baseSpacingUnit;
     top: 11px;
 
     @include respond-to( 'medium' ) {
@@ -156,7 +155,8 @@
       line-height: 3.35;
       cursor: pointer;
 
-      > a {
+
+      .menu__item__link {
         padding: 0 0 0 $baseSpacingUnit * 1.5;
 
         &:after {
@@ -191,13 +191,13 @@
     }
 
     // ACTIVE (visible) styles
-    // for defualt hidden item
+    // for default hidden items
     .is-active & {
       height: auto;
       border-top: 1px solid darken($brandColorOne, 10%);
       overflow: visible;
 
-      > a {
+      > .menu__item__link {
         padding: $baseSpacingUnit / 3 * 2 $baseSpacingUnit * 2;
       }
 
@@ -214,7 +214,7 @@
           }
         }
 
-        > a {
+        > .menu__item__link {
           padding: 0 0 0 $baseSpacingUnit * 1.5;
         }
       }
@@ -231,9 +231,3 @@
 
 /* Vendor (WP sub-menus)
 ---------------------------------------- */
-
-.menu--header__item--has-submenu:hover {
-  > ul {
-    // reset 
-  }
-}

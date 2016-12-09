@@ -9,16 +9,15 @@
 
 get_header(); ?>
 
-	<section id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
+<main class="main" role="main">
+	<div class="wrapper">
+		<div class="block">
 
-			<header class="page-header dir-header">
+			<header>
 				<h1 class="page-title"><?php printf( __( 'Search Results for: %s', 'onesocial' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
-				<?php get_search_form(); ?>
 			</header>
 
-			<div id="content" role="main" class="search-content-wrap">
-				<section class="search-content">
+			<section class="search-content">
 				<?php $products = false; $news = false; $advice = false; ?>
 				<?php if ( have_posts() ) : ?>
 					<div class="search-content-inner">
@@ -48,10 +47,10 @@ get_header(); ?>
 					<?php get_template_part( 'template-parts/content', 'none' ); ?>
 
 				<?php endif; ?>
-				</section>
-			</div>
+			</section>
 
-		</main><!-- .site-main -->
-	</section><!-- .content-area -->
+		</div>
+	</div>
+</main><!-- .site-main -->
 
 <?php get_footer(); ?>

@@ -1,0 +1,104 @@
+/* ==========================================================================
+    _forms
+
+    Form styling
+   ========================================================================== */
+
+/* Generic
+---------------------------------------- */
+.form__input {
+  font-family: $mainFontFamily;
+}
+
+.form__input--submit {
+  -webkit-appearance: none;
+  border: 0;
+  background-color: $brandColorOne;
+}
+
+/* Search Form
+---------------------------------------- */
+
+.form--search {
+  @include respond-to( 'medium' ) {
+    float: right;
+  }
+}
+
+.form--search ::placeholder {
+  color: $lightColor;
+}
+
+/* Search in header
+---------------------------------------- */
+
+.header--site .form--search {
+  height: 60px;
+}
+
+.header--site .form__input {
+  height: 100%;
+  border: 0;
+}
+
+.header--site .form--search__input--submit {
+
+  // Hide these elements on smaller devices
+  // and trust in user using the Go / Enter 
+  // on their device
+  @extend %sr-only;
+
+  @include respond-to( 'medium' ) {
+
+    // Unhide on larger devices
+    // Sorry, have to use !importants
+    height: 100% !important;
+    width: 70px !important;
+    padding: 0;
+    position: static !important;
+    float: right;
+  }
+}
+
+.header--site .form__input--search {
+  background-color: #a9bbc2;
+  color: $lightColor;
+  background-color: $brandColorOne;
+
+  &:focus {
+    background-color: lighten($brandColorOne, 10%);
+  }
+
+  @include respond-to( 'medium' ) {
+    float: left;
+  }
+}
+
+.header--site .form__input--submit {
+  background-color: #76888f;
+}
+
+// Active & inactive styles
+// -- not applicable on small devices
+.header--site .form--search {
+
+  @include respond-to( 'medium' ) {
+
+    .form__input--search {
+      width: 0;
+      padding: 0;
+      visibility: hidden;
+      pointer-events: none;
+    }
+
+    &:hover {
+      .form__input--search {
+        width: 300px;
+        padding: $baseSpacingUnit;
+        background-color: #a9bbc2;
+        visibility: visible;
+        pointer-events: all;
+      }
+    }
+  }
+}

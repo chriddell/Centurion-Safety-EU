@@ -506,11 +506,11 @@ function cntrn_stockists_link() {
  * 
  * from http://stackoverflow.com/questions/26180688/how-to-add-class-to-link-in-wp-nav-menu
  */
-function cntrn_add_link_class_wp_nav_menu_footer( $ul_class ) {
+function cntrn_add_link_class_wp_nav_menu( $ul_class ) {
 
-	return preg_replace('/<a /', '<a class="menu__item__link hover-underline"', $ul_class);
+	return preg_replace('/<a /', '<a class="menu__item__link"', $ul_class);
 }
-add_filter( 'wp_nav_menu', 'cntrn_add_link_class_wp_nav_menu_footer');
+add_filter( 'wp_nav_menu', 'cntrn_add_link_class_wp_nav_menu');
 
 /**
  * Re-order search results from
