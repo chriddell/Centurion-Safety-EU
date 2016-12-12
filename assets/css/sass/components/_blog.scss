@@ -1,0 +1,86 @@
+/* ==========================================================================
+    _blog
+
+    Blog posts - all types, including single post and previews (archive listing)
+   ========================================================================== */
+
+.blog__title {
+  color: $brandColorOne;
+}
+
+.blog__tags {
+  display: block;
+}
+
+.blog__tags__tag {
+  padding: 3px 10px;
+  margin-bottom: $baseSpacingUnit / 2;
+  border-radius: 20px;
+  display: inline-block;
+  font-size: 0.9em;
+  white-space: nowrap;
+  color: $brandColorOne;
+  background-color: lighten($borderColor, 7.5%);
+}
+
+/* Preview (Archive listing)
+---------------------------------------- */
+
+.blog--preview__container {
+  @include respond-to( 'small' ) {
+    padding-left: $baseSpacingUnit;
+  }
+}
+
+.blog--preview__image {
+  height: 140px;
+  margin-bottom: $baseSpacingUnit;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+
+  @include respond-to( 'small' ) {
+    height: 225px;
+  }
+}
+
+.blog--preview__author {
+  color: $brandColorTwo; 
+}
+
+.blog--preview__link {
+  display: inline-block;
+  margin-bottom: $baseSpacingUnit;
+}
+
+/* Events
+---------------------------------------- */
+
+.eventlist {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.eventlist__title {
+  color: $brandColorFour;
+}
+
+.event {
+  margin-bottom: $baseSpacingUnit * 2;
+}
+
+.event__title {
+  margin-bottom: $baseSpacingUnit;
+  font-size: $h3Size;
+  color: $brandColorOne;
+}
+
+.event__text {
+  margin-top: 0;
+  color: $brandColorTwo;
+}
+
+.event__text--date {
+  margin-bottom: 0;
+}

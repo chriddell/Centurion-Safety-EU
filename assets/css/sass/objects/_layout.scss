@@ -21,17 +21,17 @@
     align-items: stretch;
   }
 
-  .flexbox .main--has-sidebar,
-  .flexbox .sidebar {
+  .flexbox .flex-content .main--has-sidebar,
+  .flexbox .flex-content .sidebar {
     flex: 1 100%;
   }
 
-  .flexbox .main--has-sidebar {
+  .flexbox .flex-content .main--has-sidebar {
     flex: 10 75%;
     order: 2;
   }
 
-  .flexbox .sidebar {
+  .flexbox .flex-content .sidebar {
     flex: 1 auto;
     order: 1;
   }

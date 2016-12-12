@@ -23,6 +23,7 @@ html {
 
 a {
   text-decoration: none;
+  color: $brandColorHighlight;
 
   &:hover {
     text-decoration: underline;

@@ -11,15 +11,27 @@
   padding: $baseSpacingUnit $baseSpacingUnit;
   border: 2px solid $lightColor;
   border-radius: 4px;
+  font-size: $h4Size;
+  text-align: center;
   line-height: 1;
   color: $lightColor;
-  @extend %like-h4;
 
   &:hover {
     text-decoration: none;
   }
 }
 
+.btn--pink {
+  color: $brandColorHighlight;
+  border-color: $brandColorHighlight;
+}
+
 .btn--centered {
   margin: 0 auto;
+}
+
+.btn--full-width {
+  width: 100%;
+  max-width: none;
+  margin: 0;
 }

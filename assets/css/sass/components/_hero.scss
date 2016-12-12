@@ -13,6 +13,7 @@
   background-size: cover;
   background-position: 25% 0;
   background-repeat: no-repeat;
+  background-color: $brandColorThree;
 
   .flexbox & {
     display: flex;
@@ -37,4 +38,25 @@
 .hero__cta {
   box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.45);
   text-shadow: 1px 2px 5px rgba(0, 0, 0, 0.45);
+}
+
+/* Variations
+---------------------------------------- */
+
+.hero--blog {
+  height: 350px;
+  background-position: center center;
+}
+
+.hero--blog__title {
+  margin: 0;
+  text-shadow: none;
+}
+
+.hero--advice {
+  background-image: url(../img/advice-hero.jpg);
+}
+
+.hero--news {
+  background-image: url(../img/news-hero.jpg);
 }

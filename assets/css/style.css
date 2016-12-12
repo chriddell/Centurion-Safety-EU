@@ -746,14 +746,14 @@ template {
         -ms-flex-align: stretch;
             align-items: stretch;
   }
-  .flexbox .main--has-sidebar,
-  .flexbox .sidebar {
+  .flexbox .flex-content .main--has-sidebar,
+  .flexbox .flex-content .sidebar {
     -webkit-box-flex: 1;
     -webkit-flex: 1 100%;
         -ms-flex: 1 100%;
             flex: 1 100%;
   }
-  .flexbox .main--has-sidebar {
+  .flexbox .flex-content .main--has-sidebar {
     -webkit-box-flex: 10;
     -webkit-flex: 10 75%;
         -ms-flex: 10 75%;
@@ -763,7 +763,7 @@ template {
         -ms-flex-order: 2;
             order: 2;
   }
-  .flexbox .sidebar {
+  .flexbox .flex-content .sidebar {
     -webkit-box-flex: 1;
     -webkit-flex: 1 auto;
         -ms-flex: 1 auto;
@@ -832,6 +832,7 @@ html {
 
 a {
   text-decoration: none;
+  color: #e83272;
 }
 
 a:hover {
@@ -864,8 +865,7 @@ h3,
   font-size: 1.2em;
 }
 
-h4,
-.btn {
+h4 {
   margin-top: 0;
   font-weight: normal;
   font-size: 1.1em;
@@ -1461,6 +1461,17 @@ video {
   color: #9ba399;
 }
 
+.sidebar__title {
+  color: #262e61;
+  font-size: 1.2em;
+}
+
+@media (min-width: 767px) {
+  .sidebar--right {
+    padding-left: 40px;
+  }
+}
+
 /* Show/hide
 
 Powered by JS
@@ -1492,8 +1503,29 @@ Powered by JS
   }
 }
 
-.no-js .sidebar {
+.no-js .sidebar--has-filter {
   display: none;
+}
+
+/* ==========================================================================
+    _main
+
+    Styles for main-content element (<main>) variations
+   ========================================================================== */
+.main--blog {
+  margin: 40px 0;
+}
+
+.main--has-sidebar--right {
+  border-bottom: 1px solid #dbdbdb;
+}
+
+@media (min-width: 767px) {
+  .main--has-sidebar--right {
+    padding-right: 40px;
+    border-right: 1px solid #dbdbdb;
+    border-bottom: none;
+  }
 }
 
 /* ==========================================================================
@@ -1507,6 +1539,8 @@ Powered by JS
   padding: 20px 20px;
   border: 2px solid #FFFFFF;
   border-radius: 4px;
+  font-size: 1.1em;
+  text-align: center;
   line-height: 1;
   color: #FFFFFF;
 }
@@ -1515,8 +1549,19 @@ Powered by JS
   text-decoration: none;
 }
 
+.btn--pink {
+  color: #e83272;
+  border-color: #e83272;
+}
+
 .btn--centered {
   margin: 0 auto;
+}
+
+.btn--full-width {
+  width: 100%;
+  max-width: none;
+  margin: 0;
 }
 
 /* ==========================================================================
@@ -1583,10 +1628,6 @@ Powered by JS
   margin-bottom: 20px;
   color: #262e61;
   font-weight: normal;
-}
-
-.product-listing__link {
-  color: #e83272;
 }
 
 .product-listing__category-title,
@@ -1835,6 +1876,7 @@ Powered by JS
   background-size: cover;
   background-position: 25% 0;
   background-repeat: no-repeat;
+  background-color: #eaeef0;
 }
 
 .flexbox .hero {
@@ -1868,6 +1910,112 @@ Powered by JS
 .hero__cta {
   box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.45);
   text-shadow: 1px 2px 5px rgba(0, 0, 0, 0.45);
+}
+
+/* Variations
+---------------------------------------- */
+.hero--blog {
+  height: 350px;
+  background-position: center center;
+}
+
+.hero--blog__title {
+  margin: 0;
+  text-shadow: none;
+}
+
+.hero--advice {
+  background-image: url(../img/advice-hero.jpg);
+}
+
+.hero--news {
+  background-image: url(../img/news-hero.jpg);
+}
+
+/* ==========================================================================
+    _blog
+
+    Blog posts - all types, including single post and previews (archive listing)
+   ========================================================================== */
+.blog__title {
+  color: #262e61;
+}
+
+.blog__tags {
+  display: block;
+}
+
+.blog__tags__tag {
+  padding: 3px 10px;
+  margin-bottom: 10px;
+  border-radius: 20px;
+  display: inline-block;
+  font-size: 0.9em;
+  white-space: nowrap;
+  color: #262e61;
+  background-color: #eeeeee;
+}
+
+/* Preview (Archive listing)
+---------------------------------------- */
+@media (min-width: 767px) {
+  .blog--preview__container {
+    padding-left: 20px;
+  }
+}
+
+.blog--preview__image {
+  height: 140px;
+  margin-bottom: 20px;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+@media (min-width: 767px) {
+  .blog--preview__image {
+    height: 225px;
+  }
+}
+
+.blog--preview__author {
+  color: #94aab3;
+}
+
+.blog--preview__link {
+  display: inline-block;
+  margin-bottom: 20px;
+}
+
+/* Events
+---------------------------------------- */
+.eventlist {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.eventlist__title {
+  color: #9ba399;
+}
+
+.event {
+  margin-bottom: 40px;
+}
+
+.event__title {
+  margin-bottom: 20px;
+  font-size: 1.2em;
+  color: #262e61;
+}
+
+.event__text {
+  margin-top: 0;
+  color: #94aab3;
+}
+
+.event__text--date {
+  margin-bottom: 0;
 }
 
 /* ==========================================================================

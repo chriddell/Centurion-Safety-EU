@@ -15,6 +15,18 @@
   color: $brandColorFour;
 }
 
+.sidebar__title {
+  color: $brandColorOne;
+  font-size: $h3Size;
+}
+
+.sidebar--right {
+
+  @include respond-to( 'small' ) {
+    padding-left: $baseSpacingUnit * 2;
+  }
+}
+
 /* Show/hide
 
 Powered by JS
@@ -51,7 +63,7 @@ Powered by JS
   }
 }
 
-// Hide sidebar if no javascripts :(
-.no-js .sidebar {
+// Hide filter sidebar if no javascripts :(
+.no-js .sidebar--has-filter {
   display: none;
 }

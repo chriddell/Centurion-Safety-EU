@@ -1,0 +1,19 @@
+/* ==========================================================================
+    _main
+
+    Styles for main-content element (<main>) variations
+   ========================================================================== */
+
+.main--blog {
+  margin: $baseSpacingUnit * 2 0;
+}
+
+.main--has-sidebar--right {
+  border-bottom: 1px solid $borderColor;
+
+  @include respond-to( 'small' ) {
+    padding-right: $baseSpacingUnit * 2;
+    border-right: 1px solid $borderColor;
+    border-bottom: none;
+  }
+}

@@ -31,7 +31,7 @@ add_action( 'after_setup_theme', 'cntrn_multilang_setup' );
  * Add HTML5 theme support.
  */
 function cntrn_html5_support() {
-    add_theme_support( 'html5', array( 'search-form' ) );
+		add_theme_support( 'html5', array( 'search-form' ) );
 }
 add_action( 'after_setup_theme', 'cntrn_html5_support' );
 
@@ -57,15 +57,15 @@ add_action( 'wp_enqueue_scripts', 'cntrn_assets' );
  */
 function cntrn_jquery() {
 
-  if (!is_admin()) {
+	if (!is_admin()) {
 
-  	// Deregister wp default jQuery
-    wp_deregister_script( 'jquery' );
+		// Deregister wp default jQuery
+		wp_deregister_script( 'jquery' );
 
-    // Register it from CDN
-    wp_register_script('jquery', 'https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js', false, '3.1.1');
-    wp_enqueue_script('jquery');
-  }
+		// Register it from CDN
+		wp_register_script('jquery', 'https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js', false, '3.1.1');
+		wp_enqueue_script('jquery');
+	}
 }
 add_action( 'init', 'cntrn_jquery' );
 
@@ -510,7 +510,7 @@ function cntrn_add_link_class_wp_nav_menu( $ul_class ) {
 
 	return preg_replace('/<a /', '<a class="menu__item__link"', $ul_class);
 }
-add_filter( 'wp_nav_menu', 'cntrn_add_link_class_wp_nav_menu');
+add_filter( 'wp_nav_menu', 'cntrn_add_link_class_wp_nav_menu' );
 
 /**
  * Re-order search results from
@@ -520,25 +520,85 @@ add_filter( 'wp_nav_menu', 'cntrn_add_link_class_wp_nav_menu');
  * http://www.relevanssi.com/user-manual/relevanssi_hits_filter/
  */
 function cntrn_reorder_search_results($hits) {
-  $types = array();
 
-  $types['advice'] = array();
-  $types['news'] = array();
-  $types['product'] = array();
+	$types = array();
 
-  // Split the post types in array $types
-  if (!empty($hits)) {
-  	foreach ($hits[0] as $hit) {
-  		// If search returns null for a post_type,
-  		// define as an array so we get no PHP error
-  		// Fix from: http://pastebin.com/jmjWZik1 (line 37)
-  		if (!is_array($types[$hit->post_type])) $types[$hit->post_type] = array();
-  		array_push($types[$hit->post_type], $hit);
-  	}
-  }
+	$types['advice'] = array();
+	$types['news'] = array();
+	$types['product'] = array();
 
-  // Merge back to $hits in the desired order
-  $hits[0] = array_merge($types['product'], $types['advice'], $types['news']);
-  return $hits;
+	// Split the post types in array $types
+	if (!empty($hits)) {
+		foreach ($hits[0] as $hit) {
+			// If search returns null for a post_type,
+			// define as an array so we get no PHP error
+			// Fix from: http://pastebin.com/jmjWZik1 (line 37)
+			if (!is_array($types[$hit->post_type])) $types[$hit->post_type] = array();
+			array_push($types[$hit->post_type], $hit);
+		}
+	}
+
+	// Merge back to $hits in the desired order
+	$hits[0] = array_merge($types['product'], $types['advice'], $types['news']);
+	return $hits;
 }
-add_filter('relevanssi_hits_filter', 'cntrn_reorder_search_results');
+add_filter( 'relevanssi_hits_filter', 'cntrn_reorder_search_results' );
+
+/**
+ * Remove archive label from title
+ * https://developer.wordpress.org/reference/functions/get_the_archive_title/#user-contributed-notes
+ */
+function my_theme_archive_title( $title ) {
+
+	if ( is_category() ) {
+		$title = single_cat_title( '', false );
+	} elseif ( is_tag() ) {
+		$title = single_tag_title( '', false );
+	} elseif ( is_author() ) {
+		$title = '<span class="vcard">' . get_the_author() . '</span>';
+	} elseif ( is_post_type_archive() ) {
+		$title = post_type_archive_title( '', false );
+	} elseif ( is_tax() ) {
+		$title = single_term_title( '', false );
+	}
+	
+	return $title;
+}
+add_filter( 'get_the_archive_title', 'my_theme_archive_title' );
+
+/**
+ * Allow SVG uploads
+ */
+function cntrn_mime_types( $mimes ) {
+
+  $mimes['svg'] = 'image/svg+xml';
+  return $mimes;
+}
+add_filter('upload_mimes', 'cntrn_mime_types');
+
+/**
+ * Get all posts with post-type 'event'
+ */
+function cntrn_render_events_posts() {
+
+	// Only events, all of them
+	$args = array(
+		'post_type' 			=> 'event',
+		'posts_per_page' 	=> 1
+	);
+
+	$the_query = new WP_Query($args);
+
+	/** Loop our query **/
+	if ( $the_query->have_posts() ) {
+		echo '<ul class="eventlist">';
+		while ( $the_query->have_posts() ) {
+			$the_query->the_post();
+			get_template_part( 'template-parts/content', 'event' );
+		}
+		echo '</ul>';
+	}
+
+	/** Restore original post data **/
+	wp_reset_postdata();
+}
