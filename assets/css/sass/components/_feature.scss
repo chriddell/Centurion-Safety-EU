@@ -6,15 +6,17 @@
 
 .feature-block {
   position: relative;
+  min-height: 600px;
 
   @include respond-to( 'small' ) {
     height: 100vh;
     min-height: 600px; // Fallback
+    max-height: 800px;
   }
 }
 
 .feature-block__content {
-  padding: $baseSpacingUnit * 1.5 0;
+  padding: $baseSpacingUnit * 2 0;
 
   @include respond-to( 'small' ) {
     padding: $baseSpacingUnit * 5;
@@ -37,6 +39,7 @@
 /* Layout variations
 ---------------------------------------- */
 
+.feature-block--one__content,
 .feature-block--three__content,
 .feature-block--four__content,
 .feature-block--five__content {
@@ -45,8 +48,9 @@
   }
 }
 
-.feature-block--four__content {
-  // Shift fourth block content to
+.feature-block--four__content,
+.feature-block--one__content {
+  // Shift content to
   // right-hand side
   right: 0;
 }
@@ -56,13 +60,6 @@
 
 .feature-block--has-bg {
   @include splash-bg();
-}
-
-.feature-block--half--has-bg {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
 }
 
 .feature-block--one {
@@ -109,9 +106,25 @@
   color: $brandColorTwo;
 }
 
+/* Two-column block
+---------------------------------------- */
+
+.feature-block__half--has-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+}
+
+
 /* Trumps
 ---------------------------------------- */
 
 .feature-block--one__content {
   float: right;
+}
+
+.feature-block--two__content {
+  padding-left: 0;
+  padding-right: 0;
 }

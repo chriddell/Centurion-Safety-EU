@@ -31,7 +31,7 @@ get_header(); ?>
 	</div><!-- / .hero -->
 
 	<div class="feature-block feature-block--one feature-block--is-split clearfix">
-		<div class="feature-block--half feature-block--has-bg feature-block--half--has-bg feature-block--one--has-bg col-sml-6"></div>
+		<div class="feature-block__half feature-block--has-bg feature-block--half--has-bg feature-block--one--has-bg col-sml-6"></div>
 		<div class="wrapper">
 			<div class="feature-block__content feature-block--one__content feature-block--half feature-block--half__content col-12 col-sml-6">
 				<h2 class="feature-block__title feature-block--one__title">Why we're here</h2>
@@ -47,8 +47,54 @@ get_header(); ?>
 			<div class="feature-block__content feature-block--two__content">
 				<h3 class="feature-block__title feature-block--two__title">Experts in head protection since the 19th century</h3>
 
-				<!-- Insert slick -->
-				
+				<!-- slick.js slider -->
+				<div class="timeline" id="slick">
+					<div class="timeline__elem timeline__elem--one">
+						<img src="<?php echo get_template_directory_uri() . '/assets/img/timeline/tank-helmet-1942.png'; ?>" class="timeline__elem__image"/>
+						<h4 class="timeline__elem__title">Miners' Helmet</h4>
+						<p class="timeline__elem__copy">Worn by thousands of miners across the world, including royalty</p>
+					</div>
+					<div class="timeline__elem timeline__elem--two">
+						<img src="<?php echo get_template_directory_uri() . '/assets/img/timeline/tank-helmet-1942.png'; ?>" class="timeline__elem__image"/>
+						<h4 class="timeline__elem__title">Tank Helmet</h4>
+						<p class="timeline__elem__copy">Adaptations of the miners hat - even used for "Manning" dummy gun emplacements</p>
+					</div>
+					<div class="timeline__elem timeline__elem--three">
+						<img src="<?php echo get_template_directory_uri() . '/assets/img/timeline/tank-helmet-1942.png'; ?>" class="timeline__elem__image"/>
+						<h4 class="timeline__elem__title">Motorcycle Helmet</h4>
+						<p class="timeline__elem__copy">Motorcycle helmets moved from two layers of pulp to Fibreglass in 1950’s</p>
+					</div>
+					<div class="timeline__elem timeline__elem--four">
+						<img src="<?php echo get_template_directory_uri() . '/assets/img/timeline/tank-helmet-1942.png'; ?>" class="timeline__elem__image"/>
+						<h4 class="timeline__elem__title">Motorcycle Helmet</h4>
+						<p class="timeline__elem__copy">First injection moulded motorcycle helmet launched 1973, by 1978 the “Sprint” was the biggest selling helmet in UK</p>
+					</div>
+					<div class="timeline__elem timeline__elem--five">
+						<img src="<?php echo get_template_directory_uri() . '/assets/img/timeline/tank-helmet-1942.png'; ?>" class="timeline__elem__image"/>
+						<h4 class="timeline__elem__title">Spartan</h4>
+						<p class="timeline__elem__copy">Like Centurions past, the Spartan quickly became the head gear of choice on site for many industrial workforces</p>
+					</div>
+					<div class="timeline__elem timeline__elem--six">
+						<img src="<?php echo get_template_directory_uri() . '/assets/img/timeline/tank-helmet-1942.png'; ?>" class="timeline__elem__image"/>
+						<h4 class="timeline__elem__title">Concept</h4>
+						<p class="timeline__elem__copy">The lightest safety helmet (up to 20% known before) launched on the market, conforming to EN397 &amp; ANSI</p>
+					</div>
+					<div class="timeline__elem timeline__elem--seven">
+						<img src="<?php echo get_template_directory_uri() . '/assets/img/timeline/tank-helmet-1942.png'; ?>" class="timeline__elem__image"/>
+						<h4 class="timeline__elem__title">Nexus</h4>
+						<p class="timeline__elem__copy">Modern style, mixed with industrial practicality</p>
+					</div>
+				</div>
+
+				<div class="timeline__nav">
+					<div class="timeline__nav__elem timeline__nav__elem--one">1900</div>
+					<div class="timeline__nav__elem timeline__nav__elem--two">1942</div>
+					<div class="timeline__nav__elem timeline__nav__elem--three">1957</div>
+					<div class="timeline__nav__elem timeline__nav__elem--four">1980</div>
+					<div class="timeline__nav__elem timeline__nav__elem--five">1990</div>
+					<div class="timeline__nav__elem timeline__nav__elem--six">2004</div>
+					<div class="timeline__nav__elem timeline__nav__elem--seven">2016</div>
+				</div>
 			</div>
 		</div>
 	</div>

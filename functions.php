@@ -43,6 +43,7 @@ function cntrn_assets() {
 	/* Styles
 	 ========================================================================== */
 	 wp_enqueue_style( 'main', get_template_directory_uri() . '/assets/css/style.css' );
+	 wp_enqueue_style( 'slick', '//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.css' );
 
 	 /* Scripts
 	 ========================================================================== */
