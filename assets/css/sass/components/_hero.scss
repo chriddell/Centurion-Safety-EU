@@ -8,7 +8,6 @@
   height: 350px;
   // 100vh - height of site header
   height: calc(100vh - 94px);
-  max-height: 900px;
   text-align: center;
   background-size: cover;
   background-position: 25% 0;
@@ -25,6 +24,7 @@
     // recalculate height because header
     // is bigger now
     height: calc(100vh - 155px);
+    min-height: 600px; // Fallback
   }
 }
 

@@ -23,3 +23,15 @@
   left: 50%;
   transform: translate(-50%, -50%);
 }
+
+@mixin vertically-aligned() {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+@mixin splash-bg() {
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}

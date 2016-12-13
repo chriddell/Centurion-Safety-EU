@@ -1871,7 +1871,6 @@ Powered by JS
 .hero {
   height: 350px;
   height: calc(100vh - 94px);
-  max-height: 900px;
   text-align: center;
   background-size: cover;
   background-position: 25% 0;
@@ -1897,6 +1896,7 @@ Powered by JS
 @media (min-width: 767px) {
   .hero {
     height: calc(100vh - 155px);
+    min-height: 600px;
   }
 }
 
@@ -2019,6 +2019,131 @@ Powered by JS
 }
 
 /* ==========================================================================
+    _feature
+
+    Feature components - live on 'Our Story'
+   ========================================================================== */
+.feature-block {
+  position: relative;
+}
+
+@media (min-width: 767px) {
+  .feature-block {
+    height: 100vh;
+    min-height: 600px;
+  }
+}
+
+.feature-block__content {
+  padding: 30px 0;
+}
+
+@media (min-width: 767px) {
+  .feature-block__content {
+    padding: 100px;
+  }
+}
+
+.feature-block__title,
+.feature-block__copy {
+  font-weight: bold;
+}
+
+.feature-block__title {
+  font-size: 40px;
+}
+
+.feature-block__copy {
+  font-size: 22px;
+}
+
+/* Layout variations
+---------------------------------------- */
+@media (min-width: 767px) {
+  .feature-block--three__content,
+  .feature-block--four__content,
+  .feature-block--five__content {
+    position: absolute;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+            transform: translateY(-50%);
+  }
+}
+
+.feature-block--four__content {
+  right: 0;
+}
+
+/* Backgrounds & colors
+---------------------------------------- */
+.feature-block--has-bg {
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.feature-block--half--has-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+}
+
+.feature-block--one {
+  background-color: #262e61;
+  color: #FFFFFF;
+}
+
+.feature-block--one--has-bg {
+  background-image: url(../img/crane-bg.jpg);
+}
+
+.feature-block--two {
+  background-color: #FFFFFF;
+  color: #262e61;
+}
+
+.feature-block--three {
+  background-color: #eaeef0;
+  color: #FFFFFF;
+}
+
+.feature-block--three--has-bg {
+  background-image: url(../img/climbing-man.jpg);
+}
+
+.feature-block--four {
+  background-color: #000000;
+  color: #FFFFFF;
+}
+
+.feature-block--four--has-bg {
+  background-image: url(../img/close-up-male.jpg);
+}
+
+.feature-block--five {
+  background-color: #FFFFFF;
+  color: #FFFFFF;
+}
+
+.feature-block--five--has-bg {
+  background-image: url(../img/side-on-helmet-over-white-gradient.jpg);
+}
+
+/* Titles
+---------------------------------------- */
+.feature-block--two__title {
+  color: #94aab3;
+}
+
+/* Trumps
+---------------------------------------- */
+.feature-block--one__content {
+  float: right;
+}
+
+/* ==========================================================================
     _helpers
 
     Object-oriented classes, helper classes e.g. bold-font, absolute-center
@@ -2067,6 +2192,10 @@ Powered by JS
 
 .text-centered {
   text-align: center;
+}
+
+.float-right {
+  float: right;
 }
 
 /* ==========================================================================
