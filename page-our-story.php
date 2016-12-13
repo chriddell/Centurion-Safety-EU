@@ -31,9 +31,9 @@ get_header(); ?>
 	</div><!-- / .hero -->
 
 	<div class="feature-block feature-block--one feature-block--is-split clearfix">
-		<div class="feature-block__half feature-block--has-bg feature-block--half--has-bg feature-block--one--has-bg col-sml-6"></div>
+		<div class="feature-block__half feature-block--has-bg feature-block__half--has-bg feature-block--one--has-bg col-sml-6"></div>
 		<div class="wrapper">
-			<div class="feature-block__content feature-block--one__content feature-block--half feature-block--half__content col-12 col-sml-6">
+			<div class="feature-block__content feature-block--one__content feature-block__half feature-block__half__content col-12 col-sml-6">
 				<h2 class="feature-block__title feature-block--one__title">Why we're here</h2>
 				<p class="feature-block__copy">We're here to protect the judgement and creativity that shape our world.</p>
 				<p class="feature-block__copy">We give workers the confidence to think clearly and deliver their best.</p>
@@ -130,7 +130,7 @@ get_header(); ?>
 		</div>
 	</div>
 
-	<div class="block block--last">
+	<div class="block block--last block--after-features">
 		<div class="wrapper">
 			<?php cntrn_render_splash_blocks( 'menu splash-blocks disobey-wrapper-mob clearfix', 'splash-block splash-block__homepage col-12 col-sml-6' ); ?>
 		</div>

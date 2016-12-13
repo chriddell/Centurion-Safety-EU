@@ -1589,6 +1589,16 @@ Powered by JS
   color: #FFFFFF;
 }
 
+.block--after-features {
+  padding-top: 0;
+}
+
+@media (min-width: 767px) {
+  .block--after-features {
+    padding: 40px 0;
+  }
+}
+
 /* ==========================================================================
     _product-listing
     
@@ -2026,12 +2036,11 @@ Powered by JS
    ========================================================================== */
 .feature-block {
   position: relative;
-  min-height: 600px;
+  height: 100vh;
 }
 
 @media (min-width: 767px) {
   .feature-block {
-    height: 100vh;
     min-height: 600px;
     max-height: 800px;
   }
@@ -2138,10 +2147,16 @@ Powered by JS
 /* Two-column block
 ---------------------------------------- */
 .feature-block__half--has-bg {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
+  height: 0;
+}
+
+@media (min-width: 767px) {
+  .feature-block__half--has-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+  }
 }
 
 /* Trumps
@@ -2153,6 +2168,37 @@ Powered by JS
 .feature-block--two__content {
   padding-left: 0;
   padding-right: 0;
+}
+
+.feature-block--two {
+  height: auto;
+  min-height: none;
+  max-height: none;
+}
+
+.feature-block--four {
+  height: auto;
+}
+
+@media (min-width: 767px) {
+  .feature-block--four {
+    height: 100vh;
+  }
+}
+
+.feature-block--three__content,
+.feature-block--five__content {
+  position: absolute;
+  bottom: 0;
+  left: 20px;
+  width: 80%;
+}
+
+@media (min-width: 767px) {
+  .feature-block--three__content,
+  .feature-block--five__content {
+    width: inherit;
+  }
 }
 
 /* ==========================================================================
@@ -2213,8 +2259,13 @@ Powered by JS
 ---------------------------------------- */
 .timeline__nav {
   padding-top: 20px;
-  margin-top: 40px;
   border-top: 1px solid #94aab3;
+}
+
+@media (min-width: 767px) {
+  .timeline__nav {
+    margin-top: 40px;
+  }
 }
 
 .timeline__nav__elem {

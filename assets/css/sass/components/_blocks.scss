@@ -20,3 +20,11 @@
   background-color: $brandColorTwo;
   color: $lightColor;
 }
+
+.block--after-features {
+  padding-top: 0;
+
+  @include respond-to( 'small' ) {
+    padding: $baseSpacingUnit * 2 0;
+  }
+}

@@ -20,7 +20,6 @@
   overflow: hidden;
 }
 
-
 /* Timeline
 ---------------------------------------- */
 
@@ -60,8 +59,11 @@
 
 .timeline__nav {
   padding-top: $baseSpacingUnit;
-  margin-top: $baseSpacingUnit * 2;
   border-top: 1px solid $brandColorTwo;
+
+  @include respond-to( 'small' ) {
+    margin-top: $baseSpacingUnit * 2;
+  }
 }
 
 .timeline__nav__elem {
