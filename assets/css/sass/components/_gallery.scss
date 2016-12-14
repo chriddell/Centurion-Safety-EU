@@ -1,0 +1,71 @@
+/* ==========================================================================
+    _gallery
+    
+    Image gallery styles
+   ========================================================================== */
+
+.gallery {
+  margin-bottom: $baseSpacingUnit;
+}
+
+/* Main
+---------------------------------------- */
+
+.gallery__main {
+  padding: $baseSpacingUnit * 2;
+  margin-bottom: $baseSpacingUnit / 2;
+  border: 1px solid $borderColor;
+
+  @include respond-to( 'small' ) {
+    margin-bottom: $baseSpacingUnit * 1.5;
+  }
+}
+
+.gallery__main__image {
+  width: 75%;
+  margin: 0 auto;
+  display: block;
+}
+
+/* Nav
+---------------------------------------- */
+
+.gallery__nav__item-container {
+  padding: $baseSpacingUnit / 2 $baseSpacingUnit;
+  border: 1px solid $borderColor;
+  margin: 0 $baseSpacingUnit / 4;
+
+  @include respond-to( 'small' ) {
+    margin: 0 $baseSpacingUnit / 2;
+  }
+}
+
+// Shift position to keep in line with elem above
+.gallery__nav__item {
+  position: relative;
+
+  &:first-of-type {
+    left: -5px;
+  }
+
+  &:last-of-type {
+    right: -5px;
+  }
+
+  @include respond-to( 'small' ) {
+    &:first-of-type {
+      left: -10px;
+    }
+
+    &:last-of-type {
+      right: -10px;
+    }
+  }
+}
+
+/* Trumps
+---------------------------------------- */
+
+.gallery__nav .slick-list {
+  overflow: visible;
+}

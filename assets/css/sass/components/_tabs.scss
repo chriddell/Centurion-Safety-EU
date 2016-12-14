@@ -14,8 +14,20 @@
   text-align: center;
   cursor: pointer;
 
-  &:first-of-type {
+  // If first of type and not single child
+  &:first-of-type:not(:last-of-type) {
     border-right: 1px solid $borderColor;
+  }
+
+  // If only child
+  &:only-of-type {
+    @include span(12);
+    cursor: auto;
+  }
+
+  // If more than one tab
+  &:not(:only-of-type) {
+    @include span(6);
   }
 
   &:hover {

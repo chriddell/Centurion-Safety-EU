@@ -26,24 +26,64 @@ get_header(); ?>
 <article id="product-<?php the_ID(); ?>" class="product clearfix">
 	<div class="block clearfix">
 		<div class="col-12 col-sml-6">
-			<div class="product__image-gallery">
-				<?php /** Images **/ ?>
+			<div class="gallery product__image-gallery">
+
+				<?php /** Image Gallery **/ ?>
 				<?php if ( have_rows( 'product_images') ) { ?>
 
-					<?php 
-						$i = 0;
+					<?php /** Main viewport first **/ ?>
+					<div class="carousel carousel__main gallery__main">
+						<?php 
+							// Set an index
+							$i = 0;
 
-						// Loop through images
-						while ( have_rows( 'product_images' ) ) : the_row();
+							// Find out how many rows of content
+							// -1 because we set index of 0 (not 1)
+							$max_i = count( get_field('product_images') ) - 1;
 
-							// Current image
-							$image = get_sub_field( 'product_image');
+							// Loop through images
+							while ( have_rows( 'product_images' ) ) : the_row();
 
-							// Render the image
-							echo '<img src="' . $image['url'] . '"/>';
+								// Current image
+								$image = get_sub_field( 'product_image');
+								
+								// Render
+								echo '<div class="carousel__item carousel__main__item gallery__item gallery__main__item">';
+									echo '<img src="' . $image['url'] . '" class="gallery__main__image"/>';
+								echo '</div>';
 
-						endwhile;
-					?>
+							endwhile;
+						?>
+					</div>
+
+					<?php /** Smaller gallery items **/ ?>
+					<div class="carousel carousel__nav gallery__nav">
+						<?php 
+
+							// Set an index
+							$i = 0;
+
+							// Find out how many rows of content
+							// -1 because we set index of 0 (not 1)
+							$max_i = count( get_field('product_images') ) - 1;
+
+							// Loop through images
+							while ( have_rows( 'product_images' ) ) : the_row();
+
+								// Current image
+								$image = get_sub_field( 'product_image');
+								
+								// Render
+								echo '<div class="carousel__item carousel__nav__item gallery__item gallery__nav__item">';
+									echo '<div class="gallery__nav__item-container">';
+										echo '<img src="' . $image['url'] . '" class="gallery__nav__image"/>';
+									echo '</div>';
+								echo '</div>';
+
+							endwhile;
+
+						?>
+					</div>
 
 				<?php } ?>
 			</div>
@@ -103,12 +143,12 @@ get_header(); ?>
 
 						<div class="tabs__header product__tabs__header clearfix">
 							<?php if ( $product['approved-to'] || $product['key_features'] ) { ?>
-								<span class="tabs__tab-selector product__tabs__tab-selector col-6 is-active" data-tab-id="1">
+								<span class="tabs__tab-selector product__tabs__tab-selector is-active" data-tab-id="1">
 									<h3 class="tabs__tab-selector__title product__tabs__tab-selector__title">Specification</h3>
 								</span>
 							<?php } ?>
 							<?php if ( $product['downloads'] ) { ?>
-								<span class="tabs__tab-selector product__tabs__tab-selector col-6" data-tab-id="2">
+								<span class="tabs__tab-selector product__tabs__tab-selector" data-tab-id="2">
 									<h3 class="tabs__tab-selector__title product__tabs__tab-selector__title">Downloads</h3>
 								</span>
 							<?php } ?>
@@ -122,11 +162,18 @@ get_header(); ?>
 										<?php printf( '<h4 class="product__label">%s</h4>', __('Approved To', 'centurion')); ?>
 										<?php printf( '<p class="product__copy">%s</p>', $product['approved-to'] ); ?>
 									<?php } ?>
+									<?php /** ADD KEY FEATURES HERE **/ ?>
 								</div>
 							<?php } ?>
 
 							<?php if ( have_rows( 'product_downloads') ) { ?>
-								<div class="tabs__tab-content" data-tab-id="2">
+
+								<?php if ( have_rows( 'product_downloads') && ( $product['key-features'] || $product['approved-to'] ) ) { ?>
+									<div class="tabs__tab-content" data-tab-id="2">
+								<?php } else { ?>
+									<div class="tabs__tab-content is-active" data-tab-id="2">
+								<?php } ?>
+
 									<?php printf( '<h4 class="product__label">%s</h4>', __('Downloads', 'centurion') ); ?>
 									<?php echo '<ul>'; ?>
 									<?php
@@ -152,38 +199,40 @@ get_header(); ?>
 
 			</div>
 		</div>
+	</div><!-- / .block -->
 
-		<?php if ( have_rows( 'product_linked_products') ) { ?>
-			<div class="product__linked-products">
-				<div class="col-12">
-					<div class="block">
-						<?php printf( '<h3>%s</h3>', __('Expand your system', 'centurion') ); ?>
-						<?php echo '<ul>'; ?>
-						<?php
-						// Loop through linked-products
-						while ( have_rows( 'product_linked_products' ) ) : the_row();
-							// Get the linked product post-object
-							$linked_product 						= get_sub_field( 'product_linked_product');
-							// Get the array of images ACF
-							$linked_product_images 			= get_field( 'product_images', $linked_product);
-							// Get the first image url
-							$linked_product_image_url 	= $linked_product_images[0]['product_image']['url'];
-							// Render
-							echo '<li>';
-							echo '<a href="' . get_permalink($linked_product) . '">';
-							echo '<h4>' . $linked_product->post_title . '</h4>';
-							echo '<img src="' . $linked_product_image_url . '"/>';
-							echo '</a>';
-							echo '</li>';
-						endwhile;
-						?>
-						<?php echo '</ul>'; ?>
-					</div>
+	<?php if ( have_rows( 'product_linked_products') ) { ?>
+	<div class="block">
+		<div class="product__linked-products">
+			<div class="col-12">
+				<div class="block">
+					<?php printf( '<h3>%s</h3>', __('Expand your system', 'centurion') ); ?>
+					<?php echo '<ul>'; ?>
+					<?php
+					// Loop through linked-products
+					while ( have_rows( 'product_linked_products' ) ) : the_row();
+						// Get the linked product post-object
+						$linked_product 						= get_sub_field( 'product_linked_product');
+						// Get the array of images ACF
+						$linked_product_images 			= get_field( 'product_images', $linked_product);
+						// Get the first image url
+						$linked_product_image_url 	= $linked_product_images[0]['product_image']['url'];
+						// Render
+						echo '<li>';
+						echo '<a href="' . get_permalink($linked_product) . '">';
+						echo '<h4>' . $linked_product->post_title . '</h4>';
+						echo '<img src="' . $linked_product_image_url . '"/>';
+						echo '</a>';
+						echo '</li>';
+					endwhile;
+					?>
+					<?php echo '</ul>'; ?>
 				</div>
 			</div>
-		<?php } ?>
-
+		</div>
 	</div>
+	<?php } ?>
+
 </article>
 
 <?php get_footer(); ?>

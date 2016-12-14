@@ -1002,6 +1002,7 @@ video {
   width: calc(100% + 20px + 20px);
   position: relative;
   left: -20px;
+  z-index: 99;
 }
 
 @media (min-width: 1023px) {
@@ -1009,12 +1010,6 @@ video {
   .nav--secondary {
     height: auto;
     overflow: visible;
-  }
-}
-
-@media (min-width: 1023px) {
-  .nav--main,
-  .nav--secondary {
     width: 100%;
     left: 0;
     background-color: #94aab3;
@@ -1447,6 +1442,95 @@ video {
 }
 
 /* ==========================================================================
+    _tabs
+    
+    Tab styles, such as on the product page ('Spec' / 'Downloads')
+   ========================================================================== */
+.tabs {
+  border: 1px solid #dbdbdb;
+}
+
+.tabs__tab-selector {
+  padding: 20px;
+  border-bottom: 1px solid #dbdbdb;
+  text-align: center;
+  cursor: pointer;
+}
+
+.tabs__tab-selector:first-of-type:not(:last-of-type) {
+  border-right: 1px solid #dbdbdb;
+}
+
+.tabs__tab-selector:only-of-type {
+  width: 100%;
+  float: left;
+  margin-left: 0;
+  margin-right: 0;
+  cursor: auto;
+}
+
+.tabs__tab-selector:not(:only-of-type) {
+  width: 50%;
+  float: left;
+}
+
+.tabs__tab-selector:hover {
+  background-color: #f2f2f2;
+}
+
+@media (min-width: 767px) {
+  .tabs__tab-selector {
+    padding: 20px 40px;
+  }
+}
+
+.tabs__tab-selector__title {
+  margin: 0;
+  font-size: 1em;
+}
+
+@media (min-width: 767px) {
+  .tabs__tab-selector__title {
+    font-size: 1.1em;
+  }
+}
+
+.tabs__main {
+  padding: 20px;
+}
+
+@media (min-width: 767px) {
+  .tabs__main {
+    padding: 40px;
+  }
+}
+
+/* Active / Inactive styles
+---------------------------------------- */
+.tabs__tab-selector {
+  color: #94aab3;
+}
+
+.tabs__tab-selector.is-active {
+  border-bottom: 0;
+  color: #262e61;
+}
+
+.tabs__tab-selector.is-active:hover {
+  background-color: #FFFFFF;
+}
+
+.tabs__tab-content {
+  height: 0;
+  visibility: hidden;
+}
+
+.tabs__tab-content.is-active {
+  height: auto;
+  visibility: visible;
+}
+
+/* ==========================================================================
    _sidebar
    
    Sidebar styles.
@@ -1506,6 +1590,181 @@ Powered by JS
 
 .no-js .sidebar--has-filter {
   display: none;
+}
+
+/* ==========================================================================
+    _carousel
+    
+    Global carousel styles.
+    We're using slick.js
+   ========================================================================== */
+.carousel__item:focus, .carousel__item:active {
+  outline: 0;
+}
+
+.carousel__main {
+  overflow: hidden;
+  cursor: -webkit-grab;
+  cursor: grab;
+}
+
+.carousel__main:active {
+  cursor: -webkit-grabbing;
+  cursor: grabbing;
+}
+
+.carousel__nav__item {
+  cursor: pointer;
+}
+
+/* ==========================================================================
+    _gallery
+    
+    Image gallery styles
+   ========================================================================== */
+.gallery {
+  margin-bottom: 20px;
+}
+
+/* Main
+---------------------------------------- */
+.gallery__main {
+  padding: 40px;
+  margin-bottom: 10px;
+  border: 1px solid #dbdbdb;
+}
+
+@media (min-width: 767px) {
+  .gallery__main {
+    margin-bottom: 30px;
+  }
+}
+
+.gallery__main__image {
+  width: 75%;
+  margin: 0 auto;
+  display: block;
+}
+
+/* Nav
+---------------------------------------- */
+.gallery__nav__item-container {
+  padding: 10px 20px;
+  border: 1px solid #dbdbdb;
+  margin: 0 5px;
+}
+
+@media (min-width: 767px) {
+  .gallery__nav__item-container {
+    margin: 0 10px;
+  }
+}
+
+.gallery__nav__item {
+  position: relative;
+}
+
+.gallery__nav__item:first-of-type {
+  left: -5px;
+}
+
+.gallery__nav__item:last-of-type {
+  right: -5px;
+}
+
+@media (min-width: 767px) {
+  .gallery__nav__item:first-of-type {
+    left: -10px;
+  }
+  .gallery__nav__item:last-of-type {
+    right: -10px;
+  }
+}
+
+/* Trumps
+---------------------------------------- */
+.gallery__nav .slick-list {
+  overflow: visible;
+}
+
+/* ==========================================================================
+    _timeline
+    
+    Is a carousel, using slick.js.
+   ========================================================================== */
+/* Timeline
+---------------------------------------- */
+.timeline__main__item {
+  margin: 0 20px;
+}
+
+.timeline__main__item__title {
+  color: #e83272;
+}
+
+.timeline__main__item__image {
+  display: block;
+  margin: 0 auto;
+  max-width: 75%;
+}
+
+.timeline__main,
+.timeline__main__item,
+.timeline__main__item__copy,
+.timeline__main__item__title {
+  -webkit-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
+  -webkit-perspective: preserve-3d;
+          perspective: preserve-3d;
+}
+
+/* Nav (Controller)
+---------------------------------------- */
+.timeline__nav {
+  padding-top: 20px;
+  border-top: 1px solid #94aab3;
+}
+
+@media (min-width: 767px) {
+  .timeline__nav {
+    margin-top: 40px;
+  }
+}
+
+.timeline__nav__item {
+  font-weight: bold;
+}
+
+.timeline__nav__item:hover {
+  opacity: 1 !important;
+}
+
+.timeline__nav__item:after {
+  content: '';
+  height: 10px;
+  width: 10px;
+  margin: 10px auto 0;
+  display: block;
+  border-radius: 10px;
+}
+
+/* Slick styles
+---------------------------------------- */
+.timeline__main__item:not(.slick-center) {
+  opacity: 0.4;
+}
+
+.timeline__main__item:not(.slick-center) .timeline__main__item__copy,
+.timeline__main__item:not(.slick-center) .timeline__main__item__title {
+  opacity: 0.1;
+}
+
+.timeline__nav__item:not(.slick-current) {
+  color: #94aab3;
+}
+
+.timeline__nav__item.slick-current:after {
+  background-color: #e83272;
 }
 
 /* ==========================================================================
@@ -1773,6 +2032,20 @@ Powered by JS
 
 #product-filter-canvas[data-filtering*="powered-air"] .product-listing__category-container[data-filter-term="powered-air"] {
   height: auto;
+}
+
+/* ==========================================================================
+    _product
+    
+    These are styles for a single product page.
+   ========================================================================== */
+.product__copy {
+  color: #9ba399;
+}
+
+.product__label,
+.product__title {
+  color: #262e61;
 }
 
 /* ==========================================================================
@@ -2199,110 +2472,6 @@ Powered by JS
   .feature-block--five__content {
     width: inherit;
   }
-}
-
-/* ==========================================================================
-    _timeline
-    
-    Is a carousel, using slick.js.
-   ========================================================================== */
-/* Timeline & Nav
----------------------------------------- */
-.timeline__elem:focus, .timeline__elem:active,
-.timeline__nav__elem:focus,
-.timeline__nav__elem:active {
-  outline: 0;
-}
-
-.timeline,
-.timeline__nav {
-  overflow: hidden;
-}
-
-/* Timeline
----------------------------------------- */
-.timeline {
-  cursor: -webkit-grab;
-  cursor: grab;
-}
-
-.timeline:active {
-  cursor: -webkit-grabbing;
-  cursor: grabbing;
-}
-
-.timeline__elem {
-  margin: 0 20px;
-}
-
-.timeline__elem__title {
-  color: #e83272;
-}
-
-.timeline__elem__image {
-  display: block;
-  margin: 0 auto;
-  max-width: 75%;
-}
-
-.timeline,
-.timeline__elem,
-.timeline__elem__copy,
-.timeline__elem__title {
-  -webkit-transform: translate3d(0, 0, 0);
-          transform: translate3d(0, 0, 0);
-  -webkit-perspective: preserve-3d;
-          perspective: preserve-3d;
-}
-
-/* Nav (Controller)
----------------------------------------- */
-.timeline__nav {
-  padding-top: 20px;
-  border-top: 1px solid #94aab3;
-}
-
-@media (min-width: 767px) {
-  .timeline__nav {
-    margin-top: 40px;
-  }
-}
-
-.timeline__nav__elem {
-  font-weight: bold;
-  cursor: pointer;
-}
-
-.timeline__nav__elem:hover {
-  opacity: 1 !important;
-}
-
-.timeline__nav__elem:after {
-  content: '';
-  height: 10px;
-  width: 10px;
-  margin: 10px auto 0;
-  display: block;
-  border-radius: 10px;
-}
-
-/* Slick styles
----------------------------------------- */
-.timeline__elem:not(.slick-center) {
-  opacity: 0.4;
-}
-
-.timeline__elem:not(.slick-center) .timeline__elem__copy,
-.timeline__elem:not(.slick-center) .timeline__elem__title {
-  opacity: 0.1;
-}
-
-.timeline__nav__elem:not(.slick-current) {
-  color: #94aab3;
-}
-
-.timeline__nav__elem.slick-current:after {
-  background-color: #e83272;
 }
 
 /* ==========================================================================

@@ -4,51 +4,27 @@
     Is a carousel, using slick.js.
    ========================================================================== */
 
-/* Timeline & Nav
----------------------------------------- */
-
-.timeline__elem,
-.timeline__nav__elem {
-  &:focus,
-  &:active {
-    outline: 0;
-  }
-}
-
-.timeline,
-.timeline__nav {
-  overflow: hidden;
-}
-
 /* Timeline
 ---------------------------------------- */
 
-.timeline {
-  cursor: grab;
-
-  &:active {
-    cursor: grabbing;
-  }
-}
-
-.timeline__elem {
+.timeline__main__item {
   margin: 0 $baseSpacingUnit;
 }
 
-.timeline__elem__title {
+.timeline__main__item__title {
   color: $brandColorHighlight;
 }
 
-.timeline__elem__image {
+.timeline__main__item__image {
   display: block;
   margin: 0 auto;
   max-width: 75%;
 }
 
-.timeline,
-.timeline__elem,
-.timeline__elem__copy,
-.timeline__elem__title {
+.timeline__main,
+.timeline__main__item,
+.timeline__main__item__copy,
+.timeline__main__item__title {
   // Prevent blurry text on -webkit-
   transform: translate3d(0, 0, 0);
   perspective: preserve-3d;
@@ -66,9 +42,8 @@
   }
 }
 
-.timeline__nav__elem {
+.timeline__nav__item {
   font-weight: bold;
-  cursor: pointer;
 
   &:hover {
     opacity: 1 !important;
@@ -87,19 +62,19 @@
 /* Slick styles
 ---------------------------------------- */
 
-.timeline__elem:not(.slick-center) {
+.timeline__main__item:not(.slick-center) {
   opacity: 0.4;
 
-  .timeline__elem__copy,
-  .timeline__elem__title {
+  .timeline__main__item__copy,
+  .timeline__main__item__title {
     opacity: 0.1;
   }
 }
 
-.timeline__nav__elem:not(.slick-current) {
+.timeline__nav__item:not(.slick-current) {
   color: $brandColorTwo;
 }
 
-.timeline__nav__elem.slick-current:after {
+.timeline__nav__item.slick-current:after {
   background-color: $brandColorHighlight;
 }

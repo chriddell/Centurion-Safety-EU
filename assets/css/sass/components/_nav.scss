@@ -10,23 +10,19 @@
   height: 0;
   overflow: hidden;
 
-  @include respond-to( 'medium' ) {
-    // show again
-    height: auto;
-    overflow: visible;
-  }
-
   // adjust navs for container padding 
   // on mobile
   width: calc(100% + 20px + 20px);
   position: relative;
   left: -20px;
+  z-index: 99;
 
   @include respond-to( 'medium' ) {
     // show again
+    height: auto;
+    overflow: visible;
     width: 100%;
     left: 0;
-
     background-color: $brandColorTwo;
   }
 }
