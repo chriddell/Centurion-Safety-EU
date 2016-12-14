@@ -1,0 +1,26 @@
+/* ==========================================================================
+    _carousel
+    
+    Global carousel styles.
+    We're using slick.js
+   ========================================================================== */
+
+.carousel__item {
+  &:focus,
+  &:active {
+    outline: 0;
+  }
+}
+
+.carousel__main {
+  overflow: hidden;
+  cursor: grab;
+
+  &:active {
+    cursor: grabbing;
+  }
+}
+
+.carousel__nav__item {
+  cursor: pointer;
+}

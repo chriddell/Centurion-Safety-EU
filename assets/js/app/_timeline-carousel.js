@@ -12,8 +12,8 @@
 	 */
 	$(document).ready(function(){
 
-		// Main slick
-		$('.timeline').slick({
+		// Main carousel
+		$('.timeline__main').slick({
 			centerMode: true,
 			slidesToShow: 3,
 			slidesToScroll: 1,
@@ -30,11 +30,11 @@
       ]
 		});
 
-		// Slick nav
+		// Nav carousel
 		$('.timeline__nav').slick({
   		slidesToShow: 7,
   		slidesToScroll: 1,
-  		asNavFor: '.timeline',
+  		asNavFor: '.timeline__main',
   		centerMode: true,
   		centerPadding: '0',
   		focusOnSelect: true,
