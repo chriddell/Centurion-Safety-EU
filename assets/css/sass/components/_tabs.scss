@@ -1,0 +1,71 @@
+/* ==========================================================================
+    _tabs
+    
+    Tab styles, such as on the product page ('Spec' / 'Downloads')
+   ========================================================================== */
+
+.tabs {
+  border: 1px solid $borderColor;
+}
+
+.tabs__tab-selector {
+  padding: $baseSpacingUnit;
+  border-bottom: 1px solid $borderColor;
+  text-align: center;
+  cursor: pointer;
+
+  &:first-of-type {
+    border-right: 1px solid $borderColor;
+  }
+
+  &:hover {
+    background-color: darken( $lightColor, 5% );
+  }
+
+  @include respond-to( 'small' ) {
+    padding: $baseSpacingUnit $baseSpacingUnit * 2;
+  }
+}
+
+.tabs__tab-selector__title {
+  margin: 0;
+  font-size: 1em;
+
+  @include respond-to( 'small' ) {
+    font-size: $h4Size;
+  }
+}
+
+.tabs__main {
+  padding: $baseSpacingUnit;
+
+  @include respond-to( 'small' ) {
+    padding: $baseSpacingUnit * 2;
+  }
+}
+
+/* Active / Inactive styles
+---------------------------------------- */
+
+.tabs__tab-selector {
+  color: $brandColorTwo;
+
+  &.is-active {
+    border-bottom: 0;
+    color: $brandColorOne;
+
+    &:hover {
+      background-color: $lightColor;
+    }
+  }
+}
+
+.tabs__tab-content {
+  height: 0;
+  visibility: hidden;
+
+  &.is-active {
+    height: auto;
+    visibility: visible;
+  }
+}

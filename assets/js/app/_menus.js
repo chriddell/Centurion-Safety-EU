@@ -30,8 +30,6 @@
 			$( mainNavEl + ', ' + subNavEl ).css('height', 'auto');
 		}
 	}
-	$( document ).on( 'click', '#nav-main-trigger', function(){
-		toggleMobileMenu( this ) });
 
 	// Show lang selector
 	function toggleLangSelector( trigger ) {
@@ -42,14 +40,16 @@
 
 		container.toggleClass( activeClass );
 	}
-	$( document ).on( 'click', '.menu--lang-selector__item:first-of-type', function(){
-		toggleLangSelector( this );
-	});
 
-	// Prevent link follow on current language
-	// in language selector
-	$( document ).on('click', '.menu--lang-selector__item:first-of-type', function(e){
+	$( document ).on( 'click', '#nav-main-trigger', function(){
+		toggleMobileMenu( this ) });
+	
+	$( document ).on( 'click', '.menu--lang-selector__item:first-of-type', function(e){
+		// Prevent link follow on current language
+		// in language selector
 		e.preventDefault();
+		// Show the menu
+		toggleLangSelector( this );
 	});
 
 })(jQuery);

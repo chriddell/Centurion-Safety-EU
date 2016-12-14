@@ -15,144 +15,175 @@ $product = array(
 	'decals'						=> get_field( 'product_decals' ),
 	'visibility'				=> get_field( 'product_visibility' ),
 	'approved-to'				=> get_field( 'product_approved_to' ),
-	'tested-to'					=> get_field( 'product_tested_to' ),
 	'downloads'					=> get_field( 'product_downloads' ),
 	'specialism'				=> get_field( 'product_specialism' ),
-	'linked-products'		=> get_field( 'product_linked_products' )
+	'linked-products'		=> get_field( 'product_linked_products' ),
+	'key-features'			=> get_field( 'product_key_features' )
 );
 
 get_header(); ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+<article id="product-<?php the_ID(); ?>" class="product clearfix">
+	<div class="block clearfix">
+		<div class="col-12 col-sml-6">
+			<div class="product__image-gallery">
+				<?php /** Images **/ ?>
+				<?php if ( have_rows( 'product_images') ) { ?>
 
-	<?php the_title( '<h2>', '</h2>' ); ?>
+					<?php 
+						$i = 0;
 
-	<?php echo '<p>' . $product['description'] . '</p>'; ?>
+						// Loop through images
+						while ( have_rows( 'product_images' ) ) : the_row();
 
-	<?php
+							// Current image
+							$image = get_sub_field( 'product_image');
 
-	// Check if images
-	if ( have_rows( 'product_images') ) {
+							// Render the image
+							echo '<img src="' . $image['url'] . '"/>';
 
-		// Set an index
-		$i = 0;
+						endwhile;
+					?>
 
-		// Loop through images
-		while ( have_rows( 'product_images' ) ) : the_row();
+				<?php } ?>
+			</div>
+		</div>
 
-			// Current image
-			$image = get_sub_field( 'product_image');
+		<div class="col-12 col-sml-6">
+			<div class="product__meta">
 
-			// Render the image
-			echo '<img src="' . $image['url'] . '"/>';
+				<?php the_title( '<h2 class="product__title">', '</h2>' ); ?>
+				<?php echo '<p class="product__copy product__description">' . $product['description'] . '</p>'; ?>
+				<?php
+				// Check for more colours
+				if ( have_rows( 'product_color_variations' ) ) {
 
-		endwhile;
-	}
-	?>
+					// Title
+					printf( '<h3 class="product__label">%s</h3>', __('Colours', 'centurion') );
+					echo '<ul class="menu product__colours">';
 
-	<?php
-	// Check for more colours
-	if ( have_rows( 'product_color_variations' ) ) {
+					// Loop rows of colours
+					while ( have_rows( 'product_color_variations' ) ) : the_row();
+						echo '<li class="product__colours__colour">';
 
-		// Title
-		printf( '<h3>%s</h3>', __('Colours', 'centurion') );
-		echo '<ul>';
+						// Get the meta for this colour
+						$color_object 	= get_sub_field( 'product_color' );
+						$color_name 		= $color_object->name;
+						$color_hex 			= get_field( 'product_color_hex_code', $color_object );
 
-		// Loop rows of colours
-		while ( have_rows( 'product_color_variations' ) ) : the_row();
-			echo '<li>';
+						// Render color details
+						echo $color_name . ' (' . $color_hex . ')';
 
-			// Get the meta for this colour
-			$color_object 	= get_sub_field( 'product_color' );
-			$color_name 		= $color_object->name;
-			$color_hex 			= get_field( 'product_color_hex_code', $color_object );
+						// Loop images and show
+						while ( have_rows( 'product_color_images' ) ) : the_row();
+							$product_image = get_sub_field( 'product_color_image' );
+							echo '<img src="' . $product_image['url'] . '"/>';
+						endwhile;
 
-			// Render color details
-			echo $color_name . ' (' . $color_hex . ')';
+						echo '</li>';
+					endwhile;
 
-			// Loop images and show
-			while ( have_rows( 'product_color_images' ) ) : the_row();
-				$product_image = get_sub_field( 'product_color_image' );
-				echo '<img src="' . $product_image['url'] . '"/>';
-			endwhile;
+					echo '</ul>';
+				}
+				?>
 
-			echo '</li>';
-		endwhile;
+				<?php if ( $product['decals'] ) { ?>
+					<?php printf( '<h3 class="product__label">%s</h3>', __('Decals', 'centurion')); ?>
+					<?php printf( '<p class="product__copy">%s</p>', $product['decals'] ); ?>
+				<?php } ?>
 
-		echo '</ul>';
-	}
-	?>
+				<?php if ( $product['visibility'] ) { ?>
+					<?php printf( '<h3 class="product__label">%s</h3>', __('Visibility', 'centurion')); ?>
+					<?php printf( '<p class="product__copy">%s</p>', $product['visibility'] ); ?>
+				<?php } ?>
 
-	<?php if ( $product['decals'] ) { ?>
-		<?php printf( '<h3>%s</h3>', __('Decals', 'centurion')); ?>
-		<?php printf( '<p>%s</p>', $product['decals'] ); ?>
-	<?php } ?>
+				<?php /** Render a tabbed box if we have info for it **/ ?>
+				<?php if ( $product['approved-to'] || $product['downloads'] ) { ?>
+					<div class="tabs product__tabs"><!-- .tabs -->
 
-	<?php if ( $product['visibility'] ) { ?>
-		<?php printf( '<h3>%s</h3>', __('Visibility', 'centurion')); ?>
-		<?php printf( '<p>%s</p>', $product['visibility'] ); ?>
-	<?php } ?>
+						<div class="tabs__header product__tabs__header clearfix">
+							<?php if ( $product['approved-to'] || $product['key_features'] ) { ?>
+								<span class="tabs__tab-selector product__tabs__tab-selector col-6 is-active" data-tab-id="1">
+									<h3 class="tabs__tab-selector__title product__tabs__tab-selector__title">Specification</h3>
+								</span>
+							<?php } ?>
+							<?php if ( $product['downloads'] ) { ?>
+								<span class="tabs__tab-selector product__tabs__tab-selector col-6" data-tab-id="2">
+									<h3 class="tabs__tab-selector__title product__tabs__tab-selector__title">Downloads</h3>
+								</span>
+							<?php } ?>
+						</div>
 
-	<?php if ( $product['approved-to'] ) { ?>
-		<?php printf( '<h3>%s</h3>', __('Approved To', 'centurion')); ?>
-		<?php printf( '<p>%s</p>', $product['approved-to'] ); ?>
-	<?php } ?>
+						<div class="tabs__main product__tabs__main">
 
-	<?php if ( $product['tested-to'] ) { ?>
-		<?php printf( '<h3>%s</h3>', __('Tested To', 'centurion')); ?>
-		<?php printf( '<p>%s</p>', $product['tested-to'] ); ?>
-	<?php } ?>
+							<?php if ( $product['approved-to'] || $product['key-features'] ) { ?>
+								<div class="tabs__tab-content is-active" data-tab-id="1">
+									<?php if ( $product['approved-to'] ) { ?>
+										<?php printf( '<h4 class="product__label">%s</h4>', __('Approved To', 'centurion')); ?>
+										<?php printf( '<p class="product__copy">%s</p>', $product['approved-to'] ); ?>
+									<?php } ?>
+								</div>
+							<?php } ?>
 
-	<?php if ( $product['specialism'] ) { ?>
-		<?php printf( '<h3>%s</h3>', __('Specialism', 'centurion') ); ?>
-		<?php echo '<p>' ?>
-		<?php echo $product['specialism']->name; ?>
-		<?php echo ' ('; echo get_field( 'product_specialism_hex_code', $product['specialism']); echo ')'; ?>
-		<?php echo '</p>'; ?>
-	<?php } ?>
+							<?php if ( have_rows( 'product_downloads') ) { ?>
+								<div class="tabs__tab-content" data-tab-id="2">
+									<?php printf( '<h4 class="product__label">%s</h4>', __('Downloads', 'centurion') ); ?>
+									<?php echo '<ul>'; ?>
+									<?php
+									// Set index to 0
+									$i = 0;
+									// Loop through images
+									while ( have_rows( 'product_downloads' ) ) : the_row();
+										// Current download
+										$download = get_sub_field( 'product_download' );
+										// Render the image
+										echo '<li>';
+										echo '<a href="' . $download['url'] . '" target="_blank">' . $download['title'] . '</a>';
+										echo '</li>';
+									endwhile;
+									echo '</ul>';
+									?>
+								</div>
+							<?php } ?>
 
-	<?php if ( have_rows( 'product_downloads') ) { ?>
-		<?php printf( '<h3>%s</h3>', __('Downloads', 'centurion') ); ?>
-		<?php echo '<ul>'; ?>
-		<?php
-		// Set index to 0
-		$i = 0;
-		// Loop through images
-		while ( have_rows( 'product_downloads' ) ) : the_row();
-			// Current download
-			$download = get_sub_field( 'product_download' );
-			// Render the image
-			echo '<li>';
-			echo '<a href="' . $download['url'] . '" target="_blank">' . $download['title'] . '</a>';
-			echo '</li>';
-		endwhile;
-		echo '</ul>';
-		?>
-	<?php } ?>
+						</div><!-- / .tabs__main -->
+					</div><!-- / .tabs -->
+				<?php } ?>
 
-	<?php if ( have_rows( 'product_linked_products') ) { ?>
-		<?php printf( '<h3>%s</h3>', __('Linked Products', 'centurion') ); ?>
-		<?php echo '<ul>'; ?>
-		<?php
-		// Loop through linked-products
-		while ( have_rows( 'product_linked_products' ) ) : the_row();
-			// Get the linked product post-object
-			$linked_product 						= get_sub_field( 'product_linked_product');
-			// Get the array of images ACF
-			$linked_product_images 			= get_field( 'product_images', $linked_product);
-			// Get the first image url
-			$linked_product_image_url 	= $linked_product_images[0]['product_image']['url'];
-			// Render
-			echo '<li>';
-			echo '<a href="' . get_permalink($linked_product) . '">';
-			echo '<h4>' . $linked_product->post_title . '</h4>';
-			echo '<img src="' . $linked_product_image_url . '"/>';
-			echo '</a>';
-			echo '</li>';
-		endwhile;
-		?>
-		<?php echo '</ul>'; ?>
-	<?php } ?>
+			</div>
+		</div>
+
+		<?php if ( have_rows( 'product_linked_products') ) { ?>
+			<div class="product__linked-products">
+				<div class="col-12">
+					<div class="block">
+						<?php printf( '<h3>%s</h3>', __('Expand your system', 'centurion') ); ?>
+						<?php echo '<ul>'; ?>
+						<?php
+						// Loop through linked-products
+						while ( have_rows( 'product_linked_products' ) ) : the_row();
+							// Get the linked product post-object
+							$linked_product 						= get_sub_field( 'product_linked_product');
+							// Get the array of images ACF
+							$linked_product_images 			= get_field( 'product_images', $linked_product);
+							// Get the first image url
+							$linked_product_image_url 	= $linked_product_images[0]['product_image']['url'];
+							// Render
+							echo '<li>';
+							echo '<a href="' . get_permalink($linked_product) . '">';
+							echo '<h4>' . $linked_product->post_title . '</h4>';
+							echo '<img src="' . $linked_product_image_url . '"/>';
+							echo '</a>';
+							echo '</li>';
+						endwhile;
+						?>
+						<?php echo '</ul>'; ?>
+					</div>
+				</div>
+			</div>
+		<?php } ?>
+
+	</div>
 </article>
 
 <?php get_footer(); ?>
