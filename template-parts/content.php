@@ -29,10 +29,10 @@ $blogpost = array(
 
 		<?php /** Tags **/ ?>
 		<?php if ( $blogpost['tags'] ) { ?>
-			<div class="blog__tags blog--preview__tags">
-				<span class="blog__tags__icon"></span>
+			<div class="tags blog__tags blog--preview__tags">
+				<span class="tags__icon blog__tags__icon"></span>
 			<?php foreach ( $blogpost['tags'] as $tag ) { ?>
-				<span class="blog__tags__tag blog--preview__tags__tag"><?php echo $tag->name; ?></span>
+				<span class="tags__tag blog__tags__tag blog--preview__tags__tag"><?php echo $tag->name; ?></span>
 			<?php	} ?>
 			</div>
 		<?php } ?>

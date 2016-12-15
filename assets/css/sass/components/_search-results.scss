@@ -1,0 +1,27 @@
+/* ==========================================================================
+    _search-results
+    
+    Search result components
+   ========================================================================== */
+
+.search-result__title {
+  padding: $baseSpacingUnit * 2 0 0;
+
+  &:not(:first-of-type) {
+    margin-top: $baseSpacingUnit;
+    border-top: 1px solid $borderColor;
+  }
+
+  @include respond-to( 'small' ) {
+    // Shift wider than wrapper
+    // on desktop
+    width: 110%;
+    padding: $baseSpacingUnit * 2 0 0 5%;
+    position: relative;
+    left: -5%;
+
+    &:not(:first-of-type) {
+      margin-top: $baseSpacingUnit * 2;
+    }
+  }
+}

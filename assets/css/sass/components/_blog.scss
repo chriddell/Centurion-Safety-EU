@@ -8,21 +8,6 @@
   color: $brandColorOne;
 }
 
-.blog__tags {
-  display: block;
-}
-
-.blog__tags__tag {
-  padding: 3px 10px;
-  margin-bottom: $baseSpacingUnit / 2;
-  border-radius: 20px;
-  display: inline-block;
-  font-size: 0.9em;
-  white-space: nowrap;
-  color: $brandColorOne;
-  background-color: lighten($borderColor, 7.5%);
-}
-
 /* Preview (Archive listing)
 ---------------------------------------- */
 

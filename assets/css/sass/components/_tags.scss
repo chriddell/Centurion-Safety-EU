@@ -1,0 +1,43 @@
+/* ==========================================================================
+    _tags
+   ========================================================================== */
+
+.tags {
+  display: block;
+
+  @extend %clearfix;
+}
+
+.tags__tag {
+  padding: 3px 10px;
+  margin-bottom: $baseSpacingUnit / 3;
+  margin-right: $baseSpacingUnit / 4;
+  border-radius: 20px;
+  float: left;
+  font-size: 0.9em;
+  white-space: nowrap;
+  color: $brandColorOne;
+  background-color: lighten($borderColor, 7.5%);
+}
+
+/* Variations
+---------------------------------------- */
+
+.tags--search {
+  
+  padding: $baseSpacingUnit / 3 $baseSpacingUnit / 2 0;
+  margin-top: $baseSpacingUnit;
+  border-top: 1px solid $borderColor;
+  border-bottom: 1px solid $borderColor;
+  
+  @include respond-to( 'small' ) {
+    // Wider than wrapper on desktop
+    width: 110%;
+    position: relative;
+    left: -5%;
+  }
+}
+
+.tags--search__tag {
+  margin-right: $baseSpacingUnit / 2;
+}

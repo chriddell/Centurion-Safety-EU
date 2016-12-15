@@ -1,6 +1,6 @@
 <?php
 /**
- * The template part for displaying 'advice'
+ * The template part for displaying 'news'
  * post-type as a search result
  *
  * @package WordPress
@@ -19,7 +19,7 @@ $blogpost = array(
 
 ?>
 
-<article class="search-result search-result--advice blog blog--preview col-12">
+<article class="search-result search-result--news blog blog--preview col-12">
 	<div class="col-12 col-sml-6 blog--preview__image" style="background-image: url(<?php echo $blogpost['image']['url']; ?>"></div>
 	<div class="col-12 col-sml-6 blog--preview__container">
 		<?php the_title( '<h3 class="blog__title blog--preview__title">', '</h3>' ); ?>

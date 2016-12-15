@@ -4,10 +4,6 @@
     Object-oriented classes, helper classes e.g. bold-font, absolute-center
    ========================================================================== */
 
-.light-link {
-  color: $lightColor;
-}
-
 .sr-only,
 %sr-only {
   // Technique recommended by WebAIM
@@ -20,6 +16,13 @@
   overflow: hidden;
 }
 
+.clearfix:after,
+%clearfix:after {
+  content: '';
+  display: table;
+  clear: both;
+}
+
 .reset-spacing {
   padding: 0;
   margin: 0;
@@ -27,13 +30,6 @@
 
 .zero-line-height {
   line-height: 0;
-}
-
-.clearfix:after,
-%clearfix:after {
-  content: '';
-  display: table;
-  clear: both;
 }
 
 .hover-underline:hover {
@@ -56,10 +52,22 @@
   float: right;
 }
 
+.clear-both {
+  clear: both;
+}
+
 .inline {
   display: inline;
 }
 
 .mb-reset {
   margin-bottom: $baseSpacingUnit;
+}
+
+.highlight-color {
+  color: $brandColorHighlight;
+}
+
+.light-link {
+  color: $lightColor;
 }

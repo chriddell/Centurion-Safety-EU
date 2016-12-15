@@ -729,6 +729,19 @@ template {
   clear: both;
 }
 
+.wrapper--thin {
+  max-width: 1352px;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 740px;
+}
+
+.wrapper--thin:after {
+  content: " ";
+  display: block;
+  clear: both;
+}
+
 /* Flexbox layout
 ---------------------------------------- */
 @media (min-width: 767px) {
@@ -870,6 +883,16 @@ h4 {
   margin-top: 0;
   font-weight: normal;
   font-size: 1.1em;
+}
+
+h1,
+h2,
+.menu--main-nav__item,
+.splash-block__title,
+h3,
+.product-filter__item-heading,
+h4 {
+  color: #262e61;
 }
 
 img,
@@ -1544,6 +1567,46 @@ video {
 }
 
 /* ==========================================================================
+    _tags
+   ========================================================================== */
+.tags {
+  display: block;
+}
+
+.tags__tag {
+  padding: 3px 10px;
+  margin-bottom: 6.6666666667px;
+  margin-right: 5px;
+  border-radius: 20px;
+  float: left;
+  font-size: 0.9em;
+  white-space: nowrap;
+  color: #262e61;
+  background-color: #eeeeee;
+}
+
+/* Variations
+---------------------------------------- */
+.tags--search {
+  padding: 6.6666666667px 10px 0;
+  margin-top: 20px;
+  border-top: 1px solid #dbdbdb;
+  border-bottom: 1px solid #dbdbdb;
+}
+
+@media (min-width: 767px) {
+  .tags--search {
+    width: 110%;
+    position: relative;
+    left: -5%;
+  }
+}
+
+.tags--search__tag {
+  margin-right: 10px;
+}
+
+/* ==========================================================================
    _sidebar
    
    Sidebar styles.
@@ -1836,7 +1899,7 @@ Powered by JS
 /* ==========================================================================
     _blocks
     
-    Containers of content
+    Multi-use container for content
    ========================================================================== */
 .block {
   padding: 40px 0;
@@ -2153,6 +2216,7 @@ Powered by JS
 .splash-block__title {
   margin-bottom: 0.5em;
   font-weight: bold;
+  color: #FFFFFF;
 }
 
 @media (min-width: 767px) {
@@ -2292,27 +2356,38 @@ Powered by JS
 }
 
 /* ==========================================================================
+    _search-results
+    
+    Search result components
+   ========================================================================== */
+.search-result__title {
+  padding: 40px 0 0;
+}
+
+.search-result__title:not(:first-of-type) {
+  margin-top: 20px;
+  border-top: 1px solid #dbdbdb;
+}
+
+@media (min-width: 767px) {
+  .search-result__title {
+    width: 110%;
+    padding: 40px 0 0 5%;
+    position: relative;
+    left: -5%;
+  }
+  .search-result__title:not(:first-of-type) {
+    margin-top: 40px;
+  }
+}
+
+/* ==========================================================================
     _blog
 
     Blog posts - all types, including single post and previews (archive listing)
    ========================================================================== */
 .blog__title {
   color: #262e61;
-}
-
-.blog__tags {
-  display: block;
-}
-
-.blog__tags__tag {
-  padding: 3px 10px;
-  margin-bottom: 10px;
-  border-radius: 20px;
-  display: inline-block;
-  font-size: 0.9em;
-  white-space: nowrap;
-  color: #262e61;
-  background-color: #eeeeee;
 }
 
 /* Preview (Archive listing)
@@ -2407,6 +2482,7 @@ Powered by JS
 .feature-block__title,
 .feature-block__copy {
   font-weight: bold;
+  color: #FFFFFF;
 }
 
 .feature-block__title {
@@ -2732,10 +2808,6 @@ Powered by JS
 
     Object-oriented classes, helper classes e.g. bold-font, absolute-center
    ========================================================================== */
-.light-link {
-  color: #FFFFFF;
-}
-
 .sr-only,
 .sub-menu,
 .header--site .form--search__input--submit {
@@ -2747,6 +2819,13 @@ Powered by JS
   overflow: hidden;
 }
 
+.clearfix:after,
+.tags:after {
+  content: '';
+  display: table;
+  clear: both;
+}
+
 .reset-spacing {
   padding: 0;
   margin: 0;
@@ -2754,12 +2833,6 @@ Powered by JS
 
 .zero-line-height {
   line-height: 0;
-}
-
-.clearfix:after {
-  content: '';
-  display: table;
-  clear: both;
 }
 
 .hover-underline:hover {
@@ -2782,12 +2855,24 @@ Powered by JS
   float: right;
 }
 
+.clear-both {
+  clear: both;
+}
+
 .inline {
   display: inline;
 }
 
 .mb-reset {
   margin-bottom: 20px;
+}
+
+.highlight-color {
+  color: #e83272;
+}
+
+.light-link {
+  color: #FFFFFF;
 }
 
 /* ==========================================================================

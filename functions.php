@@ -603,3 +603,39 @@ function cntrn_render_events_posts() {
 	/** Restore original post data **/
 	wp_reset_postdata();
 }
+
+/**
+ * Split a query string into multiple
+ * strings
+ */
+function cntrn_split_search_query_string( $wrapper ) {
+
+	$query_string = get_search_query(); 
+	$result_array = explode(' ', $query_string);
+
+	foreach ( $result_array as $string ) {
+		printf( $wrapper, $string );
+	}
+}
+
+/**
+ * Count no. of individual post_types in
+ * a query
+ */
+function cntrn_count_query_post_types( $query, $type, $wrapper ) {
+
+	// Set var to hold how many 
+	// post-types returned
+	$num_posts = 0;
+
+	// Find out how many posts in total
+	$total_posts = $query->found_posts;
+
+	// Lopp the query to find the posts
+	foreach ( $query->posts as $post ) {
+		if ( $post->post_type == $type ) $num_posts++;
+	}
+
+	// Echo with some HTML
+	printf( $wrapper, $num_posts, $total_posts );
+}

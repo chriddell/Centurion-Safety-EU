@@ -9,7 +9,14 @@
  */
 ?>
 
-<article class="search-result search-result--product">
-	<?php the_title( sprintf( '<h3><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h3>' ); ?>
-	<img src="<?php echo get_field('product_images')[0]['product_image']['url']; ?>" width="150" height="auto"/>
-</article><!-- #post-## -->
+<div class="col-12 col-sml-4">
+	<article class="search-result search-result--product product-listing product-listing--centered product-listing--search">
+		<div class="product-listing__container">
+			<div class="product-listing__image-container">
+				<img src="<?php echo get_field('product_images')[0]['product_image']['url']; ?>" class="product-listing__image"/>
+			</div>
+			<?php the_title('<h3 class="product-listing__title">', '</h3>'); ?>
+			<a href="<?php echo get_permalink(); ?>" class="product-listing__link"><?php _e('More info', 'centurion' ); ?></a>
+		</div>
+	</article>
+</div>

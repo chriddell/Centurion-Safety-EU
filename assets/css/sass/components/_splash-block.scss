@@ -28,6 +28,7 @@
   @extend %like-h2;
   margin-bottom: 0.5em;
   font-weight: bold;
+  color: $lightColor;
 
   @include respond-to( 'small' ) {
     font-size: $h1Size;

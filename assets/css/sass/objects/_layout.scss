@@ -12,6 +12,11 @@
   padding: 0 20px;
 }
 
+.wrapper--thin {
+  @include container;
+  max-width: 740px;
+}
+
 /* Flexbox layout
 ---------------------------------------- */
 @include respond-to( 'small' ) {
