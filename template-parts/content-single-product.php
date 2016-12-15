@@ -13,19 +13,15 @@ $product = array(
 	'images'						=> get_field( 'product_images' ),
 	'colors'						=> get_field( 'product_color_variations' ),
 	'decals'						=> get_field_object( 'product_decals' )['value'],
-	'visibility'				=> get_field_object( 'product_visibility' )['choices'][get_field('product_visibility')],
-	'ratchet'						=> get_field_object( 'product_ratchet' )['choices'][get_field('product_ratchet')],
-	'venting'						=> get_field_object( 'product_venting' )['choices'][get_field('product_venting')],
+	'visibility'				=> get_field( 'product_visibility' ),
+	'ratchet'						=> get_field( 'product_ratchet' ),
+	'venting'						=> get_field( 'product_venting' ),
 	'approved-to'				=> get_field( 'product_approved_to' ),
 	'downloads'					=> get_field( 'product_downloads' ),
 	'specialism'				=> get_field( 'product_specialism' ),
 	'linked-products'		=> get_field( 'product_linked_products' ),
 	'key-features'			=> get_field( 'product_key_features' )
 );
-
-// NB. when get_field_object is used, it's because
-// that is a select list in ACF:
-// https://www.advancedcustomfields.com/resources/select/
 
 get_header(); ?>
 
@@ -133,7 +129,7 @@ get_header(); ?>
 				<?php if ( $product['ratchet'] ) { ?>
 					<div class="product__meta__item col-12 col-sml-6">
 						<?php printf( '<h3 class="product__label inline">%s</h3>', __('Ratchet: ', 'centurion')); ?>
-						<p class="product__copy inline"><?php echo $product['ratchet']; ?></p>
+						<p class="product__copy inline"><?php echo get_field_object( 'product_ratchet' )['choices'][$product['ratchet']] ?></p>
 					</div>
 				<?php } ?>
 
@@ -141,7 +137,7 @@ get_header(); ?>
 				<?php if ( $product['venting'] ) { ?>
 					<div class="product__meta__item col-12 col-sml-6">
 						<?php printf( '<h3 class="product__label inline">%s</h3>', __('Venting: ', 'centurion')); ?>
-						<p class="product__copy inline"><?php echo $product['venting']; ?></p>
+						<p class="product__copy inline"><?php echo get_field_object( 'product_venting' )['choices'][$product['venting']]; ?></p>
 					</div>
 				<?php } ?>
 
@@ -165,7 +161,7 @@ get_header(); ?>
 				<?php if ( $product['visibility'] ) { ?>
 					<div class="product__meta__item">
 						<?php printf( '<h3 class="product__label inline">%s</h3>', __('Visibility: ', 'centurion')); ?>
-						<p class="product__copy inline"><?php echo $product['visibility']; ?></p>
+						<p class="product__copy inline"><?php echo get_field_object( 'product_visibility' )['choices'][$product['visibility']]; ?></p>
 					</div>
 				<?php } ?>
 
