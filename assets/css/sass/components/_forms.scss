@@ -61,6 +61,7 @@
 }
 
 .header--site .form__input--search {
+  width: 100%;
   background-color: #a9bbc2;
   color: $lightColor;
   background-color: $brandColorOne;
@@ -78,7 +79,7 @@
   background-color: #76888f;
 }
 
-// Active & inactive styles
+// Active & inactive styles for 'search'
 // -- not applicable on small devices
 .header--site .form--search {
 
@@ -91,7 +92,19 @@
       pointer-events: none;
     }
 
-    &:hover {
+    #search-submit {
+      display: none;
+    }
+
+    &.is-active {
+      #search-submit {
+        display: block;
+      }
+
+      #pseudo-submit {
+        display: none;
+      }
+
       .form__input--search {
         width: 300px;
         padding: $baseSpacingUnit;

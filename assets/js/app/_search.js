@@ -5,10 +5,11 @@
 (function($){
 	'use strict';
 
-	var searchToggle 	= '#open-search-trigger',
+	var searchToggle 	= '#pseudo-submit',
 			searchForm		= '#search-form';
 
 	function showSearch() {
+
 		$(searchForm).addClass( 'is-active' );
 	}
 

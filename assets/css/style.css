@@ -1332,6 +1332,7 @@ video {
 }
 
 .header--site .form__input--search {
+  width: 100%;
   background-color: #a9bbc2;
   color: #FFFFFF;
   background-color: #262e61;
@@ -1358,7 +1359,16 @@ video {
     visibility: hidden;
     pointer-events: none;
   }
-  .header--site .form--search:hover .form__input--search {
+  .header--site .form--search #search-submit {
+    display: none;
+  }
+  .header--site .form--search.is-active #search-submit {
+    display: block;
+  }
+  .header--site .form--search.is-active #pseudo-submit {
+    display: none;
+  }
+  .header--site .form--search.is-active .form__input--search {
     width: 300px;
     padding: 20px;
     background-color: #a9bbc2;
