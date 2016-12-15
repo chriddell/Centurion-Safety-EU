@@ -4,6 +4,18 @@
     These are styles for a single product page.
    ========================================================================== */
 
+.product__title {
+  margin-top: $baseSpacingUnit;
+
+  @include respond-to( 'small' ) {
+    margin-top: $baseSpacingUnit * 2;
+  }
+}
+
+.product__description {
+  margin-bottom: $baseSpacingUnit * 2;
+}
+
 .product__copy {
   color: $brandColorFour;
 }
@@ -11,4 +23,52 @@
 .product__label,
 .product__title {
   color: $brandColorOne;
+
+  .product__meta__item & {
+    font-size: 1em;
+  }
+}
+
+.product__meta__item {
+  margin-bottom: $baseSpacingUnit;
+}
+
+.product__meta__contact__item {
+  margin-bottom: $baseSpacingUnit;
+}
+
+.product__tabs {
+  margin-top: $baseSpacingUnit * 2;
+}
+
+.product__colours {
+  margin-bottom: $baseSpacingUnit * 2;
+  line-height: 0;
+}
+
+.product__colours__item {
+  height: 26px;
+  width: 26px;
+  margin-right: 5px;
+  border-radius: 4px;
+  display: inline-block;
+
+  &--white {
+    border: 2px solid $borderColor;
+  }
+}
+
+/* Layout
+---------------------------------------- */
+
+.product__col--one {
+  @include respond-to( 'small' ) {
+    padding-right: $baseSpacingUnit;
+  }
+}
+
+.product__col--two {
+  @include respond-to( 'small' ) {
+    padding-left: $baseSpacingUnit;
+  }
 }

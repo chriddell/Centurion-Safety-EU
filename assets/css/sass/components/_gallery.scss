@@ -4,15 +4,11 @@
     Image gallery styles
    ========================================================================== */
 
-.gallery {
-  margin-bottom: $baseSpacingUnit;
-}
-
 /* Main
 ---------------------------------------- */
 
 .gallery__main {
-  padding: $baseSpacingUnit * 2;
+  padding: $baseSpacingUnit $baseSpacingUnit * 2;
   margin-bottom: $baseSpacingUnit / 2;
   border: 1px solid $borderColor;
 

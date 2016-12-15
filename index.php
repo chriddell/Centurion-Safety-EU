@@ -38,7 +38,7 @@ get_header(); ?>
 		</div>
 	</div>
 
-	<div class="block block--coloured">
+	<div class="block block--dark-bg">
 		<div class="wrapper">
 
 		</div>

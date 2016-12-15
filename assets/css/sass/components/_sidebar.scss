@@ -21,7 +21,6 @@
 }
 
 .sidebar--right {
-
   @include respond-to( 'small' ) {
     padding-left: $baseSpacingUnit * 2;
   }

@@ -1511,8 +1511,11 @@ video {
   color: #94aab3;
 }
 
-.tabs__tab-selector.is-active {
+.tabs__tab-selector:not(:only-of-type).is-active {
   border-bottom: 0;
+}
+
+.tabs__tab-selector.is-active {
   color: #262e61;
 }
 
@@ -1622,14 +1625,10 @@ Powered by JS
     
     Image gallery styles
    ========================================================================== */
-.gallery {
-  margin-bottom: 20px;
-}
-
 /* Main
 ---------------------------------------- */
 .gallery__main {
-  padding: 40px;
+  padding: 20px 40px;
   margin-bottom: 10px;
   border: 1px solid #dbdbdb;
 }
@@ -1843,9 +1842,13 @@ Powered by JS
   }
 }
 
-.block--coloured {
+.block--dark-bg {
   background-color: #94aab3;
   color: #FFFFFF;
+}
+
+.block--light-bg {
+  background-color: #eaeef0;
 }
 
 .block--after-features {
@@ -2039,6 +2042,20 @@ Powered by JS
     
     These are styles for a single product page.
    ========================================================================== */
+.product__title {
+  margin-top: 20px;
+}
+
+@media (min-width: 767px) {
+  .product__title {
+    margin-top: 40px;
+  }
+}
+
+.product__description {
+  margin-bottom: 40px;
+}
+
 .product__copy {
   color: #9ba399;
 }
@@ -2046,6 +2063,54 @@ Powered by JS
 .product__label,
 .product__title {
   color: #262e61;
+}
+
+.product__meta__item .product__label, .product__meta__item
+.product__title {
+  font-size: 1em;
+}
+
+.product__meta__item {
+  margin-bottom: 20px;
+}
+
+.product__meta__contact__item {
+  margin-bottom: 20px;
+}
+
+.product__tabs {
+  margin-top: 40px;
+}
+
+.product__colours {
+  margin-bottom: 40px;
+  line-height: 0;
+}
+
+.product__colours__item {
+  height: 26px;
+  width: 26px;
+  margin-right: 5px;
+  border-radius: 4px;
+  display: inline-block;
+}
+
+.product__colours__item--white {
+  border: 2px solid #dbdbdb;
+}
+
+/* Layout
+---------------------------------------- */
+@media (min-width: 767px) {
+  .product__col--one {
+    padding-right: 20px;
+  }
+}
+
+@media (min-width: 767px) {
+  .product__col--two {
+    padding-left: 20px;
+  }
 }
 
 /* ==========================================================================
@@ -2705,6 +2770,14 @@ Powered by JS
 
 .float-right {
   float: right;
+}
+
+.inline {
+  display: inline;
+}
+
+.mb-reset {
+  margin-bottom: 20px;
 }
 
 /* ==========================================================================

@@ -16,9 +16,13 @@
   }
 }
 
-.block--coloured {
+.block--dark-bg {
   background-color: $brandColorTwo;
   color: $lightColor;
+}
+
+.block--light-bg {
+  background-color: $brandColorThree;
 }
 
 .block--after-features {

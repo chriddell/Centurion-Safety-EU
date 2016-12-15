@@ -12,8 +12,10 @@ $product = array(
 	'description' 			=> get_field( 'product_description' ),
 	'images'						=> get_field( 'product_images' ),
 	'colors'						=> get_field( 'product_color_variations' ),
-	'decals'						=> get_field( 'product_decals' ),
-	'visibility'				=> get_field( 'product_visibility' ),
+	'decals'						=> get_field_object( 'product_decals' )['value'],
+	'visibility'				=> get_field_object( 'product_visibility' )['choices'][get_field('product_visibility')],
+	'ratchet'						=> get_field_object( 'product_ratchet' )['choices'][get_field('product_ratchet')],
+	'venting'						=> get_field_object( 'product_venting' )['choices'][get_field('product_venting')],
 	'approved-to'				=> get_field( 'product_approved_to' ),
 	'downloads'					=> get_field( 'product_downloads' ),
 	'specialism'				=> get_field( 'product_specialism' ),
@@ -21,11 +23,15 @@ $product = array(
 	'key-features'			=> get_field( 'product_key_features' )
 );
 
+// NB. when get_field_object is used, it's because
+// that is a select list in ACF:
+// https://www.advancedcustomfields.com/resources/select/
+
 get_header(); ?>
 
 <article id="product-<?php the_ID(); ?>" class="product clearfix">
 	<div class="block clearfix">
-		<div class="col-12 col-sml-6">
+		<div class="col-12 col-sml-6 product__col product__col--one">
 			<div class="gallery product__image-gallery">
 
 				<?php /** Image Gallery **/ ?>
@@ -89,52 +95,78 @@ get_header(); ?>
 			</div>
 		</div>
 
-		<div class="col-12 col-sml-6">
+		<div class="col-12 col-sml-6 product__col product__col--two">
 			<div class="product__meta">
 
+				<?php /** Product title & description **/ ?>
 				<?php the_title( '<h2 class="product__title">', '</h2>' ); ?>
 				<?php echo '<p class="product__copy product__description">' . $product['description'] . '</p>'; ?>
-				<?php
-				// Check for more colours
-				if ( have_rows( 'product_color_variations' ) ) {
 
-					// Title
-					printf( '<h3 class="product__label">%s</h3>', __('Colours', 'centurion') );
+				<?php /** Product colours **/ ?>
+				<?php if ( have_rows( 'product_color_variations' ) ) { ?>
+
+				<?php
 					echo '<ul class="menu product__colours">';
 
 					// Loop rows of colours
 					while ( have_rows( 'product_color_variations' ) ) : the_row();
-						echo '<li class="product__colours__colour">';
 
 						// Get the meta for this colour
 						$color_object 	= get_sub_field( 'product_color' );
-						$color_name 		= $color_object->name;
+						$color_name 		= $color_object->slug;
 						$color_hex 			= get_field( 'product_color_hex_code', $color_object );
 
-						// Render color details
-						echo $color_name . ' (' . $color_hex . ')';
-
-						// Loop images and show
-						while ( have_rows( 'product_color_images' ) ) : the_row();
-							$product_image = get_sub_field( 'product_color_image' );
-							echo '<img src="' . $product_image['url'] . '"/>';
-						endwhile;
-
-						echo '</li>';
+						echo '<li class="product__colours__item product__colours__item--' . $color_name . '" style="background-color: ' . $color_hex . '"></li>';
 					endwhile;
 
 					echo '</ul>';
-				}
 				?>
-
-				<?php if ( $product['decals'] ) { ?>
-					<?php printf( '<h3 class="product__label">%s</h3>', __('Decals', 'centurion')); ?>
-					<?php printf( '<p class="product__copy">%s</p>', $product['decals'] ); ?>
 				<?php } ?>
 
+				<?php /** Contact Links **/ ?>
+				<div class="product__meta__item product__meta__contact clearfix">
+					<a href="" class="product__meta__contact__item col-12 col-sml-6"><?php _e( 'Contact our Sales Team', 'centurion' ); ?></a>
+					<a href="" class="product__meta__contact__item col-12 col-sml-6"><?php _e( 'Upload your logo', 'centurion' ); ?></a>
+				</div>
+
+				<?php /** Product ratchet **/ ?>
+				<?php if ( $product['ratchet'] ) { ?>
+					<div class="product__meta__item col-12 col-sml-6">
+						<?php printf( '<h3 class="product__label inline">%s</h3>', __('Ratchet: ', 'centurion')); ?>
+						<p class="product__copy inline"><?php echo $product['ratchet']; ?></p>
+					</div>
+				<?php } ?>
+
+				<?php /** Product venting **/ ?>
+				<?php if ( $product['venting'] ) { ?>
+					<div class="product__meta__item col-12 col-sml-6">
+						<?php printf( '<h3 class="product__label inline">%s</h3>', __('Venting: ', 'centurion')); ?>
+						<p class="product__copy inline"><?php echo $product['venting']; ?></p>
+					</div>
+				<?php } ?>
+
+				<?php /** Product decals **/ ?>
+				<?php if ( $product['decals'] ) { ?>
+					<div class="product__meta__item">
+						<?php printf( '<h3 class="product__label inline">%s</h3>', __('Decals: ', 'centurion')); ?>
+						<p class="product__copy inline product__decals">
+							<?php 
+								_e('Reflective decals in ' . count($product['decals']) . ' colours: ', 'centurion');
+
+								// Capitalise those strings!
+								$capitalised_decals_array = array_map('ucfirst', $product['decals']);
+								echo implode(', ', $capitalised_decals_array);
+							?>
+						</p>
+					</div>
+				<?php } ?>
+
+				<?php /** Product visibility **/ ?>
 				<?php if ( $product['visibility'] ) { ?>
-					<?php printf( '<h3 class="product__label">%s</h3>', __('Visibility', 'centurion')); ?>
-					<?php printf( '<p class="product__copy">%s</p>', $product['visibility'] ); ?>
+					<div class="product__meta__item">
+						<?php printf( '<h3 class="product__label inline">%s</h3>', __('Visibility: ', 'centurion')); ?>
+						<p class="product__copy inline"><?php echo $product['visibility']; ?></p>
+					</div>
 				<?php } ?>
 
 				<?php /** Render a tabbed box if we have info for it **/ ?>
@@ -197,20 +229,20 @@ get_header(); ?>
 					</div><!-- / .tabs -->
 				<?php } ?>
 
+				</div>
 			</div>
-		</div>
-	</div><!-- / .block -->
+		</div><!-- / .block -->
+	</div><!-- / .wrapper -->
 
 	<?php if ( have_rows( 'product_linked_products') ) { ?>
-	<div class="block">
-		<div class="product__linked-products">
-			<div class="col-12">
-				<div class="block">
-					<?php printf( '<h3>%s</h3>', __('Expand your system', 'centurion') ); ?>
-					<?php echo '<ul>'; ?>
+	<div class="block block--light-bg clearfix">
+		<div class="wrapper">
+			<div class="product__linked-products">
+				<div class="col-12">
+					<?php printf( '<h3 class="section-title mb-reset">%s</h3>', __('Expand your system', 'centurion') ); ?>
+					<ul class="menu">
+					<?php while ( have_rows( 'product_linked_products' ) ) : the_row(); ?>
 					<?php
-					// Loop through linked-products
-					while ( have_rows( 'product_linked_products' ) ) : the_row();
 						// Get the linked product post-object
 						$linked_product 						= get_sub_field( 'product_linked_product');
 						// Get the array of images ACF
@@ -218,14 +250,19 @@ get_header(); ?>
 						// Get the first image url
 						$linked_product_image_url 	= $linked_product_images[0]['product_image']['url'];
 						// Render
-						echo '<li>';
-						echo '<a href="' . get_permalink($linked_product) . '">';
-						echo '<h4>' . $linked_product->post_title . '</h4>';
-						echo '<img src="' . $linked_product_image_url . '"/>';
-						echo '</a>';
-						echo '</li>';
-					endwhile;
 					?>
+						<li class="col-3">
+							<div class="product-listing product-listing--centered">
+								<div class="product-listing__container">
+									<div class="product-listing__image-container">
+										<img src="<?php echo $linked_product_image_url; ?>" class="product-listing__image"/>
+									</div>
+									<h4 class="product-listing__title"><?php echo $linked_product->post_title; ?></h4>
+									<a href="<?php echo get_permalink($linked_product); ?>" class="product-listing__link"><?php _e('More info', 'centurion' ); ?></a>
+								</div>
+							</div>
+						</li>
+					<?php endwhile; ?>
 					<?php echo '</ul>'; ?>
 				</div>
 			</div>

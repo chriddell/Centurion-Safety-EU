@@ -62,8 +62,11 @@
 .tabs__tab-selector {
   color: $brandColorTwo;
 
-  &.is-active {
+  &:not(:only-of-type).is-active {
     border-bottom: 0;
+  }
+
+  &.is-active {
     color: $brandColorOne;
 
     &:hover {

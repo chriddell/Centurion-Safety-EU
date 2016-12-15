@@ -55,3 +55,11 @@
 .float-right {
   float: right;
 }
+
+.inline {
+  display: inline;
+}
+
+.mb-reset {
+  margin-bottom: $baseSpacingUnit;
+}
