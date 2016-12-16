@@ -4,10 +4,6 @@
     Filter for products, lives in sidebar.
    ========================================================================== */
 
-.product-filter__main {
-
-}
-
 .product-filter__header {
   background-color: darken($brandColorThree, 5%);
 }
@@ -32,6 +28,7 @@
 .product-filter__item-heading {
   padding: $baseSpacingUnit;
   border-top: 1px solid $borderColor;
+  color: $brandColorTwo;
   @extend %like-h3;
 }
 
@@ -42,6 +39,11 @@
 
 .product-filter__header {
   cursor: pointer;
+}
+
+.product-filter__toggle-text {
+  color: inherit;
+  text-align: right;
 }
 
 /* Filters

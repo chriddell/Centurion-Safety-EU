@@ -4,6 +4,10 @@
     Site footer styles.
    ========================================================================== */
 
+.footer p {
+  color: $lightColor;
+}
+
 .footer--site a {
   color: $lightColor;
 }
