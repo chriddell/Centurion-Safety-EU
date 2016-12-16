@@ -20,6 +20,7 @@
 			centerPadding: '0',
 			asNavFor: '.timeline__nav',
 			focusOnSelect: true,
+      infinite: false,
 			responsive: [
 				{
       		breakpoint: 768,
