@@ -15,14 +15,25 @@ get_header(); ?>
 
 			<header>
 				<h1 class="section-title"><?php printf( __( 'Your search has returned %s results', 'centurion' ), '<span class="highlight-color">' . $wp_query->found_posts . '</span>' ); ?></h1>
+
+				<div class="search-results__form clearfix">
+					<!-- .search-form -->
+					<form action="/" method="GET" class="form form--search form--search--in-page col-12" id="search-form">
+						<input type="search" class="form__input form--search--in-page__input form__input--search form--search--in-page__input--search col-12" placeholder="What are you looking for?" value="<?php echo get_search_query(); ?>" name="s">
+						<input class="form__input form--search--in-page__input form__input--submit form--search--in-page__input--submit" type="submit" id="search-submit" value="" />
+					</form>
+					<!-- / .search-form -->
+				</div>
+
 				<?php if ( !empty( get_search_query() ) && !ctype_space( get_search_query() ) ) { ?>
 					<ul class="menu tags tags--search">
 						<?php cntrn_split_search_query_string('<li class="tags__tag tags--search__tag">%s</li>'); ?>
 					</ul>
 				<?php } ?>
+
 			</header>
 
-			<section class="search-content clearfix">
+			<section class="search-results__content clearfix">
 				<?php $products = false; $news = false; $advice = false; ?>
 				<?php if ( have_posts() ) : ?>
 
@@ -30,19 +41,19 @@ get_header(); ?>
 						<?php 
 						if ( $post->post_type == 'product' && !$products ) {
 
-							printf('<h3 class="search-result__title clear-both col-12">%s</h3>', get_post_type_object('product')->labels->name);
+							printf('<h3 class="search-results__title clear-both col-12">%s</h3>', get_post_type_object('product')->labels->name);
 							$products = true;
 						}
 
 						if ( $post->post_type == 'news' && !$news ) {
 
-							printf( '<h3 class="search-result__title clear-both col-12">%s</h3>', __( 'News & Events' ) );
+							printf( '<h3 class="search-results__title clear-both col-12">%s</h3>', __( 'News & Events' ) );
 							$news = true;
 						}
 
 						if ( $post->post_type == 'advice' && !$advice ) {
 
-							printf( '<h3 class="search-result__title clear-both col-12">%s</h3>', get_post_type_object('advice')->labels->name );
+							printf( '<h3 class="search-results__title clear-both col-12">%s</h3>', get_post_type_object('advice')->labels->name );
 							$advice = true;
 						}
 						?>

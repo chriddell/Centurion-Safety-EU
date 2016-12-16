@@ -5,8 +5,8 @@
 (function($){
 	'use strict';
 
-	var searchToggle 	= '#pseudo-submit',
-			searchForm		= '#search-form';
+	var searchToggle 	= '#header-pseudo-submit',
+			searchForm		= '#header-search-form';
 
 	function showSearch() {
 

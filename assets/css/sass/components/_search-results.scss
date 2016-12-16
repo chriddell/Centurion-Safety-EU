@@ -4,10 +4,10 @@
     Search result components
    ========================================================================== */
 
-.search-result__title {
-  padding: $baseSpacingUnit * 2 0 0;
+.search-results__title {
 
   &:not(:first-of-type) {
+    padding: $baseSpacingUnit * 2 0 0;
     margin-top: $baseSpacingUnit;
     border-top: 1px solid $borderColor;
   }
@@ -16,12 +16,17 @@
     // Shift wider than wrapper
     // on desktop
     width: 110%;
-    padding: $baseSpacingUnit * 2 0 0 5%;
     position: relative;
     left: -5%;
 
     &:not(:first-of-type) {
+      padding: $baseSpacingUnit * 2 0 0;
       margin-top: $baseSpacingUnit * 2;
     }
   }
+}
+
+.search-results__form {
+  height: 60px;
+  margin: $baseSpacingUnit 0 $baseSpacingUnit * 2;
 }

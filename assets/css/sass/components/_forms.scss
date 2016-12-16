@@ -16,52 +16,57 @@
   background-color: $brandColorOne;
 }
 
-/* Search Form
+/* Search (not in header)
 ---------------------------------------- */
 
-.form--search {
-  @include respond-to( 'medium' ) {
-    float: right;
+.form--search--in-page {
+  height: 100%;
+  position: relative;
+}
+
+.form--search--in-page__input {
+  height: 100%;
+}
+
+.form--search--in-page__input--submit {
+  width: 60px;
+  position: absolute;
+  right: 0;
+}
+
+.form--search--in-page__input--search {
+  padding: $baseSpacingUnit;
+  border: 0;
+  background-color: lighten($borderColor, 10%);
+  transition: background-color .25s ease;
+
+  &:focus {
+    outline: 0;
+    background-color: lighten($borderColor, 5%);
   }
 }
 
-.form--search ::placeholder {
-  color: $lightColor;
-}
-
-/* Search in header
+/* Search (in header)
 ---------------------------------------- */
 
-.header--site .form--search {
+.form--search--in-header {
   height: 60px;
+  width: 100%;
+
+  @include respond-to( 'medium' ) {
+    float: right;
+    width: auto;
+  }
 }
 
-.header--site .form__input {
+.form--search--in-header__input {
   height: 100%;
   border: 0;
 }
 
-.header--site .form--search__input--submit {
-
-  // Hide these elements on smaller devices
-  // and trust in user using the Go / Enter 
-  // on their device
-  @extend %sr-only;
-
-  @include respond-to( 'medium' ) {
-
-    // Unhide on larger devices
-    // Sorry, have to use !importants
-    height: 100% !important;
-    width: 70px !important;
-    padding: 0;
-    position: static !important;
-    float: right;
-  }
-}
-
-.header--site .form__input--search {
+.form--search--in-header__input--search {
   width: 100%;
+  padding: $baseSpacingUnit;
   background-color: #a9bbc2;
   color: $lightColor;
   background-color: $brandColorOne;
@@ -75,43 +80,60 @@
   }
 }
 
-.header--site .form__input--submit {
-  background-color: #76888f;
-}
+.form--search--in-header__input--submit {
 
-// Active & inactive styles for 'search'
-// -- not applicable on small devices
-.header--site .form--search {
+  // Hide these elements on smaller devices
+  // and trust in user using the Go / Enter 
+  // on their device
+  @extend %sr-only;
+  background-color: #76888f;
 
   @include respond-to( 'medium' ) {
 
-    .form__input--search {
-      width: 0;
-      padding: 0;
-      visibility: hidden;
-      pointer-events: none;
+    // Unhide on larger devices
+    // Sorry, have to use !importants
+    height: 100% !important;
+    width: 60px !important;
+    padding: 0;
+    position: static !important;
+    float: right;
+  }
+}
+
+.form--search--in-header ::placeholder {
+  color: $lightColor;
+}
+
+// Active & inactive styles for header search
+// -- not applicable on small devices
+@include respond-to( 'medium' ) {
+  .form--search--in-header__input--search {
+    width: 0;
+    visibility: hidden;
+    pointer-events: none;
+  }
+
+  #header-search-submit {
+    display: none;
+  }
+
+  &.is-active {
+
+    // Show the real submit input
+    #header-search-submit {
+      display: block;
     }
 
-    #search-submit {
+    // Hide the fake submit input
+    #header-pseudo-submit {
       display: none;
     }
 
-    &.is-active {
-      #search-submit {
-        display: block;
-      }
-
-      #pseudo-submit {
-        display: none;
-      }
-
-      .form__input--search {
-        width: 300px;
-        padding: $baseSpacingUnit;
-        background-color: #a9bbc2;
-        visibility: visible;
-        pointer-events: all;
-      }
+    .form--search--in-header__input--search {
+      width: 300px;
+      background-color: #a9bbc2;
+      visibility: visible;
+      pointer-events: all;
     }
   }
 }
