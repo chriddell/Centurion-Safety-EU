@@ -43,11 +43,14 @@ get_header(); ?>
 		</div>
 	</div>
 
-	<div class="block block--dark-bg">
-		<div class="wrapper">
-
+	<?php /** Latest posts **/ ?>
+	<?php if ( cntrn_get_latest_advice_posts() ) { ?>
+		<div class="block block--dark-bg">
+			<div class="wrapper">
+				<?php cntrn_render_latest_advice_posts(); ?>
+			</div>
 		</div>
-	</div>
+	<?php } ?>
 
 	<div class="block block--last">
 		<div class="wrapper">

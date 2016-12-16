@@ -395,51 +395,10 @@ function cntrn_render_term_tree( $taxonomy, $term_id ){
 	}
 }
 
-/**
- * Show 2 featured products
- */ 
-function cntrn_render_featured_products() {
-
-	// Get products with featured = true
-	$query = new WP_Query(array(
-		'posts_per_page'	=> 2,
-		'post_type'				=> 'product',
-		'meta_key'				=> 'product_featured',
-		'meta_value'			=> true
-	));
-
-	// If posts returns something
-	if ( $query->have_posts() ) { ?>
-
-		<h2 class="section-title uppercase text-centered"><?php _e('Our Latest Systems'); ?></h2>
-		<ul class="product-listings menu clearfix">
-			<?php while ( $query->have_posts() ) : $query->the_post(); ?>
-
-				<?php
-				// Get the fields we need
-				$product_image 				= get_field('product_images');
-				$product_description 	= get_field('product_description');
-				?>
-				<li class="product-listing product-listing--featured col-12 col-sml-6">
-					<div class="product-listing__container product-listing--featured__container">
-						<span class="product-listing__image-container product-listing--featured__image-container">
-							<img src="<?php echo $product_image[0]['product_image']['url']; ?>" class="product-listing__image product-listing--featured__image"/>
-						</span>
-						<?php the_title('<h3 class="product-listing__title product-listing--featured__title uppercase">', '</h3>'); ?>
-						<p class="product-listing__description product-listing--featured__description"><?php echo $product_description; ?></p>
-						<a href="<?php the_permalink(); ?>" class="product-listing__link product-listing--featured__link"><?php _e('Visit product page', 'centurion'); ?></a>
-					</div>
-				</li>
-			<?php endwhile; ?>
-		</ul>
-	<?php }
-
-	// Restore global data
-	wp_reset_query();
-}
 
 /**
- * Show most recent advice articles
+ * Show top level product_category
+ * links
  *
  * @param images 			= show category_image; boolean
  * @param classnames 	= add class(es); string
@@ -585,7 +544,7 @@ function cntrn_render_events_posts() {
 	// Only events, all of them
 	$args = array(
 		'post_type' 			=> 'event',
-		'posts_per_page' 	=> 1
+		'posts_per_page' 	=> -1
 	);
 
 	$the_query = new WP_Query($args);
@@ -638,4 +597,111 @@ function cntrn_count_query_post_types( $query, $type, $wrapper ) {
 
 	// Echo with some HTML
 	printf( $wrapper, $num_posts, $total_posts );
+}
+
+/**
+ * Find out if there are any featured-products
+ */ 
+function cntrn_get_featured_products() {
+
+	// Get products with featured = true
+	$query = new WP_Query(array(
+		'posts_per_page'	=> 2,
+		'post_type'				=> 'product',
+		'meta_key'				=> 'product_featured',
+		'meta_value'			=> true
+	));
+
+	// If posts returns something
+	if ( $query->have_posts() ) { 
+		return true;
+	}
+
+	else {
+		return false;
+	}
+
+	// Restore global post data
+	wp_reset_query();
+}
+
+/**
+ * Show 2 featured products
+ */ 
+function cntrn_render_featured_products() {
+
+	// Get products with featured = true
+	$query = new WP_Query(array(
+		'posts_per_page'	=> 2,
+		'post_type'				=> 'product',
+		'meta_key'				=> 'product_featured',
+		'meta_value'			=> true
+	));
+
+	// If posts returns something
+	if ( $query->have_posts() ) { 
+
+		// Echo title
+		printf('<h2 class="section-title uppercase text-centered">%s</h2>', __( 'Our Latest Systems' ) );
+
+		while ( $query->have_posts() ) : $query->the_post();
+
+			get_template_part( 'template-parts/content', 'featured-product' );
+
+		endwhile;
+	}
+
+	// Restore global data
+	wp_reset_query();
+}
+
+/**
+ * Get latest advice post_type
+ * so we can check for them before rendering
+ * them
+ */
+function cntrn_get_latest_advice_posts() {
+
+	// Query advice posts
+	$query = new WP_Query(array(
+		'posts_per_page'	=> 3,
+		'post_type'				=> 'advice',
+		'orderby'					=> 'date'
+	));
+
+	// If posts returns something
+	if ( $query->have_posts() ) { 
+		return true;
+	}
+
+	else {
+		return false;
+	}
+
+	// Restore global post data
+	wp_reset_query();
+}
+
+/**
+ * Get latest advice post_type 
+ * and render them
+ */
+function cntrn_render_latest_advice_posts() {
+
+	// Query advice posts
+	$query = new WP_Query(array(
+		'posts_per_page'	=> 3,
+		'post_type'				=> 'advice',
+		'orderby'					=> 'date'
+	));
+
+	// If posts returns something
+	if ( $query->have_posts() ) { 
+		while ( $query->have_posts() ) : $query->the_post();
+			get_template_part( 'template-parts/content', 'most-recent' );
+		endwhile;
+	}
+
+	// Restore global post data
+	wp_reset_query();
 }

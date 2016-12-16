@@ -2503,6 +2503,14 @@ Powered by JS
   margin-bottom: 0;
 }
 
+/* Most recent
+---------------------------------------- */
+.blog--most-recent__title,
+.blog--most-recent__author,
+.blog--most-recent__link {
+  color: #FFFFFF;
+}
+
 /* ==========================================================================
     _feature
 

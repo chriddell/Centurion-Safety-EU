@@ -69,3 +69,12 @@
 .event__text--date {
   margin-bottom: 0;
 }
+
+/* Most recent
+---------------------------------------- */
+
+.blog--most-recent__title,
+.blog--most-recent__author,
+.blog--most-recent__link {
+  color: $lightColor;
+}
