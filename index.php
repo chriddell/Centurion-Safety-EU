@@ -37,11 +37,14 @@ get_header(); ?>
 		</div>
 	</div><!-- / .hero -->
 
-	<div class="block">
-		<div class="wrapper">
-			<?php cntrn_render_featured_products(); ?>
+	<?php /** Featured Products **/ ?>
+	<?php if ( cntrn_get_featured_products() ) { ?>
+		<div class="block">
+			<div class="wrapper">
+				<?php cntrn_render_featured_products(); ?>
+			</div>
 		</div>
-	</div>
+	<?php } ?>
 
 	<?php /** Latest posts **/ ?>
 	<?php if ( cntrn_get_latest_advice_posts() ) { ?>
