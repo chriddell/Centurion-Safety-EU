@@ -844,6 +844,10 @@ html {
   box-sizing: border-box;
 }
 
+p {
+  color: #262e61;
+}
+
 a {
   text-decoration: none;
   color: #e83272;
@@ -1309,91 +1313,120 @@ video {
   background-color: #262e61;
 }
 
-/* Search Form
+/* Search (not in header)
 ---------------------------------------- */
+.form--search--in-page {
+  height: 100%;
+  position: relative;
+}
+
+.form--search--in-page__input {
+  height: 100%;
+}
+
+.form--search--in-page__input--submit {
+  width: 60px;
+  position: absolute;
+  right: 0;
+}
+
+.form--search--in-page__input--search {
+  padding: 20px;
+  border: 0;
+  background-color: whitesmoke;
+  -webkit-transition: background-color .25s ease;
+          transition: background-color .25s ease;
+}
+
+.form--search--in-page__input--search:focus {
+  outline: 0;
+  background-color: #e8e8e8;
+}
+
+/* Search (in header)
+---------------------------------------- */
+.form--search--in-header {
+  height: 60px;
+  width: 100%;
+}
+
 @media (min-width: 1023px) {
-  .form--search {
+  .form--search--in-header {
     float: right;
+    width: auto;
   }
 }
 
-.form--search ::-webkit-input-placeholder {
-  color: #FFFFFF;
-}
-
-.form--search ::-moz-placeholder {
-  color: #FFFFFF;
-}
-
-.form--search :-ms-input-placeholder {
-  color: #FFFFFF;
-}
-
-.form--search ::placeholder {
-  color: #FFFFFF;
-}
-
-/* Search in header
----------------------------------------- */
-.header--site .form--search {
-  height: 60px;
-}
-
-.header--site .form__input {
+.form--search--in-header__input {
   height: 100%;
   border: 0;
 }
 
+.form--search--in-header__input--search {
+  width: 100%;
+  padding: 20px;
+  background-color: #a9bbc2;
+  color: #FFFFFF;
+  background-color: #262e61;
+}
+
+.form--search--in-header__input--search:focus {
+  background-color: #343f86;
+}
+
 @media (min-width: 1023px) {
-  .header--site .form--search__input--submit {
+  .form--search--in-header__input--search {
+    float: left;
+  }
+}
+
+.form--search--in-header__input--submit {
+  background-color: #76888f;
+}
+
+@media (min-width: 1023px) {
+  .form--search--in-header__input--submit {
     height: 100% !important;
-    width: 70px !important;
+    width: 60px !important;
     padding: 0;
     position: static !important;
     float: right;
   }
 }
 
-.header--site .form__input--search {
-  width: 100%;
-  background-color: #a9bbc2;
+.form--search--in-header ::-webkit-input-placeholder {
   color: #FFFFFF;
-  background-color: #262e61;
 }
 
-.header--site .form__input--search:focus {
-  background-color: #343f86;
+.form--search--in-header ::-moz-placeholder {
+  color: #FFFFFF;
 }
 
-@media (min-width: 1023px) {
-  .header--site .form__input--search {
-    float: left;
-  }
+.form--search--in-header :-ms-input-placeholder {
+  color: #FFFFFF;
 }
 
-.header--site .form__input--submit {
-  background-color: #76888f;
+.form--search--in-header ::placeholder {
+  color: #FFFFFF;
 }
 
 @media (min-width: 1023px) {
-  .header--site .form--search .form__input--search {
+  .form--search--in-header__input--search {
     width: 0;
-    padding: 0;
     visibility: hidden;
     pointer-events: none;
   }
-  .header--site .form--search #search-submit {
+  #header-search-submit {
     display: none;
   }
-  .header--site .form--search.is-active #search-submit {
+  .is-active #header-search-submit {
     display: block;
   }
-  .header--site .form--search.is-active #pseudo-submit {
+  .is-active #header-pseudo-submit {
     display: none;
   }
-  .header--site .form--search.is-active .form__input--search {
+  .is-active .form--search--in-header__input--search {
     width: 300px;
-    padding: 20px;
     background-color: #a9bbc2;
     visibility: visible;
     pointer-events: all;
@@ -1455,6 +1488,10 @@ video {
     
     Site footer styles.
    ========================================================================== */
+.footer p {
+  color: #FFFFFF;
+}
+
 .footer--site a {
   color: #FFFFFF;
 }
@@ -1590,6 +1627,7 @@ video {
 .tags--search {
   padding: 6.6666666667px 10px 0;
   margin-top: 20px;
+  margin-bottom: 40px;
   border-top: 1px solid #dbdbdb;
   border-bottom: 1px solid #dbdbdb;
 }
@@ -2072,6 +2110,7 @@ Powered by JS
 .product-filter__item-heading {
   padding: 20px;
   border-top: 1px solid #dbdbdb;
+  color: #94aab3;
 }
 
 .product-filter__item-list--is-child {
@@ -2081,6 +2120,11 @@ Powered by JS
 
 .product-filter__header {
   cursor: pointer;
+}
+
+.product-filter__toggle-text {
+  color: inherit;
+  text-align: right;
 }
 
 /* Filters
@@ -2335,6 +2379,11 @@ Powered by JS
   text-shadow: 1px 2px 5px rgba(0, 0, 0, 0.45);
 }
 
+.hero__video {
+  display: none;
+  width: 100%;
+}
+
 /* Variations
 ---------------------------------------- */
 .hero--blog {
@@ -2360,25 +2409,27 @@ Powered by JS
     
     Search result components
    ========================================================================== */
-.search-result__title {
+.search-results__title:not(:first-of-type) {
   padding: 40px 0 0;
-}
-
-.search-result__title:not(:first-of-type) {
   margin-top: 20px;
   border-top: 1px solid #dbdbdb;
 }
 
 @media (min-width: 767px) {
-  .search-result__title {
+  .search-results__title {
     width: 110%;
-    padding: 40px 0 0 5%;
     position: relative;
     left: -5%;
   }
-  .search-result__title:not(:first-of-type) {
+  .search-results__title:not(:first-of-type) {
+    padding: 40px 0 0;
     margin-top: 40px;
   }
+}
+
+.search-results__form {
+  height: 60px;
+  margin: 20px 0 40px;
 }
 
 /* ==========================================================================
@@ -2630,6 +2681,9 @@ Powered by JS
 		
 		Vendor / library styles
 	 ========================================================================== */
+/* ==========================================================================
+		Slick JS
+	 ========================================================================== */
 /* Slider
 ---------------------------------------- */
 .slick-loading .slick-list {
@@ -2804,13 +2858,20 @@ Powered by JS
 }
 
 /* ==========================================================================
+		Featherlight (Lightbox)
+	 ========================================================================== */
+.featherlight-content {
+  width: 100%;
+}
+
+/* ==========================================================================
     _helpers
 
     Object-oriented classes, helper classes e.g. bold-font, absolute-center
    ========================================================================== */
 .sr-only,
 .sub-menu,
-.header--site .form--search__input--submit {
+.form--search--in-header__input--submit {
   position: absolute;
   left: -1000000px;
   top: auto;

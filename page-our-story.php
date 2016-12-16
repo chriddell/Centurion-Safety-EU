@@ -26,7 +26,11 @@ get_header(); ?>
 
 	<div class="hero" style="background-image: url(<?php echo $hero['image']['url'] ?>);"><!-- .hero -->
 		<div class="wrapper">
-			<a class="btn btn--play"><span class="sr-only">Play Video</span></a>
+			<a href="" class="hero__cta btn btn--centered" data-featherlight="#featherlight-content"><span class="sr-only">Play video</span></a>
+				<!-- video is hidden -->
+				<video controls id="featherlight-content" class="hero__video">
+					<source src="<?php echo $hero['video']['url']; ?>" type="<?php echo $hero['video']['mime_type']; ?>">
+				</video>
 		</div>
 	</div><!-- / .hero -->
 

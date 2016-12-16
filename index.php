@@ -23,11 +23,16 @@ $hero = array(
 get_header(); ?>
 
 <main class="main" role="main">
+	
 	<div class="hero" style="background-image: url(<?php echo $hero['image']['url'] ?>);"><!-- .hero -->
 		<div class="wrapper">
 			<h2 class="hero__title"><?php echo $hero['title']; ?></h2>
 			<?php if ( $hero['cta-text'] ) { ?>
-			<a href="" class="hero__cta btn btn--centered"><?php echo $hero['cta-text']; ?></a>
+				<a href="" class="hero__cta btn btn--centered" data-featherlight="#featherlight-content"><?php echo $hero['cta-text']; ?></a>
+				<!-- video is hidden -->
+				<video controls id="featherlight-content" class="hero__video">
+					<source src="<?php echo $hero['video']['url']; ?>" type="<?php echo $hero['video']['mime_type']; ?>">
+				</video>
 			<?php } ?>
 		</div>
 	</div><!-- / .hero -->
@@ -54,11 +59,3 @@ get_header(); ?>
 </main>
 
 <?php get_footer(); ?>
-
-<?php if ( $hero['cta-text'] ) { ?>
-	<div>
-		<video controls>
-			<source src="<?php echo $hero['video']['url']; ?>" type="<?php echo $hero['video']['mime_type']; ?>">
-		</video>
-	</div>
-<?php } ?>
