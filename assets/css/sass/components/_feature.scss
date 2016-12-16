@@ -5,8 +5,9 @@
    ========================================================================== */
 
 .feature-block {
-  position: relative;
   height: 100vh;
+  position: relative;
+  overflow: hidden;
 
   @include respond-to( 'small' ) {
     min-height: 600px; // Fallback
@@ -15,7 +16,7 @@
 }
 
 .feature-block__content {
-  padding: $baseSpacingUnit * 2 0;
+  padding: $baseSpacingUnit * 2 $baseSpacingUnit;
 
   @include respond-to( 'small' ) {
     padding: $baseSpacingUnit * 5;
@@ -43,16 +44,27 @@
 .feature-block--three__content,
 .feature-block--four__content,
 .feature-block--five__content {
+  position: absolute;
+
   @include respond-to( 'small' ) {
     @include vertically-aligned();
   }
 }
 
-.feature-block--four__content,
-.feature-block--one__content {
-  // Shift content to
-  // right-hand side
+.feature-block__content--on-left {
+  left: 0;
+
+  @include respond-to( 'small' ) {
+    padding-left: $baseSpacingUnit * 3;
+  }
+}
+
+.feature-block__content--on-right {
   right: 0;
+
+  @include respond-to( 'small' ) {
+    padding-right: $baseSpacingUnit * 3;
+  }
 }
 
 /* Backgrounds & colors
@@ -139,7 +151,6 @@
 }
 
 .feature-block--four {
-  height: auto;
 
   @include respond-to( 'small' ) {
     height: 100vh;
@@ -148,12 +159,13 @@
 
 .feature-block--three__content,
 .feature-block--five__content {
-  position: absolute;
   bottom: 0;
-  left: 20px;
-  width: 80%;
 
   @include respond-to( 'small' ) {
     width: inherit;
   }
+}
+
+.feature-block > .wrapper {
+  height: 100%;
 }

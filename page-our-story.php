@@ -36,8 +36,8 @@ get_header(); ?>
 
 	<div class="feature-block feature-block--one feature-block--is-split clearfix">
 		<div class="feature-block__half feature-block--has-bg feature-block__half--has-bg feature-block--one--has-bg col-sml-6"></div>
-		<div class="wrapper">
-			<div class="feature-block__content feature-block--one__content feature-block__half feature-block__half__content col-12 col-sml-6">
+		<div class="wrapper pos-rel">
+			<div class="feature-block__content feature-block__content--on-right feature-block--one__content feature-block__half feature-block__half__content col-12 col-sml-6">
 				<h2 class="feature-block__title feature-block--one__title">Why we're here</h2>
 				<p class="feature-block__copy">We're here to protect the judgement and creativity that shape our world.</p>
 				<p class="feature-block__copy">We give workers the confidence to think clearly and deliver their best.</p>
@@ -105,8 +105,8 @@ get_header(); ?>
 	</div>
 
 	<div class="feature-block feature-block--three feature-block--has-bg feature-block--three--has-bg clearfix">
-		<div class="wrapper">
-			<div class="feature-block__content feature-block--three__content col-12 col-sml-6">
+		<div class="wrapper pos-rel">
+			<div class="feature-block__content feature-block__content--on-left feature-block--three__content col-12 col-sml-6">
 				<h2 class="feature-block__title feature-block--three__title">Our vision</h2>
 				<p class="feature-block__copy feature-block--three__copy">To be the global experts in total head safety at work</p>
 			</div>
@@ -114,8 +114,8 @@ get_header(); ?>
 	</div>
 
 	<div class="feature-block feature-block--four feature-block--has-bg feature-block--four--has-bg clearfix">
-		<div class="wrapper">
-			<div class="feature-block__content feature-block--four__content col-12 col-sml-6 float-right">
+		<div class="wrapper pos-rel">
+			<div class="feature-block__content feature-block__content--on-right feature-block--four__content col-12 col-sml-6">
 				<h2 class="feature-block__title feature-block--four__title">What we believe</h2>
 				<p class="feature-block__copy feature-block--four__copy">That the users we serve shape the world we live in and the way we live in it</p>
 				<p class="feature-block__copy feature-block--four__copy">That judgement and creativity are only possible with a clear head</p>
@@ -127,10 +127,10 @@ get_header(); ?>
 	</div>
 
 	<div class="feature-block feature-block--five feature-block--has-bg feature-block--five--has-bg clearfix">
-		<div class="wrapper">
-			<div class="feature-block__content feature-block--five__content col-12 col-sml-6">
-				<h2 class="feature-block__title feature-block--five__title">What we believe</h2>
-				<p class="feature-block__copy feature-block--five__copy">That the users we serve shape the world we live in and the way we live in it</p>
+		<div class="wrapper pos-rel">
+			<div class="feature-block__content feature-block__content--on-left feature-block--five__content col-12 col-sml-6">
+				<h2 class="feature-block__title feature-block--five__title">What we do</h2>
+				<p class="feature-block__copy feature-block--five__copy">We design and make the world’s most advanced and intuitive head protection systems</p>
 			</div>
 		</div>
 	</div>
