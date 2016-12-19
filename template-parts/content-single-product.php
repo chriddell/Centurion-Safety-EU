@@ -203,24 +203,125 @@ get_header(); ?>
 							<?php if ( $product['approved-to'] || $product['key-features'] ) { ?>
 								<div class="tabs__tab-content is-active" data-tab-id="1">
 									<?php if ( $product['approved-to'] ) { ?>
-										<?php printf( '<h4 class="product__label">%s</h4>', __('Approved To', 'centurion')); ?>
+										<?php printf( '<h4 class="product__label">%s</h4>', __( 'Approved To', 'centurion' ) ); ?>
 										<?php printf( '<p class="product__copy">%s</p>', $product['approved-to'] ); ?>
 									<?php } ?>
 									<?php /** ADD KEY FEATURES HERE **/ ?>
 								</div>
 							<?php } ?>
 
-							<?php if ( have_rows( 'product_downloads') ) { ?>
+							<?php if ( have_rows( 'product_downloads' ) ) { ?>
 
-								<?php /** Make tab active if  **/ ?>
+								<?php /** Make tab active if only tab  **/ ?>
+
 								<?php if ( !$product['key-features'] && !$product['approved-to'] ) { ?>
-									<div class="tabs__tab-content is-active" data-tab-id="2">
+									<div class="tabs__tab-content is-active" data-tab-id="2"><!-- .tabs__tab-content -->
 								<?php } else { ?>
-									<div class="tabs__tab-content" data-tab-id="2">
+									<div class="tabs__tab-content" data-tab-id="2"><!-- .tabs__tab-content -->
 								<?php } ?>
 
+								<?php while ( have_rows( 'product_downloads' ) ) : the_row(); ?>
 
-								</div>
+									<?php /** Technical Downloads **/ ?>
+									<?php if ( have_rows( 'product_technical_downloads' ) ) { ?>
+
+										<?php printf( '<h4 class="product__label">%s</h4>', __( 'Technical information', 'centurion' ) ); ?>
+
+										<div class="col-12 col-sml-6">
+											<ul class="menu product__downloads-list">
+												<?php while ( have_rows('product_technical_downloads') ) : the_row(); ?>
+													<?php 
+														$technical_downloads = array(
+															'instructions' 			=> get_sub_field( 'instructions_download' ),
+															'data-sheet'				=> get_sub_field( 'data_sheet_download' ),
+															'ce-certification'	=> get_sub_field( 'ce_certification_download' ),
+															'barcodes'					=> get_sub_field( 'barcodes_download' ),
+															'how-to-fit-video'	=> get_sub_field( 'how_to_fit_video_download' )
+														);
+													?>
+
+													<?php /** Check through all downloads and output if content **/ ?>
+
+													<?php if ( $technical_downloads['instructions'] ) { ?>
+														<li class="product__downloads-list__item">
+															<a href="<?php echo $technical_downloads['instructions']['url']; ?>"><?php _e('Instructions', 'centurion' ); ?> (PDF)</a>
+														</li>
+													<?php } ?>
+
+													<?php if ( $technical_downloads['data-sheet'] ) { ?>
+														<li class="product__downloads-list__item">
+															<a href="<?php echo $technical_downloads['data-sheet']['url']; ?>"><?php _e('Data Sheet', 'centurion' ); ?> (PDF)</a>
+														</li>
+													<?php } ?>
+
+													<?php if ( $technical_downloads['ce-certification'] ) { ?>
+														<li class="product__downloads-list__item">
+															<a href="<?php echo $technical_downloads['ce-certification']['url']; ?>"><?php _e('CE Certification', 'centurion' ); ?> (PDF)</a>
+														</li>
+													<?php } ?>
+
+													<?php if ( $technical_downloads['barcodes'] ) { ?>
+														<li class="product__downloads-list__item">
+															<a href="<?php echo $technical_downloads['barcodes']['url']; ?>"><?php _e( 'Barcodes', 'centurion' ); ?> (EPS)</a>
+														</li>
+													<?php } ?>
+
+													<?php if ( $technical_downloads['how-to-fit-video'] ) { ?>
+														<li class="product__downloads-list__item">
+															<a href="<?php echo $technical_downloads['how-to-fit-video']['url']; ?>"><?php _e( 'How to fit video', 'centurion' ); ?> (MP4)</a>
+														</li>
+													<?php } ?>
+
+												<?php endwhile; ?>
+											</ul>
+										</div>
+
+									<?php } ?>
+
+									<?php if ( have_rows( 'product_imagery_downloads' ) || have_rows( 'product_marketing_downloads' ) ) { ?>
+
+										<div class="col-12 col-sml-6">
+
+											<?php /** Marketing Downloads **/ ?>
+											<?php if ( have_rows( 'product_marketing_downloads' ) ) { ?>
+
+												<?php printf( '<h4 class="product__label">%s</h4>', __( 'Marketing information', 'centurion' ) ); ?>
+
+												<ul class="menu product__downloads-list">
+													<?php while ( have_rows('product_marketing_downloads') ) : the_row(); ?>
+														<?php 
+															$marketing_downloads = array(
+																'video' 	=> get_sub_field( 'product_video_download' ),
+																'leaflet'	=> get_sub_field( 'product_leaflet_download' )
+															);
+														?>
+
+														<?php /** Check through all downloads and output if content **/ ?>
+
+														<?php if ( $marketing_downloads['video'] ) { ?>
+															<li class="product__downloads-list__item">
+																<a href="<?php echo $marketing_downloads['video']['url']; ?>"><?php _e('Product Video', 'centurion' ); ?> (MP4)</a>
+															</li>
+														<?php } ?>
+
+														<?php if ( $marketing_downloads['leaflet'] ) { ?>
+															<li class="product__downloads-list__item">
+																<a href="<?php echo $marketing_downloads['leaflet']['url']; ?>"><?php _e('Product Leaflet', 'centurion' ); ?> (PDF)</a>
+															</li>
+														<?php } ?>
+
+													<?php endwhile; ?>
+												</ul>
+											<?php } ?>
+
+										</div>
+
+									<?php } ?>
+
+								<?php endwhile; ?>
+
+
+								</div><!-- / .tabs__tab-content -->
 							<?php } ?>
 
 						</div><!-- / .tabs__main -->

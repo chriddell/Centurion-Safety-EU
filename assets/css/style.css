@@ -1643,7 +1643,7 @@ input,
   float: left;
 }
 
-.tabs__tab-selector:hover {
+.tabs__tab-selector:not(:only-of-type):hover {
   background-color: #f2f2f2;
 }
 
@@ -3055,6 +3055,7 @@ Powered by JS
 }
 
 .clearfix:after,
+.tabs__tab-content:after,
 .tags:after {
   content: '';
   display: table;

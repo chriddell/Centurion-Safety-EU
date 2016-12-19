@@ -30,7 +30,7 @@
     @include span(6);
   }
 
-  &:hover {
+  &:not(:only-of-type):hover {
     background-color: darken( $lightColor, 5% );
   }
 
@@ -54,6 +54,10 @@
   @include respond-to( 'small' ) {
     padding: $baseSpacingUnit * 2;
   }
+}
+
+.tabs__tab-content {
+  @extend %clearfix;
 }
 
 /* Active / Inactive styles
