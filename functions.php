@@ -56,6 +56,7 @@ add_action( 'wp_enqueue_scripts', 'cntrn_assets' );
  * Remove jQuery Migrate
  * http://aaha.co/2013/08/05/remove-jquery-migrate-wordpress-36/
  */
+/*
 function cntrn_jquery() {
 
 	if (!is_admin()) {
@@ -69,7 +70,7 @@ function cntrn_jquery() {
 	}
 }
 add_action( 'init', 'cntrn_jquery' );
-
+*/
 
 /**
  * Create custom post type
