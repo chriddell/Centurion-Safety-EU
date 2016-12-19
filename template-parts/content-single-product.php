@@ -12,7 +12,7 @@ $product = array(
 	'description' 			=> get_field( 'product_description' ),
 	'images'						=> get_field( 'product_images' ),
 	'colors'						=> get_field( 'product_color_variations' ),
-	'decals'						=> get_field_object( 'product_decals' )['value'],
+	'decals'						=> get_field( 'product_decals' ),
 	'visibility'				=> get_field( 'product_visibility' ),
 	'ratchet'						=> get_field( 'product_ratchet' ),
 	'venting'						=> get_field( 'product_venting' ),
@@ -127,22 +127,33 @@ get_header(); ?>
 
 				<?php /** Product ratchet **/ ?>
 				<?php if ( $product['ratchet'] ) { ?>
+
+					<?php /** Get the object and value **/ ?>
+					<?php $ratchet_object 	= get_field_object('product_ratchet'); ?>
+					<?php $ratchet_value 		= $ratchet_object['choices'][$product['ratchet']]; ?>
+
 					<div class="product__meta__item col-12 col-sml-6">
 						<?php printf( '<h3 class="product__label inline">%s</h3>', __('Ratchet: ', 'centurion')); ?>
-						<p class="product__copy inline"><?php echo get_field_object( 'product_ratchet' )['choices'][$product['ratchet']] ?></p>
+						<p class="product__copy inline"><?php echo $ratchet_value; ?></p>
 					</div>
 				<?php } ?>
 
 				<?php /** Product venting **/ ?>
 				<?php if ( $product['venting'] ) { ?>
+
+					<?php /** Get the object and value **/ ?>
+					<?php $venting_object 	= get_field_object('product_venting'); ?>
+					<?php $venting_value 		= $venting_object['choices'][$product['venting']]; ?>
+
 					<div class="product__meta__item col-12 col-sml-6">
 						<?php printf( '<h3 class="product__label inline">%s</h3>', __('Venting: ', 'centurion')); ?>
-						<p class="product__copy inline"><?php echo get_field_object( 'product_venting' )['choices'][$product['venting']]; ?></p>
+						<p class="product__copy inline"><?php echo $venting_value; ?></p>
 					</div>
 				<?php } ?>
 
 				<?php /** Product decals **/ ?>
 				<?php if ( $product['decals'] ) { ?>
+
 					<div class="product__meta__item">
 						<?php printf( '<h3 class="product__label inline">%s</h3>', __('Decals: ', 'centurion')); ?>
 						<p class="product__copy inline product__decals">
@@ -159,9 +170,14 @@ get_header(); ?>
 
 				<?php /** Product visibility **/ ?>
 				<?php if ( $product['visibility'] ) { ?>
+
+					<?php /** Get the object and value **/ ?>
+					<?php $visibility_object 	= get_field_object('product_visibility'); ?>
+					<?php $visibility_value 	= $visibility_object['choices'][$product['visibility']]; ?>
+
 					<div class="product__meta__item">
 						<?php printf( '<h3 class="product__label inline">%s</h3>', __('Visibility: ', 'centurion')); ?>
-						<p class="product__copy inline"><?php echo get_field_object( 'product_visibility' )['choices'][$product['visibility']]; ?></p>
+						<p class="product__copy inline"><?php echo $visibility_value; ?></p>
 					</div>
 				<?php } ?>
 
@@ -170,7 +186,7 @@ get_header(); ?>
 					<div class="tabs product__tabs"><!-- .tabs -->
 
 						<div class="tabs__header product__tabs__header clearfix">
-							<?php if ( $product['approved-to'] || $product['key_features'] ) { ?>
+							<?php if ( $product['approved-to'] || $product['key-features'] ) { ?>
 								<span class="tabs__tab-selector product__tabs__tab-selector is-active" data-tab-id="1">
 									<h3 class="tabs__tab-selector__title product__tabs__tab-selector__title">Specification</h3>
 								</span>
@@ -196,28 +212,14 @@ get_header(); ?>
 
 							<?php if ( have_rows( 'product_downloads') ) { ?>
 
-								<?php if ( have_rows( 'product_downloads') && ( $product['key-features'] || $product['approved-to'] ) ) { ?>
-									<div class="tabs__tab-content" data-tab-id="2">
-								<?php } else { ?>
+								<?php /** Make tab active if  **/ ?>
+								<?php if ( !$product['key-features'] && !$product['approved-to'] ) { ?>
 									<div class="tabs__tab-content is-active" data-tab-id="2">
+								<?php } else { ?>
+									<div class="tabs__tab-content" data-tab-id="2">
 								<?php } ?>
 
-									<?php printf( '<h4 class="product__label">%s</h4>', __('Downloads', 'centurion') ); ?>
-									<?php echo '<ul>'; ?>
-									<?php
-									// Set index to 0
-									$i = 0;
-									// Loop through images
-									while ( have_rows( 'product_downloads' ) ) : the_row();
-										// Current download
-										$download = get_sub_field( 'product_download' );
-										// Render the image
-										echo '<li>';
-										echo '<a href="' . $download['url'] . '" target="_blank">' . $download['title'] . '</a>';
-										echo '</li>';
-									endwhile;
-									echo '</ul>';
-									?>
+
 								</div>
 							<?php } ?>
 
