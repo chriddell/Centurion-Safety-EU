@@ -4,6 +4,12 @@
     Form styling
    ========================================================================== */
 
+input,
+.form__input {
+  border: 0;
+  padding: $baseSpacingUnit / 2 $baseSpacingUnit;
+}
+
 /* Generic
 ---------------------------------------- */
 .form__input {
