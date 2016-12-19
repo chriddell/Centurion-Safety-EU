@@ -904,6 +904,32 @@ video {
   max-width: 100%;
 }
 
+br {
+  display: block;
+  content: '';
+  margin-top: 10px;
+}
+
+::-webkit-input-placeholder,
+input {
+  font-family: effra, Tahoma, Verdana, Arial, sans-serif;
+}
+
+::-moz-placeholder,
+input {
+  font-family: effra, Tahoma, Verdana, Arial, sans-serif;
+}
+
+:-ms-input-placeholder,
+input {
+  font-family: effra, Tahoma, Verdana, Arial, sans-serif;
+}
+
+::placeholder,
+input {
+  font-family: effra, Tahoma, Verdana, Arial, sans-serif;
+}
+
 /* ==========================================================================
     _titles
 
@@ -1301,6 +1327,12 @@ video {
 
     Form styling
    ========================================================================== */
+input,
+.form__input {
+  border: 0;
+  padding: 10px 20px;
+}
+
 /* Generic
 ---------------------------------------- */
 .form__input {
@@ -1509,6 +1541,73 @@ video {
 
 .footer__copyright {
   color: #94aab3;
+}
+
+/* ==========================================================================
+    _map
+
+    We are using WP Google Maps (https://www.wpgmaps.com/) as the plugin
+    for our map
+   ========================================================================== */
+.map-container {
+  position: relative;
+  height: 500px;
+  height: calc(100vh - 95px);
+}
+
+@media (min-width: 1023px) {
+  .map-container {
+    height: 500px;
+    height: calc(100vh - 155px);
+  }
+}
+
+.wpgmza_sl_main_div {
+  height: 50px !important;
+  width: 280px !important;
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  z-index: 2;
+  background-color: #FFFFFF;
+}
+
+#locationSelect,
+.wpgmza_sl_radius_div,
+.wpgmza_sl_reset_button_div {
+  display: none !important;
+}
+
+/* Search fields
+---------------------------------------- */
+.wpgmza_sl_search_button_div,
+.wpgmza_sl_query_div {
+  height: 100% !important;
+  display: inline-block !important;
+}
+
+.wpgmza_sl_search_button_div {
+  width: 60px;
+  float: left;
+}
+
+.wpgmza_sl_search_button_1 {
+  background-color: #94aab3;
+}
+
+.wpgmza_sl_query_innerdiv2,
+.wpgmza_sl_search_button_1,
+.addressInput {
+  height: 100% !important;
+  width: 100% !important;
+}
+
+.wpgmza_sl_query_div {
+  width: 220px;
+}
+
+.wpgmza_sl_search_button_1 {
+  padding: 5px;
 }
 
 /* ==========================================================================
@@ -2134,6 +2233,46 @@ Powered by JS
   overflow: hidden;
 }
 
+#product-filter-canvas[data-filtering*="general-purpose"] .product-listing__category-container[data-filter-term="general-purpose"] {
+  height: auto;
+}
+
+#product-filter-canvas[data-filtering*="integrated-eyewear-helmet-systems"] .product-listing__category-container[data-filter-term="integrated-eyewear-helmet-systems"] {
+  height: auto;
+}
+
+#product-filter-canvas[data-filtering*="face-protection"] .product-listing__category-container[data-filter-term="face-protection"] {
+  height: auto;
+}
+
+#product-filter-canvas[data-filtering*="specialised-helmet-systems"] .product-listing__category-container[data-filter-term="specialised-helmet-systems"] {
+  height: auto;
+}
+
+#product-filter-canvas[data-filtering*="hearing-protection"] .product-listing__category-container[data-filter-term="hearing-protection"] {
+  height: auto;
+}
+
+#product-filter-canvas[data-filtering*="seasonal-protection"] .product-listing__category-container[data-filter-term="seasonal-protection"] {
+  height: auto;
+}
+
+#product-filter-canvas[data-filtering*="mounting-accessories"] .product-listing__category-container[data-filter-term="mounting-accessories"] {
+  height: auto;
+}
+
+#product-filter-canvas[data-filtering*="visibility-accessories"] .product-listing__category-container[data-filter-term="visibility-accessories"] {
+  height: auto;
+}
+
+#product-filter-canvas[data-filtering*="chinstraps-and-neck-capes"] .product-listing__category-container[data-filter-term="chinstraps-and-neck-capes"] {
+  height: auto;
+}
+
+#product-filter-canvas[data-filtering*="helmet-spares"] .product-listing__category-container[data-filter-term="helmet-spares"] {
+  height: auto;
+}
+
 #product-filter-canvas[data-filtering*="baseball-bump-caps"] .product-listing__category-container[data-filter-term="baseball-bump-caps"] {
   height: auto;
 }
@@ -2142,15 +2281,15 @@ Powered by JS
   height: auto;
 }
 
-#product-filter-canvas[data-filtering*="general-purpose"] .product-listing__category-container[data-filter-term="general-purpose"] {
+#product-filter-canvas[data-filtering*="powered-air-systems"] .product-listing__category-container[data-filter-term="powered-air-systems"] {
   height: auto;
 }
 
-#product-filter-canvas[data-filtering*="integrated-eyewear"] .product-listing__category-container[data-filter-term="integrated-eyewear"] {
+#product-filter-canvas[data-filtering*="fresh-air-systems"] .product-listing__category-container[data-filter-term="fresh-air-systems"] {
   height: auto;
 }
 
-#product-filter-canvas[data-filtering*="powered-air"] .product-listing__category-container[data-filter-term="powered-air"] {
+#product-filter-canvas[data-filtering*="airforce-compressed-air-systems"] .product-listing__category-container[data-filter-term="airforce-compressed-air-systems"] {
   height: auto;
 }
 
@@ -2253,6 +2392,7 @@ Powered by JS
 
 .splash-block__container {
   padding: 20px;
+  background-color: #e83272;
   background-size: cover;
   background-position: center center;
 }
@@ -2893,13 +3033,19 @@ Powered by JS
 }
 
 /* ==========================================================================
+		WP Google Maps
+
+		These styles are not here, sorry! They live in components/_map
+	 ========================================================================== */
+/* ==========================================================================
     _helpers
 
     Object-oriented classes, helper classes e.g. bold-font, absolute-center
    ========================================================================== */
 .sr-only,
 .sub-menu,
-.form--search--in-header__input--submit {
+.form--search--in-header__input--submit,
+.wpgmza_sl_query_innerdiv1 {
   position: absolute;
   left: -1000000px;
   top: auto;

@@ -82,3 +82,14 @@ img,
 video {
   max-width: 100%;
 }
+
+br {
+  display: block;
+  content: '';
+  margin-top: 10px;
+}
+
+::placeholder,
+input {
+  font-family: $mainFontFamily;
+}

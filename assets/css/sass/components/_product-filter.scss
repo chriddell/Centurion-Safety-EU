@@ -53,11 +53,21 @@
 // be filtered must be added to the 
 // $terms map
 $terms: (
-  'baseball-bump-caps',
-  'hygiene-bump-caps',
-  'general-purpose',
-  'integrated-eyewear',
-  'powered-air'
+  'general-purpose', 
+  'integrated-eyewear-helmet-systems', 
+  'face-protection', 
+  'specialised-helmet-systems', 
+  'hearing-protection', 
+  'seasonal-protection', 
+  'mounting-accessories', 
+  'visibility-accessories', 
+  'chinstraps-and-neck-capes', 
+  'helmet-spares', 
+  'baseball-bump-caps', 
+  'hygiene-bump-caps', 
+  'powered-air-systems', 
+  'fresh-air-systems', 
+  'airforce-compressed-air-systems'
 );
 
 // We only filter if JS is enabled
