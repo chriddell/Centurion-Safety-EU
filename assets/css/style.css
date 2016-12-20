@@ -840,12 +840,22 @@ html {
   -moz-osx-font-smoothing: grayscale;
 }
 
+html,
+body {
+  width: 100%;
+  overflow-x: hidden;
+}
+
 * {
   box-sizing: border-box;
 }
 
 p {
   color: #262e61;
+}
+
+p:first-of-type {
+  margin-top: 0;
 }
 
 a {
@@ -857,9 +867,9 @@ a:hover {
   text-decoration: underline;
 }
 
-p:first-of-type {
-  margin-top: 0;
-  line-height: 1.35;
+ul {
+  margin: 20px 0;
+  padding-left: 20px;
 }
 
 h1 {
@@ -1845,7 +1855,7 @@ input,
 
 /* Variations
 ---------------------------------------- */
-.tags--search {
+.tags--with-border {
   padding: 6.6666666667px 10px 0;
   margin-top: 20px;
   margin-bottom: 40px;
@@ -1854,7 +1864,7 @@ input,
 }
 
 @media (min-width: 767px) {
-  .tags--search {
+  .tags--with-border {
     width: 110%;
     position: relative;
     left: -5%;
@@ -2703,6 +2713,82 @@ Powered by JS
   color: #262e61;
 }
 
+.blog__hero {
+  max-height: 350px;
+  min-height: 0;
+}
+
+.blog__header {
+  padding-bottom: 20px;
+  margin: 20px 0;
+  border-bottom: 1px solid #dbdbdb;
+}
+
+@media (min-width: 767px) {
+  .blog__header {
+    margin: 40px 0;
+  }
+}
+
+.blog__header-copy {
+  margin: 10px 0;
+}
+
+.blog__header-copy:last-of-type {
+  margin-bottom: 0;
+}
+
+@media (min-width: 767px) {
+  .blog__header-copy {
+    margin: 0;
+  }
+}
+
+@media (min-width: 767px) {
+  .blog__date {
+    text-align: right;
+  }
+}
+
+.blog__main {
+  line-height: 1.33;
+}
+
+.blog__main img {
+  width: calc(100% + 40px);
+  max-width: none;
+  height: auto;
+  position: relative;
+  left: -20px;
+}
+
+@media (min-width: 767px) {
+  .blog__main img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    margin: 10px 0;
+    position: static;
+  }
+}
+
+/* Single
+---------------------------------------- */
+.blog--single__title {
+  font-size: 2em;
+  margin-bottom: 10px;
+}
+
+@media (min-width: 767px) {
+  .blog--single__title {
+    font-size: 2.25em;
+  }
+}
+
+.blog--single__tags {
+  margin: 40px 0 60px;
+}
+
 /* Preview (Archive listing)
 ---------------------------------------- */
 @media (min-width: 767px) {
@@ -2714,6 +2800,7 @@ Powered by JS
 .blog--preview__image {
   height: 140px;
   margin-bottom: 20px;
+  background-color: #eaeef0;
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;

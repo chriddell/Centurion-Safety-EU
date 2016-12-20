@@ -7,40 +7,42 @@
  * @since Centurion 1.0
  */
 
-// Get ACF fields
-$hero_image = get_field('post_hero_image');
+// ACF fields
+$hero_image = get_field( 'post_hero_image' );
 
-// Setup author and tags as var for ease
-$author = get_the_author();
-$tags		= get_the_tags();
+// Get tags of post
+$tags = wp_get_post_tags($post->ID);
 
 get_header(); ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+<article id="post-<?php the_ID(); ?>" class="blog blog--single">
 
-	<header>
-		<img src="<?php echo $hero_image['url']; ?>"/>
-		<p>Written by <?php echo $author; ?></p>
-		<p><?php the_date('j F Y'); ?></p>
-	</header>
+	<span class="hero hero--blog hero--blog--single blog__hero" style="background-image: url(<?php echo $hero_image['url']; ?>);"></span>
 
-	<div class="entry-content">
-		<?php the_content(); ?>
-	</div><!-- .entry-content -->
+	<div class="wrapper wrapper--thin">
+		<header class="blog__header clearfix">
+			<?php the_title( '<h2 class="blog__title blog--single__title">', '</h2>' ); ?>
+			<p class="blog__header-copy blog__author col-12 col-sml-6">Written by <?php the_author(); ?></p>
+			<p class="blog__header-copy blog__date col-12 col-sml-6"><?php the_date('j F Y'); ?></p>
+		</header>
 
-	<?php if ( $tags ) { ?>
-		<footer>
-			<h4>Tags</h4>
-			<ul>
+		<div class="blog__main">
+			<?php the_content(); ?>
+		</div><!-- .entry-content -->
+
+		<footer class="blog__footer">
+			<?php /** Tags **/ ?>
+			<?php if ( $tags ) { ?>
+				<div class="menu tags tags--with-border blog__tags blog--single__tags">
+					<span class="tags__icon blog__tags__icon"></span>
 				<?php foreach ( $tags as $tag ) { ?>
-					<li>
-						<?php echo $tag->name; ?>
-					</li>
-				<?php } ?>
-			</ul>
+					<span class="tags__tag blog__tags__tag blog--preview__tags__tag"><?php echo $tag->name; ?></span>
+				<?php	} ?>
+				</div>
+			<?php } ?>
 		</footer>
-	<?php } ?>
 
+	</div>
 </article>
 
 <?php get_footer(); ?>

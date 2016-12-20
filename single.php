@@ -10,27 +10,25 @@
 get_header(); ?>
 
 <main class="main" role="main">
-	<div class="wrapper">
-		<?php
-		// Start the loop.
-		while ( have_posts() ) : the_post();
+	<?php
+	// Start the loop.
+	while ( have_posts() ) : the_post();
 
-			if ( get_post_type() == 'product' ) {
+		if ( get_post_type() == 'product' ) {
 
-				// Include the single product content template.
-				get_template_part( 'template-parts/content', 'single-product' );
-			}
+			// Include the single product content template.
+			get_template_part( 'template-parts/content', 'single-product' );
+		}
 
-			else {
+		else {
 
-				// Include the single post content template.
-				get_template_part( 'template-parts/content', 'single' );
-			}
+			// Include the single post content template.
+			get_template_part( 'template-parts/content', 'single' );
+		}
 
-			// End of the loop.
-		endwhile;
-		?>
-	</div>
+		// End of the loop.
+	endwhile;
+	?>
 </main>
 
 <?php get_footer(); ?>

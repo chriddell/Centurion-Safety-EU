@@ -26,11 +26,10 @@ get_header(); ?>
 				</div>
 
 				<?php if ( !empty( get_search_query() ) && !ctype_space( get_search_query() ) ) { ?>
-					<ul class="menu tags tags--search">
+					<ul class="menu tags tags--with-border">
 						<?php cntrn_split_search_query_string('<li class="tags__tag tags--search__tag">%s</li>'); ?>
 					</ul>
 				<?php } ?>
-
 			</header>
 
 			<section class="search-results__content clearfix">
