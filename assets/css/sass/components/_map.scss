@@ -16,6 +16,9 @@
   }
 }
 
+/* Search fields
+---------------------------------------- */
+
 .wpgmza_sl_main_div {
   // we define a width because it helps
   // with positioning markup we have no control
@@ -27,6 +30,22 @@
   left: $baseSpacingUnit;
   z-index: 2;
   background-color: $lightColor;
+
+  // If we have calc, construct layout differently
+  .csscalc & {
+    width: 80% !important;
+    left: 10% !important;
+  }
+
+  @include respond-to( 'small' ) {
+    width: 400px !important;
+
+    .csscalc & {
+      width: 400px !important;
+      right: $baseSpacingUnit !important;
+      left: auto !important;
+    }
+  }
 }
 
 .wpgmza_sl_query_innerdiv1 {
@@ -39,9 +58,6 @@
   // These are not used
   display: none !important;
 }
-
-/* Search fields
----------------------------------------- */
 
 .wpgmza_sl_search_button_div,
 .wpgmza_sl_query_div {
@@ -68,10 +84,117 @@
 
 .wpgmza_sl_query_div {
   width: 220px;
+
+  .csscalc & {
+    width: calc(100% - 60px);
+
+    @include respond-to( 'small' ) {
+      width: 340px;
+    }
+  }
 }
 
 .wpgmza_sl_search_button_1 {
   // Reset padding to allow for icon
   // in submit input
   padding: $baseSpacingUnit / 4;
+}
+
+/* Info Window
+---------------------------------------- */
+
+.wpgmza_modern_infowindow_inner {
+  @extend %clearfix;
+
+  padding: $baseSpacingUnit $baseSpacingUnit $baseSpacingUnit $baseSpacingUnit * 4;
+
+  &:before {
+    content: '';
+    height: 34px;
+    width: 27px;
+    display: block;
+    position: absolute;
+    top: $baseSpacingUnit;
+    left: $baseSpacingUnit;
+    background-image: url(../img/pin.svg);
+  }
+}
+
+#wpgmza_iw_holder_1 {
+  width: 80%;
+  padding: 0;
+  margin: 0;
+  top: auto !important;
+  bottom: 80px;
+  left: 10%;
+  font-family: $mainFontFamily;
+  box-shadow: none;
+  background-color: $lightColor;
+
+  @include respond-to( 'small' ) {
+    width: 400px;
+    right: $baseSpacingUnit !important;
+    left: auto !important;
+  }
+}
+
+.wpgmza_iw_title {
+  height: auto !important;
+  padding: 0 !important;
+  margin: 0 0 $baseSpacingUnit / 2 !important;
+  position: static !important;
+  background-color: $lightColor !important;
+  font-weight: bold;
+}
+
+.wpgmza_iw_description {
+  max-height: none !important;
+  margin-bottom: 0 !important;
+  overflow: visible !important;
+
+  p:first-of-type {
+    margin-bottom: 0;
+  }
+
+  p:nth-of-type(2) {
+    margin-top: 0;
+  }
+
+  p:last-of-type {
+    margin-bottom: 0;
+  }
+
+  a {
+    color: $brandColorOne;
+    text-decoration: underline;
+  }
+}
+
+.wpgmza_iw_address,
+.wpgmza_iw_title,
+.wpgmza_iw_description,
+.wpgmza_iw_address_p {
+  color: $brandColorOne !important;
+  font-size: 18px !important;
+}
+
+.wpgmza_iw_image,
+.wpgmza_iw_buttons,
+.wpgmza_iw_address,
+.wpgmza_modern_infowindow_close {
+  display: none !important;
+}
+
+/* Google components
+---------------------------------------- */
+
+.gmnoprint {
+  //display: none;
+}
+
+// Reposition zoom controls
+.gmnoprint.gm-bundled-control.gm-bundled-control-on-bottom {
+  display: block !important;
+  top: $baseSpacingUnit;
+  right: $baseSpacingUnit;
 }
