@@ -182,18 +182,24 @@ get_header(); ?>
 				<?php } ?>
 
 				<?php /** Render a tabbed box if we have info for it **/ ?>
-				<?php if ( $product['approved-to'] || $product['downloads'] ) { ?>
+				<?php if ( $product['approved-to'] || $product['key-features'] || have_rows('product_downloads') ) { ?>
 					<div class="tabs product__tabs"><!-- .tabs -->
 
 						<div class="tabs__header product__tabs__header clearfix">
-							<?php if ( $product['approved-to'] || $product['key-features'] ) { ?>
+							<?php if ( ( $product['approved-to'] || $product['key-features'] ) && have_rows('product_downloads') ) { ?>
 								<span class="tabs__tab-selector product__tabs__tab-selector is-active" data-tab-id="1">
 									<h3 class="tabs__tab-selector__title product__tabs__tab-selector__title">Specification</h3>
 								</span>
-							<?php } ?>
-							<?php if ( $product['downloads'] ) { ?>
 								<span class="tabs__tab-selector product__tabs__tab-selector" data-tab-id="2">
 									<h3 class="tabs__tab-selector__title product__tabs__tab-selector__title">Downloads</h3>
+								</span>
+							<?php } else if ( !$product['approved-to'] && !$product['key-features'] && $product['downloads'] ) { ?>
+								<span class="tabs__tab-selector product__tabs__tab-selector is-active" data-tab-id="2">
+									<h3 class="tabs__tab-selector__title product__tabs__tab-selector__title">Downloads</h3>
+								</span>
+							<?php } else if ( ( $product['approved-to'] || $product['key-features'] ) && !$product['downloads'] ) { ?>
+								<span class="tabs__tab-selector product__tabs__tab-selector is-active" data-tab-id="1">
+									<h3 class="tabs__tab-selector__title product__tabs__tab-selector__title">Specification</h3>
 								</span>
 							<?php } ?>
 						</div>
@@ -223,20 +229,19 @@ get_header(); ?>
 								<?php while ( have_rows( 'product_downloads' ) ) : the_row(); ?>
 
 									<?php /** Technical Downloads **/ ?>
-									<?php if ( have_rows( 'product_technical_downloads' ) ) { ?>
-
-										<?php printf( '<h4 class="product__label">%s</h4>', __( 'Technical information', 'centurion' ) ); ?>
+									<?php if ( have_rows( 'technical_downloads' ) ) { ?>
 
 										<div class="col-12 col-sml-6">
+											<?php printf( '<h4 class="product__label">%s</h4>', __( 'Technical information', 'centurion' ) ); ?>
 											<ul class="menu product__downloads-list">
-												<?php while ( have_rows('product_technical_downloads') ) : the_row(); ?>
+												<?php while ( have_rows('technical_downloads') ) : the_row(); ?>
 													<?php 
 														$technical_downloads = array(
-															'instructions' 			=> get_sub_field( 'instructions_download' ),
-															'data-sheet'				=> get_sub_field( 'data_sheet_download' ),
-															'ce-certification'	=> get_sub_field( 'ce_certification_download' ),
-															'barcodes'					=> get_sub_field( 'barcodes_download' ),
-															'how-to-fit-video'	=> get_sub_field( 'how_to_fit_video_download' )
+															'instructions' 			=> get_sub_field( 'instructions' ),
+															'data-sheet'				=> get_sub_field( 'data_sheet' ),
+															'ce-certification'	=> get_sub_field( 'ce_certification' ),
+															'barcodes'					=> get_sub_field( 'barcodes' ),
+															'how-to-fit-video'	=> get_sub_field( 'how_to_fit_video' )
 														);
 													?>
 
@@ -244,31 +249,31 @@ get_header(); ?>
 
 													<?php if ( $technical_downloads['instructions'] ) { ?>
 														<li class="product__downloads-list__item">
-															<a href="<?php echo $technical_downloads['instructions']['url']; ?>"><?php _e('Instructions', 'centurion' ); ?> (PDF)</a>
+															<a href="<?php echo $technical_downloads['instructions']; ?>"><?php _e('Instructions', 'centurion' ); ?> (PDF)</a>
 														</li>
 													<?php } ?>
 
 													<?php if ( $technical_downloads['data-sheet'] ) { ?>
 														<li class="product__downloads-list__item">
-															<a href="<?php echo $technical_downloads['data-sheet']['url']; ?>"><?php _e('Data Sheet', 'centurion' ); ?> (PDF)</a>
+															<a href="<?php echo $technical_downloads['data-sheet']; ?>"><?php _e('Data Sheet', 'centurion' ); ?> (PDF)</a>
 														</li>
 													<?php } ?>
 
 													<?php if ( $technical_downloads['ce-certification'] ) { ?>
 														<li class="product__downloads-list__item">
-															<a href="<?php echo $technical_downloads['ce-certification']['url']; ?>"><?php _e('CE Certification', 'centurion' ); ?> (PDF)</a>
+															<a href="<?php echo $technical_downloads['ce-certification']; ?>"><?php _e('CE Certification', 'centurion' ); ?> (PDF)</a>
 														</li>
 													<?php } ?>
 
 													<?php if ( $technical_downloads['barcodes'] ) { ?>
 														<li class="product__downloads-list__item">
-															<a href="<?php echo $technical_downloads['barcodes']['url']; ?>"><?php _e( 'Barcodes', 'centurion' ); ?> (EPS)</a>
+															<a href="<?php echo $technical_downloads['barcodes']; ?>"><?php _e( 'Barcodes', 'centurion' ); ?> (EPS)</a>
 														</li>
 													<?php } ?>
 
 													<?php if ( $technical_downloads['how-to-fit-video'] ) { ?>
 														<li class="product__downloads-list__item">
-															<a href="<?php echo $technical_downloads['how-to-fit-video']['url']; ?>"><?php _e( 'How to fit video', 'centurion' ); ?> (MP4)</a>
+															<a href="<?php echo $technical_downloads['how-to-fit-video']; ?>"><?php _e( 'How to fit video', 'centurion' ); ?> (MP4)</a>
 														</li>
 													<?php } ?>
 
@@ -278,21 +283,21 @@ get_header(); ?>
 
 									<?php } ?>
 
-									<?php if ( have_rows( 'product_imagery_downloads' ) || have_rows( 'product_marketing_downloads' ) ) { ?>
+									<?php if ( have_rows( 'imagery_downloads' ) || have_rows( 'marketing_downloads' ) ) { ?>
 
 										<div class="col-12 col-sml-6">
 
 											<?php /** Marketing Downloads **/ ?>
-											<?php if ( have_rows( 'product_marketing_downloads' ) ) { ?>
+											<?php if ( have_rows( 'marketing_downloads' ) ) { ?>
 
 												<?php printf( '<h4 class="product__label">%s</h4>', __( 'Marketing information', 'centurion' ) ); ?>
 
 												<ul class="menu product__downloads-list">
-													<?php while ( have_rows('product_marketing_downloads') ) : the_row(); ?>
+													<?php while ( have_rows('marketing_downloads') ) : the_row(); ?>
 														<?php 
 															$marketing_downloads = array(
-																'video' 	=> get_sub_field( 'product_video_download' ),
-																'leaflet'	=> get_sub_field( 'product_leaflet_download' )
+																'video' 	=> get_sub_field( 'product_video' ),
+																'leaflet'	=> get_sub_field( 'product_leaflet' )
 															);
 														?>
 
@@ -300,13 +305,45 @@ get_header(); ?>
 
 														<?php if ( $marketing_downloads['video'] ) { ?>
 															<li class="product__downloads-list__item">
-																<a href="<?php echo $marketing_downloads['video']['url']; ?>"><?php _e('Product Video', 'centurion' ); ?> (MP4)</a>
+																<a href="<?php echo $marketing_downloads['video']; ?>"><?php _e('Product Video', 'centurion' ); ?> (MP4)</a>
 															</li>
 														<?php } ?>
 
 														<?php if ( $marketing_downloads['leaflet'] ) { ?>
 															<li class="product__downloads-list__item">
-																<a href="<?php echo $marketing_downloads['leaflet']['url']; ?>"><?php _e('Product Leaflet', 'centurion' ); ?> (PDF)</a>
+																<a href="<?php echo $marketing_downloads['leaflet']; ?>"><?php _e('Product Leaflet', 'centurion' ); ?> (PDF)</a>
+															</li>
+														<?php } ?>
+
+													<?php endwhile; ?>
+												</ul>
+											<?php } ?>
+
+											<?php /** Imagery Downloads **/ ?>
+											<?php if ( have_rows( 'image_downloads' ) ) { ?>
+
+												<?php printf( '<h4 class="product__label">%s</h4>', __( 'Product imagery', 'centurion' ) ); ?>
+
+												<ul class="menu product__downloads-list">
+													<?php while ( have_rows('image_downloads') ) : the_row(); ?>
+														<?php 
+															$image_downloads = array(
+																'hi-res' 	=> get_sub_field( 'hires_images' ),
+																'low-res'	=> get_sub_field( 'lowres_images' )
+															);
+														?>
+
+														<?php /** Check through all downloads and output if content **/ ?>
+
+														<?php if ( $image_downloads['hi-res'] ) { ?>
+															<li class="product__downloads-list__item">
+																<a href="<?php echo $image_downloads['hi-res']; ?>"><?php _e('High Res', 'centurion' ); ?> (JPG)</a>
+															</li>
+														<?php } ?>
+
+														<?php if ( $image_downloads['low-res'] ) { ?>
+															<li class="product__downloads-list__item">
+																<a href="<?php echo $image_downloads['low-res']; ?>"><?php _e('Low Res', 'centurion' ); ?> (JPG)</a>
 															</li>
 														<?php } ?>
 
