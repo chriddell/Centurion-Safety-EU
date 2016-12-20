@@ -188,13 +188,14 @@
 /* Google components
 ---------------------------------------- */
 
-.gmnoprint {
-  //display: none;
-}
-
 // Reposition zoom controls
 .gmnoprint.gm-bundled-control.gm-bundled-control-on-bottom {
   display: block !important;
   top: $baseSpacingUnit;
   right: $baseSpacingUnit;
+}
+
+// Hide autocomplete
+.pac-container.pac-logo {
+  display: none !important;
 }

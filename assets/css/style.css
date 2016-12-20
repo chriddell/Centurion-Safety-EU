@@ -1728,6 +1728,10 @@ input,
   right: 20px;
 }
 
+.pac-container.pac-logo {
+  display: none !important;
+}
+
 /* ==========================================================================
     _tabs
     
