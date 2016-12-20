@@ -1243,6 +1243,11 @@ input {
 
 /* Language Selector
 ---------------------------------------- */
+.menu--lang-selector__item {
+  /** Hide language switcher **/
+  display: none;
+}
+
 @media (min-width: 1023px) {
   .menu--lang-selector__item {
     line-height: 3;
@@ -2441,6 +2446,10 @@ Powered by JS
 }
 
 .product__description {
+  margin-bottom: 40px;
+}
+
+.product__attributes {
   margin-bottom: 40px;
 }
 

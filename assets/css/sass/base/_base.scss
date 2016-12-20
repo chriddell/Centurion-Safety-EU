@@ -15,6 +15,12 @@ html {
   }
 }
 
+html,
+body {
+  width: 100%;
+  overflow-x: hidden;
+}
+
 @if $globalBoxSizing == 'border-box' {
   * {
     box-sizing: border-box;
@@ -23,6 +29,10 @@ html {
 
 p {
   color: $brandColorOne;
+
+  &:first-of-type {
+    margin-top: 0;
+  }
 }
 
 a {
@@ -34,9 +44,13 @@ a {
   }
 }
 
-p:first-of-type {
-  margin-top: 0;
-  line-height: 1.35;
+ul {
+  margin: $baseSpacingUnit 0;
+  padding-left: $baseSpacingUnit;
+
+  > li {
+    
+  }
 }
 
 h1,
