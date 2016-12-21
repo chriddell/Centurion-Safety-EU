@@ -73,6 +73,13 @@
 
 .wpgmza_sl_search_button_1 {
   background-color: $brandColorTwo;
+  background-image: url(../img/search-icon.svg);
+  background-size: 21px 21px;
+  background-repeat: no-repeat;
+  background-position: center center;
+  // Hide text
+  font-size: 0;
+  color: $brandColorTwo;
 }
 
 .wpgmza_sl_query_innerdiv2,

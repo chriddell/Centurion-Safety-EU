@@ -21,6 +21,6 @@ $product_description 	= get_field('product_description');
 		</span>
 		<?php the_title('<h3 class="product-listing__title product-listing--featured__title uppercase">', '</h3>'); ?>
 		<p class="product-listing__description product-listing--featured__description"><?php echo $product_description; ?></p>
-		<a href="<?php the_permalink(); ?>" class="product-listing__link product-listing--featured__link"><?php _e('Visit product page', 'centurion'); ?></a>
+		<a href="<?php the_permalink(); ?>" class="product-listing__link product-listing--featured__link"><?php _e('Visit product page', 'centurion'); ?><span class="icon icon--link"></span></a>
 	</div>
 </div>

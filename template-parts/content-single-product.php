@@ -132,8 +132,8 @@ get_header(); ?>
 
 					<?php /** Contact Links **/ ?>
 					<div class="product__meta__item product__meta__contact clearfix">
-						<a href="" class="product__meta__contact__item col-12 col-sml-6"><?php _e( 'Contact our Sales Team', 'centurion' ); ?></a>
-						<a href="" class="product__meta__contact__item col-12 col-sml-6"><?php _e( 'Upload your logo', 'centurion' ); ?></a>
+						<a href="" class="product__meta__contact__item col-12 col-sml-6"><?php _e( 'Contact our Sales Team', 'centurion' ); ?><span class="icon icon--link"></span></a>
+						<a href="" class="product__meta__contact__item col-12 col-sml-6"><?php _e( 'Upload your logo', 'centurion' ); ?><span class="icon icon--link"></span></a>
 					</div>
 
 					<?php /** Product ratchet **/ ?>
@@ -244,7 +244,7 @@ get_header(); ?>
 
 											<div class="col-12 col-sml-6">
 												<?php printf( '<h4 class="product__label">%s</h4>', __( 'Technical information', 'centurion' ) ); ?>
-												<ul class="menu product__downloads-list">
+												<ul class="menu product__downloads">
 													<?php while ( have_rows('technical_downloads') ) : the_row(); ?>
 														<?php 
 															$technical_downloads = array(
@@ -259,32 +259,32 @@ get_header(); ?>
 														<?php /** Check through all downloads and output if content **/ ?>
 
 														<?php if ( $technical_downloads['instructions'] ) { ?>
-															<li class="product__downloads-list__item">
-																<a href="<?php echo $technical_downloads['instructions']; ?>"><?php _e('Instructions', 'centurion' ); ?> (PDF)</a>
+															<li class="product__downloads__item">
+																<a href="<?php echo $technical_downloads['instructions']; ?>"><?php _e('Instructions', 'centurion' ); ?> (PDF)<span class="icon icon--link"></span></a>
 															</li>
 														<?php } ?>
 
 														<?php if ( $technical_downloads['data-sheet'] ) { ?>
-															<li class="product__downloads-list__item">
-																<a href="<?php echo $technical_downloads['data-sheet']; ?>"><?php _e('Data Sheet', 'centurion' ); ?> (PDF)</a>
+															<li class="product__downloads__item">
+																<a href="<?php echo $technical_downloads['data-sheet']; ?>"><?php _e('Data Sheet', 'centurion' ); ?> (PDF)<span class="icon icon--link"></span></a>
 															</li>
 														<?php } ?>
 
 														<?php if ( $technical_downloads['ce-certification'] ) { ?>
-															<li class="product__downloads-list__item">
-																<a href="<?php echo $technical_downloads['ce-certification']; ?>"><?php _e('CE Certification', 'centurion' ); ?> (PDF)</a>
+															<li class="product__downloads__item">
+																<a href="<?php echo $technical_downloads['ce-certification']; ?>"><?php _e('CE Certification', 'centurion' ); ?> (PDF)<span class="icon icon--link"></span></a>
 															</li>
 														<?php } ?>
 
 														<?php if ( $technical_downloads['barcodes'] ) { ?>
-															<li class="product__downloads-list__item">
-																<a href="<?php echo $technical_downloads['barcodes']; ?>"><?php _e( 'Barcodes', 'centurion' ); ?> (EPS)</a>
+															<li class="product__downloads__item">
+																<a href="<?php echo $technical_downloads['barcodes']; ?>"><?php _e( 'Barcodes', 'centurion' ); ?> (EPS)<span class="icon icon--link"></span></a>
 															</li>
 														<?php } ?>
 
 														<?php if ( $technical_downloads['how-to-fit-video'] ) { ?>
-															<li class="product__downloads-list__item">
-																<a href="<?php echo $technical_downloads['how-to-fit-video']; ?>"><?php _e( 'How to fit video', 'centurion' ); ?> (MP4)</a>
+															<li class="product__downloads__item">
+																<a href="<?php echo $technical_downloads['how-to-fit-video']; ?>"><?php _e( 'How to fit video', 'centurion' ); ?> (MP4)<span class="icon icon--link"></span></a>
 															</li>
 														<?php } ?>
 
@@ -303,7 +303,7 @@ get_header(); ?>
 
 													<?php printf( '<h4 class="product__label">%s</h4>', __( 'Marketing information', 'centurion' ) ); ?>
 
-													<ul class="menu product__downloads-list">
+													<ul class="menu product__downloads">
 														<?php while ( have_rows('marketing_downloads') ) : the_row(); ?>
 															<?php 
 																$marketing_downloads = array(
@@ -315,14 +315,14 @@ get_header(); ?>
 															<?php /** Check through all downloads and output if content **/ ?>
 
 															<?php if ( $marketing_downloads['video'] ) { ?>
-																<li class="product__downloads-list__item">
-																	<a href="<?php echo $marketing_downloads['video']; ?>"><?php _e('Product Video', 'centurion' ); ?> (MP4)</a>
+																<li class="product__downloads__item">
+																	<a href="<?php echo $marketing_downloads['video']; ?>"><?php _e('Product Video', 'centurion' ); ?> (MP4)<span class="icon icon--link"></span></a>
 																</li>
 															<?php } ?>
 
 															<?php if ( $marketing_downloads['leaflet'] ) { ?>
-																<li class="product__downloads-list__item">
-																	<a href="<?php echo $marketing_downloads['leaflet']; ?>"><?php _e('Product Leaflet', 'centurion' ); ?> (PDF)</a>
+																<li class="product__downloads__item">
+																	<a href="<?php echo $marketing_downloads['leaflet']; ?>"><?php _e('Product Leaflet', 'centurion' ); ?> (PDF)<span class="icon icon--link"></span></a>
 																</li>
 															<?php } ?>
 
@@ -335,7 +335,7 @@ get_header(); ?>
 
 													<?php printf( '<h4 class="product__label">%s</h4>', __( 'Product imagery', 'centurion' ) ); ?>
 
-													<ul class="menu product__downloads-list">
+													<ul class="menu product__downloads">
 														<?php while ( have_rows('image_downloads') ) : the_row(); ?>
 															<?php 
 																$image_downloads = array(
@@ -347,14 +347,14 @@ get_header(); ?>
 															<?php /** Check through all downloads and output if content **/ ?>
 
 															<?php if ( $image_downloads['hi-res'] ) { ?>
-																<li class="product__downloads-list__item">
-																	<a href="<?php echo $image_downloads['hi-res']; ?>"><?php _e('High Res', 'centurion' ); ?> (JPG)</a>
+																<li class="product__downloads__item">
+																	<a href="<?php echo $image_downloads['hi-res']; ?>"><?php _e('High Res', 'centurion' ); ?> (JPG)<span class="icon icon--link"></span></a>
 																</li>
 															<?php } ?>
 
 															<?php if ( $image_downloads['low-res'] ) { ?>
-																<li class="product__downloads-list__item">
-																	<a href="<?php echo $image_downloads['low-res']; ?>"><?php _e('Low Res', 'centurion' ); ?> (JPG)</a>
+																<li class="product__downloads__item">
+																	<a href="<?php echo $image_downloads['low-res']; ?>"><?php _e('Low Res', 'centurion' ); ?> (JPG)<span class="icon icon--link"></span></a>
 																</li>
 															<?php } ?>
 
@@ -406,7 +406,7 @@ get_header(); ?>
 										<img src="<?php echo $linked_product_image_url; ?>" class="product-listing__image"/>
 									</div>
 									<h4 class="product-listing__title"><?php echo $linked_product->post_title; ?></h4>
-									<a href="<?php echo get_permalink($linked_product); ?>" class="product-listing__link"><?php _e('More info', 'centurion' ); ?></a>
+									<a href="<?php echo get_permalink($linked_product); ?>" class="product-listing__link"><?php _e('More info', 'centurion' ); ?><span class="icon icon--link"></span></a>
 								</div>
 							</div>
 						</li>

@@ -8,15 +8,16 @@ input,
 .form__input,
 select,
 .form__select {
+  padding: $baseSpacingUnit / 2 $baseSpacingUnit;
   border: 0;
   border-bottom: 1px solid $brandColorOne;
-  padding: $baseSpacingUnit / 2 $baseSpacingUnit;
 }
 
 select,
 .form__select {
-  background: none;
   border-radius: 0;
+  background: none;
+  font-family: $mainFontFamily;
   -webkit-appearance: none;
 }
 
@@ -138,11 +139,25 @@ select {
     padding: 0;
     position: static !important;
     float: right;
+    text-align: center;
+    line-height: 3;
   }
 }
 
 .form--search--in-header ::placeholder {
   color: $lightColor;
+}
+
+.form--search__input--submit {
+  background-image: url(../img/search-icon.svg);
+  background-size: 21px 21px;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.form--search--in-header__input--pseudo-submit {
+  background-image: none;
+  background-color: $brandColorTwo;
 }
 
 // Active & inactive styles for header search

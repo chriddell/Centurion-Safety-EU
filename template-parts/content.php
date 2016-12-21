@@ -25,7 +25,7 @@ $blogpost = array(
 		<p class="blog__author blog--preview__author">
 			<?php _e( 'Written by', 'centurion' ); echo ' ' . $blogpost['author']; echo ', '; the_date('j F'); ?>
 		</p>
-		<a href="<?php echo $blogpost['url']; ?>" class="blog__link blog--preview__link">Read article</a>
+		<a href="<?php echo $blogpost['url']; ?>" class="blog__link blog--preview__link">Read article<span class="icon icon--link"></span></a>
 
 		<?php /** Tags **/ ?>
 		<?php if ( $blogpost['tags'] ) { ?>

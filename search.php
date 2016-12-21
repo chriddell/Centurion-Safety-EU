@@ -20,7 +20,7 @@ get_header(); ?>
 					<!-- .search-form -->
 					<form action="/" method="GET" class="form form--search form--search--in-page col-12" id="search-form">
 						<input type="search" class="form__input form--search--in-page__input form__input--search form--search--in-page__input--search col-12" placeholder="What are you looking for?" value="<?php echo get_search_query(); ?>" name="s">
-						<input class="form__input form--search--in-page__input form__input--submit form--search--in-page__input--submit" type="submit" id="search-submit" value="" />
+						<input class="form__input form--search__input--submit form--search--in-page__input form__input--submit form--search--in-page__input--submit" type="submit" id="search-submit" value="" />
 					</form>
 					<!-- / .search-form -->
 				</div>

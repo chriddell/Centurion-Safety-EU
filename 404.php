@@ -9,6 +9,10 @@
 
 get_header(); ?>
 
-	<h1>404!</h1>
+<header class="hero hero--blog hero--<?php echo get_post_type(); ?>">
+	<div class="wrapper">
+		<h1>404!</h1>
+	</div>
+</header>
 
 <?php get_footer(); ?>

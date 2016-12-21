@@ -4,10 +4,58 @@
     Sprites
    ========================================================================== */
 
-.icon {
-  background-image: url();
+.icon,
+%icon {
+  height: 24px;
+  width: 24px;
+  margin-left: $baseSpacingUnit / 2;
+  display: inline-block;
+  background-image: url(../img/sprite.svg);
+  background-size: 100%;
+  background-size: cover;
+  vertical-align: middle;
+
+  // Allow tweaks on positions
+  position: relative;
 }
 
-.icon--white {
-  background-image: url();
+/* Icons
+---------------------------------------- */
+
+.icon--link,
+%icon--link {
+  background-position: 0 -140px;
+  top: -2px;
+}
+
+.icon--white-link,
+%icon--white-link {
+  background-position: 0 -168px;
+  top: -2px;
+}
+
+.icon--white-pin,
+%icon--white-pin {
+  background-position: 0 -55px;
+  top: -2px;
+}
+
+.icon--search,
+%icon--search {
+  background-position: 0 -110px; 
+}
+
+/* Tweaks
+---------------------------------------- */
+
+.icon--on-left,
+%icon--on-left {
+  margin: 0 $baseSpacingUnit / 2 0 0;
+}
+
+.icon--fit,
+%icon--fit {
+  //height: 100%;
+  //width: 100%;
+  margin: 0;
 }

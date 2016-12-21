@@ -44,9 +44,7 @@ $child_term_object = get_terms(array(
 				<img src="<?php echo $product['image'][0]['product_image']['url'] ?>" class="product-listing__image"/>
 			</span>
 			<?php the_title( '<h3 class="product-listing__title">', '</h3>' ); ?>
-			<a href="<?php echo esc_url( get_permalink() ); ?>" rel="bookmark" class="product-listing__link">
-				<?php _e('More info', 'centurion'); ?>
-			</a>
+			<a href="<?php echo esc_url( get_permalink() ); ?>" rel="bookmark" class="product-listing__link"><?php _e('More info', 'centurion'); ?><span class="icon icon--link"></span></a>
 		</div>
 	</article><!-- #post-## -->
 </div>

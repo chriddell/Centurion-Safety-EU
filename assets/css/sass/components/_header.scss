@@ -41,11 +41,3 @@
 .header__button {
   float: right;
 }
-
-.header__custom-link a {
-  @include respond-to( 'medium' ) {
-    &:hover {
-      background-color: darken($brandColorOne, 10%);
-    }
-  }
-}

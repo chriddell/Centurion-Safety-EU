@@ -149,6 +149,12 @@
 /* Most recent
 ---------------------------------------- */
 
+.blog--most-recent {
+  @include respond-to( 'small' ) {
+    padding: 0 $baseSpacingUnit / 2;
+  }
+}
+
 .blog--most-recent__title,
 .blog--most-recent__author,
 .blog--most-recent__link {

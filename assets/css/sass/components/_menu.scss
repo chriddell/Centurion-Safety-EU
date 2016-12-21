@@ -9,14 +9,7 @@
   // sub-menu is default WP class
   margin: 0;
   padding: 0;
-
-  li,
-  .menu__item {
-    &:before {
-      content: '';
-      display: none;
-    }
-  }
+  list-style: none;
 }
 
 /* Sub Menus

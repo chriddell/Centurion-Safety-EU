@@ -697,7 +697,11 @@ function cntrn_render_latest_advice_posts() {
 	));
 
 	// If posts returns something
-	if ( $query->have_posts() ) { 
+	if ( $query->have_posts() ) {
+
+		// Render title
+		printf('<h2 class="section-title section-title--light uppercase text-centered">%s</h2>', __( 'Latest Advice' ) );
+
 		while ( $query->have_posts() ) : $query->the_post();
 			get_template_part( 'template-parts/content', 'most-recent' );
 		endwhile;
@@ -760,3 +764,41 @@ function cntrn_convert_id_to_term_in_query($query) {
 	}
 }
 add_filter('parse_query', 'cntrn_convert_id_to_term_in_query');
+
+/*
+ * Let Editors manage users, and run this only once.
+ */
+function cntrn_editor_manage_users() {
+ 
+	if ( get_option( 'cntrn_add_cap_editor_once' ) != 'done' ) {
+		 
+		// let editor manage users
+		$edit_editor = get_role('editor'); // Get the user role
+		$edit_editor->add_cap('edit_users');
+		$edit_editor->add_cap('list_users');
+		$edit_editor->add_cap('promote_users');
+		$edit_editor->add_cap('create_users');
+		$edit_editor->add_cap('add_users');
+		$edit_editor->add_cap('delete_users');
+
+		update_option( 'cntrn_add_cap_editor_once', 'done' );
+	}
+}
+add_action( 'init', 'cntrn_editor_manage_users' );
+
+/**
+ * Hide Admin from user list
+ * because we have Editors managing
+ * users
+ */
+function cntrn_pre_user_query($user_search) {
+		$admin_ids = '1'; // REPLACE THESE NUMBERS WITH IDs TO HIDE.
+		 
+		$user = wp_get_current_user();
+		$admin_array = explode($admin_ids, ',');
+		if ( ! in_array( $user->ID, $admin_array ) ) {
+			global $wpdb;
+			$user_search->query_where = str_replace('WHERE 1=1', "WHERE 1=1 AND {$wpdb->users}.ID NOT IN($admin_ids)",$user_search->query_where);
+		}
+}
+add_action( 'pre_user_query', 'cntrn_pre_user_query' );

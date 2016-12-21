@@ -58,7 +58,7 @@
 				<div class="wrapper">
 					<ul class="menu menu--header">
 						<li class="menu__item menu--header__item header__custom-link">
-							<a href="<?php echo cntrn_stockists_link(); ?>" class="menu__item__link hover-underline"><?php _e( 'Find a valued stockist', 'centurion' ); ?></a>
+							<a href="<?php echo cntrn_stockists_link(); ?>" class="menu__item__link hover-underline"><span class="icon icon--white-pin icon--on-left"></span><?php _e( 'Find a valued stockist', 'centurion' ); ?></a>
 						</li>
 					</ul>
 					<!--

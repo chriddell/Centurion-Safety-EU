@@ -29,6 +29,7 @@ body {
 
 p {
   color: $brandColorOne;
+  margin-bottom: $baseSpacingUnit;
 
   &:first-of-type {
     margin-top: 0;
@@ -45,14 +46,13 @@ a {
 }
 
 ul {
-  margin: $baseSpacingUnit 0;
-  padding-left: 0;
-  list-style: none;
+  padding-left: $baseSpacingUnit;
+  //list-style: none;
 
   > li {
     &:before {
-      content: '•';
-      margin-right: $baseSpacingUnit / 4;
+      //content: '•';
+      //margin-right: $baseSpacingUnit / 4;
     }
   }
 }
@@ -110,4 +110,9 @@ br {
 ::placeholder,
 input {
   font-family: $mainFontFamily;
+}
+
+::selection {
+  background-color: $brandColorOne;
+  color: $lightColor;
 }

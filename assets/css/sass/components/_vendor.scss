@@ -249,82 +249,109 @@ $slick-opacity-not-active: 0.25 !default;
 	@extend %clearfix;
 }
 
+.gform_fields {
+	padding: 0;
+	list-style: none;
+}
+
 .gform_heading {
-	margin: 0 !important;
-	padding: 0 !important;
+	margin: 0;
+	padding: 0;
 
 	> .gform_title {
-		margin: 0 !important;
+		margin: 0;
 	}
 }
 
 .gform_footer {
 	padding: 0 !important;
-	margin: $baseSpacingUnit * 2 0 0 !important;
+	margin: $baseSpacingUnit * 2 0 0;
 	float: right;
 }
 
 .gfield[class*="col-"] {
-	margin-top: $baseSpacingUnit / 2 !important;
-	clear: none !important;
+	margin-top: $baseSpacingUnit / 2;
+	clear: none;
 
 	@include respond-to( 'small' ) {
-		margin-top: $baseSpacingUnit !important;
+		margin-top: $baseSpacingUnit;
+		padding-right: $baseSpacingUnit;
+
+		input,
+		select,
+		textarea {
+			width: 100%;
+		}
 	}
 }
 
 .gsection {
-	padding: $baseSpacingUnit 0 0 $baseSpacingUnit / 4 !important;
-	margin: 0 !important;
-	border-bottom: 0 !important;
-	clear: both !important;
+	padding: $baseSpacingUnit / 2 0 0 $baseSpacingUnit / 4;
+	margin: 0;
+	border-bottom: 0;
+	clear: both;
 
 	.gfield + & {
 		// Double padding on section after input field
-		padding-top: $baseSpacingUnit * 2 !important;
+		padding-top: $baseSpacingUnit * 2;
 	}
 }
 
 .gsection_title {
-	font-weight: normal !important;
+	font-weight: normal;
+	font-size: 1em;
 }
 
 .ginput_container {
-	margin: 0 !important;
+	margin: 0;
 }
 
 .gfield input,
 .gfield select {
-	padding: $baseSpacingUnit / 2 !important;
-	margin-left: 0 !important;
+	padding: $baseSpacingUnit / 2;
+	margin-left: 0;
 }
 
 .gfield textarea {
-	padding: $baseSpacingUnit !important;
-	height: 150px !important;
+	padding: $baseSpacingUnit;
+	height: 150px;
 }
 
 .gfield label {
-	font-weight: normal !important;
+	font-weight: normal;
+}
+
+.gform_footer {
+	&:after {
+		content: '';
+		@extend %icon;
+		@extend %icon--link;
+	}
 }
 
 .gform_button {
-	min-height: 0 !important;
+	// Submit
+	min-height: 0;
 	padding: 0;
-	margin: 0 !important;
+	margin: 0;
 	border: 0;
 	background: none;
 	color: $brandColorHighlight;
-	line-height: 1.33 !important;
+	line-height: 1.33;
+
+	&:hover {
+		cursor: pointer;
+		text-decoration: underline;
+	}
 }
 
 // Validation
 .gform_wrapper .validation_error {
-	margin-bottom: 0 !important;
+	margin-bottom: 0;
 	margin-top: $baseSpacingUnit;
 }
 
 // Super trumps
 .gform_wrapper .gform_fields li.gfield.field_description_below + li.gsection {
-	margin-top: 0 !important;
+	margin-top: 0;
 }

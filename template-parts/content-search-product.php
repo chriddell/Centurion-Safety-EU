@@ -16,7 +16,7 @@
 				<img src="<?php echo get_field('product_images')[0]['product_image']['url']; ?>" class="product-listing__image"/>
 			</div>
 			<?php the_title('<h3 class="product-listing__title">', '</h3>'); ?>
-			<a href="<?php echo get_permalink(); ?>" class="product-listing__link"><?php _e('More info', 'centurion' ); ?></a>
+			<a href="<?php echo get_permalink(); ?>" class="product-listing__link"><?php _e('More info', 'centurion' ); ?><span class="icon icon--link"></a>
 		</div>
 	</article>
 </div>
