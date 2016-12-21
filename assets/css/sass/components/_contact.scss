@@ -1,0 +1,49 @@
+/* ==========================================================================
+    _contact
+
+    Contact page components
+   ========================================================================== */
+
+.contact {
+  // This is the container
+  @include respond-to( 'small' ) {
+    padding-right: $baseSpacingUnit * 5;
+    border-right: 1px solid $borderColor;
+  }
+}
+
+.contact__fax,
+.contact__tel {
+  margin: 0;
+}
+
+.contact__fax {
+  margin-bottom: 1em;
+
+  @include respond-to( 'small' ) {
+    margin-bottom: 0;
+  }
+}
+
+.contact__copy {
+  color: $brandColorTwo;
+}
+
+// Remove height of line-breaks
+// in address
+.contact__address br {
+  content: '';
+  height: 0;
+  margin: 0;
+}
+
+.contact__page-content {
+  padding-top: $baseSpacingUnit * 2;
+}
+
+.contact__map-container {
+  position: absolute;
+  height: 100%;
+  top: 0;
+  right: 0;
+}

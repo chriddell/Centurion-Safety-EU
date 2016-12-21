@@ -17,21 +17,34 @@ $contact = array(
 get_header(); ?>
 
 <main class="main" role="main">
-	<div class="wrapper">
-		<div class="block">
-			<?php bloginfo( 'name' ); ?>
+	<div class="wrapper pos-rel">
+		<div class="col-12 col-sml-6 contact border-right">
+			<div class="block">
+				<?php the_title('<h2 class="contact__title">', '</h2>'); ?>
+				<h3 class="contact__title bold">Centurion Safety Products Ltd</h3>
 
-			<p><?php echo $contact['address']; ?></p>
-			<p><?php _e('Tel:', 'centurion'); echo $contact['telephone']; ?></p>
-			<p><?php _e('Fax:', 'centurion'); echo $contact['fax']; ?></p>
+				<div class="col-12 col-sml-6 contact__block">
+					<p class="contact__copy contact__address"><?php echo $contact['address']; ?></p>
+				</div>
 
-			<?php
-				// Start the loop.
-				while ( have_posts() ) : the_post();
-					// Show the content
-					the_content();
-				endwhile;
-			?>
+				<div class="col-12 col-sml-6 contact__block">
+					<p class="contact__copy contact__tel"><?php _e('Tel:', 'centurion'); echo $contact['telephone']; ?></p>
+					<p class="contact__copy contact__fax"><?php _e('Fax:', 'centurion'); echo $contact['fax']; ?></p>
+				</div>
+
+				<div class="contact__page-content clear-both clearfix">
+					<?php
+						// Start the loop.
+						while ( have_posts() ) : the_post();
+							// Show the content
+							the_content();
+						endwhile;
+					?>
+				</div>
+			</div>
+		</div>
+		<div class="col-12 col-sml-6 contact__map-container map-container">
+			<?php echo do_shortcode('[wpgmza id="2"]'); ?>
 		</div>
 	</div>
 </main>

@@ -5,13 +5,48 @@
    ========================================================================== */
 
 input,
-.form__input {
+.form__input,
+select,
+.form__select {
   border: 0;
+  border-bottom: 1px solid $brandColorOne;
   padding: $baseSpacingUnit / 2 $baseSpacingUnit;
+  -webkit-appearance: none;
+}
+
+select,
+.form__select {
+  background: none;
+  border-radius: 0;
+}
+
+textarea,
+.form__textarea {
+  padding: $baseSpacingUnit;
+  border: 1px solid $borderColor;
+  border-radius: 4px;
+}
+
+label,
+.form__label {
+  color: #262e61;
+  font-weight: normal;
+  font-style: italic;
+}
+
+// Show no labels if placeholder available
+.placeholder label {
+  @extend %sr-only;
+}
+
+::placeholder,
+select {
+  color: $brandColorTwo;
 }
 
 /* Generic
 ---------------------------------------- */
+
 .form__input {
   font-family: $mainFontFamily;
 }

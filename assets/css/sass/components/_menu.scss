@@ -140,8 +140,9 @@
 ---------------------------------------- */
 
 .menu--lang-selector__item {
-  /** Hide language switcher **/
+  // Hide language switcher
   display: none;
+
   @include respond-to( 'medium' ) {
     line-height: 3;
 

@@ -103,9 +103,30 @@
 /* Info Window
 ---------------------------------------- */
 
+.map-container .wpgmza_modern_infowindow {
+  width: 80% !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  top: auto !important;
+  bottom: 80px !important;
+  left: 10% !important;
+  font-family: $mainFontFamily !important;
+  box-shadow: none !important;
+  background-color: $lightColor !important;
+
+  @include respond-to( 'small' ) {
+    width: 400px !important;
+    right: $baseSpacingUnit !important;
+    left: auto !important;
+  }
+}
+
+.contact__map-container .wpgmza_modern_infowindow {
+  bottom: $baseSpacingUnit * 2 !important;
+}
+
 .wpgmza_modern_infowindow_inner {
   @extend %clearfix;
-
   padding: $baseSpacingUnit $baseSpacingUnit $baseSpacingUnit $baseSpacingUnit * 4;
 
   &:before {
@@ -117,24 +138,6 @@
     top: $baseSpacingUnit;
     left: $baseSpacingUnit;
     background-image: url(../img/pin.svg);
-  }
-}
-
-#wpgmza_iw_holder_1 {
-  width: 80%;
-  padding: 0;
-  margin: 0;
-  top: auto !important;
-  bottom: 80px;
-  left: 10%;
-  font-family: $mainFontFamily;
-  box-shadow: none;
-  background-color: $lightColor;
-
-  @include respond-to( 'small' ) {
-    width: 400px;
-    right: $baseSpacingUnit !important;
-    left: auto !important;
   }
 }
 

@@ -1,6 +1,6 @@
 /*!
  * modernizr v3.3.1
- * Build https://modernizr.com/download?-csscalc-flexbox-setclasses-dontmin
+ * Build https://modernizr.com/download?-csscalc-flexbox-placeholder-setclasses-dontmin
  *
  * Copyright (c)
  *  Faruk Ates
@@ -253,6 +253,20 @@
   }
 
   ;
+/*!
+{
+  "name": "placeholder attribute",
+  "property": "placeholder",
+  "tags": ["forms", "attribute"],
+  "builderAliases": ["forms_placeholder"]
+}
+!*/
+/* DOC
+Tests for placeholder attribute in inputs and textareas
+*/
+
+  Modernizr.addTest('placeholder', ('placeholder' in createElement('input') && 'placeholder' in createElement('textarea')));
+
 
   /**
    * List of property values to set for css tests. See ticket #21

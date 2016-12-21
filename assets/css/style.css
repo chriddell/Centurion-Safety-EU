@@ -1244,7 +1244,6 @@ input {
 /* Language Selector
 ---------------------------------------- */
 .menu--lang-selector__item {
-  /** Hide language switcher **/
   display: none;
 }
 
@@ -1343,9 +1342,53 @@ input {
     Form styling
    ========================================================================== */
 input,
-.form__input {
+.form__input,
+select,
+.form__select {
   border: 0;
+  border-bottom: 1px solid #262e61;
   padding: 10px 20px;
+  -webkit-appearance: none;
+}
+
+select,
+.form__select {
+  background: none;
+  border-radius: 0;
+}
+
+textarea,
+.form__textarea {
+  padding: 20px;
+  border: 1px solid #dbdbdb;
+  border-radius: 4px;
+}
+
+label,
+.form__label {
+  color: #262e61;
+  font-weight: normal;
+  font-style: italic;
+}
+
+::-webkit-input-placeholder,
+select {
+  color: #94aab3;
+}
+
+::-moz-placeholder,
+select {
+  color: #94aab3;
+}
+
+:-ms-input-placeholder,
+select {
+  color: #94aab3;
+}
+
+::placeholder,
+select {
+  color: #94aab3;
 }
 
 /* Generic
@@ -1653,6 +1696,30 @@ input,
 
 /* Info Window
 ---------------------------------------- */
+.map-container .wpgmza_modern_infowindow {
+  width: 80% !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  top: auto !important;
+  bottom: 80px !important;
+  left: 10% !important;
+  font-family: effra, Tahoma, Verdana, Arial, sans-serif !important;
+  box-shadow: none !important;
+  background-color: #FFFFFF !important;
+}
+
+@media (min-width: 767px) {
+  .map-container .wpgmza_modern_infowindow {
+    width: 400px !important;
+    right: 20px !important;
+    left: auto !important;
+  }
+}
+
+.contact__map-container .wpgmza_modern_infowindow {
+  bottom: 40px !important;
+}
+
 .wpgmza_modern_infowindow_inner {
   padding: 20px 20px 20px 80px;
 }
@@ -1666,26 +1733,6 @@ input,
   top: 20px;
   left: 20px;
   background-image: url(../img/pin.svg);
-}
-
-#wpgmza_iw_holder_1 {
-  width: 80%;
-  padding: 0;
-  margin: 0;
-  top: auto !important;
-  bottom: 80px;
-  left: 10%;
-  font-family: effra, Tahoma, Verdana, Arial, sans-serif;
-  box-shadow: none;
-  background-color: #FFFFFF;
-}
-
-@media (min-width: 767px) {
-  #wpgmza_iw_holder_1 {
-    width: 400px;
-    right: 20px !important;
-    left: auto !important;
-  }
 }
 
 .wpgmza_iw_title {
@@ -2511,6 +2558,54 @@ Powered by JS
 }
 
 /* ==========================================================================
+    _contact
+
+    Contact page components
+   ========================================================================== */
+@media (min-width: 767px) {
+  .contact {
+    padding-right: 100px;
+    border-right: 1px solid #dbdbdb;
+  }
+}
+
+.contact__fax,
+.contact__tel {
+  margin: 0;
+}
+
+.contact__fax {
+  margin-bottom: 1em;
+}
+
+@media (min-width: 767px) {
+  .contact__fax {
+    margin-bottom: 0;
+  }
+}
+
+.contact__copy {
+  color: #94aab3;
+}
+
+.contact__address br {
+  content: '';
+  height: 0;
+  margin: 0;
+}
+
+.contact__page-content {
+  padding-top: 40px;
+}
+
+.contact__map-container {
+  position: absolute;
+  height: 100%;
+  top: 0;
+  right: 0;
+}
+
+/* ==========================================================================
     _splash-block
 
     A repetitive UI-pattern across the site, which consits of:
@@ -3256,12 +3351,95 @@ Powered by JS
 		These styles are not here, sorry! They live in components/_map
 	 ========================================================================== */
 /* ==========================================================================
+		Gravity Forms
+	 ========================================================================== */
+.gform_heading {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.gform_heading > .gform_title {
+  margin: 0 !important;
+}
+
+.gform_footer {
+  padding: 0 !important;
+  margin: 40px 0 0 !important;
+  float: right;
+}
+
+.gfield[class*="col-"] {
+  margin-top: 10px !important;
+  clear: none !important;
+}
+
+@media (min-width: 767px) {
+  .gfield[class*="col-"] {
+    margin-top: 20px !important;
+  }
+}
+
+.gsection {
+  padding: 20px 0 0 5px !important;
+  margin: 0 !important;
+  border-bottom: 0 !important;
+  clear: both !important;
+}
+
+.gfield + .gsection {
+  padding-top: 40px !important;
+}
+
+.gsection_title {
+  font-weight: normal !important;
+}
+
+.ginput_container {
+  margin: 0 !important;
+}
+
+.gfield input,
+.gfield select {
+  padding: 10px !important;
+  margin-left: 0 !important;
+}
+
+.gfield textarea {
+  padding: 20px !important;
+  height: 150px !important;
+}
+
+.gfield label {
+  font-weight: normal !important;
+}
+
+.gform_button {
+  min-height: 0 !important;
+  padding: 0;
+  margin: 0 !important;
+  border: 0;
+  background: none;
+  color: #e83272;
+  line-height: 1.33 !important;
+}
+
+.gform_wrapper .validation_error {
+  margin-bottom: 0 !important;
+  margin-top: 20px;
+}
+
+.gform_wrapper .gform_fields li.gfield.field_description_below + li.gsection {
+  margin-top: 0 !important;
+}
+
+/* ==========================================================================
     _helpers
 
     Object-oriented classes, helper classes e.g. bold-font, absolute-center
    ========================================================================== */
 .sr-only,
 .sub-menu,
+.placeholder label,
 .form--search--in-header__input--submit,
 .wpgmza_sl_query_innerdiv1 {
   position: absolute;
@@ -3275,15 +3453,13 @@ Powered by JS
 .clearfix:after,
 .wpgmza_modern_infowindow_inner:after,
 .tabs__tab-content:after,
-.tags:after {
+.tags:after,
+.gfield:after,
+.gform_fields:after,
+.gform_body:after {
   content: '';
   display: table;
   clear: both;
-}
-
-.reset-spacing {
-  padding: 0;
-  margin: 0;
 }
 
 .zero-line-height {
@@ -3320,6 +3496,11 @@ Powered by JS
 
 .mb-reset {
   margin-bottom: 20px;
+}
+
+.reset-spacing {
+  padding: 0;
+  margin: 0;
 }
 
 .highlight-color {
