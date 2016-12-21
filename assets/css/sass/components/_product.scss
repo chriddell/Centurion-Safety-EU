@@ -13,11 +13,14 @@
 }
 
 .product__description {
-  margin-bottom: $baseSpacingUnit * 2;
+  margin-bottom: $baseSpacingUnit;
 }
 
 .product__attributes {
   margin-bottom: $baseSpacingUnit * 2;
+}
+.product__attributes__item {
+  margin-bottom: $baseSpacingUnit / 2;
 }
 
 .product__copy {

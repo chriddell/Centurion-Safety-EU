@@ -54,7 +54,7 @@ get_header(); ?>
 				<div class="timeline">
 					<div class="carousel carousel__main timeline__main" id="slick">
 						<div class="carousel__item carousel__main__item timeline__item timeline__main__item timeline__main__item--one">
-							<img src="<?php echo get_template_directory_uri() . '/assets/img/timeline/tank-helmet-1942.png'; ?>" class="timeline__main__item__image"/>
+							<img src="<?php echo get_template_directory_uri() . '/assets/img/timeline/miners-helmet-1900.png'; ?>" class="timeline__main__item__image"/>
 							<h4 class="timeline__main__item__title">Miners' Helmet</h4>
 							<p class="timeline__main__item__copy">Worn by thousands of miners across the world, including royalty</p>
 						</div>
@@ -64,27 +64,27 @@ get_header(); ?>
 							<p class="timeline__main__item__copy">Adaptations of the miners hat - even used for "Manning" dummy gun emplacements</p>
 						</div>
 						<div class="carousel__item carousel__main__item timeline__item timeline__main__item timeline__main__item--three">
-							<img src="<?php echo get_template_directory_uri() . '/assets/img/timeline/tank-helmet-1942.png'; ?>" class="timeline__main__item__image"/>
+							<img src="<?php echo get_template_directory_uri() . '/assets/img/timeline/motorcycle-helmet-1957.png'; ?>" class="timeline__main__item__image"/>
 							<h4 class="timeline__main__item__title">Motorcycle Helmet</h4>
 							<p class="timeline__main__item__copy">Motorcycle helmets moved from two layers of pulp to Fibreglass in 1950’s</p>
 						</div>
 						<div class="carousel__item carousel__main__item timeline__item timeline__main__item timeline__main__item--four">
-							<img src="<?php echo get_template_directory_uri() . '/assets/img/timeline/tank-helmet-1942.png'; ?>" class="timeline__main__item__image"/>
+							<img src="<?php echo get_template_directory_uri() . '/assets/img/timeline/motorcycle-helmet-1980.png'; ?>" class="timeline__main__item__image"/>
 							<h4 class="timeline__main__item__title">Motorcycle Helmet</h4>
 							<p class="timeline__main__item__copy">First injection moulded motorcycle helmet launched 1973, by 1978 the “Sprint” was the biggest selling helmet in UK</p>
 						</div>
 						<div class="carousel__item carousel__main__item timeline__item timeline__main__item timeline__main__item--five">
-							<img src="<?php echo get_template_directory_uri() . '/assets/img/timeline/tank-helmet-1942.png'; ?>" class="timeline__main__item__image"/>
+							<img src="<?php echo get_template_directory_uri() . '/assets/img/timeline/spartan-1990.png'; ?>" class="timeline__main__item__image"/>
 							<h4 class="timeline__main__item__title">Spartan</h4>
 							<p class="timeline__main__item__copy">Like Centurions past, the Spartan quickly became the head gear of choice on site for many industrial workforces</p>
 						</div>
 						<div class="carousel__item carousel__main__item timeline__item timeline__main__item timeline__main__item--six">
-							<img src="<?php echo get_template_directory_uri() . '/assets/img/timeline/tank-helmet-1942.png'; ?>" class="timeline__main__item__image"/>
+							<img src="<?php echo get_template_directory_uri() . '/assets/img/timeline/concept-2004.png'; ?>" class="timeline__main__item__image"/>
 							<h4 class="timeline__main__item__title">Concept</h4>
 							<p class="timeline__main__item__copy">The lightest safety helmet (up to 20% known before) launched on the market, conforming to EN397 &amp; ANSI</p>
 						</div>
 						<div class="carousel__item carousel__main__item timeline__item timeline__main__item timeline__main__item--seven">
-							<img src="<?php echo get_template_directory_uri() . '/assets/img/timeline/tank-helmet-1942.png'; ?>" class="timeline__main__item__image"/>
+							<img src="<?php echo get_template_directory_uri() . '/assets/img/timeline/nexus-2016.png'; ?>" class="timeline__main__item__image"/>
 							<h4 class="timeline__main__item__title">Nexus</h4>
 							<p class="timeline__main__item__copy">Modern style, mixed with industrial practicality</p>
 						</div>

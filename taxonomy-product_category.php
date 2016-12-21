@@ -66,7 +66,7 @@ if ( !is_array( $child_term_ids ) ) {
 
 get_header(); ?>
 	
-	<div class="flex-content"><!-- .flex-content -->
+	<div class="flex-content fill-height"><!-- .flex-content -->
 		<?php get_sidebar('expanded'); ?>
 		<main role="main" class="main main--has-sidebar main--with-padding"><!-- .main -->
 			<div class="wrapper">

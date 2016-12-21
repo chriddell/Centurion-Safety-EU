@@ -352,7 +352,7 @@ function cntrn_render_term_tree( $taxonomy, $term_id ){
 	if ( $children ) {
 
 		// Sub-list
-		echo '<ul class="product-filter__item-list--is-child">';
+		echo '<ul class="product-filter__item-list--is-child menu">';
 
 		foreach ( $children as $child ) {
 
@@ -455,7 +455,7 @@ function cntrn_render_splash_blocks( $ul_classnames = '', $li_classnames = '' ) 
 function cntrn_stockists_link() {
 
 	$stockists_page = get_page_by_path( 'stockists', object );
-	$stockists_page_url = get_page_link($stockists_page->ID);
+	$stockists_page_url = get_page_link( $stockists_page->ID );
 
 	// Print the URL
 	return $stockists_page_url;
@@ -552,7 +552,7 @@ function cntrn_render_events_posts() {
 
 	/** Loop our query **/
 	if ( $the_query->have_posts() ) {
-		echo '<ul class="eventlist">';
+		echo '<ul class="eventlist menu">';
 		while ( $the_query->have_posts() ) {
 			$the_query->the_post();
 			get_template_part( 'template-parts/content', 'event' );

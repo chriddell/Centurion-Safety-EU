@@ -16,7 +16,7 @@
 		</p>
 	</header>
 	<div class="sidebar__main">
-		<ul class="product-filter__item-list reset-spacing">
+		<ul class="product-filter__item-list menu">
 			<?php 
 			wp_nav_menu(array(
 				'menu' 				=> 'sidebar product categories',

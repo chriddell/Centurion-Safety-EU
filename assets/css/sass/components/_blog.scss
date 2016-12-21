@@ -82,6 +82,10 @@
 /* Preview (Archive listing)
 ---------------------------------------- */
 
+.blog--preview {
+  margin-bottom: $baseSpacingUnit;
+}
+
 .blog--preview__container {
   @include respond-to( 'small' ) {
     padding-left: $baseSpacingUnit;

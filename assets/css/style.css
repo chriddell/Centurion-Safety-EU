@@ -787,6 +787,9 @@ template {
         -ms-flex-order: 1;
             order: 1;
   }
+  .flexbox.csscalc .fill-height {
+    min-height: calc(100vh - 155px);
+  }
 }
 
 /* Fallback layout
@@ -869,7 +872,13 @@ a:hover {
 
 ul {
   margin: 20px 0;
-  padding-left: 20px;
+  padding-left: 0;
+  list-style: none;
+}
+
+ul > li:before {
+  content: '•';
+  margin-right: 5px;
 }
 
 h1 {
@@ -1122,9 +1131,16 @@ input {
    ========================================================================== */
 .menu,
 .sub-menu {
-  list-style: none;
   margin: 0;
   padding: 0;
+}
+
+.menu li:before,
+.menu .menu__item:before,
+.sub-menu li:before,
+.sub-menu .menu__item:before {
+  content: '';
+  display: none;
 }
 
 /* Sub Menus
@@ -1348,13 +1364,13 @@ select,
   border: 0;
   border-bottom: 1px solid #262e61;
   padding: 10px 20px;
-  -webkit-appearance: none;
 }
 
 select,
 .form__select {
   background: none;
   border-radius: 0;
+  -webkit-appearance: none;
 }
 
 textarea,
@@ -1364,7 +1380,7 @@ textarea,
   border-radius: 4px;
 }
 
-label,
+form label,
 .form__label {
   color: #262e61;
   font-weight: normal;
@@ -1674,6 +1690,7 @@ select {
 .addressInput {
   height: 100% !important;
   width: 100% !important;
+  border-bottom: 0;
 }
 
 .wpgmza_sl_query_div {
@@ -2493,11 +2510,15 @@ Powered by JS
 }
 
 .product__description {
-  margin-bottom: 40px;
+  margin-bottom: 20px;
 }
 
 .product__attributes {
   margin-bottom: 40px;
+}
+
+.product__attributes__item {
+  margin-bottom: 10px;
 }
 
 .product__copy {
@@ -2622,13 +2643,14 @@ Powered by JS
 
 @media (min-width: 767px) {
   .splash-block {
-    height: 250px;
+    height: 33.33333%;
+    min-height: 250px;
   }
 }
 
 .splash-block__container {
   padding: 20px;
-  background-color: #e83272;
+  background-color: #9ba399;
   background-size: cover;
   background-position: center center;
 }
@@ -2647,6 +2669,10 @@ Powered by JS
 
 .splash-block__btn {
   margin: 0 auto;
+}
+
+.splash-blocks {
+  height: 100%;
 }
 
 /* Centering content
@@ -2689,6 +2715,7 @@ Powered by JS
 @media (min-width: 767px) {
   .splash-block__homepage {
     margin-bottom: 20px;
+    height: 250px;
   }
   .splash-block__homepage:nth-of-type(odd) .splash-block__container {
     margin-right: 10px;
@@ -2895,6 +2922,10 @@ Powered by JS
 
 /* Preview (Archive listing)
 ---------------------------------------- */
+.blog--preview {
+  margin-bottom: 20px;
+}
+
 @media (min-width: 767px) {
   .blog--preview__container {
     padding-left: 20px;
@@ -3439,7 +3470,7 @@ Powered by JS
    ========================================================================== */
 .sr-only,
 .sub-menu,
-.placeholder label,
+.placeholder form label,
 .form--search--in-header__input--submit,
 .wpgmza_sl_query_innerdiv1 {
   position: absolute;

@@ -30,7 +30,7 @@ $new_term_object				= ( $queried_term_object->parent == 0 ) ? $queried_term_obje
 		<p class="reset-spacing product-filter__toggle-text" id="sidebar-toggle-text"><?php _e('Collapse Filter', 'centurion'); ?></p>
 	</header>
 	<div class="sidebar__main">
-		<ul class="product-filter__item-list reset-spacing" id="product-filter-controller">
+		<ul class="product-filter__item-list menu" id="product-filter-controller">
 			<?php cntrn_render_term_tree( $new_term_object->taxonomy, $new_term_object->term_id ); ?>
 		</ul>
 	</div>

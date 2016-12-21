@@ -14,13 +14,14 @@
   text-align: center;
 
   @include respond-to( 'small' ) {
-    height: 250px;
+    height: 33.33333%;
+    min-height: 250px;
   }
 }
 
 .splash-block__container {
   padding: $baseSpacingUnit;
-  background-color: $brandColorHighlight;
+  background-color: $brandColorFour;
   background-size: cover;
   background-position: center center;
 }
@@ -38,6 +39,11 @@
 
 .splash-block__btn {
   margin: 0 auto;
+}
+
+// Container
+.splash-blocks {
+  height: 100%;
 }
 
 /* Centering content
@@ -70,6 +76,7 @@
 
   @include respond-to( 'small' ) {
     margin-bottom: $baseSpacingUnit;
+    height: 250px;
     
     &:nth-of-type(odd) .splash-block__container {
       margin-right: $baseSpacingUnit / 2;

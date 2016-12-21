@@ -16,7 +16,7 @@ $eventpost = array(
 
 ?>
 
-<li class="event event-list__item">
+<li class="event event-list__item menu__item">
 	<?php the_title('<h4 class="event__title">', '</h4>'); ?>
 	<p class="event__text event__text--date"><?php echo $eventpost['date']->format('j F Y'); ?></p>
 	<p class="event__text event__text--location"><?php echo $eventpost['location']; ?></p>

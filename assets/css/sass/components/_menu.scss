@@ -7,9 +7,16 @@
 .menu,
 .sub-menu {
   // sub-menu is default WP class
-  list-style: none;
   margin: 0;
   padding: 0;
+
+  li,
+  .menu__item {
+    &:before {
+      content: '';
+      display: none;
+    }
+  }
 }
 
 /* Sub Menus

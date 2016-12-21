@@ -40,6 +40,12 @@
     flex: 1 auto;
     order: 1;
   }
+
+  .flexbox.csscalc .fill-height {
+    // min-height is remaining viewport height after
+    // header
+    min-height: calc(100vh - 155px);
+  }
 }
 
 /* Fallback layout

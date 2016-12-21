@@ -11,13 +11,13 @@ select,
   border: 0;
   border-bottom: 1px solid $brandColorOne;
   padding: $baseSpacingUnit / 2 $baseSpacingUnit;
-  -webkit-appearance: none;
 }
 
 select,
 .form__select {
   background: none;
   border-radius: 0;
+  -webkit-appearance: none;
 }
 
 textarea,
@@ -27,7 +27,7 @@ textarea,
   border-radius: 4px;
 }
 
-label,
+form label,
 .form__label {
   color: #262e61;
   font-weight: normal;
@@ -35,7 +35,7 @@ label,
 }
 
 // Show no labels if placeholder available
-.placeholder label {
+.placeholder form label {
   @extend %sr-only;
 }
 

@@ -104,7 +104,7 @@ get_header(); ?>
 					<?php if ( have_rows( 'product_attributes' ) ) { ?>
 						<ul class="product__attributes product__copy">
 							<?php while ( have_rows( 'product_attributes' ) ) : the_row(); ?>
-								<li><?php the_sub_field('attribute'); ?></li>
+								<li class="product__attributes__item"><?php the_sub_field('attribute'); ?></li>
 							<?php endwhile; ?>
 						</ul>
 					<?php } ?>

@@ -17,7 +17,7 @@ $blogpost = array(
 
 ?>
 
-<article id="post-<?php the_ID(); ?>" class="blog blog--preview">
+<article id="post-<?php the_ID(); ?>" class="blog blog--preview clearfix">
 	<div class="col-12 col-sml-6 blog--preview__image" style="background-image: url(<?php echo $blogpost['image']['url']; ?>)"></div>
 
 	<div class="col-12 col-sml-6 blog--preview__container">
