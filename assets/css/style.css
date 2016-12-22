@@ -974,27 +974,28 @@ input {
 /* Icons
 ---------------------------------------- */
 .icon--mail {
-  background-position: 0 0;
+  background-position: 0 2px;
+  top: -1px;
 }
 
 .icon--link,
 .gform_footer:after {
-  background-position: 0 -137px;
+  background-position: 0 -129px;
   top: -2px;
 }
 
 .icon--white-link {
-  background-position: 0 -165px;
+  background-position: 0 -155px;
   top: -2px;
 }
 
 .icon--white-pin {
   background-position: 0 -54px;
-  top: -2px;
+  top: -1px;
 }
 
 .icon--search {
-  background-position: 0 -109px;
+  background-position: 0 -102px;
 }
 
 .icon--play {
@@ -1003,6 +1004,14 @@ input {
 
 .icon--play.icon--2x {
   background-position: 0 -330px;
+}
+
+.icon--checked-box {
+  background-position: 0 -233px;
+}
+
+.icon--unchecked-box {
+  background-position: 0 -266px;
 }
 
 /* Tweaks
@@ -2315,6 +2324,7 @@ Powered by JS
 
 .btn:hover {
   text-decoration: none;
+  cursor: pointer;
 }
 
 .btn--pink {
@@ -2502,6 +2512,29 @@ Powered by JS
 
 .product-filter__item__label {
   margin-left: 10px;
+}
+
+@media (min-width: 767px) {
+  .product-filter__item__label {
+    width: 85%;
+    margin-left: 0;
+  }
+}
+
+@media (min-width: 1023px) {
+  .product-filter__item__label {
+    margin-left: 5px;
+  }
+}
+
+.product-filter__item__label,
+.product-filter__checkbox {
+  float: left;
+}
+
+.product-filter__checkbox {
+  position: relative;
+  top: -2px;
 }
 
 .product-filter__item-link,
@@ -2743,6 +2776,20 @@ Powered by JS
   height: 100%;
   top: 0;
   right: 0;
+}
+
+/* ==========================================================================
+    _newsletter
+    
+    Newsletter container
+   ========================================================================== */
+.newsletter.is-active .gform--newsletter {
+  height: auto;
+  overflow: visible;
+}
+
+.newsletter.is-active #show-newsletter-form {
+  display: none;
 }
 
 /* ==========================================================================
@@ -3640,6 +3687,21 @@ Powered by JS
   color: white;
 }
 
+/* Newsletter
+---------------------------------------- */
+.gform--newsletter {
+  height: 0;
+  overflow: hidden;
+}
+
+.gform--newsletter .gform_fields {
+  margin-top: 0;
+}
+
+.gform--newsletter .gfield[class*="col-"]:first-of-type {
+  margin-top: 0;
+}
+
 /* ==========================================================================
     _helpers
 
@@ -3662,6 +3724,7 @@ Powered by JS
 .wpgmza_modern_infowindow_inner:after,
 .tabs__tab-content:after,
 .tags:after,
+.product-filter__item:after,
 .gfield:after,
 .gform_fields:after,
 .gform_body:after {

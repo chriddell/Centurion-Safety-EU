@@ -57,6 +57,28 @@
 	}
 
 	/**
+	 * Mark 'checkbox' (is actually a span elem)
+	 * as checked (change class, works with sprites)
+	 */ 
+	function markChecked( target ) {
+
+		$( target ).siblings('.icon')
+			.removeClass('icon--unchecked-box')
+			.addClass('icon--checked-box');
+	}
+
+	/**
+	 * Mark 'checkbox' (is actually a span elem)
+	 * as checked (change class, works with sprites)
+	 */ 
+	function markUnchecked( target ) {
+
+		$( target ).siblings('.icon')
+			.removeClass('icon--checked-box')
+			.addClass('icon--unchecked-box');
+	}
+
+	/**
 	 * Hide/show elements on canvas
 	 * 
 	 * @param target 	= string; new filter term
@@ -103,6 +125,12 @@
 			// and set to variable
 			var add = this.checked ? true : false
 			var targetTerm = $( this ).attr( 'data-filter-by' );
+
+			if ( add === true ) {
+				markChecked( this );
+			} else {
+				markUnchecked( this );
+			}
 
 			runFilter( targetTerm, add )
 		})

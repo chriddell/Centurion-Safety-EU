@@ -10,6 +10,7 @@
 
 .product-filter__item {
   list-style-type: none;
+  @extend %clearfix;
 }
 
 .product-filter__item--has-input {
@@ -18,6 +19,25 @@
 
 .product-filter__item__label {
   margin-left: $baseSpacingUnit / 2;
+
+  @include respond-to( 'small' ) {
+    width: 85%;
+    margin-left: 0;
+  }
+
+  @include respond-to( 'medium' ) {
+    margin-left: $baseSpacingUnit / 4;
+  }
+}
+
+.product-filter__item__label,
+.product-filter__checkbox {
+  float: left;
+}
+
+.product-filter__checkbox {
+  position: relative;
+  top: -2px;
 }
 
 .product-filter__item-link,

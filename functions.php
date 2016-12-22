@@ -364,7 +364,8 @@ function cntrn_render_term_tree( $taxonomy, $term_id ){
 			if ( $child_term->count > 0 ) {
 
 				echo '<li class="product-filter__item product-filter__item--has-input">';
-				echo '<input type="checkbox" name="filter-' . $child_term->slug . '" class="product-filter__item__input" data-filter-by="' . $child_term->slug . '" id="filter-' . $child_term->slug . '"/>';
+				echo '<span class="icon icon--checked-box icon--fit product-filter__checkbox"></span>';
+				echo '<input type="checkbox" name="filter-' . $child_term->slug . '" class="product-filter__item__input sr-only" data-filter-by="' . $child_term->slug . '" id="filter-' . $child_term->slug . '"/>';
 				echo '<label for="filter-' . $child_term->slug . '" class="product-filter__item__label">';
 				echo $child_term->name;
 				echo '</label>';
