@@ -1,0 +1,16 @@
+/* ==========================================================================
+    _newsletter
+    
+    Newsletter container
+   ========================================================================== */
+
+.newsletter.is-active {
+  .gform--newsletter {
+    height: auto;
+    overflow: visible;
+  }
+
+  #show-newsletter-form {
+    display: none;
+  }
+}
