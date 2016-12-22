@@ -86,9 +86,12 @@ get_header(); ?>
 					 * with the current taxonomy term and return
 					 * them
 					 */
-					$terms = get_terms( 'product_category', array( 
-						'parent' => $new_term_object->term_id
-					));
+					$args = array(
+						'parent' 		=> $new_term_object->term_id,
+						'orderby'		=> 'id'
+					);
+
+					$terms = get_terms( 'product_category', $args );
 
 					foreach ( $terms as $term ) {
 

@@ -358,12 +358,16 @@ function cntrn_render_term_tree( $taxonomy, $term_id ){
 
 			$child_term = get_term( $child );
 
-			echo '<li class="product-filter__item product-filter__item--has-input">';
-			echo '<input type="checkbox" name="filter-' . $child_term->slug . '" class="product-filter__item__input" data-filter-by="' . $child_term->slug . '"/>';
-			echo '<label for="filter-' . $child_term->slug . '" class="product-filter__item__label">';
-			echo $child_term->name;
-			echo '</label>';
-			echo '</li>';
+			// Only show if term has products attached
+			if ( $child_term->count > 0 ) {
+
+				echo '<li class="product-filter__item product-filter__item--has-input">';
+				echo '<input type="checkbox" name="filter-' . $child_term->slug . '" class="product-filter__item__input" data-filter-by="' . $child_term->slug . '" id="filter-' . $child_term->slug . '"/>';
+				echo '<label for="filter-' . $child_term->slug . '" class="product-filter__item__label">';
+				echo $child_term->name;
+				echo '</label>';
+				echo '</li>';
+			}
 		}
 
 		// Close sub-list

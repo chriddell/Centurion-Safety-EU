@@ -53,26 +53,30 @@
 // be filtered must be added to the 
 // $terms map
 $terms: (
-  'general-purpose', 
-  'integrated-eyewear-helmet-systems', 
-  'face-protection', 
-  'specialised-helmet-systems', 
-  'hearing-protection', 
-  'seasonal-protection', 
-  'mounting-accessories', 
-  'visibility-accessories', 
-  'chinstraps-and-neck-capes', 
-  'helmet-spares', 
-  'baseball-bump-caps', 
-  'hygiene-bump-caps', 
-  'powered-air-systems', 
-  'fresh-air-systems', 
-  'airforce-compressed-air-systems'
+  'airforce-compressed-air-systems',
+  'baseball-bump-caps',
+  'cap-protection-systems',
+  'chinstraps-and-neck-capes',
+  'face-protection',
+  'fresh-air-systems',
+  'general-purpose',
+  'hearing-protection',
+  'helmet-protection-systems',
+  'helmet-spares',
+  'hygiene-bump-caps',
+  'integrated-eyewear-helmet-systems',
+  'mounting-accessories',
+  'powered-air-systems',
+  'respiratory-protection-systems',
+  'seasonal-protection',
+  'specialised-helmet-systems',
+  'visibility-accessories'
 );
 
 // We only filter if JS is enabled
 .js *[data-filter="filterable"] {
   height: 0;
+  margin: 0;
   overflow: hidden;
 }
 

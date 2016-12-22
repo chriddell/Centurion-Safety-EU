@@ -2533,46 +2533,11 @@ Powered by JS
 ---------------------------------------- */
 .js *[data-filter="filterable"] {
   height: 0;
+  margin: 0;
   overflow: hidden;
 }
 
-#product-filter-canvas[data-filtering*="general-purpose"] .product-listing__category-container[data-filter-term="general-purpose"] {
-  height: auto;
-}
-
-#product-filter-canvas[data-filtering*="integrated-eyewear-helmet-systems"] .product-listing__category-container[data-filter-term="integrated-eyewear-helmet-systems"] {
-  height: auto;
-}
-
-#product-filter-canvas[data-filtering*="face-protection"] .product-listing__category-container[data-filter-term="face-protection"] {
-  height: auto;
-}
-
-#product-filter-canvas[data-filtering*="specialised-helmet-systems"] .product-listing__category-container[data-filter-term="specialised-helmet-systems"] {
-  height: auto;
-}
-
-#product-filter-canvas[data-filtering*="hearing-protection"] .product-listing__category-container[data-filter-term="hearing-protection"] {
-  height: auto;
-}
-
-#product-filter-canvas[data-filtering*="seasonal-protection"] .product-listing__category-container[data-filter-term="seasonal-protection"] {
-  height: auto;
-}
-
-#product-filter-canvas[data-filtering*="mounting-accessories"] .product-listing__category-container[data-filter-term="mounting-accessories"] {
-  height: auto;
-}
-
-#product-filter-canvas[data-filtering*="visibility-accessories"] .product-listing__category-container[data-filter-term="visibility-accessories"] {
-  height: auto;
-}
-
-#product-filter-canvas[data-filtering*="chinstraps-and-neck-capes"] .product-listing__category-container[data-filter-term="chinstraps-and-neck-capes"] {
-  height: auto;
-}
-
-#product-filter-canvas[data-filtering*="helmet-spares"] .product-listing__category-container[data-filter-term="helmet-spares"] {
+#product-filter-canvas[data-filtering*="airforce-compressed-air-systems"] .product-listing__category-container[data-filter-term="airforce-compressed-air-systems"] {
   height: auto;
 }
 
@@ -2580,11 +2545,15 @@ Powered by JS
   height: auto;
 }
 
-#product-filter-canvas[data-filtering*="hygiene-bump-caps"] .product-listing__category-container[data-filter-term="hygiene-bump-caps"] {
+#product-filter-canvas[data-filtering*="cap-protection-systems"] .product-listing__category-container[data-filter-term="cap-protection-systems"] {
   height: auto;
 }
 
-#product-filter-canvas[data-filtering*="powered-air-systems"] .product-listing__category-container[data-filter-term="powered-air-systems"] {
+#product-filter-canvas[data-filtering*="chinstraps-and-neck-capes"] .product-listing__category-container[data-filter-term="chinstraps-and-neck-capes"] {
+  height: auto;
+}
+
+#product-filter-canvas[data-filtering*="face-protection"] .product-listing__category-container[data-filter-term="face-protection"] {
   height: auto;
 }
 
@@ -2592,7 +2561,51 @@ Powered by JS
   height: auto;
 }
 
-#product-filter-canvas[data-filtering*="airforce-compressed-air-systems"] .product-listing__category-container[data-filter-term="airforce-compressed-air-systems"] {
+#product-filter-canvas[data-filtering*="general-purpose"] .product-listing__category-container[data-filter-term="general-purpose"] {
+  height: auto;
+}
+
+#product-filter-canvas[data-filtering*="hearing-protection"] .product-listing__category-container[data-filter-term="hearing-protection"] {
+  height: auto;
+}
+
+#product-filter-canvas[data-filtering*="helmet-protection-systems"] .product-listing__category-container[data-filter-term="helmet-protection-systems"] {
+  height: auto;
+}
+
+#product-filter-canvas[data-filtering*="helmet-spares"] .product-listing__category-container[data-filter-term="helmet-spares"] {
+  height: auto;
+}
+
+#product-filter-canvas[data-filtering*="hygiene-bump-caps"] .product-listing__category-container[data-filter-term="hygiene-bump-caps"] {
+  height: auto;
+}
+
+#product-filter-canvas[data-filtering*="integrated-eyewear-helmet-systems"] .product-listing__category-container[data-filter-term="integrated-eyewear-helmet-systems"] {
+  height: auto;
+}
+
+#product-filter-canvas[data-filtering*="mounting-accessories"] .product-listing__category-container[data-filter-term="mounting-accessories"] {
+  height: auto;
+}
+
+#product-filter-canvas[data-filtering*="powered-air-systems"] .product-listing__category-container[data-filter-term="powered-air-systems"] {
+  height: auto;
+}
+
+#product-filter-canvas[data-filtering*="respiratory-protection-systems"] .product-listing__category-container[data-filter-term="respiratory-protection-systems"] {
+  height: auto;
+}
+
+#product-filter-canvas[data-filtering*="seasonal-protection"] .product-listing__category-container[data-filter-term="seasonal-protection"] {
+  height: auto;
+}
+
+#product-filter-canvas[data-filtering*="specialised-helmet-systems"] .product-listing__category-container[data-filter-term="specialised-helmet-systems"] {
+  height: auto;
+}
+
+#product-filter-canvas[data-filtering*="visibility-accessories"] .product-listing__category-container[data-filter-term="visibility-accessories"] {
   height: auto;
 }
 
