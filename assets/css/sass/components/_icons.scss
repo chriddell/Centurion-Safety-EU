@@ -6,8 +6,8 @@
 
 .icon,
 %icon {
-  height: 24px;
-  width: 24px;
+  height: 30px;
+  width: 30px;
   margin-left: $baseSpacingUnit / 2;
   display: inline-block;
   background-image: url(../img/sprite.svg);
@@ -29,25 +29,25 @@
 
 .icon--link,
 %icon--link {
-  background-position: 0 -118px;
+  background-position: 0 -137px;
   top: -2px;
 }
 
 .icon--white-link,
 %icon--white-link {
-  background-position: 0 -141px;
+  background-position: 0 -165px;
   top: -2px;
 }
 
 .icon--white-pin,
 %icon--white-pin {
-  background-position: 0 -47px;
+  background-position: 0 -54px;
   top: -2px;
 }
 
 .icon--search,
 %icon--search {
-  background-position: 0 -94px; 
+  background-position: 0 -109px; 
 }
 
 .icon--play,

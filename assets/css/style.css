@@ -960,8 +960,8 @@ input {
    ========================================================================== */
 .icon,
 .gform_footer:after {
-  height: 24px;
-  width: 24px;
+  height: 30px;
+  width: 30px;
   margin-left: 10px;
   display: inline-block;
   background-image: url(../img/sprite.svg);
@@ -979,22 +979,22 @@ input {
 
 .icon--link,
 .gform_footer:after {
-  background-position: 0 -118px;
+  background-position: 0 -137px;
   top: -2px;
 }
 
 .icon--white-link {
-  background-position: 0 -141px;
+  background-position: 0 -165px;
   top: -2px;
 }
 
 .icon--white-pin {
-  background-position: 0 -47px;
+  background-position: 0 -54px;
   top: -2px;
 }
 
 .icon--search {
-  background-position: 0 -94px;
+  background-position: 0 -109px;
 }
 
 .icon--play {
