@@ -34,6 +34,7 @@
   .flexbox .flex-content .main--has-sidebar {
     flex: 10 75%;
     order: 2;
+    position: relative;
   }
 
   .flexbox .flex-content .sidebar {
@@ -57,8 +58,9 @@
   }
 
   .main--has-sidebar {
-    display: table-cell;
     width: 75%;
+    min-height: 760px;
+    display: table-cell;
     vertical-align: top;
   }
 
