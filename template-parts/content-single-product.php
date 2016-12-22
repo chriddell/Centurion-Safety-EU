@@ -297,7 +297,7 @@ get_header(); ?>
 
 										<?php } ?>
 
-										<?php if ( have_rows( 'imagery_downloads' ) || have_rows( 'marketing_downloads' ) ) { ?>
+										<?php if ( have_rows( 'image_downloads' ) || have_rows( 'marketing_downloads' ) ) { ?>
 
 											<div class="col-12 col-sml-6">
 
