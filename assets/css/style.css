@@ -776,6 +776,7 @@ template {
     -webkit-order: 2;
         -ms-flex-order: 2;
             order: 2;
+    position: relative;
   }
   .flexbox .flex-content .sidebar {
     -webkit-box-flex: 1;
@@ -799,8 +800,9 @@ template {
     display: table;
   }
   .main--has-sidebar {
-    display: table-cell;
     width: 75%;
+    min-height: 760px;
+    display: table-cell;
     vertical-align: top;
   }
   .sidebar {
@@ -965,8 +967,7 @@ input {
   margin-left: 10px;
   display: inline-block;
   background-image: url(../img/sprite.svg);
-  background-size: 100%;
-  background-size: cover;
+  background-size: 30px 350px;
   vertical-align: middle;
   position: relative;
 }
@@ -974,28 +975,28 @@ input {
 /* Icons
 ---------------------------------------- */
 .icon--mail {
-  background-position: 0 2px;
+  background-position: 0 0px;
   top: -1px;
 }
 
-.icon--link,
-.gform_footer:after {
-  background-position: 0 -129px;
-  top: -2px;
-}
-
-.icon--white-link {
-  background-position: 0 -155px;
-  top: -2px;
-}
-
 .icon--white-pin {
-  background-position: 0 -54px;
+  background-position: 0 -62px;
   top: -1px;
 }
 
 .icon--search {
-  background-position: 0 -102px;
+  background-position: 0 -122px;
+}
+
+.icon--link,
+.gform_footer:after {
+  background-position: 0 -153px;
+  top: -2px;
+}
+
+.icon--white-link {
+  background-position: 0 -184px;
+  top: -2px;
 }
 
 .icon--play {
@@ -1003,15 +1004,15 @@ input {
 }
 
 .icon--play.icon--2x {
-  background-position: 0 -330px;
+  background-position: 0 -343px;
 }
 
 .icon--checked-box {
-  background-position: 0 -233px;
+  background-position: 0 -272px;
 }
 
 .icon--unchecked-box {
-  background-position: 0 -266px;
+  background-position: 0 -311px;
 }
 
 /* Tweaks
@@ -1025,6 +1026,7 @@ input {
 }
 
 .icon--2x {
+  background-size: 48px 560px;
   width: 48px;
   height: 48px;
 }
@@ -2394,6 +2396,10 @@ Powered by JS
   margin-bottom: 20px;
 }
 
+.product-listing:nth-of-type(3n+1) {
+  clear: both;
+}
+
 @media (min-width: 767px) {
   .product-listing__container {
     margin-right: 30px;
@@ -2534,7 +2540,7 @@ Powered by JS
 
 .product-filter__checkbox {
   position: relative;
-  top: -2px;
+  top: -4px;
 }
 
 .product-filter__item-link,
@@ -2839,6 +2845,13 @@ Powered by JS
 
 .splash-blocks {
   height: 100%;
+  width: 100%;
+}
+
+@media (min-width: 767px) {
+  .flex-content .splash-blocks {
+    position: absolute;
+  }
 }
 
 /* Centering content

@@ -7,6 +7,10 @@
 .product-listing {
   padding: 0;
   margin-bottom: $baseSpacingUnit;
+
+  &:nth-of-type(3n+1) {
+    clear: both;
+  }
 }
 
 .product-listing__container {
