@@ -18,6 +18,11 @@
   color: $lightColor;
 }
 
+.footer--site--tier-two {
+  padding: $baseSpacingUnit 0;
+  background-color: #323d5d;
+}
+
 .footer__contact-detail {
   margin: 0;
   margin-bottom: 0.25em;
@@ -25,4 +30,20 @@
 
 .footer__copyright {
   color: #94aab3;
+}
+
+.footer__logos {
+  text-align: center;
+}
+
+.footer__logos__item {
+  height: 30px;
+  margin-right: $baseSpacingUnit / 2;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.footer__logo {
+  height: 100%;
+  width: auto;
 }

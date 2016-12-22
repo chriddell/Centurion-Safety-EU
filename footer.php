@@ -67,7 +67,22 @@ $contact = array(
 </footer>
 
 <footer class="footer footer--site footer--site--tier-two">
-	<!-- Logos here -->
+	<div class="wrapper">
+		<ul class="menu footer__logos">
+			<li class="menu__item footer__logos__item">
+				<img src="<?php echo get_template_directory_uri(); ?>/assets/img/logos/registered-safety-supplier-logo.svg" class="footer__logo"/>
+			</li>
+			<li class="menu__item footer__logos__item">
+				<img src="<?php echo get_template_directory_uri(); ?>/assets/img/logos/bsi-kitemark-logo.svg" class="	footer__logo"/>
+			</li>
+			<li class="menu__item footer__logos__item">
+				<img src="<?php echo get_template_directory_uri(); ?>/assets/img/logos/bsif-logo.svg" class="footer__logo"/>
+			</li>
+			<li class="menu__item footer__logos__item">
+				<img src="<?php echo get_template_directory_uri(); ?>/assets/img/logos/bsi-ukas-logo.png" class="footer__logo"/>
+			</li>
+		</ul>
+	</div>
 </footer>
 
 <?php wp_footer(); ?>
