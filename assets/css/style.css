@@ -973,24 +973,36 @@ input {
 
 /* Icons
 ---------------------------------------- */
+.icon--mail {
+  background-position: 0 0;
+}
+
 .icon--link,
 .gform_footer:after {
-  background-position: 0 -140px;
+  background-position: 0 -118px;
   top: -2px;
 }
 
 .icon--white-link {
-  background-position: 0 -168px;
+  background-position: 0 -141px;
   top: -2px;
 }
 
 .icon--white-pin {
-  background-position: 0 -55px;
+  background-position: 0 -47px;
   top: -2px;
 }
 
 .icon--search {
-  background-position: 0 -110px;
+  background-position: 0 -94px;
+}
+
+.icon--play {
+  background-position: 0 -165px;
+}
+
+.icon--play.icon--2x {
+  background-position: 0 -330px;
 }
 
 /* Tweaks
@@ -1001,6 +1013,11 @@ input {
 
 .icon--fit {
   margin: 0;
+}
+
+.icon--2x {
+  width: 48px;
+  height: 48px;
 }
 
 /* ==========================================================================
@@ -1176,6 +1193,10 @@ input {
 
 .nav--main__trigger .hamburger-inner:after {
   bottom: -12px;
+}
+
+.nav--main .current-menu-item {
+  background-color: #76888f;
 }
 
 /* ==========================================================================
@@ -1664,6 +1685,11 @@ select {
   color: #FFFFFF;
 }
 
+.footer--site--tier-two {
+  padding: 20px 0;
+  background-color: #323d5d;
+}
+
 .footer__contact-detail {
   margin: 0;
   margin-bottom: 0.25em;
@@ -1671,6 +1697,22 @@ select {
 
 .footer__copyright {
   color: #94aab3;
+}
+
+.footer__logos {
+  text-align: center;
+}
+
+.footer__logos__item {
+  height: 30px;
+  margin-right: 10px;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.footer__logo {
+  height: 100%;
+  width: auto;
 }
 
 /* ==========================================================================
@@ -2153,12 +2195,6 @@ Powered by JS
   }
 }
 
-/* Trumps
----------------------------------------- */
-.gallery__nav .slick-list {
-  overflow: visible;
-}
-
 /* ==========================================================================
     _timeline
     
@@ -2294,6 +2330,10 @@ Powered by JS
   width: 100%;
   max-width: none;
   margin: 0;
+}
+
+.btn--no-padding {
+  padding: 0;
 }
 
 /* ==========================================================================
@@ -2783,19 +2823,19 @@ Powered by JS
     margin-bottom: 20px;
     height: 250px;
   }
-  .splash-block__homepage:nth-of-type(odd) .splash-block__container {
+  .splash-block__homepage:nth-of-type(even) .splash-block__container {
     margin-right: 10px;
   }
-  .splash-block__homepage:nth-of-type(even) .splash-block__container {
+  .splash-block__homepage:nth-of-type(odd):not(:first-of-type) .splash-block__container {
     margin-left: 10px;
   }
 }
 
-.splash-block__homepage:last-of-type:nth-of-type(odd) {
+.splash-block__homepage:first-of-type {
   width: 100%;
 }
 
-.splash-block__homepage:last-of-type:nth-of-type(odd) .splash-block__container {
+.splash-block__homepage:first-of-type .splash-block__container {
   margin-right: 0;
 }
 
@@ -2849,7 +2889,6 @@ Powered by JS
 }
 
 .hero__video {
-  display: none;
   width: 100%;
 }
 
@@ -3439,13 +3478,6 @@ Powered by JS
 .slick-dots li.slick-active button:before {
   color: black;
   opacity: 0.75;
-}
-
-/* ==========================================================================
-		Featherlight (Lightbox)
-	 ========================================================================== */
-.featherlight-content {
-  width: 100%;
 }
 
 /* ==========================================================================

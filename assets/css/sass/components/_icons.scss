@@ -22,27 +22,41 @@
 /* Icons
 ---------------------------------------- */
 
+.icon--mail,
+%icon--mail {
+  background-position: 0 0;
+}
+
 .icon--link,
 %icon--link {
-  background-position: 0 -140px;
+  background-position: 0 -118px;
   top: -2px;
 }
 
 .icon--white-link,
 %icon--white-link {
-  background-position: 0 -168px;
+  background-position: 0 -141px;
   top: -2px;
 }
 
 .icon--white-pin,
 %icon--white-pin {
-  background-position: 0 -55px;
+  background-position: 0 -47px;
   top: -2px;
 }
 
 .icon--search,
 %icon--search {
-  background-position: 0 -110px; 
+  background-position: 0 -94px; 
+}
+
+.icon--play,
+%icon--play {
+  background-position: 0 -165px;
+
+  &.icon--2x {
+    background-position: 0 -330px;
+  }
 }
 
 /* Tweaks
@@ -58,4 +72,10 @@
   //height: 100%;
   //width: 100%;
   margin: 0;
+}
+
+.icon--2x,
+%icon--2x {
+  width: 48px;
+  height: 48px;
 }

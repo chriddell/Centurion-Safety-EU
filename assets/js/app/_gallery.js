@@ -36,6 +36,7 @@
   		slidesToShow: 3,
   		slidesToScroll: 1,
   		asNavFor: '.gallery__main',
+  		infinite: false,
   		focusOnSelect: true,
   		responsive: [
 				{
