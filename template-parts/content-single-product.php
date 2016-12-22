@@ -132,8 +132,8 @@ get_header(); ?>
 
 					<?php /** Contact Links **/ ?>
 					<div class="product__meta__item product__meta__contact clearfix">
-						<a href="" class="product__meta__contact__item col-12 col-sml-6"><?php _e( 'Contact our Sales Team', 'centurion' ); ?><span class="icon icon--link"></span></a>
-						<a href="" class="product__meta__contact__item col-12 col-sml-6"><?php _e( 'Upload your logo', 'centurion' ); ?><span class="icon icon--link"></span></a>
+						<a href="mailto:sales@centurionsafety.co.uk" class="product__meta__contact__item col-12 col-sml-6"><?php _e( 'Contact our Sales Team', 'centurion' ); ?><span class="icon icon--link"></span></a>
+						<a href="mailto:artwork@centurionsafety.co.uk" class="product__meta__contact__item col-12 col-sml-6"><?php _e( 'Upload your logo', 'centurion' ); ?><span class="icon icon--link"></span></a>
 					</div>
 
 					<?php /** Product ratchet **/ ?>
