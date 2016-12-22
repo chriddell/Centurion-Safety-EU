@@ -396,7 +396,6 @@ function cntrn_render_term_tree( $taxonomy, $term_id ){
 	}
 }
 
-
 /**
  * Show top level product_category
  * links
@@ -409,9 +408,9 @@ function cntrn_render_splash_blocks( $ul_classnames = '', $li_classnames = '' ) 
 	// Set up query args
 	$args = array(
 		'hide_empty' => false,
-		'orderby' 		=> 'name',
-		'order' 			=> 'ASC',
-		'parent' 			=> 0 
+		'orderby' 		=> 'count',
+		'order' 			=> 'DESC',
+		'parent' 			=> 0
 	);
 
 	// Get all product categories

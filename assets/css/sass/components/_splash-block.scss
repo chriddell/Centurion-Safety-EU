@@ -78,17 +78,17 @@
     margin-bottom: $baseSpacingUnit;
     height: 250px;
     
-    &:nth-of-type(odd) .splash-block__container {
+    &:nth-of-type(even) .splash-block__container {
       margin-right: $baseSpacingUnit / 2;
     }
 
-    &:nth-of-type(even) .splash-block__container {
+    &:nth-of-type(odd):not(:first-of-type) .splash-block__container {
       margin-left: $baseSpacingUnit / 2;
     }
   }
 
-  &:last-of-type:nth-of-type(odd) {
-    // Last needs to be full-width if an odd number
+  &:first-of-type {
+    // First is full-width
     width: 100%;
 
     .splash-block__container {
