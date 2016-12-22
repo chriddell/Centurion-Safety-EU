@@ -347,3 +347,23 @@ $slick-opacity-not-active: 0.25 !default;
 .gform_wrapper .gform_fields li.gfield.field_description_below + li.gsection {
 	margin-top: 0;
 }
+
+// Validation
+.validation_error,
+.validation_message {
+	color: $errorColor;
+}
+
+.validation_message {
+	margin-top: $baseSpacingUnit / 2;
+}
+
+.gfield_error input,
+.gfield_error select,
+.gfield_error textarea {
+	background-color: lighten($errorColor, 50%);
+
+	&::placeholder {
+		color: white;
+	}
+}

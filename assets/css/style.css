@@ -3601,6 +3601,45 @@ Powered by JS
   margin-top: 0;
 }
 
+.validation_error,
+.validation_message {
+  color: #b2180e;
+}
+
+.validation_message {
+  margin-top: 10px;
+}
+
+.gfield_error input,
+.gfield_error select,
+.gfield_error textarea {
+  background-color: #fac8c5;
+}
+
+.gfield_error input::-webkit-input-placeholder,
+.gfield_error select::-webkit-input-placeholder,
+.gfield_error textarea::-webkit-input-placeholder {
+  color: white;
+}
+
+.gfield_error input::-moz-placeholder,
+.gfield_error select::-moz-placeholder,
+.gfield_error textarea::-moz-placeholder {
+  color: white;
+}
+
+.gfield_error input:-ms-input-placeholder,
+.gfield_error select:-ms-input-placeholder,
+.gfield_error textarea:-ms-input-placeholder {
+  color: white;
+}
+
+.gfield_error input::placeholder,
+.gfield_error select::placeholder,
+.gfield_error textarea::placeholder {
+  color: white;
+}
+
 /* ==========================================================================
     _helpers
 
