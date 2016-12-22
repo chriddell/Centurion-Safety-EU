@@ -234,7 +234,8 @@ function cntrn_advice_init() {
 			),
 			'public'        => true,
 			'has_archive'   => true,
-			'taxonomies'		=> array('post_tag')
+			'taxonomies'		=> array('post_tag'),
+			'supports'			=> array('title', 'editor', 'author', 'excerpt', 'revisions')
 		)
 	);
 }
@@ -256,7 +257,8 @@ function cntrn_news_init() {
 			),
 			'public'        => true,
 			'has_archive'   => true,
-			'taxonomies'		=> array('post_tag')
+			'taxonomies'		=> array('post_tag'),
+			'supports'			=> array('title', 'editor', 'author', 'excerpt', 'revisions')
 		)
 	);
 }
