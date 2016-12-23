@@ -226,7 +226,12 @@ get_header(); ?>
 											<?php printf( '<h4 class="product__label">%s</h4>', __( 'Approved To', 'centurion' ) ); ?>
 											<?php printf( '<p class="product__copy">%s</p>', $product['approved-to'] ); ?>
 										<?php } ?>
-										<?php /** ADD KEY FEATURES HERE **/ ?>
+										<?php if ( $product['key-features'] ) { ?>
+											<?php printf( '<h4 class="product__label">%s</h4>', __( 'Key Features', 'centurion' ) ); ?>
+											<?php while ( have_rows( 'product_key_features' ) ) : the_row(); ?>
+												<p class="product__copy"><?php the_sub_field('product_feature_label'); ?>: <?php the_sub_field('product_feature_copy'); ?></p>
+											<?php endwhile; ?>
+										<?php } ?>
 									</div>
 								<?php } ?>
 

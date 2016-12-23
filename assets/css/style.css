@@ -2578,74 +2578,92 @@ Powered by JS
 
 #product-filter-canvas[data-filtering*="airforce-compressed-air-systems"] .product-listing__category-container[data-filter-term="airforce-compressed-air-systems"] {
   height: auto;
+  margin-top: 60px;
 }
 
 #product-filter-canvas[data-filtering*="baseball-bump-caps"] .product-listing__category-container[data-filter-term="baseball-bump-caps"] {
   height: auto;
+  margin-top: 60px;
 }
 
 #product-filter-canvas[data-filtering*="cap-protection-systems"] .product-listing__category-container[data-filter-term="cap-protection-systems"] {
   height: auto;
+  margin-top: 60px;
 }
 
 #product-filter-canvas[data-filtering*="chinstraps-and-neck-capes"] .product-listing__category-container[data-filter-term="chinstraps-and-neck-capes"] {
   height: auto;
+  margin-top: 60px;
 }
 
 #product-filter-canvas[data-filtering*="face-protection"] .product-listing__category-container[data-filter-term="face-protection"] {
   height: auto;
+  margin-top: 60px;
 }
 
 #product-filter-canvas[data-filtering*="fresh-air-systems"] .product-listing__category-container[data-filter-term="fresh-air-systems"] {
   height: auto;
+  margin-top: 60px;
 }
 
 #product-filter-canvas[data-filtering*="general-purpose"] .product-listing__category-container[data-filter-term="general-purpose"] {
   height: auto;
+  margin-top: 60px;
 }
 
 #product-filter-canvas[data-filtering*="hearing-protection"] .product-listing__category-container[data-filter-term="hearing-protection"] {
   height: auto;
+  margin-top: 60px;
 }
 
 #product-filter-canvas[data-filtering*="helmet-protection-systems"] .product-listing__category-container[data-filter-term="helmet-protection-systems"] {
   height: auto;
+  margin-top: 60px;
 }
 
 #product-filter-canvas[data-filtering*="helmet-spares"] .product-listing__category-container[data-filter-term="helmet-spares"] {
   height: auto;
+  margin-top: 60px;
 }
 
 #product-filter-canvas[data-filtering*="hygiene-bump-caps"] .product-listing__category-container[data-filter-term="hygiene-bump-caps"] {
   height: auto;
+  margin-top: 60px;
 }
 
 #product-filter-canvas[data-filtering*="integrated-eyewear-helmet-systems"] .product-listing__category-container[data-filter-term="integrated-eyewear-helmet-systems"] {
   height: auto;
+  margin-top: 60px;
 }
 
 #product-filter-canvas[data-filtering*="mounting-accessories"] .product-listing__category-container[data-filter-term="mounting-accessories"] {
   height: auto;
+  margin-top: 60px;
 }
 
 #product-filter-canvas[data-filtering*="powered-air-systems"] .product-listing__category-container[data-filter-term="powered-air-systems"] {
   height: auto;
+  margin-top: 60px;
 }
 
 #product-filter-canvas[data-filtering*="respiratory-protection-systems"] .product-listing__category-container[data-filter-term="respiratory-protection-systems"] {
   height: auto;
+  margin-top: 60px;
 }
 
 #product-filter-canvas[data-filtering*="seasonal-protection"] .product-listing__category-container[data-filter-term="seasonal-protection"] {
   height: auto;
+  margin-top: 60px;
 }
 
 #product-filter-canvas[data-filtering*="specialised-helmet-systems"] .product-listing__category-container[data-filter-term="specialised-helmet-systems"] {
   height: auto;
+  margin-top: 60px;
 }
 
 #product-filter-canvas[data-filtering*="visibility-accessories"] .product-listing__category-container[data-filter-term="visibility-accessories"] {
   height: auto;
+  margin-top: 60px;
 }
 
 /* ==========================================================================
@@ -2827,6 +2845,12 @@ Powered by JS
   background-position: center center;
 }
 
+.no-flexbox .splash-block__container {
+  height: 100%;
+  width: 100%;
+  display: block;
+}
+
 .splash-block__title {
   margin-bottom: 0.5em;
   font-weight: bold;
@@ -2940,6 +2964,19 @@ Powered by JS
   -webkit-align-items: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+.no-flexbox .hero {
+  position: relative;
+}
+
+.no-flexbox .hero > * {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
 }
 
 @media (min-width: 767px) {
@@ -3797,6 +3834,10 @@ Powered by JS
 
 .pos-rel {
   position: relative;
+}
+
+.on-top {
+  z-index: 999;
 }
 
 /* ==========================================================================

@@ -103,5 +103,6 @@ $terms: (
 @each $term in $terms {
   #product-filter-canvas[data-filtering*="#{$term}"] .product-listing__category-container[data-filter-term="#{$term}"] {
     height: auto;
+    margin-top: $baseSpacingUnit * 3;
   }
 }

@@ -20,6 +20,14 @@
     align-items: center;
   }
 
+  .no-flexbox & {
+    position: relative;
+
+    > * {
+      @include totally-aligned(absolute);
+    }
+  }
+
   @include respond-to( 'small' ) {
     // recalculate height because header
     // is bigger now

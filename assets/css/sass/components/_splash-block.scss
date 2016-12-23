@@ -24,6 +24,12 @@
   background-color: $brandColorFour;
   background-size: cover;
   background-position: center center;
+
+  .no-flexbox & {
+    height: 100%;
+    width: 100%;
+    display: block;
+  }
 }
 
 .splash-block__title {

@@ -75,3 +75,7 @@
 .pos-rel {
   position: relative;
 }
+
+.on-top {
+  z-index: 999;
+}
