@@ -2942,6 +2942,10 @@ Powered by JS
   margin-right: 0;
 }
 
+.splash-block__homepage .splash-block__title {
+  font-size: 1.9em;
+}
+
 /* ==========================================================================
     _hero
 
