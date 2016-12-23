@@ -82,6 +82,7 @@
 .tabs__tab-content {
   height: 0;
   visibility: hidden;
+  overflow: hidden;
 
   &.is-active {
     height: auto;
