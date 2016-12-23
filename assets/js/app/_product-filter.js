@@ -9,6 +9,7 @@
 	// partial
 	var filterCanvas = '#product-filter-canvas',
 			filterTerms = [],
+			filterTrigger = '.product-filter__item',
 			currentlyFiltering = ( $(filterCanvas).length ? $(filterCanvas).attr('data-filtering').split(' ') : false );
 
 	/**
@@ -16,18 +17,9 @@
 	 * as checked
 	 */
 	function markAsChecked( target ) {
+
 		$('.product-filter__item__input[name="filter-' + target + '"]' ).prop('checked', true);
 	};
-
-	// Loop array of strings from
-	// curentlyFilter var and mark the 
-	// relevant input as checked 
-	// (make it's associated products visible)
-	if ( currentlyFiltering !== false ) {
-		$.each(currentlyFiltering, function(i, e){
-			markAsChecked(e);
-		});
-	}
 
 
 	/**
@@ -35,7 +27,9 @@
 	 * terms for a given page
 	 */ 
 	function getFilterTerms() {
+
 		$('#product-filter-canvas > div[data-filter="filterable"]').each( function( i, e ){
+
 			pushFilterTerm( this );
 		});
 	}
@@ -52,6 +46,7 @@
 		// (jQuery inArray returns -1 if value
 		// not present)
 		if ( $.inArray( filterTerm, filterTerms ) == -1 ) {
+
 			filterTerms.push( filterTerm );
 		}
 	}
@@ -79,7 +74,7 @@
 	}
 
 	/**
-	 * Hide/show elements on canvas
+	 * Hide/show elements
 	 * 
 	 * @param target 	= string; new filter term
 	 * @param add 		= boolean; true = add filter, false = remove filter
@@ -118,6 +113,11 @@
 
 		// Load our available terms
 		getFilterTerms();
+
+		// Change value of checkbox on container click
+		$( document ).on( 'click', filterTrigger, function(){
+			$(this).children('input.product-filter__item__input').prop('checked', true);
+		})
 
 		$( 'input.product-filter__item__input' ).on( 'change', function(e){
 

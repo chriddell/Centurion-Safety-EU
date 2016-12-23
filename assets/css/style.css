@@ -2576,6 +2576,11 @@ Powered by JS
   overflow: hidden;
 }
 
+.js #product-filter-canvas[data-filtering="all"] .product-listing__category-container {
+  height: auto;
+  margin-top: 60px;
+}
+
 #product-filter-canvas[data-filtering*="airforce-compressed-air-systems"] .product-listing__category-container[data-filter-term="airforce-compressed-air-systems"] {
   height: auto;
   margin-top: 60px;

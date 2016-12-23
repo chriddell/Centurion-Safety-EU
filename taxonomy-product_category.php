@@ -79,7 +79,7 @@ get_header(); ?>
 				</header>
 
 				<!-- #product-filter-canvas -->
-				<div id="product-filter-canvas" class="clearfix" data-filtering="<?php echo $slugs_for_filter; ?>">
+				<div id="product-filter-canvas" class="clearfix" data-filtering="all">
 					<?php
 					/**
 					 * Get all the posts (products) associated

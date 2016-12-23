@@ -100,9 +100,19 @@ $terms: (
   overflow: hidden;
 }
 
-@each $term in $terms {
-  #product-filter-canvas[data-filtering*="#{$term}"] .product-listing__category-container[data-filter-term="#{$term}"] {
+// When filter is 'all', show all
+.js #product-filter-canvas[data-filtering="all"] {
+  .product-listing__category-container {
     height: auto;
     margin-top: $baseSpacingUnit * 3;
+  }
+}
+
+@each $term in $terms {
+  #product-filter-canvas[data-filtering*="#{$term}"] {
+    .product-listing__category-container[data-filter-term="#{$term}"] {
+      height: auto;
+      margin-top: $baseSpacingUnit * 3;
+    }
   }
 }
