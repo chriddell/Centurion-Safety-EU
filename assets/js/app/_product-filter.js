@@ -116,6 +116,7 @@
 
 		// Change value of checkbox on container click
 		$( document ).on( 'click', filterTrigger, function(){
+			
 			$(this).children('input.product-filter__item__input').prop('checked', true);
 		})
 

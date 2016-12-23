@@ -2996,12 +2996,6 @@ Powered by JS
   font-size: 2.6em;
   font-weight: bold;
   color: #FFFFFF;
-  text-shadow: 1px 2px 5px rgba(0, 0, 0, 0.45);
-}
-
-.hero__cta {
-  box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.45);
-  text-shadow: 1px 2px 5px rgba(0, 0, 0, 0.45);
 }
 
 .hero__video {
