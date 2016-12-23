@@ -3404,13 +3404,6 @@ Powered by JS
   bottom: 0;
 }
 
-@media (min-width: 767px) {
-  .feature-block--three__content,
-  .feature-block--five__content {
-    width: inherit;
-  }
-}
-
 .feature-block > .wrapper {
   height: 100%;
 }

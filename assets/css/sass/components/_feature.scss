@@ -160,10 +160,6 @@
 .feature-block--three__content,
 .feature-block--five__content {
   bottom: 0;
-
-  @include respond-to( 'small' ) {
-    width: inherit;
-  }
 }
 
 .feature-block > .wrapper {
