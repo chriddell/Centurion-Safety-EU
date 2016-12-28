@@ -1441,6 +1441,28 @@ input:checked + .product-filter__item__label:before {
     Form styling
    ========================================================================== */
 input,
+select,
+textarea {
+  max-width: 100%;
+}
+
+input:not([type="submit"]),
+.form__input,
+select,
+.form__select {
+  width: 100%;
+}
+
+@media (min-width: 767px) {
+  input:not([type="submit"]),
+  .form__input,
+  select,
+  .form__select {
+    width: auto;
+  }
+}
+
+input,
 .form__input,
 select,
 .form__select {
@@ -1746,6 +1768,12 @@ select {
   .map-container {
     height: 500px;
     height: calc(100vh - 155px);
+  }
+}
+
+@media (min-width: 767px) {
+  .wpgmza_map {
+    max-height: none;
   }
 }
 
@@ -2797,11 +2825,14 @@ Powered by JS
   padding-top: 40px;
 }
 
-.contact__map-container {
-  position: absolute;
-  height: 100%;
-  top: 0;
-  right: 0;
+@media (min-width: 767px) {
+  .contact__map-container {
+    position: absolute;
+    height: 100%;
+    width: 50%;
+    top: 0;
+    right: 0;
+  }
 }
 
 /* ==========================================================================
@@ -3834,15 +3865,10 @@ Powered by JS
 
     "Hacks"
    ========================================================================== */
-.csscalc .disobey-wrapper-mob {
-  width: calc(100% + 40px);
-  margin-left: -20px;
-}
-
-@media (min-width: 767px) {
+@media screen and (max-width: 767px) {
   .csscalc .disobey-wrapper-mob {
-    width: inherit;
-    margin-left: inherit;
+    width: calc(100% + 40px);
+    margin-left: -20px;
   }
 }
 /*# sourceMappingURL=style.css.map */

@@ -43,7 +43,7 @@ get_header(); ?>
 				</div>
 			</div>
 		</div>
-		<div class="col-12 col-sml-6 contact__map-container map-container">
+		<div class="col-12 col-sml-6 contact__map-container map-container disobey-wrapper-mob">
 			<?php echo do_shortcode('[wpgmza id="2"]'); ?>
 		</div>
 	</div>

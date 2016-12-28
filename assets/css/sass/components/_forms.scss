@@ -5,6 +5,23 @@
    ========================================================================== */
 
 input,
+select,
+textarea {
+  max-width: 100%;
+}
+
+input:not([type="submit"]),
+.form__input,
+select,
+.form__select {
+  width: 100%;
+
+  @include respond-to( 'small' ) {
+    width: auto;
+  }
+}
+
+input,
 .form__input,
 select,
 .form__select {

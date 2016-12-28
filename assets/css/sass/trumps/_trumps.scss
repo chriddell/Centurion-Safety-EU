@@ -11,15 +11,12 @@
 // for browsers who understand calc
 // https://developer.mozilla.org/en/docs/Web/CSS/calc
 .csscalc .disobey-wrapper-mob {
-  // $baseSpacingUnit is equal to
-  // margin on wrapper
-  width: calc(100% + #{$baseSpacingUnit * 2});
+  @media screen and (max-width: 767px) {
+    // $baseSpacingUnit is equal to
+    // margin on wrapper
+    width: calc(100% + #{$baseSpacingUnit * 2});
 
-  // now adjust margin back so still in grid
-  margin-left: -#{$baseSpacingUnit};
-
-  @include respond-to( 'small' ) {
-    width: inherit;
-    margin-left: inherit;
+    // now adjust margin back so still in grid
+    margin-left: -#{$baseSpacingUnit};
   }
 }

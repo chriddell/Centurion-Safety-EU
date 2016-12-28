@@ -16,6 +16,16 @@
   }
 }
 
+.wpgmza_map {
+  // This height is defined in CMS, but we will overwrite here
+  // hence any !importants
+  //max-height: 300px;
+
+  @include respond-to( 'small' ) {
+    max-height: none;
+  }
+}
+
 /* Search fields
 ---------------------------------------- */
 
