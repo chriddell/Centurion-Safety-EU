@@ -30,6 +30,7 @@
   left: $baseSpacingUnit;
   z-index: 2;
   background-color: $lightColor;
+  box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.35);
 
   // If we have calc, construct layout differently
   .csscalc & {
@@ -134,8 +135,10 @@
 }
 
 .wpgmza_modern_infowindow_inner {
-  @extend %clearfix;
   padding: $baseSpacingUnit $baseSpacingUnit $baseSpacingUnit $baseSpacingUnit * 4;
+  box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.35);
+
+  @extend %clearfix;
 
   &:before {
     content: '';
