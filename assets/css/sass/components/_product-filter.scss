@@ -14,11 +14,18 @@
 }
 
 .product-filter__item--has-input {
-  margin-bottom: $baseSpacingUnit / 2;
+  margin-bottom: $baseSpacingUnit / 1.5;
+
+  &:last-of-type {
+    margin-bottom: 0;
+  }
+
+  @include respond-to( 'small' ) {
+    padding-right: $baseSpacingUnit;
+  }
 }
 
 .product-filter__item__label {
-  margin-left: $baseSpacingUnit / 2;
 
   @include respond-to( 'small' ) {
     width: 85%;
@@ -28,16 +35,20 @@
   @include respond-to( 'medium' ) {
     margin-left: $baseSpacingUnit / 4;
   }
-}
 
-.product-filter__item__label,
-.product-filter__checkbox {
-  float: left;
-}
+  &:before {
+    content: '';
+    @extend %icon;
+    @extend %icon--on-left;
+    @extend %icon--unchecked-box;
 
-.product-filter__checkbox {
-  position: relative;
-  top: -4px;
+    // shift position slightly
+    top: -1px;
+
+    input:checked + & {
+      @extend %icon--checked-box;
+    }
+  }
 }
 
 .product-filter__item-link,
@@ -95,24 +106,20 @@ $terms: (
 
 // We only filter if JS is enabled
 .js *[data-filter="filterable"] {
-  height: 0;
-  margin: 0;
-  overflow: hidden;
+  display: none;
 }
 
 // When filter is 'all', show all
 .js #product-filter-canvas[data-filtering="all"] {
   .product-listing__category-container {
-    height: auto;
-    margin-top: $baseSpacingUnit * 3;
+    display: block;
   }
 }
 
 @each $term in $terms {
   #product-filter-canvas[data-filtering*="#{$term}"] {
     .product-listing__category-container[data-filter-term="#{$term}"] {
-      height: auto;
-      margin-top: $baseSpacingUnit * 3;
+      display: block;
     }
   }
 }

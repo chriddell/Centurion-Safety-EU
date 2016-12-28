@@ -922,7 +922,7 @@ video {
 br {
   display: block;
   content: '';
-  margin-top: 10px;
+  margin-top: 20px;
 }
 
 ::-webkit-input-placeholder,
@@ -961,6 +961,7 @@ input {
     Sprites
    ========================================================================== */
 .icon,
+.product-filter__item__label:before,
 .gform_footer:after {
   height: 30px;
   width: 30px;
@@ -1007,17 +1008,20 @@ input {
   background-position: 0 -343px;
 }
 
-.icon--checked-box {
+.icon--checked-box,
+input:checked + .product-filter__item__label:before {
   background-position: 0 -272px;
 }
 
-.icon--unchecked-box {
+.icon--unchecked-box,
+.product-filter__item__label:before {
   background-position: 0 -311px;
 }
 
 /* Tweaks
 ---------------------------------------- */
-.icon--on-left {
+.icon--on-left,
+.product-filter__item__label:before {
   margin: 0 10px 0 0;
 }
 
@@ -1755,6 +1759,7 @@ select {
   left: 20px;
   z-index: 2;
   background-color: #FFFFFF;
+  box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.35);
 }
 
 .csscalc .wpgmza_sl_main_div {
@@ -1854,6 +1859,7 @@ select {
 
 .wpgmza_modern_infowindow_inner {
   padding: 20px 20px 20px 80px;
+  box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.35);
 }
 
 .wpgmza_modern_infowindow_inner:before {
@@ -2411,6 +2417,7 @@ Powered by JS
   display: block;
   margin-bottom: 20px;
   border: 1px solid #eaeef0;
+  position: relative;
   background-color: #FFFFFF;
 }
 
@@ -2439,13 +2446,22 @@ Powered by JS
 }
 
 .product-listing__category-container {
-  margin-top: 30px;
+  margin-top: 60px;
   overflow: hidden;
 }
 
 .product-listing__description {
   color: #9ba399;
   margin-bottom: 20px;
+}
+
+.product-listing__specialism {
+  padding: 5px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  color: #FFFFFF;
+  background-color: #94aab3;
 }
 
 /* Featured
@@ -2514,11 +2530,17 @@ Powered by JS
 }
 
 .product-filter__item--has-input {
-  margin-bottom: 10px;
+  margin-bottom: 13.3333333333px;
 }
 
-.product-filter__item__label {
-  margin-left: 10px;
+.product-filter__item--has-input:last-of-type {
+  margin-bottom: 0;
+}
+
+@media (min-width: 767px) {
+  .product-filter__item--has-input {
+    padding-right: 20px;
+  }
 }
 
 @media (min-width: 767px) {
@@ -2534,14 +2556,9 @@ Powered by JS
   }
 }
 
-.product-filter__item__label,
-.product-filter__checkbox {
-  float: left;
-}
-
-.product-filter__checkbox {
-  position: relative;
-  top: -4px;
+.product-filter__item__label:before {
+  content: '';
+  top: -1px;
 }
 
 .product-filter__item-link,
@@ -2572,104 +2589,83 @@ Powered by JS
 /* Filters
 ---------------------------------------- */
 .js *[data-filter="filterable"] {
-  height: 0;
-  margin: 0;
-  overflow: hidden;
+  display: none;
 }
 
 .js #product-filter-canvas[data-filtering="all"] .product-listing__category-container {
-  height: auto;
-  margin-top: 60px;
+  display: block;
 }
 
 #product-filter-canvas[data-filtering*="airforce-compressed-air-systems"] .product-listing__category-container[data-filter-term="airforce-compressed-air-systems"] {
-  height: auto;
-  margin-top: 60px;
+  display: block;
 }
 
 #product-filter-canvas[data-filtering*="baseball-bump-caps"] .product-listing__category-container[data-filter-term="baseball-bump-caps"] {
-  height: auto;
-  margin-top: 60px;
+  display: block;
 }
 
 #product-filter-canvas[data-filtering*="cap-protection-systems"] .product-listing__category-container[data-filter-term="cap-protection-systems"] {
-  height: auto;
-  margin-top: 60px;
+  display: block;
 }
 
 #product-filter-canvas[data-filtering*="chinstraps-and-neck-capes"] .product-listing__category-container[data-filter-term="chinstraps-and-neck-capes"] {
-  height: auto;
-  margin-top: 60px;
+  display: block;
 }
 
 #product-filter-canvas[data-filtering*="face-protection"] .product-listing__category-container[data-filter-term="face-protection"] {
-  height: auto;
-  margin-top: 60px;
+  display: block;
 }
 
 #product-filter-canvas[data-filtering*="fresh-air-systems"] .product-listing__category-container[data-filter-term="fresh-air-systems"] {
-  height: auto;
-  margin-top: 60px;
+  display: block;
 }
 
 #product-filter-canvas[data-filtering*="general-purpose"] .product-listing__category-container[data-filter-term="general-purpose"] {
-  height: auto;
-  margin-top: 60px;
+  display: block;
 }
 
 #product-filter-canvas[data-filtering*="hearing-protection"] .product-listing__category-container[data-filter-term="hearing-protection"] {
-  height: auto;
-  margin-top: 60px;
+  display: block;
 }
 
 #product-filter-canvas[data-filtering*="helmet-protection-systems"] .product-listing__category-container[data-filter-term="helmet-protection-systems"] {
-  height: auto;
-  margin-top: 60px;
+  display: block;
 }
 
 #product-filter-canvas[data-filtering*="helmet-spares"] .product-listing__category-container[data-filter-term="helmet-spares"] {
-  height: auto;
-  margin-top: 60px;
+  display: block;
 }
 
 #product-filter-canvas[data-filtering*="hygiene-bump-caps"] .product-listing__category-container[data-filter-term="hygiene-bump-caps"] {
-  height: auto;
-  margin-top: 60px;
+  display: block;
 }
 
 #product-filter-canvas[data-filtering*="integrated-eyewear-helmet-systems"] .product-listing__category-container[data-filter-term="integrated-eyewear-helmet-systems"] {
-  height: auto;
-  margin-top: 60px;
+  display: block;
 }
 
 #product-filter-canvas[data-filtering*="mounting-accessories"] .product-listing__category-container[data-filter-term="mounting-accessories"] {
-  height: auto;
-  margin-top: 60px;
+  display: block;
 }
 
 #product-filter-canvas[data-filtering*="powered-air-systems"] .product-listing__category-container[data-filter-term="powered-air-systems"] {
-  height: auto;
-  margin-top: 60px;
+  display: block;
 }
 
 #product-filter-canvas[data-filtering*="respiratory-protection-systems"] .product-listing__category-container[data-filter-term="respiratory-protection-systems"] {
-  height: auto;
-  margin-top: 60px;
+  display: block;
 }
 
 #product-filter-canvas[data-filtering*="seasonal-protection"] .product-listing__category-container[data-filter-term="seasonal-protection"] {
-  height: auto;
-  margin-top: 60px;
+  display: block;
 }
 
 #product-filter-canvas[data-filtering*="specialised-helmet-systems"] .product-listing__category-container[data-filter-term="specialised-helmet-systems"] {
-  height: auto;
-  margin-top: 60px;
+  display: block;
 }
 
 #product-filter-canvas[data-filtering*="visibility-accessories"] .product-listing__category-container[data-filter-term="visibility-accessories"] {
-  height: auto;
-  margin-top: 60px;
+  display: block;
 }
 
 /* ==========================================================================
@@ -3010,6 +3006,7 @@ Powered by JS
 ---------------------------------------- */
 .hero--blog {
   height: 350px;
+  min-height: 0;
   background-position: center center;
 }
 
@@ -3061,11 +3058,6 @@ Powered by JS
    ========================================================================== */
 .blog__title {
   color: #262e61;
-}
-
-.blog__hero {
-  max-height: 350px;
-  min-height: 0;
 }
 
 .blog__header {
