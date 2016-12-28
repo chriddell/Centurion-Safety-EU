@@ -7,10 +7,11 @@
 
 	// Global vars for this
 	// partial
-	var filterCanvas = '#product-filter-canvas',
-			filterTerms = [],
-			filterTrigger = '.product-filter__item',
-			currentlyFiltering = ( $(filterCanvas).length ? $(filterCanvas).attr('data-filtering').split(' ') : false );
+	var filterCanvas 				= '#product-filter-canvas',
+			filterTerms 				= [],
+			filterTrigger 			= '.product-filter__item--has-input',
+			filterTriggerTwo 		= '.product-filter__checkbox',
+			currentlyFiltering 	= ( $(filterCanvas).length ? $(filterCanvas).attr('data-filtering').split(' ') : false );
 
 	/**
 	 * Set a filter input [checkbox]
@@ -114,12 +115,6 @@
 		// Load our available terms
 		getFilterTerms();
 
-		// Change value of checkbox on container click
-		$( document ).on( 'click', filterTrigger, function(){
-			
-			$(this).children('input.product-filter__item__input').prop('checked', true);
-		})
-
 		$( 'input.product-filter__item__input' ).on( 'change', function(e){
 
 			// Check whether checked or unchecked
@@ -133,8 +128,8 @@
 				markUnchecked( this );
 			}
 
-			runFilter( targetTerm, add )
-		})
+			runFilter( targetTerm, add );
+		});
 	});
 
 })(jQuery);
