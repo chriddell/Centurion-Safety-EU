@@ -23,6 +23,7 @@
   display: block;
   margin-bottom: $baseSpacingUnit;
   border: 1px solid $brandColorThree;
+  position: relative;
   background-color: $lightColor;
 }
 
@@ -49,13 +50,22 @@
 }
 
 .product-listing__category-container {
-  margin-top: $baseSpacingUnit * 1.5;
+  margin-top: $baseSpacingUnit * 3;
   overflow: hidden;
 }
 
 .product-listing__description {
   color: $brandColorFour;
   margin-bottom: $baseSpacingUnit;
+}
+
+.product-listing__specialism {
+  padding: $baseSpacingUnit / 4;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  color: $lightColor;
+  background-color: $brandColorTwo;
 }
 
 /* Featured
