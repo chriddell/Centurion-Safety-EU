@@ -73,8 +73,12 @@
 						wp_nav_menu( $args );
 					?>
 					-->
-					<ul class="menu menu--drop-down menu--lang-selector menu--header" id="language-selector">
+					<!-- We will unhide language selector menu when we launch multi-lingual -->
+					<!--
+					<ul class="menu menu--drop-down menu--lang-selector menu--header" id="language-selector"> 
+					-->
 						<?php /** Alternative menu order per language  **/ ?>
+						<?php /** ?>
 						<?php $currentLang = qtrans_getLanguage(); ?>
 						<?php switch ( $currentLang ) {
 							case 'en': ?>
@@ -102,7 +106,8 @@
 								<li class="menu__item menu--header__item menu--lang-selector__item"><a href="<?php echo site_url('de/'); ?>" class="menu__item__link">Deutsch</a></li>
 							<?php break; ?>
 						<?php } ?>
-					</ul>
+						<? **/ ?>
+					<!-- </ul> -->
 				</div>
 			</div>
 

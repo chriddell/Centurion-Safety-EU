@@ -111,7 +111,7 @@ function cntrn_product_category_init() {
 		'update_item'       => 'Update Product Category',
 		'add_new_item'      => 'Add New Product Category',
 		'new_item_name'     => 'New Product Category Name',
-		'menu_name'         => 'Product Categories',
+		'menu_name'         => 'Product Categories'
 	);
 
 	// create a new taxonomy
@@ -153,7 +153,7 @@ function cntrn_product_colours_init() {
 		'update_item'       => 'Update Product Colour',
 		'add_new_item'      => 'Add New Product Colour',
 		'new_item_name'     => 'New Product Colour Name',
-		'menu_name'         => 'Product Colours',
+		'menu_name'         => 'Product Colours'
 	);
 
 	// create a new taxonomy
@@ -194,7 +194,7 @@ function cntrn_product_specialisms_init() {
 		'update_item'       => 'Update Product Specialism',
 		'add_new_item'      => 'Add New Product Specialism',
 		'new_item_name'     => 'New Product Specialism Name',
-		'menu_name'         => 'Product Specialisms',
+		'menu_name'         => 'Product Specialisms'
 	);
 
 	// create a new taxonomy

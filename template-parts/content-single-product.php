@@ -410,13 +410,13 @@ get_header(); ?>
 						$linked_product_image_url 	= $linked_product_images[0]['product_image']['url'];
 						// Render
 					?>
-						<li class="col-3">
+						<li class="col-12 col-sml-3">
 							<div class="product-listing product-listing--centered">
 								<div class="product-listing__container">
 									<div class="product-listing__image-container">
 										<img src="<?php echo $linked_product_image_url; ?>" class="product-listing__image"/>
 									</div>
-									<h4 class="product-listing__title"><?php echo $linked_product->post_title; ?></h4>
+									<h4 class="product-listing__title"><?php echo apply_filters('the_title', $linked_product->post_title) ?></h4>
 									<a href="<?php echo get_permalink($linked_product); ?>" class="product-listing__link"><?php _e('More info', 'centurion' ); ?><span class="icon icon--link"></span></a>
 								</div>
 							</div>
