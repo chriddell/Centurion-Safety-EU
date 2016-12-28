@@ -55,7 +55,9 @@
   left: 0;
 
   @include respond-to( 'small' ) {
-    padding-left: $baseSpacingUnit * 3;
+    // because absolutely positoned, need to replicate
+    // wrapper padding
+    padding-left: $baseSpacingUnit;
   }
 }
 
@@ -63,7 +65,9 @@
   right: 0;
 
   @include respond-to( 'small' ) {
-    padding-right: $baseSpacingUnit * 3;
+    // because absolutely positoned, need to replicate
+    // wrapper padding
+    padding-right: $baseSpacingUnit;
   }
 }
 

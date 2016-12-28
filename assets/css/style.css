@@ -3313,7 +3313,7 @@ Powered by JS
 
 @media (min-width: 767px) {
   .feature-block__content--on-left {
-    padding-left: 60px;
+    padding-left: 20px;
   }
 }
 
@@ -3323,7 +3323,7 @@ Powered by JS
 
 @media (min-width: 767px) {
   .feature-block__content--on-right {
-    padding-right: 60px;
+    padding-right: 20px;
   }
 }
 
