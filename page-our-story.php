@@ -43,9 +43,9 @@ get_header(); ?>
 		<div class="wrapper pos-rel">
 			<div class="feature-block__content feature-block__content--on-right feature-block--one__content feature-block__half feature-block__half__content col-12 col-sml-6">
 				<h2 class="feature-block__title feature-block--one__title">Why we're here</h2>
-				<p class="feature-block__copy">We're here to protect the judgement and creativity that shape our world.</p>
-				<p class="feature-block__copy">We give workers the confidence to think clearly and deliver their best.</p>
-				<p class="feature-block__copy">We've been doing it for over a hundred years.</p>
+				<p class="feature-block__copy">We're here to protect the judgement and creativity that shape our world</p>
+				<p class="feature-block__copy">We give workers the confidence to think clearly and deliver their best</p>
+				<p class="feature-block__copy">We've been doing it for over a hundred years</p>
 			</div>
 		</div>
 	</div>
