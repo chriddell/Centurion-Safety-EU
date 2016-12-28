@@ -51,6 +51,7 @@
 
 .hero--blog {
   height: 350px;
+  min-height: 0; // reset global hero
   background-position: center center;
 }
 

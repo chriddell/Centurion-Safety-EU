@@ -8,11 +8,6 @@
   color: $brandColorOne;
 }
 
-.blog__hero {
-  max-height: 350px;
-  min-height: 0; // reset global .hero
-}
-
 .blog__header {
   padding-bottom: $baseSpacingUnit;
   margin: $baseSpacingUnit 0;
