@@ -364,8 +364,8 @@ function cntrn_render_term_tree( $taxonomy, $term_id ){
 			if ( $child_term->count > 0 ) {
 
 				echo '<li class="product-filter__item product-filter__item--has-input">';
-				echo '<span class="icon icon--unchecked-box icon--fit product-filter__checkbox"></span>';
 				echo '<input type="checkbox" name="filter-' . $child_term->slug . '" class="product-filter__item__input sr-only" data-filter-by="' . $child_term->slug . '" id="filter-' . $child_term->slug . '"/>';
+				// echo '<span class="icon icon--unchecked-box icon--fit product-filter__checkbox"></span>';
 				echo '<label for="filter-' . $child_term->slug . '" class="product-filter__item__label">';
 				echo $child_term->name;
 				echo '</label>';
@@ -486,22 +486,24 @@ add_filter( 'wp_nav_menu', 'cntrn_add_link_class_wp_nav_menu' );
  * Uses 'relevanssi_hits_filter' hook
  * http://www.relevanssi.com/user-manual/relevanssi_hits_filter/
  */
-function cntrn_reorder_search_results($hits) {
+function cntrn_reorder_search_results( $hits ) {
 
 	$types = array();
 
-	$types['advice'] = array();
-	$types['news'] = array();
+	$types['advice'] 	= array();
+	$types['news'] 		= array();
 	$types['product'] = array();
 
 	// Split the post types in array $types
-	if (!empty($hits)) {
+	if ( !empty( $hits ) ) {
+
 		foreach ($hits[0] as $hit) {
+
 			// If search returns null for a post_type,
 			// define as an array so we get no PHP error
 			// Fix from: http://pastebin.com/jmjWZik1 (line 37)
-			if (!is_array($types[$hit->post_type])) $types[$hit->post_type] = array();
-			array_push($types[$hit->post_type], $hit);
+			if ( !is_array( $types[ $hit->post_type ] ) ) $types[ $hit->post_type ] = array();
+			array_push( $types[ $hit->post_type ], $hit );
 		}
 	}
 
@@ -515,7 +517,7 @@ add_filter( 'relevanssi_hits_filter', 'cntrn_reorder_search_results' );
  * Remove archive label from title
  * https://developer.wordpress.org/reference/functions/get_the_archive_title/#user-contributed-notes
  */
-function my_theme_archive_title( $title ) {
+function cntrn_archive_title( $title ) {
 
 	if ( is_category() ) {
 		$title = single_cat_title( '', false );
@@ -531,7 +533,7 @@ function my_theme_archive_title( $title ) {
 	
 	return $title;
 }
-add_filter( 'get_the_archive_title', 'my_theme_archive_title' );
+add_filter( 'get_the_archive_title', 'cntrn_archive_title' );
 
 /**
  * Allow SVG uploads
