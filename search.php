@@ -25,11 +25,9 @@ get_header(); ?>
 					<!-- / .search-form -->
 				</div>
 
-				<?php if ( !empty( get_search_query() ) && !ctype_space( get_search_query() ) ) { ?>
-					<ul class="menu tags tags--with-border">
-						<?php cntrn_split_search_query_string('<li class="tags__tag tags--search__tag">%s</li>'); ?>
-					</ul>
-				<?php } ?>
+				<ul class="menu tags tags--with-border">
+					<?php cntrn_split_search_query_string('<li class="tags__tag tags--search__tag">%s</li>'); ?>
+				</ul>
 			</header>
 
 			<section class="search-results__content clearfix">
