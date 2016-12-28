@@ -1211,7 +1211,13 @@ input:checked + .product-filter__item__label:before {
 }
 
 .nav--main .current-menu-item {
-  background-color: #76888f;
+  background-color: #181d3c;
+}
+
+@media (min-width: 767px) {
+  .nav--main .current-menu-item {
+    background-color: #76888f;
+  }
 }
 
 /* ==========================================================================
