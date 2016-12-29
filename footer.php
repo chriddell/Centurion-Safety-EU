@@ -54,9 +54,11 @@ $contact = array(
 
 		<div class="col-sml-3">
 			<ul class="menu menu--footer">
+				<!--
 				<li class="menu__item menu--footer__item">
 					<a href="#0"/><span class="icon icon--mail icon--on-left"></span><?php _e('Sign up to our newsletter', 'centurion'); ?>
 				</li>
+				-->
 				<li class="menu__item menu--footer__item">
 					<a href="<?php echo cntrn_stockists_link(); ?>"/><span class="icon icon--white-pin icon--on-left"></span><?php _e('Find a valued stockist', 'centurion'); ?></a>
 				</li>
