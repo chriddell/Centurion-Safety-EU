@@ -9,10 +9,14 @@ select,
 textarea {
   max-width: 100%;
   border-radius: 0;
+
+  @include respond-to( 'small' ) {
+    max-width: none;
+  }
 }
 
 input:not([type="submit"]),
-.form__input,
+.form__input:not([type="submit"]),
 select,
 .form__select {
   width: 100%;
@@ -95,6 +99,7 @@ select {
 }
 
 .form--search--in-page__input--search {
+  width: 100%;
   padding: $baseSpacingUnit;
   border: 0;
   background-color: lighten($borderColor, 10%);
@@ -103,6 +108,10 @@ select {
   &:focus {
     outline: 0;
     background-color: lighten($borderColor, 5%);
+  }
+
+  @include respond-to( 'small' ) {
+    width: 100% !important;
   }
 }
 

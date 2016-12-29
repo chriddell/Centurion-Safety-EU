@@ -20,12 +20,20 @@
     margin-bottom: 0;
   }
 
+  &:hover {
+    cursor: pointer;
+  }
+
   @include respond-to( 'small' ) {
     padding-right: $baseSpacingUnit;
   }
 }
 
 .product-filter__item__label {
+
+  &:hover {
+    cursor: pointer;
+  }
 
   @include respond-to( 'small' ) {
     width: 85%;
