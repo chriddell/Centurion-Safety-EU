@@ -21,6 +21,10 @@ body {
   overflow-x: hidden;
 }
 
+body {
+  color: $brandColorOne;
+}
+
 @if $globalBoxSizing == 'border-box' {
   * {
     box-sizing: border-box;
@@ -50,6 +54,8 @@ ul {
   //list-style: none;
 
   > li {
+    margin-bottom: 5px;
+    
     &:before {
       //content: '•';
       //margin-right: $baseSpacingUnit / 4;

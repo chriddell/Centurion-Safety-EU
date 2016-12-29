@@ -12,7 +12,7 @@ get_header(); ?>
 <div class="flex-content fill-height"><!-- .flex-content -->
 	<?php get_sidebar(); ?>
 	<main role="main" class="main main--has-sidebar"><!-- .main -->
-		<?php cntrn_render_splash_blocks( 'menu splash-blocks disobey-wrapper clearfix', 'splash-block splash-block--full col-12' ); ?>
+		<?php cntrn_render_splash_blocks( 'menu splash-blocks disobey-wrapper clearfix', 'menu__item splash-block splash-block--full col-12' ); ?>
 	</main>
 </div>
 
