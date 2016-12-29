@@ -71,11 +71,9 @@ get_header(); ?>
 		<main role="main" class="main main--has-sidebar main--with-padding"><!-- .main -->
 			<div class="wrapper">
 				<header id="main-header">
-					<?php
-						// Show taxonomy term (or it's parent) name and description
-						echo '<h2 class="product-listing__category-title">'; echo $new_term_object->name; echo '</h2>';
-						echo '<p class="product-listing__description">'; echo $new_term_object->description; echo '</p>';
-					?>
+					<?php /** Show taxonomy term (or it's parent) name and description **/ ?>
+					<h2 class="product-listing__category-title"><?php echo $new_term_object->name; ?></h2>
+					<?php echo apply_filters( 'term_description', '<p class="product-listing__description">' . $new_term_object->description . '</p>' ); ?>
 				</header>
 
 				<!-- #product-filter-canvas -->
