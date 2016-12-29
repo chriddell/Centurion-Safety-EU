@@ -2417,11 +2417,14 @@ Powered by JS
   text-align: center;
   line-height: 1;
   color: #FFFFFF;
+  -webkit-transition: background-color 0.375s ease;
+          transition: background-color 0.375s ease;
 }
 
 .btn:hover {
   text-decoration: none;
   cursor: pointer;
+  background-color: rgba(255, 255, 255, 0.5);
 }
 
 .btn--pink {
@@ -3986,8 +3989,8 @@ Powered by JS
 		https://afterglowplayer.com/
 	 ========================================================================== */
 .afterglow-lightbox-wrapper {
-  -webkit-animation: fadeIn 0.75s ease;
-  animation: fadeIn 0.75s ease;
+  -webkit-animation: fadeIn 0.375s ease;
+  animation: fadeIn 0.375s ease;
 }
 
 /* ==========================================================================

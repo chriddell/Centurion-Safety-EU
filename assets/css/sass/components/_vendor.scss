@@ -398,5 +398,5 @@ $slick-opacity-not-active: 0.25 !default;
 	 ========================================================================== */
 
 .afterglow-lightbox-wrapper {
-	@include animation( fadeIn $gtd ease );
+	@include animation( fadeIn $gtd / 2 ease );
 }
