@@ -123,7 +123,7 @@
 }
 
 .event {
-  margin-bottom: $baseSpacingUnit * 2;
+  margin-bottom: $baseSpacingUnit;
 }
 
 .event__title {
@@ -139,6 +139,10 @@
 
 .event__text--date {
   margin-bottom: 0;
+}
+
+.event__link {
+  margin-bottom: $baseSpacingUnit;
 }
 
 /* Most recent

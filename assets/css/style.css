@@ -851,6 +851,10 @@ body {
   overflow-x: hidden;
 }
 
+body {
+  color: #262e61;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -875,6 +879,10 @@ a:hover {
 
 ul {
   padding-left: 20px;
+}
+
+ul > li {
+  margin-bottom: 5px;
 }
 
 h1 {
@@ -1230,6 +1238,10 @@ input:checked + .product-filter__item__label:before {
   margin: 0;
   padding: 0;
   list-style: none;
+}
+
+.menu__item {
+  margin-bottom: 0;
 }
 
 /* Sub Menus
@@ -3229,8 +3241,6 @@ Powered by JS
 .blog--preview__link {
   display: inline-block;
   margin-bottom: 20px;
-  position: relative;
-  z-index: 3;
 }
 
 /* Events
@@ -3246,7 +3256,7 @@ Powered by JS
 }
 
 .event {
-  margin-bottom: 40px;
+  margin-bottom: 20px;
 }
 
 .event__title {
@@ -3262,6 +3272,10 @@ Powered by JS
 
 .event__text--date {
   margin-bottom: 0;
+}
+
+.event__link {
+  margin-bottom: 20px;
 }
 
 /* Most recent
@@ -3808,6 +3822,13 @@ Powered by JS
 }
 
 /* ==========================================================================
+		Wordpress
+	 ========================================================================== */
+.wysiwyg-content {
+  margin-bottom: 40px;
+}
+
+/* ==========================================================================
     _helpers
 
     Object-oriented classes, helper classes e.g. bold-font, absolute-center
@@ -3893,15 +3914,6 @@ Powered by JS
 
 .on-top {
   z-index: 999;
-}
-
-.link-cover {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  z-index: 2;
 }
 
 /* ==========================================================================
