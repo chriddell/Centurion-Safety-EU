@@ -169,3 +169,97 @@
 .feature-block > .wrapper {
   height: 100%;
 }
+
+/* Animations and application
+---------------------------------------- */
+
+// Prefix animations with feature because they
+// are specific to this partial
+@include keyframes( featureFadeInLeft ) {
+  0% {
+    opacity: 0;
+    transform: translateX(40px);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+    -webkit-font-smoothing: antialiased;
+  }
+}
+
+@include keyframes( featureFadeInRight ) {
+  0% {
+    opacity: 0;
+    transform: translateX(-40px);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+    -webkit-font-smoothing: antialiased;
+  }
+}
+
+// Ready our animated elements
+.js .feature-block--one {
+  .feature-block__half--has-bg {
+    opacity: 0;
+  }
+
+  .feature-block__title,
+  .feature-block__copy {
+    opacity: 0;
+  }
+}
+
+.js .feature-block--three,
+.js .feature-block--four,
+.js .feature-block--five {
+  opacity: 0;
+
+  .feature-block__title,
+  .feature-block__copy {
+    opacity: 0;
+  }
+}
+
+.js .feature-block--one.in-view {
+  .feature-block__copy,
+  .feature-block__title {
+    @include animation(featureFadeInLeft $gtd * 3 $gtd ease forwards);
+  }
+
+  .feature-block__half--has-bg {
+    @include animation(featureFadeInRight $gtd * 3 ease forwards);
+  }
+}
+
+.js .feature-block--three.in-view {
+  @include animation(featureFadeInLeft $gtd * 3 ease forwards);
+
+  .feature-block__copy,
+  .feature-block__title {
+    @include animation(featureFadeInRight $gtd * 3 $gtd ease forwards);
+  }
+}
+
+.js .feature-block--four.in-view {
+  @include animation(featureFadeInRight $gtd * 3 ease forwards);
+
+  .feature-block__copy,
+  .feature-block__title {
+    @include animation(featureFadeInLeft $gtd * 3 $gtd ease forwards);
+  }
+}
+
+.js .feature-block--five.in-view {
+  @include animation(featureFadeInLeft $gtd * 3 ease forwards);
+
+  .feature-block__copy,
+  .feature-block__title {
+    @include animation(featureFadeInRight $gtd * 3 $gtd ease forwards);
+  }
+}

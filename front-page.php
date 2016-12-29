@@ -30,7 +30,7 @@ get_header(); ?>
 			<?php if ( $hero['cta-text'] ) { ?>
 				<a href="#brand-video" class="hero__cta btn btn--centered afterglow-video-trigger afterglow"><?php echo $hero['cta-text']; ?></a>
 				<!-- video loads in afterglow lightbox -->
-				<video id="brand-video" class="hero__video" height="762" width="1354" data-overscale="false">
+				<video id="brand-video" class="hero__video" height="762" width="1354" data-overscale="false" style="display: none;">
 					<!--<source src="<?php echo $hero['video']['url']; ?>" type="<?php echo $hero['video']['mime_type']; ?>">-->
 					<source src="<?php echo get_template_directory_uri(); ?>/assets/video/centurion_brand_video.mp4">
 				</video>

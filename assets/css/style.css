@@ -21,6 +21,29 @@
     Global mixins
    ========================================================================== */
 /* ==========================================================================
+    _animations
+   
+    Global animations
+   ========================================================================== */
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* ==========================================================================
     _reset
     
     normalize.css v5.0.0 | MIT License | github.com/necolas/normalize.css
@@ -3478,6 +3501,136 @@ Powered by JS
   height: 100%;
 }
 
+/* Animations and application
+---------------------------------------- */
+@-webkit-keyframes featureFadeInLeft {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(40px);
+            transform: translateX(40px);
+    -webkit-font-smoothing: antialiased;
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+    -webkit-font-smoothing: antialiased;
+  }
+}
+
+@keyframes featureFadeInLeft {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(40px);
+            transform: translateX(40px);
+    -webkit-font-smoothing: antialiased;
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+    -webkit-font-smoothing: antialiased;
+  }
+}
+
+@-webkit-keyframes featureFadeInRight {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(-40px);
+            transform: translateX(-40px);
+    -webkit-font-smoothing: antialiased;
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+    -webkit-font-smoothing: antialiased;
+  }
+}
+
+@keyframes featureFadeInRight {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(-40px);
+            transform: translateX(-40px);
+    -webkit-font-smoothing: antialiased;
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+    -webkit-font-smoothing: antialiased;
+  }
+}
+
+.js .feature-block--one .feature-block__half--has-bg {
+  opacity: 0;
+}
+
+.js .feature-block--one .feature-block__title,
+.js .feature-block--one .feature-block__copy {
+  opacity: 0;
+}
+
+.js .feature-block--three,
+.js .feature-block--four,
+.js .feature-block--five {
+  opacity: 0;
+}
+
+.js .feature-block--three .feature-block__title,
+.js .feature-block--three .feature-block__copy,
+.js .feature-block--four .feature-block__title,
+.js .feature-block--four .feature-block__copy,
+.js .feature-block--five .feature-block__title,
+.js .feature-block--five .feature-block__copy {
+  opacity: 0;
+}
+
+.js .feature-block--one.in-view .feature-block__copy,
+.js .feature-block--one.in-view .feature-block__title {
+  -webkit-animation: featureFadeInLeft 2.25s 0.75s ease forwards;
+  animation: featureFadeInLeft 2.25s 0.75s ease forwards;
+}
+
+.js .feature-block--one.in-view .feature-block__half--has-bg {
+  -webkit-animation: featureFadeInRight 2.25s ease forwards;
+  animation: featureFadeInRight 2.25s ease forwards;
+}
+
+.js .feature-block--three.in-view {
+  -webkit-animation: featureFadeInLeft 2.25s ease forwards;
+  animation: featureFadeInLeft 2.25s ease forwards;
+}
+
+.js .feature-block--three.in-view .feature-block__copy,
+.js .feature-block--three.in-view .feature-block__title {
+  -webkit-animation: featureFadeInRight 2.25s 0.75s ease forwards;
+  animation: featureFadeInRight 2.25s 0.75s ease forwards;
+}
+
+.js .feature-block--four.in-view {
+  -webkit-animation: featureFadeInRight 2.25s ease forwards;
+  animation: featureFadeInRight 2.25s ease forwards;
+}
+
+.js .feature-block--four.in-view .feature-block__copy,
+.js .feature-block--four.in-view .feature-block__title {
+  -webkit-animation: featureFadeInLeft 2.25s 0.75s ease forwards;
+  animation: featureFadeInLeft 2.25s 0.75s ease forwards;
+}
+
+.js .feature-block--five.in-view {
+  -webkit-animation: featureFadeInLeft 2.25s ease forwards;
+  animation: featureFadeInLeft 2.25s ease forwards;
+}
+
+.js .feature-block--five.in-view .feature-block__copy,
+.js .feature-block--five.in-view .feature-block__title {
+  -webkit-animation: featureFadeInRight 2.25s 0.75s ease forwards;
+  animation: featureFadeInRight 2.25s 0.75s ease forwards;
+}
+
 /* ==========================================================================
 		_vendor
 		
@@ -3826,6 +3979,15 @@ Powered by JS
 	 ========================================================================== */
 .wysiwyg-content {
   margin-bottom: 40px;
+}
+
+/* ==========================================================================
+		Afterglow
+		https://afterglowplayer.com/
+	 ========================================================================== */
+.afterglow-lightbox-wrapper {
+  -webkit-animation: fadeIn 0.75s ease;
+  animation: fadeIn 0.75s ease;
 }
 
 /* ==========================================================================
