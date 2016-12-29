@@ -141,7 +141,7 @@ get_header(); ?>
 
 	<div class="block block--last block--after-features">
 		<div class="wrapper">
-			<?php cntrn_render_splash_blocks( 'menu splash-blocks disobey-wrapper-mob clearfix', 'splash-block splash-block__homepage col-12 col-sml-6' ); ?>
+			<?php cntrn_render_splash_blocks( 'menu splash-blocks disobey-wrapper-mob clearfix', 'splash-block splash-block__homepage menu__item col-12 col-sml-6' ); ?>
 		</div>
 	</div>
 
