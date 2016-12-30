@@ -20,7 +20,9 @@ $blogpost = array(
 ?>
 
 <article id="post-<?php the_ID(); ?>" class="blog blog--preview blog--most-recent col-12 col-sml-4">
-	<div class="col-12 blog--preview__image" style="background-image: url(<?php echo $blogpost['image']['url']; ?>)"></div>
+	<a href="<?php the_permalink(); ?>">
+		<div class="col-12 blog--preview__image" style="background-image: url(<?php echo $blogpost['image']['url']; ?>)"></div>
+	</a>
 
 	<div class="col-12 blog--preview__container">
 		<?php the_title( '<h3 class="blog__title blog--preview__title blog--most-recent__title">', '</h3>' ); ?>

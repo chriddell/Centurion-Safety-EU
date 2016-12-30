@@ -414,7 +414,9 @@ get_header(); ?>
 							<div class="product-listing product-listing--centered">
 								<div class="product-listing__container">
 									<div class="product-listing__image-container">
-										<img src="<?php echo $linked_product_image_url; ?>" class="product-listing__image"/>
+										<a href="<?php the_permalink(); ?>">
+											<img src="<?php echo $linked_product_image_url; ?>" class="product-listing__image"/>
+										</a>
 									</div>
 									<h4 class="product-listing__title"><?php echo apply_filters('the_title', $linked_product->post_title); ?></h4>
 									<a href="<?php echo get_permalink($linked_product); ?>" class="product-listing__link"><?php _e('More info', 'centurion' ); ?><span class="icon icon--link"></span></a>

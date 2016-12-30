@@ -41,12 +41,14 @@ $child_term_object = get_terms(array(
 <article id="post-<?php the_ID(); ?>" class="product-listing product-listing--centered col-sml-4">
 	<div class="product-listing__container">
 		<span class="product-listing__image-container">
-			<img src="<?php echo $product['image'][0]['product_image']['url'] ?>" class="product-listing__image"/>
+			<a href="<?php the_permalink(); ?>">
+				<img src="<?php echo $product['image'][0]['product_image']['url'] ?>" class="product-listing__image"/>
 
-			<?php /** Product specialism **/ ?>
-			<?php if ( $product['specialism'] ) { ?>
-				<span class="product-listing__specialism product-listing__specialism--<?php echo $product['specialism']->name; ?> col-12"><?php echo $product['specialism']->name; ?></span>
-			<?php } ?>
+				<?php /** Product specialism **/ ?>
+				<?php if ( $product['specialism'] ) { ?>
+					<span class="product-listing__specialism product-listing__specialism--<?php echo $product['specialism']->name; ?> col-12"><?php echo $product['specialism']->name; ?></span>
+				<?php } ?>
+			</a>
 		</span>
 		<?php the_title( '<h3 class="product-listing__title">', '</h3>' ); ?>
 		<a href="<?php echo esc_url( get_permalink() ); ?>" rel="bookmark" class="product-listing__link"><?php _e('More info', 'centurion'); ?><span class="icon icon--link"></span></a>

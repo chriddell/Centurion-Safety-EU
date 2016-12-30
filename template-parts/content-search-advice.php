@@ -20,7 +20,9 @@ $blogpost = array(
 ?>
 
 <article class="search-result search-result--advice blog blog--preview col-12">
-	<div class="col-12 col-sml-6 blog--preview__image" style="background-image: url(<?php echo $blogpost['image']['url']; ?>"></div>
+	<a href="<?php the_permalink(); ?>">
+		<div class="col-12 col-sml-6 blog--preview__image" style="background-image: url(<?php echo $blogpost['image']['url']; ?>"></div>
+	</a>
 	<div class="col-12 col-sml-6 blog--preview__container">
 		<?php the_title( '<h3 class="blog__title blog--preview__title">', '</h3>' ); ?>
 		<?php printf( '<p class="blog__author blog--preview__author">' . __( 'Written by', 'centurion' ) . ' %s, %s' . '</p>', $blogpost['author'], $blogpost['date'] ); ?>
