@@ -9,9 +9,15 @@ select,
 textarea {
   max-width: 100%;
   border-radius: 0;
+  transition: background-color $gtd / 2 ease;
 
   @include respond-to( 'small' ) {
     max-width: none;
+  }
+
+  &:focus {
+    outline: none;
+    background-color: lighten($borderColor, 10%);
   }
 }
 
@@ -106,7 +112,6 @@ select {
   transition: background-color .25s ease;
 
   &:focus {
-    outline: 0;
     background-color: lighten($borderColor, 5%);
   }
 
@@ -138,11 +143,6 @@ select {
   padding: $baseSpacingUnit;
   background-color: #a9bbc2;
   color: $lightColor;
-  background-color: $brandColorOne;
-
-  &:focus {
-    background-color: lighten($brandColorOne, 10%);
-  }
 
   @include respond-to( 'medium' ) {
     float: left;

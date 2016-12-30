@@ -11,6 +11,7 @@
 	function showSearch() {
 
 		$(searchForm).addClass( 'is-active' );
+		$(searchForm + ' input[type="search"]').focus();
 	}
 
 	$( 'body' ).on( 'click', searchToggle, function(){ showSearch() });
