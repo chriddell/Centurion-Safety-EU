@@ -47,30 +47,15 @@ function cntrn_assets() {
 
 	 /* Scripts
 	 ========================================================================== */
+
+	 // Enqueue modernizr separately b/c faster
+	 wp_enqueue_script( 'modernizr', get_template_directory_uri() . '/assets/js/lib/modernizr/modernizr-3.3.1.js', '3.3.1', true );
+
+	 // Enqueue built versions of app and vendor scripts
 	 wp_enqueue_script( 'main-js', get_template_directory_uri() . '/assets/js/app/built/app.min.js', array( 'jquery' ), '1.0.0', true );
 	 wp_enqueue_script( 'lib', get_template_directory_uri() . '/assets/js/lib/built/lib.min.js', '', '1.0.0', true );
 }
 add_action( 'wp_enqueue_scripts', 'cntrn_assets' );
-
-/**
- * Remove jQuery Migrate
- * http://aaha.co/2013/08/05/remove-jquery-migrate-wordpress-36/
- */
-/*
-function cntrn_jquery() {
-
-	if (!is_admin()) {
-
-		// Deregister wp default jQuery
-		wp_deregister_script( 'jquery' );
-
-		// Register it from CDN
-		wp_register_script('jquery', 'https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js', false, '3.1.1');
-		wp_enqueue_script('jquery');
-	}
-}
-add_action( 'init', 'cntrn_jquery' );
-*/
 
 /**
  * Create custom post type
@@ -553,7 +538,12 @@ function cntrn_render_events_posts() {
 	// Only events, all of them
 	$args = array(
 		'post_type' 			=> 'event',
-		'posts_per_page' 	=> -1
+		'posts_per_page' 	=> -1,
+		// Order by ACF Date
+		'order'						=> 'ASC',
+		'orderby'					=> 'meta_value',
+		'meta_key'				=> 'event_date',
+		'meta_type'				=> 'DATETIME'
 	);
 
 	$the_query = new WP_Query($args);
