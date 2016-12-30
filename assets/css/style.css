@@ -1488,6 +1488,7 @@ textarea {
   border-radius: 0;
   -webkit-transition: background-color 0.375s ease;
           transition: background-color 0.375s ease;
+  font-family: effra, Tahoma, Verdana, Arial, sans-serif;
 }
 
 @media (min-width: 767px) {
@@ -1534,7 +1535,6 @@ select,
 .form__select {
   border-radius: 0;
   background: none;
-  font-family: effra, Tahoma, Verdana, Arial, sans-serif;
   -webkit-appearance: none;
 }
 
@@ -1694,6 +1694,11 @@ select {
 .form--search--in-header__input--pseudo-submit {
   background-image: none;
   background-color: #94aab3;
+}
+
+.form--search--in-header__input--pseudo-submit:hover {
+  background-color: #76888f;
+  cursor: pointer;
 }
 
 @media (min-width: 1023px) {
@@ -2434,6 +2439,13 @@ Powered by JS
 .btn--pink {
   color: #e83272;
   border-color: #e83272;
+  -webkit-transition: background-color 0.375s ease, color 0.375s 0.0625s ease;
+          transition: background-color 0.375s ease, color 0.375s 0.0625s ease;
+}
+
+.btn--pink:hover {
+  background-color: #e83272;
+  color: #FFFFFF;
 }
 
 .btn--centered {
@@ -3923,7 +3935,7 @@ Powered by JS
 }
 
 .gform_wrapper .validation_error {
-  margin-bottom: 0;
+  margin-bottom: 20px;
   margin-top: 20px;
 }
 

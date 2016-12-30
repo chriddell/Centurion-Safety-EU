@@ -10,6 +10,7 @@ textarea {
   max-width: 100%;
   border-radius: 0;
   transition: background-color $gtd / 2 ease;
+  font-family: $mainFontFamily;
 
   @include respond-to( 'small' ) {
     max-width: none;
@@ -45,7 +46,6 @@ select,
 .form__select {
   border-radius: 0;
   background: none;
-  font-family: $mainFontFamily;
   -webkit-appearance: none;
 }
 
@@ -185,6 +185,11 @@ select {
 .form--search--in-header__input--pseudo-submit {
   background-image: none;
   background-color: $brandColorTwo;
+
+  &:hover {
+    background-color: $brandColorTwoDark;
+    cursor: pointer;
+  }
 }
 
 // Active & inactive styles for header search

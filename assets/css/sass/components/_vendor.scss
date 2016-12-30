@@ -339,7 +339,7 @@ $slick-opacity-not-active: 0.25 !default;
 
 // Validation
 .gform_wrapper .validation_error {
-	margin-bottom: 0;
+	margin-bottom: $baseSpacingUnit;
 	margin-top: $baseSpacingUnit;
 }
 

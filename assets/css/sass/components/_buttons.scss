@@ -27,6 +27,12 @@
 .btn--pink {
   color: $brandColorHighlight;
   border-color: $brandColorHighlight;
+  transition: background-color $gtd / 2 ease, color $gtd / 2 $gtd / 12 ease;
+
+  &:hover {
+    background-color: $brandColorHighlight;
+    color: $lightColor;
+  }
 }
 
 .btn--centered {
