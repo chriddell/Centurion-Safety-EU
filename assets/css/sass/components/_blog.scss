@@ -137,8 +137,9 @@
   color: $brandColorTwo;
 }
 
-.event__text--date {
-  margin-bottom: 0;
+.event__text--location br {
+  // No height to line-breaks in this copy
+  margin-top: 0;
 }
 
 .event__link {
