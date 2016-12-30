@@ -27,7 +27,7 @@ get_header(); ?>
 	<div class="hero" style="background-image: url(<?php echo $hero['image']['url'] ?>);"><!-- .hero -->
 		<div class="wrapper">
 			<h2 class="hero__title"><?php echo $hero['title']; ?></h2>
-			<?php if ( $hero['cta-text'] ) { ?>
+			<?php if ( $hero['cta-text'] && $hero['video'] ) { ?>
 				<a href="#brand-video" class="hero__cta btn btn--centered afterglow-video-trigger afterglow"><?php echo $hero['cta-text']; ?></a>
 				<video id="brand-video" class="hero__video" height="566" width="1080" data-overscale="false" style="display: none;">
 					<source src="<?php echo $hero['video']['url']; ?>" type="<?php echo $hero['video']['mime_type']; ?>">
