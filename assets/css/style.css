@@ -2179,6 +2179,7 @@ select {
 @media (min-width: 767px) {
   .sidebar--right {
     padding-left: 40px;
+    border-left: 1px solid #dbdbdb;
   }
 }
 
@@ -2398,7 +2399,6 @@ Powered by JS
 @media (min-width: 767px) {
   .main--has-sidebar--right {
     padding-right: 40px;
-    border-right: 1px solid #dbdbdb;
     border-bottom: none;
   }
 }
@@ -2912,6 +2912,10 @@ Powered by JS
     
     Newsletter container
    ========================================================================== */
+.eventlist + .newsletter {
+  margin-top: 20px;
+}
+
 .newsletter.is-active .gform--newsletter {
   height: auto;
   overflow: visible;
@@ -3297,8 +3301,8 @@ Powered by JS
   color: #94aab3;
 }
 
-.event__text--date {
-  margin-bottom: 0;
+.event__text--location br {
+  margin-top: 0;
 }
 
 .event__link {

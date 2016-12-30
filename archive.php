@@ -68,8 +68,8 @@ get_header(); ?>
 					<h3 class="eventlist__title"><?php _e( 'Upcoming Events', 'centurion' ); ?></h3>
 					<?php cntrn_render_events_posts(); ?>
 				<?php } ?>
-				<h4 class="sidebar__title"><?php _e( 'Stay up to date with our advice pieces with our newsletter', 'centurion' ); ?></h4>
 				<div class="col-12 newsletter">
+					<h4 class="sidebar__title"><?php _e( 'Stay up to date with our advice pieces with our newsletter', 'centurion' ); ?></h4>
 					<span class="btn btn--pink btn--full-width btn--newsletter" id="show-newsletter-form"><?php _e( 'Sign up here', 'centurion' ); ?></span>
 					<?php echo do_shortcode('[gravityform id="3" title="false" description="false" ajax="true"]'); ?>
 				</div>

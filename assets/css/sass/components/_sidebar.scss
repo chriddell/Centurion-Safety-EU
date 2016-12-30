@@ -23,6 +23,7 @@
 .sidebar--right {
   @include respond-to( 'small' ) {
     padding-left: $baseSpacingUnit * 2;
+    border-left: 1px solid $borderColor;
   }
 }
 

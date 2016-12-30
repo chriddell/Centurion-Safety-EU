@@ -4,6 +4,12 @@
     Newsletter container
    ========================================================================== */
 
+.newsletter {
+  .eventlist + & {
+    margin-top: $baseSpacingUnit;
+  }
+}
+
 .newsletter.is-active {
   .gform--newsletter {
     height: auto;
