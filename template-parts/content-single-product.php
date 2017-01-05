@@ -379,7 +379,6 @@ get_header(); ?>
 
 									<?php endwhile; ?>
 
-
 									</div><!-- / .tabs__tab-content -->
 								<?php } ?>
 
@@ -402,13 +401,12 @@ get_header(); ?>
 					<ul class="menu">
 					<?php while ( have_rows( 'product_linked_products' ) ) : the_row(); ?>
 					<?php
-						// Get the linked product post-object
+						// ACF
 						$linked_product 						= get_sub_field( 'product_linked_product');
-						// Get the array of images ACF
 						$linked_product_images 			= get_field( 'product_images', $linked_product);
-						// Get the first image url
 						$linked_product_image_url 	= $linked_product_images[0]['product_image']['url'];
-						// Render
+						$linked_product_specialism 	= get_field('product_specialism', $linked_product);
+						$linked_product_is_new 			= get_field('product_is_new', $linked_product);
 					?>
 						<li class="col-12 col-sml-3">
 							<div class="product-listing product-listing--centered">
@@ -416,6 +414,16 @@ get_header(); ?>
 									<div class="product-listing__image-container">
 										<a href="<?php echo get_permalink($linked_product); ?>">
 											<img src="<?php echo $linked_product_image_url; ?>" class="product-listing__image"/>
+
+											<?php /** Product specialism **/ ?>
+											<?php if ( $linked_product_specialism ) { ?>
+												<span class="product-listing__specialism product-listing__specialism--<?php echo $linked_product_specialism->name; ?> col-12"><?php echo $linked_product_specialism->name; ?></span>
+											<?php } ?>
+
+											<?php /** New product **/ ?>
+											<?php if ( $linked_product_is_new ) { ?>
+												<span class="product-listing__specialism product-listing__specialism--new col-12"><?php _e( 'New', 'centurion' ) ?></span>
+											<?php } ?>
 										</a>
 									</div>
 									<h4 class="product-listing__title"><?php echo apply_filters('the_title', $linked_product->post_title); ?></h4>
