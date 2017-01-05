@@ -69,7 +69,7 @@
 .nav--main .current-menu-item {
   background-color: darken($brandColorOne, 10%);
 
-  @include respond-to( 'small' ) {
+  @include respond-to( 'medium' ) {
     background-color: $brandColorTwoDark;
   }
 }

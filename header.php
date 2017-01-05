@@ -38,6 +38,10 @@
     			<span class="hamburger-inner"></span>
   			</span>
 			</button>
+
+			<a href="<?php echo cntrn_stockists_link(); ?>" class="header__button header__custom-link menu__item__link hover-underline">
+				<span class="icon icon--white-pin icon--on-left"></span><?php _e( 'Find a valued stockist', 'centurion' ); ?>
+			</a>
 		</div>
 
 			<nav class="nav--main" id="main-nav">
@@ -51,16 +55,12 @@
 						wp_nav_menu( $args );
 					?>
 					<?php get_search_form(); ?>
+					<div class="menu__item menu--main-nav__item menu--header__item menu__item--custom menu--header__item--custom"><a class="menu__item__link" href="<?php echo cntrn_stockists_link(); ?>"><span class="icon icon--white-pin icon--on-left"></span><?php _e( 'Find a valued stockist', 'centurion' ); ?></a></div>
 				</div>
 			</nav>
 
 			<div class="nav--secondary" id="sub-nav">
 				<div class="wrapper">
-					<ul class="menu menu--header">
-						<li class="menu__item menu--header__item header__custom-link">
-							<a href="<?php echo cntrn_stockists_link(); ?>" class="menu__item__link hover-underline"><span class="icon icon--white-pin icon--on-left"></span><?php _e( 'Find a valued stockist', 'centurion' ); ?></a>
-						</li>
-					</ul>
 					<!--
 					Not currently using the wp_nav_menu for language selector.
 					Should go back to using this so we can rearrange dynamically.

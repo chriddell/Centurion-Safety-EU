@@ -28,7 +28,7 @@ select,
 .form__select {
   width: 100%;
 
-  @include respond-to( 'small' ) {
+  @include respond-to( 'medium' ) {
     width: auto;
   }
 }

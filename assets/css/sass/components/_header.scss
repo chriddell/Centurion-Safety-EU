@@ -41,3 +41,14 @@
 .header__button {
   float: right;
 }
+
+.header__custom-link {
+  display: none;
+  padding: $baseSpacingUnit $baseSpacingUnit * 2;
+  position: relative;
+  top: 20px;
+
+  @include respond-to( 'medium' ) {
+    display: block;
+  }
+}
