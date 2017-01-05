@@ -13,6 +13,10 @@
   }
 }
 
+.product-listing__header {
+  margin-bottom: $baseSpacingUnit * 2;
+}
+
 .product-listing__container {
   @include respond-to( 'small' ) {
     margin-right: $baseSpacingUnit * 1.5;
@@ -50,8 +54,13 @@
 }
 
 .product-listing__category-container {
-  margin-top: $baseSpacingUnit * 3;
   overflow: hidden;
+
+  &:not(:last-of-type) {
+    padding-bottom: $baseSpacingUnit * 2;
+    margin-bottom: $baseSpacingUnit * 3;
+    border-bottom: 1px solid $borderColor;
+  }
 }
 
 .product-listing__description {

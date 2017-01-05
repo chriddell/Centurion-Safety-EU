@@ -2520,6 +2520,10 @@ Powered by JS
   clear: both;
 }
 
+.product-listing__header {
+  margin-bottom: 40px;
+}
+
 @media (min-width: 767px) {
   .product-listing__container {
     margin-right: 30px;
@@ -2559,8 +2563,13 @@ Powered by JS
 }
 
 .product-listing__category-container {
-  margin-top: 60px;
   overflow: hidden;
+}
+
+.product-listing__category-container:not(:last-of-type) {
+  padding-bottom: 40px;
+  margin-bottom: 60px;
+  border-bottom: 1px solid #dbdbdb;
 }
 
 .product-listing__description {
