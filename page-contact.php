@@ -11,7 +11,8 @@
 $contact = array(
 	'address' 		=> get_field( 'contact_address' ),
 	'telephone'		=> get_field( 'contact_telephone' ),
-	'fax'					=> get_field( 'contact_fax' )
+	'fax'					=> get_field( 'contact_fax' ),
+	'hotline'			=> get_field( 'contact_hotline' )
 );
 
 get_header(); ?>
@@ -29,6 +30,7 @@ get_header(); ?>
 
 				<div class="col-12 col-sml-6 contact__block">
 					<p class="contact__copy contact__tel"><?php _e('Tel:', 'centurion'); echo $contact['telephone']; ?></p>
+					<?php if ( $contact['hotline'] ) { ?><p class="contact__copy contact__tel"><?php _e('Hotline: ', 'centurion'); echo $contact['hotline']; ?></p><?php } ?>
 					<p class="contact__copy contact__fax"><?php _e('Fax:', 'centurion'); echo $contact['fax']; ?></p>
 				</div>
 
