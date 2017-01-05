@@ -87,7 +87,8 @@ module.exports = function( grunt ) {
 			},
 			options: {
 				watchTask: true,
-				proxy: 'http://cntrn.dev'
+				proxy: 'http://cntrn.dev',
+				open: false
 			}
 		}
 

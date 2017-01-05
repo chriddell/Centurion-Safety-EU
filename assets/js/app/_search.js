@@ -14,6 +14,6 @@
 		$(searchForm + ' input[type="search"]').focus();
 	}
 
-	$( 'body' ).on( 'click', searchToggle, function(){ showSearch() });
+	$( document ).on( 'click', searchToggle, function(){ showSearch() });
 
 })(jQuery);

@@ -11,6 +11,7 @@ textarea {
   border-radius: 0;
   transition: background-color $gtd / 2 ease;
   font-family: $mainFontFamily;
+  -webkit-appearance: none;
 
   @include respond-to( 'small' ) {
     max-width: none;
@@ -78,6 +79,7 @@ select {
 
 .form__input {
   font-family: $mainFontFamily;
+  -webkit-appearance: none;
 }
 
 .form__input--submit {
@@ -117,116 +119,5 @@ select {
 
   @include respond-to( 'small' ) {
     width: 100% !important;
-  }
-}
-
-/* Search (in header)
----------------------------------------- */
-
-.form--search--in-header {
-  height: 60px;
-  width: 100%;
-
-  @include respond-to( 'medium' ) {
-    float: right;
-    width: auto;
-  }
-}
-
-.form--search--in-header__input {
-  height: 100%;
-  border: 0;
-}
-
-.form--search--in-header__input--search {
-  width: 100%;
-  padding: $baseSpacingUnit;
-  background-color: $brandColorOne;
-  color: $lightColor;
-
-  &:focus {
-    background-color: darken($brandColorOne, 10%);
-  }
-
-  @include respond-to( 'medium' ) {
-    float: left;
-    background-color: #a9bbc2;
-  }
-}
-
-.form--search--in-header__input--submit {
-
-  // Hide these elements on smaller devices
-  // and trust in user using the Go / Enter 
-  // on their device
-  @extend %sr-only;
-  background-color: #76888f;
-
-  @include respond-to( 'medium' ) {
-
-    // Unhide on larger devices
-    // Sorry, have to use !importants
-    height: 100% !important;
-    width: 60px !important;
-    padding: 0;
-    position: static !important;
-    float: right;
-    text-align: center;
-    line-height: 3;
-  }
-}
-
-.form--search--in-header ::placeholder {
-  color: $lightColor;
-}
-
-.form--search__input--submit {
-  background-image: url(../img/search-icon.svg);
-  background-size: 21px 21px;
-  background-repeat: no-repeat;
-  background-position: center center;
-}
-
-.form--search--in-header__input--pseudo-submit {
-  background-image: none;
-  background-color: $brandColorTwo;
-
-  &:hover {
-    background-color: $brandColorTwoDark;
-    cursor: pointer;
-  }
-}
-
-// Active & inactive styles for header search
-// -- not applicable on small devices
-@include respond-to( 'medium' ) {
-  .form--search--in-header__input--search {
-    width: 0;
-    visibility: hidden;
-    pointer-events: none;
-  }
-
-  #header-search-submit {
-    display: none;
-  }
-
-  &.is-active {
-
-    // Show the real submit input
-    #header-search-submit {
-      display: block;
-    }
-
-    // Hide the fake submit input
-    #header-pseudo-submit {
-      display: none;
-    }
-
-    .form--search--in-header__input--search {
-      width: 300px;
-      background-color: #a9bbc2;
-      visibility: visible;
-      pointer-events: all;
-    }
   }
 }

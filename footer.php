@@ -99,5 +99,14 @@ $contact = array(
 
 <?php wp_footer(); ?>
 
+<!-- Fastclick.js -->
+<script>
+	if ('addEventListener' in document) {
+		document.addEventListener('DOMContentLoaded', function() {
+			FastClick.attach(document.body);
+		}, false);
+	}
+</script>
+
 </body>
 </html>
