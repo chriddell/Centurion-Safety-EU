@@ -24,7 +24,7 @@ get_header(); ?>
 
 <main class="main" role="main">
 	
-	<div class="hero" style="background-image: url(<?php echo $hero['image']['url'] ?>);"><!-- .hero -->
+	<div class="hero col-12" style="background-image: url(<?php echo $hero['image']['url'] ?>);"><!-- .hero -->
 		<div class="wrapper">
 			<h2 class="hero__title"><?php echo $hero['title']; ?></h2>
 			<?php if ( $hero['cta-text'] && $hero['video'] ) { ?>
@@ -38,7 +38,7 @@ get_header(); ?>
 
 	<?php /** Featured Products **/ ?>
 	<?php if ( cntrn_get_featured_products() ) { ?>
-		<div class="block">
+		<div class="block col-12">
 			<div class="wrapper">
 				<?php cntrn_render_featured_products(); ?>
 			</div>
@@ -47,14 +47,14 @@ get_header(); ?>
 
 	<?php /** Latest posts **/ ?>
 	<?php if ( cntrn_get_latest_advice_posts() ) { ?>
-		<div class="block block--dark-bg">
+		<div class="block block--dark-bg col-12">
 			<div class="wrapper">
 				<?php cntrn_render_latest_advice_posts(); ?>
 			</div>
 		</div>
 	<?php } ?>
 
-	<div class="block block--last">
+	<div class="block block--last col-12">
 		<div class="wrapper">
 			<?php cntrn_render_splash_blocks( 'menu splash-blocks disobey-wrapper-mob clearfix', 'splash-block splash-block__homepage menu__item col-12 col-sml-6' ); ?>
 		</div>

@@ -19,7 +19,7 @@
 
   @include respond-to( 'medium' ) {
     // show again
-    height: auto;
+    height: auto !important;
     overflow: visible;
     width: 100%;
     left: 0;

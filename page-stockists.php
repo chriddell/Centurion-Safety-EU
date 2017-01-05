@@ -10,7 +10,7 @@
 get_header(); ?>
 
 <main class="main" role="main">
-	<div class="map-container">
+	<div class="map-container col-12">
 		<?php echo do_shortcode('[wpgmza id="1"]'); ?>
 	</div>
 </main>
