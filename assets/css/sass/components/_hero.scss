@@ -10,7 +10,7 @@
   height: calc(100vh - 94px);
   text-align: center;
   background-size: cover;
-  background-position: 25% 0;
+  background-position: 70% 0;
   background-repeat: no-repeat;
   background-color: $brandColorThree;
 
@@ -33,6 +33,7 @@
     // is bigger now
     height: calc(100vh - 155px);
     min-height: 600px; // Fallback
+    background-position: 25% 0;
   }
 }
 

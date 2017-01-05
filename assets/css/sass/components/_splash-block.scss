@@ -23,12 +23,23 @@
   padding: $baseSpacingUnit;
   background-color: $brandColorFour;
   background-size: cover;
-  background-position: center center;
+  background-position: 25% 0;
+
+  .splash-block:nth-of-type(2) & {
+    // 2nd category (resp. products)
+    // have focus on diff. part of
+    // element (sorry)
+    background-position: 75% 0;
+  }
 
   .no-flexbox & {
     height: 100%;
     width: 100%;
     display: block;
+  }
+
+  @include respond-to( 'small' ) {
+    background-position: center center;
   }
 }
 
