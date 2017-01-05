@@ -26,9 +26,11 @@ $blogpost = array(
 
 	<div class="col-12 blog--preview__container">
 		<?php the_title( '<h3 class="blog__title blog--preview__title blog--most-recent__title">', '</h3>' ); ?>
+		<!--
 		<p class="blog__author blog--preview__author blog--most-recent__author">
 			<?php _e( 'Written by', 'centurion' ); echo ' ' . $blogpost['author']; echo ', '; echo $blogpost['date']; ?>
 		</p>
+		-->
 		<a href="<?php echo $blogpost['url']; ?>" class="blog__link blog--preview__link blog--most-recent__link">Read article<span class="icon icon--white-link"></span></a>
 	</div>
 </article>

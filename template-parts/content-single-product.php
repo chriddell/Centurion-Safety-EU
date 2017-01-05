@@ -414,7 +414,7 @@ get_header(); ?>
 							<div class="product-listing product-listing--centered">
 								<div class="product-listing__container">
 									<div class="product-listing__image-container">
-										<a href="<?php the_permalink(); ?>">
+										<a href="<?php echo get_permalink($linked_product); ?>">
 											<img src="<?php echo $linked_product_image_url; ?>" class="product-listing__image"/>
 										</a>
 									</div>

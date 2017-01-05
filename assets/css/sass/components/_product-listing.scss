@@ -62,10 +62,21 @@
 .product-listing__specialism {
   padding: $baseSpacingUnit / 4;
   position: absolute;
-  bottom: 0;
-  left: 0;
+  bottom: 0; left: 0;
+  text-align: center;
   color: $lightColor;
   background-color: $brandColorTwo;
+}
+.product-listing__specialism--new {
+  // 'New' is actually a separate field in CMS
+  // It renders the same as other specialisms, though,
+  // with some slight differences
+  width: auto;
+  padding: $baseSpacingUnit / 4 $baseSpacingUnit / 2;
+  left: auto; bottom: auto;
+  top: 0; right: 0;
+  background-color: $borderColor;
+  color: $brandColorOne;
 }
 
 /* Featured

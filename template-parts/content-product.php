@@ -11,7 +11,8 @@
 // Get ACF fields
 $product = array(
 	'image' 					=> get_field( 'product_images' ),
-	'specialism'			=> get_field( 'product_specialism' )
+	'specialism'			=> get_field( 'product_specialism' ),
+	'is_new'					=> get_field( 'product_is_new')
 );
 
 // Get associated terms of this post
@@ -47,6 +48,11 @@ $child_term_object = get_terms(array(
 				<?php /** Product specialism **/ ?>
 				<?php if ( $product['specialism'] ) { ?>
 					<span class="product-listing__specialism product-listing__specialism--<?php echo $product['specialism']->name; ?> col-12"><?php echo $product['specialism']->name; ?></span>
+				<?php } ?>
+
+				<?php /** New product **/ ?>
+				<?php if ( $product['is_new'] ) { ?>
+					<span class="product-listing__specialism product-listing__specialism--new col-12"><?php _e( 'New', 'centurion' ) ?></span>
 				<?php } ?>
 			</a>
 		</span>
