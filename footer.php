@@ -15,7 +15,8 @@ $contact_page 	= get_page_by_path( 'contact', object );
 // Get ACF Contact fields
 $contact = array(
 	'telephone' 	=> get_field( 'contact_telephone', $contact_page->ID ),
-	'fax'					=> get_field( 'contact_fax', $contact_page->ID )
+	'fax'					=> get_field( 'contact_fax', $contact_page->ID ),
+	'hotline'					=> get_field( 'contact_hotline', $contact_page->ID )
 );
 
 ?>
@@ -26,8 +27,9 @@ $contact = array(
 	<div class="wrapper">
 		<div class="col-sml-4 footer__contact">
 			<p class="footer__copy bold"><?php bloginfo( 'name' ); ?></p>
-			<p class="footer__contact-detail"><?php _e('Tel:', 'centurion'); echo $contact['telephone']; ?></p>
-			<p class="footer__contact-detail"><?php _e('Fax:', 'centurion'); echo $contact['fax']; ?></p>
+			<p class="footer__contact-detail"><?php _e('Tel: ', 'centurion'); echo $contact['telephone']; ?></p>
+			<?php if ( $contact['hotline'] ) { ?><p class="footer__contact-detail"><?php _e('Hotline: ', 'centurion'); echo $contact['hotline']; ?></p><?php } ?>
+			<p class="footer__contact-detail"><?php _e('Fax: ', 'centurion'); echo $contact['fax']; ?></p>
 		</div>
 
 		<div class="col-sml-3">
@@ -72,16 +74,24 @@ $contact = array(
 	<div class="wrapper">
 		<ul class="menu footer__logos">
 			<li class="menu__item footer__logos__item">
-				<img src="<?php echo get_template_directory_uri(); ?>/assets/img/logos/registered-safety-supplier-logo.svg" class="footer__logo"/>
+				<a href="http://www.bsif.co.uk/rsss/" target="_blank">
+					<img src="<?php echo get_template_directory_uri(); ?>/assets/img/logos/registered-safety-supplier-logo.svg" class="footer__logo"/>
+				</a>
 			</li>
 			<li class="menu__item footer__logos__item">
-				<img src="<?php echo get_template_directory_uri(); ?>/assets/img/logos/bsi-kitemark-logo.svg" class="	footer__logo"/>
+				<a href="https://www.bsigroup.com/en-GB/kitemark/" target="_blank">
+					<img src="<?php echo get_template_directory_uri(); ?>/assets/img/logos/bsi-kitemark-logo.svg" class="	footer__logo"/>
+				</a>
 			</li>
 			<li class="menu__item footer__logos__item">
-				<img src="<?php echo get_template_directory_uri(); ?>/assets/img/logos/bsif-logo.svg" class="footer__logo"/>
+				<a href="http://www.bsif.co.uk/" target="_blank">
+					<img src="<?php echo get_template_directory_uri(); ?>/assets/img/logos/bsif-logo.svg" class="footer__logo"/>
+				</a>
 			</li>
 			<li class="menu__item footer__logos__item">
-				<img src="<?php echo get_template_directory_uri(); ?>/assets/img/logos/bsi-ukas-logo.png" class="footer__logo"/>
+				<a href="https://www.bsigroup.com/en-GB/our-services/product-certification/" target="_blank">
+					<img src="<?php echo get_template_directory_uri(); ?>/assets/img/logos/bsi-ukas-logo.png" class="footer__logo"/>
+				</a>
 			</li>
 		</ul>
 	</div>
