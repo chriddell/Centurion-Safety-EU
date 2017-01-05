@@ -1668,7 +1668,7 @@ select {
   display: none;
   padding: 20px 40px;
   position: relative;
-  top: 20px;
+  top: 18px;
 }
 
 @media (min-width: 1023px) {

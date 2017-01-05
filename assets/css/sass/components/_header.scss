@@ -46,7 +46,7 @@
   display: none;
   padding: $baseSpacingUnit $baseSpacingUnit * 2;
   position: relative;
-  top: 20px;
+  top: 18px;
 
   @include respond-to( 'medium' ) {
     display: block;
