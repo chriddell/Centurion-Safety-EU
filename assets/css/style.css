@@ -1207,6 +1207,7 @@ input:checked + .product-filter__item__label:before {
 
 @media (min-width: 1023px) {
   .nav--secondary {
+    width: auto;
     position: absolute;
     top: 20px;
     right: 0;
@@ -1642,13 +1643,18 @@ select {
 .form--search--in-header__input--search {
   width: 100%;
   padding: 20px;
-  background-color: #a9bbc2;
+  background-color: #262e61;
   color: #FFFFFF;
+}
+
+.form--search--in-header__input--search:focus {
+  background-color: #181d3c;
 }
 
 @media (min-width: 1023px) {
   .form--search--in-header__input--search {
     float: left;
+    background-color: #a9bbc2;
   }
 }
 
@@ -2571,6 +2577,17 @@ Powered by JS
   background-color: #94aab3;
 }
 
+.product-listing__specialism--new {
+  width: auto;
+  padding: 5px 10px;
+  left: auto;
+  bottom: auto;
+  top: 0;
+  right: 0;
+  background-color: #dbdbdb;
+  color: #262e61;
+}
+
 /* Featured
 ---------------------------------------- */
 .product-listing--featured {
@@ -2950,7 +2967,7 @@ Powered by JS
     - Title
    ========================================================================== */
 .splash-block {
-  height: 180px;
+  height: 250px;
   color: #FFFFFF;
   text-align: center;
 }
