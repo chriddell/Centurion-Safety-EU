@@ -999,6 +999,7 @@ input {
   margin-left: 10px;
   display: inline-block;
   background-image: url(../img/sprite.svg);
+  background-repeat: no-repeat;
   background-size: 30px 350px;
   vertical-align: middle;
   position: relative;
@@ -1012,22 +1013,22 @@ input {
 }
 
 .icon--white-pin {
-  background-position: 0 -62px;
+  background-position: 0 -58px;
   top: -1px;
 }
 
 .icon--search {
-  background-position: 0 -122px;
+  background-position: 0 -112px;
 }
 
 .icon--link,
 .gform_footer:after {
-  background-position: 0 -153px;
+  background-position: 0 -142px;
   top: -2px;
 }
 
 .icon--white-link {
-  background-position: 0 -184px;
+  background-position: 0 -170px;
   top: -2px;
 }
 
@@ -1041,12 +1042,16 @@ input {
 
 .icon--checked-box,
 input:checked + .product-filter__item__label:before {
-  background-position: 0 -272px;
+  background-position: 0 -254px;
 }
 
 .icon--unchecked-box,
 .product-filter__item__label:before {
-  background-position: 0 -311px;
+  background-position: 0 -290px;
+}
+
+.icon--arrow-down {
+  background-position: 0 -318px;
 }
 
 /* Tweaks
@@ -1532,9 +1537,13 @@ select,
 
 select,
 .form__select {
+  height: auto;
   border-radius: 0;
-  background: none;
-  -webkit-appearance: none;
+  background-color: transparent;
+  background-image: url(../img/down-arrow.svg);
+  background-repeat: no-repeat;
+  background-position: 99% center;
+  background-size: 12px 7px;
 }
 
 textarea,

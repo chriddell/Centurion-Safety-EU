@@ -11,6 +11,7 @@
   margin-left: $baseSpacingUnit / 2;
   display: inline-block;
   background-image: url(../img/sprite.svg);
+  background-repeat: no-repeat;
   background-size: 30px 350px;
   vertical-align: middle;
 
@@ -29,24 +30,24 @@
 
 .icon--white-pin,
 %icon--white-pin {
-  background-position: 0 -62px;
+  background-position: 0 -58px;
   top: -1px;
 }
 
 .icon--search,
 %icon--search {
-  background-position: 0 -122px; 
+  background-position: 0 -112px; 
 }
 
 .icon--link,
 %icon--link {
-  background-position: 0 -153px;
+  background-position: 0 -142px;
   top: -2px;
 }
 
 .icon--white-link,
 %icon--white-link {
-  background-position: 0 -184px;
+  background-position: 0 -170px;
   top: -2px;
 }
 
@@ -61,12 +62,17 @@
 
 .icon--checked-box,
 %icon--checked-box {
-  background-position: 0 -272px;
+  background-position: 0 -254px;
 }
 
 .icon--unchecked-box,
 %icon--unchecked-box {
-  background-position: 0 -311px;
+  background-position: 0 -290px;
+}
+
+.icon--arrow-down,
+%icon--arrow-down {
+  background-position: 0 -318px;
 }
 
 /* Tweaks

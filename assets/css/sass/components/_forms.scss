@@ -45,9 +45,13 @@ select,
 
 select,
 .form__select {
+  height: auto; // overwrite %icon
   border-radius: 0;
-  background: none;
-  -webkit-appearance: none;
+  background-color: transparent;
+  background-image: url(../img/down-arrow.svg);
+  background-repeat: no-repeat;
+  background-position: 99% center;
+  background-size: 12px 7px;
 }
 
 textarea,
