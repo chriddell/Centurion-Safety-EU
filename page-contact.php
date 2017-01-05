@@ -17,8 +17,8 @@ $contact = array(
 
 get_header(); ?>
 
-<main class="main" role="main">
-	<div class="wrapper pos-rel">
+<main class="main pos-rel" role="main">
+	<div class="wrapper">
 		<div class="col-12 col-sml-6 contact border-right">
 			<div class="block">
 				<?php the_title('<h2 class="contact__title">', '</h2>'); ?>
