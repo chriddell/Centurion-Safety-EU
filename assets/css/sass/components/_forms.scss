@@ -141,11 +141,16 @@ select {
 .form--search--in-header__input--search {
   width: 100%;
   padding: $baseSpacingUnit;
-  background-color: #a9bbc2;
+  background-color: $brandColorOne;
   color: $lightColor;
+
+  &:focus {
+    background-color: darken($brandColorOne, 10%);
+  }
 
   @include respond-to( 'medium' ) {
     float: left;
+    background-color: #a9bbc2;
   }
 }
 
