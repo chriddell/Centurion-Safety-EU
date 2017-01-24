@@ -739,7 +739,7 @@ function cntrn_filter_post_type_by_taxonomy() {
 		));
 	};
 }
-add_action('restrict_manage_posts', 'cntrn_filter_post_type_by_taxonomy');
+add_action( 'restrict_manage_posts', 'cntrn_filter_post_type_by_taxonomy' );
 
 /**
  * Filter posts by taxonomy in admin
@@ -761,7 +761,7 @@ function cntrn_convert_id_to_term_in_query($query) {
 		$q_vars[$taxonomy] = $term->slug;
 	}
 }
-add_filter('parse_query', 'cntrn_convert_id_to_term_in_query');
+add_filter( 'parse_query', 'cntrn_convert_id_to_term_in_query' );
 
 /*
  * Let Editors manage users, and run this only once.
@@ -789,14 +789,14 @@ add_action( 'init', 'cntrn_editor_manage_users' );
  * because we have Editors managing
  * users
  */
-function cntrn_pre_user_query($user_search) {
-		$admin_ids = '1'; // REPLACE THESE NUMBERS WITH IDs TO HIDE.
-		 
-		$user = wp_get_current_user();
-		$admin_array = explode($admin_ids, ',');
-		if ( ! in_array( $user->ID, $admin_array ) ) {
-			global $wpdb;
-			$user_search->query_where = str_replace('WHERE 1=1', "WHERE 1=1 AND {$wpdb->users}.ID NOT IN($admin_ids)",$user_search->query_where);
-		}
+function cntrn_pre_user_query( $user_search ) {
+	$admin_ids = '1'; // REPLACE THESE NUMBERS WITH IDs TO HIDE.
+	 
+	$user = wp_get_current_user();
+	$admin_array = explode($admin_ids, ',');
+	if ( ! in_array( $user->ID, $admin_array ) ) {
+		global $wpdb;
+		$user_search->query_where = str_replace('WHERE 1=1', "WHERE 1=1 AND {$wpdb->users}.ID NOT IN($admin_ids)",$user_search->query_where);
+	}
 }
 add_action( 'pre_user_query', 'cntrn_pre_user_query' );

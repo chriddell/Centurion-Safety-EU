@@ -1725,9 +1725,15 @@ select {
 
 .footer__logos__item {
   height: 30px;
-  margin-right: 20px;
+  margin-right: 10px;
   display: inline-block;
   vertical-align: middle;
+}
+
+@media (min-width: 767px) {
+  .footer__logos__item {
+    margin-right: 20px;
+  }
 }
 
 .footer__logo {

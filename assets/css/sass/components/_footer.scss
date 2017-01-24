@@ -38,9 +38,13 @@
 
 .footer__logos__item {
   height: 30px;
-  margin-right: $baseSpacingUnit;
+  margin-right: $baseSpacingUnit / 2;
   display: inline-block;
   vertical-align: middle;
+
+  @include respond-to( 'small' ) {
+    margin-right: $baseSpacingUnit;
+  }
 }
 
 .footer__logo {
